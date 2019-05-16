@@ -33,7 +33,7 @@ export default class PostTemplate extends Component {
     const twitterUrl = `https://twitter.com/search?q=${config.siteUrl}/${post.slug}/`
     const twitterShare = `http://twitter.com/share?text=${encodeURIComponent(post.title)}&url=${
       config.siteUrl
-    }/${post.slug}/&via=taniarascia`
+    }/${post.slug}/&via=runeliteplus`
 
     return (
       <Layout>

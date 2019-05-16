@@ -1,26 +1,18 @@
 const config = {
-  siteTitle: 'Tania Rascia',
-  siteTitleShort: 'Tania Rascia',
-  siteTitleAlt: 'Tania Rascia',
-  siteLogo: '/logos/tania.jpg',
-  siteUrl: 'https://www.taniarascia.com',
+  siteTitle: 'RuneLitePlus',
+  siteTitleShort: 'RuneLitePlus',
+  siteTitleAlt: 'RuneLitePlus',
+  siteLogo: '/logos/logo.png',
+  siteUrl: 'https://runelitepl.us/',
   repo: 'https://github.com/taniarascia/taniarascia.com',
   pathPrefix: '',
   dateFromFormat: 'YYYY-MM-DD',
   dateFormat: 'MMMM Do, YYYY',
   siteDescription:
-    'Tania Rascia is full-stack software developer specializing in modern JavaScript who breaks down complex concepts in an accessible and intuitive way.',
+    'RuneLitePlus | Fork of RuneLite that provides more functionality and less restrictions while staying open source. We have lots of runelite plugins!',
   siteRss: '/rss.xml',
   googleAnalyticsID: 'UA-42068444-1',
-  disqusShortname: 'taniarascia',
-  postDefaultCategoryID: 'Tech',
-  userName: 'Tania',
-  userEmail: 'tania@taniarascia.com',
-  userTwitter: 'taniarascia',
-  userLocation: 'Chicago, IL',
-  userAvatar: 'https://api.adorable.io/avatars/150/test.png',
-  userDescription:
-    'I build open source projects and write the missing instruction manuals of the web.',
+  postDefaultCategoryID: 'Updates',
   menuLinks: [
     {
       name: 'Updates',
