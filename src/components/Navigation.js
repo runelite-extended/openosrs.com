@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'gatsby'
-import logo from '../images/logo.png'
+import logos from '../images/logos.png'
 import sun from '../images/sun.svg'
 import moon from '../images/moon.svg'
 import ThemeContext from '../context/ThemeContext'
@@ -38,7 +38,7 @@ export default class Navigation extends Component {
         <div className="nav-container">
           <div className="brand">
             <Link to="/">
-              <img src={logo} className="favicon" alt="Runelite" />
+              <img src={logos} className="favicon" alt="Runelite" />
               <span className="text">RuneLitePlus</span>
             </Link>
           </div>
