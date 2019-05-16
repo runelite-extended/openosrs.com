@@ -1,4 +1,5 @@
-# https://runelitepl.us [![Netlify Status](https://api.netlify.com/api/v1/badges/0a51d0e9-f611-4dd8-887f-fc1889e68540/deploy-status)](https://app.netlify.com/sites/runeliteplus/deploys) [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+# https://runelitepl.us [![Netlify Status](https://api.netlify.com/api/v1/badges/dab38b2f-c1da-4e02-b7f7-f23c3290f5f6/deploy-status)](https://app.netlify.com/sites/runeliteplus/deploys)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 Runeliteplus website running on Gatsby, React, and Node.js.
 
