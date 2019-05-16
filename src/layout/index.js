@@ -6,6 +6,10 @@ import Footer from '../components/Footer'
 import config from '../../data/SiteConfig'
 import favicon from '../images/favicon.png'
 import '../styles/main.scss'
+import '../styles/card.scss'
+import '../styles/flexboxgrid.min.css'
+
+
 
 export default class MainLayout extends Component {
   static contextType = ThemeContext

@@ -23,16 +23,12 @@ const config = {
     'I build open source projects and write the missing instruction manuals of the web.',
   menuLinks: [
     {
-      name: 'Me',
-      link: '/me/',
-    },
-    {
-      name: 'Articles',
+      name: 'Updates',
       link: '/blog/',
     },
     {
-      name: 'Contact',
-      link: '/contact/',
+      name: 'Features',
+      link: '/features/',
     },
   ],
   themeColor: '#3F80FF', // Used for setting manifest and progress theme colors.

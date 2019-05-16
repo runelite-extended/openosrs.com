@@ -5,8 +5,10 @@
   "author": "Tania Rascia <tania@taniarascia.com>",
   "repository": "git@github.com:taniarascia/taniarascia.com",
   "dependencies": {
+    "better-opn": "^0.1.4",
     "disqus-react": "^1.0.5",
     "gatsby": "2.1.23",
+    "gatsby-cli": "^2.5.14",
     "gatsby-image": "2.0.31",
     "gatsby-plugin-catch-links": "2.0.12",
     "gatsby-plugin-feed": "2.0.14",
@@ -32,6 +34,7 @@
     "lodash.kebabcase": "^4.1.1",
     "moment": "^2.24.0",
     "node-sass": "^4.11.0",
+    "preact": "^8.4.2",
     "prismjs": "^1.15.0",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",

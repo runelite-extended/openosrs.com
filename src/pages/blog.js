@@ -57,43 +57,12 @@ export default class BlogPage extends Component {
   render() {
     const { filteredPosts, searchTerm, currentCategories } = this.state
     const filterCount = filteredPosts.length
-    const categories = this.props.data.categories.group
 
     return (
       <Layout>
-        <Helmet title={`Articles – ${config.siteTitle}`} />
+        <Helmet title={`Updates – ${config.siteTitle}`} />
         <SEO />
         <div className="container">
-          <h1>Articles</h1>
-          <div className="category-container">
-            {categories.map(category => {
-              const active = currentCategories.includes(category.fieldValue)
-
-              return (
-                <div
-                  className={`category-filter ${active ? 'active' : ''}`}
-                  key={category.fieldValue}
-                  onClick={async () => {
-                    await this.updateCategories(category.fieldValue)
-                    await this.filterPosts()
-                  }}
-                >
-                  {category.fieldValue}
-                </div>
-              )
-            })}
-          </div>
-          <div className="search-container">
-            <input
-              className="search"
-              type="text"
-              name="searchTerm"
-              value={searchTerm}
-              placeholder="Type here to filter posts..."
-              onChange={this.handleChange}
-            />
-            <div className="filter-count">{filterCount}</div>
-          </div>
           <PostListing postEdges={filteredPosts} />
         </div>
       </Layout>
