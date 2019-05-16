@@ -87,17 +87,6 @@ label {
   margin: 1rem 0 0.5rem;
 }
 
-.newsletter-form {
-  display: flex;
-
-  [type='text'],
-  [type='email'] {
-    width: 100%;
-    max-width: 400px;
-    margin-right: 0.5rem;
-  }
-}
-
 // Placeholder Text
 ::-webkit-input-placeholder,
 ::-moz-placeholder,

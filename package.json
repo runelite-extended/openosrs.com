@@ -1,9 +1,9 @@
 {
-  "name": "taniarascia.com",
-  "description": "Personal website running on Gatsby, React, and Node.js.",
+  "name": "runelitepl.us",
+  "description": "Runeliteplus website running on Gatsby, React, and Node.js.",
   "version": "1.0.1",
-  "author": "Tania Rascia <tania@taniarascia.com>",
-  "repository": "git@github.com:taniarascia/taniarascia.com",
+  "author": "James",
+  "repository": "git@github.com:runelite-extended/runelitepl.us.git",
   "dependencies": {
     "better-opn": "^0.1.4",
     "disqus-react": "^1.0.5",

@@ -4,7 +4,7 @@ const config = {
   siteTitleAlt: 'RuneLitePlus',
   siteLogo: '/logos/logo.png',
   siteUrl: 'https://runelitepl.us/',
-  repo: 'https://github.com/taniarascia/taniarascia.com',
+  repo: 'https://github.com/runelite-extended/runelitepl.us',
   pathPrefix: '',
   dateFromFormat: 'YYYY-MM-DD',
   dateFormat: 'MMMM Do, YYYY',
