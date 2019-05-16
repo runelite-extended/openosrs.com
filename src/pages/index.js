@@ -19,7 +19,7 @@ export default class Index extends Component {
 
     return (
       <Layout>
-        <Helmet title={`${config.siteTitle} – Full-Stack Software Developer`} />
+        <Helmet title={`${config.siteTitle} – Fork of RuneLite that provides more functionality."`} />
         <SEO />
         <div className="container">
           <div className="lead">
