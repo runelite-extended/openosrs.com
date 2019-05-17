@@ -13,7 +13,7 @@ tags:
 ---
 
 We updated!
-As always, I appreciate the RL+ Staff and our end users. We are delivering a hurtful blow to P2W clients with every update, and every new user.
+As always, I appreciate the staff and our end users. We are delivering a hurtful blow to P2W clients with every update, and every new user.
 
 
 
