@@ -6,9 +6,6 @@ import Layout from '../layout'
 import PostListing from '../components/PostListing'
 import SEO from '../components/SEO'
 import config from '../../data/SiteConfig'
-import react from '../../content/thumbnails/react.png'
-import vue from '../../content/thumbnails/vue.png'
-import js from '../../content/thumbnails/js.png'
 
 export default class Index extends Component {
   render() {
