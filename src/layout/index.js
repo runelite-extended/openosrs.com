@@ -35,7 +35,6 @@ export default class MainLayout extends Component {
           <meta name="description" content={config.siteDescription} />
           <meta name="keywords" content={config.metaKeywords} />
           <link rel="shortcut icon" type="image/png" href={favicon} />
-          <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i"/>
         </Helmet>
         <Navigation menuLinks={config.menuLinks} />
         <main id="main-content">{children}</main>

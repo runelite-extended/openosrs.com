@@ -18,6 +18,12 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-twitter',
     {
+      resolve: 'gatsby-plugin-web-font-loader',
+      options: {
+        google: {
+          families: ['Roboto']
+        },
+      },
       resolve: `gatsby-plugin-netlify`,
       options: {
         headers: {
