@@ -3,7 +3,7 @@ date: 2019-05-16
 title: 'RuneLite+ has been updated to 1.2!'
 template: post
 slug: runelite-plus-update
-thumbnail: '../thumbnails/floppy.png'
+thumbnail: '../thumbnails/firecape.png'
 categories:
   - updates
 tags:
