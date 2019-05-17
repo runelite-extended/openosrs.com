@@ -36,7 +36,6 @@ export default class MainLayout extends Component {
           <meta name="keywords" content={config.metaKeywords} />
           <link rel="shortcut icon" type="image/png" href={favicon} />
           <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i"/>
-          <script src="https://use.fontawesome.com/releases/v5.5.0/js/all.js"></script>
         </Helmet>
         <Navigation menuLinks={config.menuLinks} />
         <main id="main-content">{children}</main>
