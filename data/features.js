@@ -76,7 +76,7 @@ const features = [
       title: 'Loot Assist Plugin',
       description: 'Creates a tile overlay with a timer that counts down to when the loot will appear to you.',
       link: ''
-    },
+    }
 ]
 
 export default features
