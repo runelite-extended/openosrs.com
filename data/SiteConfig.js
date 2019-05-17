@@ -12,7 +12,7 @@ const config = {
   siteDescription:
     'RuneLitePlus | Fork of RuneLite that provides more functionality and less restrictions while staying open source. We have lots of runelite plugins!',
   siteRss: '/rss.xml',
-  googleAnalyticsID: 'UA-42068444-1',
+  googleAnalyticsID: 'UA-73292863-4',
   postDefaultCategoryID: 'Updates',
   menuLinks: [
     {
