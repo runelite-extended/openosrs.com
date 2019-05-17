@@ -24,14 +24,15 @@ export default class Index extends Component {
         <div className="container">
           <div className="lead">
           <div class="row justify-content-center">
-          <div class="col-2 col-md-8 col-lg-6 text-center pb-md-2"><h1>RuneLitePlus</h1><p class="lead">Fork of RuneLite that provides more functionality and less restrictions while staying open source.&nbsp;</p><p class="mt-4"><a class="btn btn-primary" href="https://runelitepl.us/RuneLitePlus.jar">Download</a></p></div>
+          <div class="col-2 col-md-8 col-lg-6 text-center pb-md-2"><h1>RuneLitePlus</h1><p class="lead">Fork of RuneLite that provides more functionality and less restrictions while staying open source.&nbsp;</p><p class="mt-4"><a class="btn btn-primary" href="https://runelitepl.us/RuneLitePlus.jar">Download</a></p>
+          </div>
 
 
-          
-        <div class="col-12 col-sm-6 col-lg-3 pt-4 pt-sm-0"><h3>Plugin Support</h3><p>Load your own plugins with our external jar plugin support. Simple and easy!</p></div>
-        <div class="col-12 col-sm-6 col-lg-3 pt-4 pt-lg-0"><h3>Open Source</h3><p>This is meant to directly compete with 3rd party clients that are trying to sell their code.</p></div>
-        <div class="col-12 col-sm-6 col-lg-3 pt-4 pt-lg-0"><h3>Quick Updates</h3><p>Updated often! Check the git commits below to see our newest changes.</p></div>
-
+          <div class="row2 justify-content-center">
+        <div class="col-12 col-sm-6 col-lg-3 pt-4 text-center pt-sm-0"><h3>Plugin Support</h3><p>Load your own plugins with our external jar plugin support. Simple and easy!</p></div>
+        <div class="col-12 col-sm-6 col-lg-3 pt-4 text-center pt-lg-0"><h3>Open Source</h3><p>This is meant to directly compete with 3rd party clients that are trying to sell their code.</p></div>
+        <div class="col-12 col-sm-6 col-lg-3 pt-4 text-center pt-lg-0"><h3>Quick Updates</h3><p>Updated often! Check the git commits below to see our newest changes.</p></div>
+        </div>
           </div>
           </div>
           </div>

@@ -16,6 +16,18 @@
   padding: 1.25rem;
 }
 
+.row2 {
+  box-sizing: border-box;
+  display: flex;
+  flex: 0 1 auto;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-right: -11.5rem;
+  margin-left: -11.5rem;
+  margin-top: 25px;
+  margin-bottom: -10px;
+}
+
 .card-header {
   color: black;
   text-align: center;
