@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import Helmet from 'react-helmet'
 import { graphql, Link } from 'gatsby'
-import GitHubButton from 'react-github-btn'
 import Layout from '../layout'
 import PostListing from '../components/PostListing'
 import SEO from '../components/SEO'
@@ -12,7 +11,7 @@ export default class Index extends Component {
     const { data } = this.props
 
     const latestPostEdges = data.latest.edges
-    //const popularPostEdges = data.popular.edges
+
 
     return (
       <Layout>
