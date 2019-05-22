@@ -21,9 +21,14 @@ export default class OAuthPage extends Component {
   }
 
   render() {
+	  let foo = 'null';
+	  try {
 		let search = window.location.search;
 		let params = new URLSearchParams(search);
-		let foo = params.get('code');
+		foo = params.get('code');
+	} catch (e) {
+		console.log(e)
+	}
     return (
       <Layout>
         <Helmet title={`Page not found – OAuth`} />
