@@ -31,7 +31,7 @@ export default class OAuthPage extends Component {
 	}
     return (
       <Layout>
-        <Helmet title={`Page not found – OAuth`} />
+        <Helmet title={`RuneLitePlus - Integration`} />
         <SEO />
         <div className="container">
           <div className="text-center">
