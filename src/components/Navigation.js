@@ -30,7 +30,7 @@ export default class Navigation extends Component {
     const { menuLinks } = this.props
 
     return (
-      <nav className={scrolled ? 'nav scroll' : 'nav'}>
+      <nav className={scrolled ? 'nav scroll' : 'nav scroll'}>
         <div className="nav-container">
           <div className="brand">
             <Link to="/">
