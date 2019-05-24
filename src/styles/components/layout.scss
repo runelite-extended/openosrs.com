@@ -4,6 +4,15 @@
   min-height: calc(100vh - 162px);
 }
 
+
+.nav .nav-container .links a {
+    font-size: 1.2rem;
+    margin: 0 .3rem;
+    padding: 1rem .5rem;
+    border-bottom: 2px solid transparent;
+    text-decoration: none;
+}
+
 @include small-breakpoint {
   #main-content {
     margin-top: 92px;
