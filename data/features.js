@@ -1,6 +1,6 @@
 const features = [
     {
-      image: '/img/features/mousehighlight.png',
+      image: '/img/features/zoom.png',
       title: '1 Way Safe Spots',
       description: 'This plugin will introduce 1 way safespots to your PVP and PVM fights. this will highlight floor tiles with where you can stand do you can attack your opponent without them attacking you back.',
       link: ''
