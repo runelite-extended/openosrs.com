@@ -310,7 +310,7 @@ const features = [
         title: 'Zulrah Helper',
         description: 'One of the harder bosses made trivial with a plugin showing you where to stand and what to pray.',
         link: ''
-    },
+    }
 ]
 
 export default features
