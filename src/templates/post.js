@@ -60,16 +60,7 @@ export default class PostTemplate extends Component {
             </div>
           </header>
           <div className="post" dangerouslySetInnerHTML={{ __html: postNode.html }} />
-          <div>
-            {' '}
-            <a className="button twitter-button" href={twitterShare} target="_blank">
-              Share on Twitter
-            </a>
-            {' '}
-            <a className="button twitter-button" href={twitterUrl} target="_blank">
-              Discuss on Twitter
-            </a>
-          </div>
+
         </article>
   
       </Layout>

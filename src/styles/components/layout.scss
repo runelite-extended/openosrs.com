@@ -38,23 +38,9 @@
 
 .lead {
   font-size: 1.1rem;
-
   a {
-    border-bottom: 2px solid lighten($primary-color, 30%);
-
-    &:hover {
-      color: $link-hover-color;
-      background: $primary-hover;
-      border-bottom: 2px solid $link-hover-color;
-    }
-
-    &:active,
-    &:focus {
-      color: $link-hover-color;
-      background: $primary-hover;
-      border-bottom: 2px dashed $link-hover-color;
-    }
-  }
+    text-decoration: none;
+}
 
   h1 {
     font-weight: 500;
@@ -170,8 +156,8 @@ a.article-callout {
 @include small-breakpoint {
   .single {
     .gatsby-image-wrapper {
-      height: 150px !important;
-      width: 150px !important;
+      height: 128px !important;
+      width: 128px !important;
     }
   }
 }
@@ -322,7 +308,6 @@ a.article-callout {
 
         &:active,
         &:focus {
-          border: 2px dashed $primary-color;
           background: $primary-hover;
         }
 
@@ -360,7 +345,6 @@ a.article-callout {
 
           &:active,
           &:focus {
-            border: 2px dashed $primary-color;
             background: $primary-hover;
           }
 
@@ -555,9 +539,9 @@ h2.publication-company {
     }
 
     h2 {
-      width: 150px;
-      min-width: 150px;
-      max-width: 150px;
+      width: 128px;
+      min-width: 128px;
+      max-width: 128px;
       font-size: 1.4rem;
       margin-right: 1rem;
     }

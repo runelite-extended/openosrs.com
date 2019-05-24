@@ -121,7 +121,7 @@ button.dark-switcher {
       }
 
       .links a {
-
+        
         &:hover,
         &.active {
           color: #111;
@@ -161,6 +161,7 @@ button.dark-switcher {
           margin: 0 1rem;
           padding: 1rem 0.5rem;
           border-bottom: 2px solid transparent;
+          text-decoration: none;
 
           &.active {
             color: #111;

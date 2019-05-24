@@ -191,17 +191,8 @@ ul {
 
 // Link styling
 a {
-  color: $link-color;
   text-decoration: none;
-  font-weight: 600;
-
-  &:hover,
-  &:active,
-  &:focus {
-    color: $link-hover-color;
-  }
 }
-
 .post,
 .page {
   a:not(.button):not(.anchor):not(.gatsby-resp-image-link) {

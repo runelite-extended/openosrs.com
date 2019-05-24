@@ -1,12 +1,9 @@
 import React, { Component } from 'react'
 import { Link } from 'gatsby'
 import logos from '../images/logos.png'
-import sun from '../images/sun.svg'
-import moon from '../images/moon.svg'
-import ThemeContext from '../context/ThemeContext'
+
 
 export default class Navigation extends Component {
-  static contextType = ThemeContext
 
   state = {
     scrolled: false,
@@ -31,7 +28,6 @@ export default class Navigation extends Component {
   render() {
     const { scrolled } = this.state
     const { menuLinks } = this.props
-    const theme = this.context
 
     return (
       <nav className={scrolled ? 'nav scroll' : 'nav'}>
@@ -55,19 +51,6 @@ export default class Navigation extends Component {
               GitHub
             </a>
         
-            <div className="cta">
-              <button className="dark-switcher" onClick={theme.toggleDark}>
-                {theme.dark ? (
-                  <span>
-                    <img src={sun} className="theme-icon" alt="Light Mode" />
-                  </span>
-                ) : (
-                  <span>
-                    <img src={moon} className="theme-icon" alt="Dark Mode" />
-                  </span>
-                )}
-              </button>
-            </div>
           </div>
         </div>
       </nav>

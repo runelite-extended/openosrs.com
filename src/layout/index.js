@@ -8,6 +8,9 @@ import favicon from '../images/favicon.png'
 import '../styles/main.scss'
 import '../styles/card.scss'
 import '../styles/flexboxgrid.min.css'
+import '../styles/froala_style.min.css'
+import '../styles/froala_blocks.min.css'
+
 
 
 
