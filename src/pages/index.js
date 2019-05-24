@@ -27,10 +27,6 @@ export default class Index extends Component {
           </div>
           </div>
         <div className="container">
-          <section className="section">
-            <div class=""><h2>Latest Updates</h2> </div>
-            <PostListing simple postEdges={latestPostEdges} />
-          </section>
   <div class=""><h2>Our Features</h2> </div>
   <section class="fdb-block fp-active" data-block-type="features" data-id="5" draggable="true">
     <div class="row text-left">
@@ -56,8 +52,11 @@ export default class Index extends Component {
         </div>
       </div>
     </div>
-
 </section>
+<section className="section">
+            <div class=""><h2>Latest Updates</h2> </div>
+            <PostListing simple postEdges={latestPostEdges} />
+          </section>
         </div>
       </Layout>
     )
