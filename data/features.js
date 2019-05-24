@@ -24,16 +24,18 @@ const features = [
       link: ''
     },
     {
-      image: '/img/features/zoom.png',
+      image: '/img/features/aoe.png',
       title: 'AoE Warnings',
-      description: 'This will show you the projectiles of certain enemy attacks, such as Crazy Archaeologist, Cerberus, Tekton, Galvek, Vetion and more.',
-      link: ''
+      description: 'This will show you the projectiles of certain enemy attacks.',
+      link: 'https://github.com/runelite-extended/runelite/wiki/Aoe-Warnings',
+      home: true
     },
     {
-      image: '/img/features/zoom.png',
+      image: '/img/features/egg.png',
       title: 'Barbarian Assault+',
-      description: 'Custom barbarian assault plugin, overlay of eggs counted, highlight eggs and more.',
-      link: ''
+      description: 'Custom barbarian assault plugin, highlight eggs and a lot more.',
+      link: 'https://github.com/runelite-extended/runelite/wiki/Barbarian-Assault-',
+      home: true
     },
     {
       image: '/img/features/zoom.png',
@@ -246,10 +248,11 @@ const features = [
         link: ''
     },
     {
-        image: '/img/features/zoom.png',
+        image: '/img/features/tracker.png',
         title: 'Supplies Used Tracker',
-        description: 'Track all supplies used during session.',
-        link: ''
+        description: 'Track your supplies while pvping or pvming, very useful.',
+        link: 'https://github.com/runelite-extended/runelite/wiki/Supplies-tracker',
+        home: true
     },
     {
         image: '/img/features/zoom.png',
@@ -306,10 +309,11 @@ const features = [
         link: ''
     },
     {
-        image: '/img/features/zoom.png',
+        image: '/img/features/zulrah.png',
         title: 'Zulrah Helper',
-        description: 'One of the harder bosses made trivial with a plugin showing you where to stand and what to pray.',
-        link: ''
+        description: 'Kill zulrah no problem with our zulrah helper. Raise that KC!',
+        link: 'https://github.com/runelite-extended/runelite/wiki',
+        home: true
     }
 ]
 
