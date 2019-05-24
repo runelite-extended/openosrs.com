@@ -39,7 +39,7 @@ export default class Index extends Component {
           </section>
         </div>
         <div className="container">
-          <div class=""><h2>Our Features</h2> </div>
+          <div class="ez"><h2>Our Features</h2> </div>
           <section class="fdb-block fp-active" data-block-type="features" data-id="5" draggable="true">
             <div class="row text-left">
               <div class="col-12 col-md-8 m-auto col-lg-4">
