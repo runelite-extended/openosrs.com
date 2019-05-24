@@ -18,13 +18,15 @@ export default class Index extends Component {
         <Helmet title={`${config.siteTitle} – Fork of RuneLite that provides more functionality.`} />
         <SEO />
         <div className="container">
-          <div className="lead">
+        <section class="test" >
+          
           <div class="row justify-content-center">
-          <div class="col-2 col-md-8 col-lg-6 text-center pb-md-2"><h1>RuneLitePlus</h1><p class="lead">Fork of RuneLite that provides more functionality and less restrictions while staying open source.&nbsp;</p><p class="mt-4"><a class="btn btn-primary" href="https://runelitepl.us/RuneLitePlus.jar">Download</a></p>
+          <div class="col-2 col-md-8 col-lg-6 text-center pb-md-2"><p class="lead2"><h1>RuneLitePlus</h1></p><p class="lead">Fork of RuneLite that provides more functionality and less restrictions while staying open source.&nbsp;</p><p class="mt-4"><a class="btn btn-primary" href="https://runelitepl.us/RuneLitePlus.jar">Download</a></p>
           </div>
 
           </div>
-          </div>
+          
+                    </section>
           </div>
         <div className="container">
   <div class=""><h2>Our Features</h2> </div>

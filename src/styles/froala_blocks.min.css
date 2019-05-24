@@ -372,10 +372,12 @@ hr {
     margin-bottom: 1rem
 }
 .lead {
-    font-size: 1.4rem;
-    font-weight: 400
-}
+    color: white; 
+    font-weight: 400;
+    background: rgb(0, 0, 0); /* fallback color */
+    background: rgba(0, 0, 0, 0.7);
 
+}
 .display-1,
 .display-2,
 .display-3,
