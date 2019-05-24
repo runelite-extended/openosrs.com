@@ -10,7 +10,7 @@ const config = {
   dateFormat: 'MMMM Do, YYYY',
   metaKeywords: 'runelite,runeliteplus,runelite client,runelite pvp plugins,osrs,runelite pvp,runelite plugins',
   siteDescription:
-    'RuneLitePlus | Fork of RuneLite that provides more functionality and less restrictions while staying open source. We have lots of runelite plugins!',
+    'RuneLitePlus | Fork of RuneLite that provides more functionality and less restrictions while staying open source. We have lots of RuneLitePlus plugins!',
   siteRss: '/rss.xml',
   googleAnalyticsID: 'UA-73292863-4',
   postDefaultCategoryID: 'Updates',
