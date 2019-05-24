@@ -21,20 +21,20 @@ export default class MainLayout extends Component {
     const { notFound } = this.context
     const { children } = this.props
     let themeClass = ''
-    
+
     if (notFound) {
       themeClass = 'not-found'
     }
 
     return (
       <>
-      
+
         <Helmet
           bodyAttributes={{
             class: `theme ${themeClass}`,
           }}
         >
-          
+
           <meta name="description" content={config.siteDescription} />
           <meta name="keywords" content={config.metaKeywords} />
           <link rel="shortcut icon" type="image/png" href={favicon} />

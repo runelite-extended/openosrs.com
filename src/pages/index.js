@@ -18,52 +18,56 @@ export default class Index extends Component {
         <Helmet title={`${config.siteTitle} – Fork of RuneLite that provides more functionality.`} />
         <SEO />
         <div className="container">
-        <div class="row justify-content-center">
-        <h1>RuneLitePlus</h1>
-        </div>
-        <section class="test" >
-          
           <div class="row justify-content-center">
-          <div class="col-2 col-md-8 col-lg-6 text-center pb-md-2">
-            <p class="lead2">
-              </p>
-              <div class="lead">Fork of RuneLite that provides more functionality and less restrictions while staying open source.</div>
-              <p class="mt-4"><a class="btn btn-primary" href="https://runelitepl.us/RuneLitePlus.jar">Download</a></p>
+            <h1>RuneLitePlus</h1>
           </div>
+          <section class="test" >
 
-          </div>
-          
-                    </section>
-          </div>
+            <div class="row justify-content-center">
+              <div class="col-2 col-md-8 col-lg-6 text-center pb-md-2">
+                <p class="lead2">
+                </p>
+                <div class="lead">Fork of RuneLite that provides more functionality and less restrictions while staying open source.</div>
+                <p class="mt-4"><a class="btn btn-primary" href="https://runelitepl.us/RuneLitePlus.jar">Download</a></p>
+              </div>
+
+            </div>
+
+          </section>
+        </div>
         <div className="container">
-  <div class=""><h2>Our Features</h2> </div>
-  <section class="fdb-block fp-active" data-block-type="features" data-id="5" draggable="true">
-    <div class="row text-left">
-      <div class="col-12 col-md-8 m-auto col-lg-4">
-        <div class="fdb-box fdb-touch">
-          <h2>Plugin Support</h2>
-          <p>Load your own plugins with our external jar plugin support. Simple and easy! Code your own or use premade plugins!</p>
-          <p><a href="https://github.com/runelite-extended/runelite/wiki/Plugin-Support">Read More</a></p>
-        </div>
-      </div>
-      <div class="col-12 col-md-8 m-auto col-lg-4 pt-5 pt-lg-0">
-        <div class="fdb-box fdb-touch">
-          <h2>Open Source</h2>
-          <p>This is meant to directly compete with 3rd party clients that are trying to sell their code</p>
-          <p><a href="https://github.com/runelite-extended/runelite">View RL+ Source</a></p>
-        </div>
-      </div>
-      <div class="col-12 col-md-8 m-auto col-lg-4 pt-5 pt-lg-0">
-        <div class="fdb-box fdb-touch">
-          <h2>Many Features</h2>
-          <p>RuneLitePlus is jam packed full of features, check out our feature page for a full list of our features.</p>
-          <p><a href="/features">Read Features</a></p>
-        </div>
-      </div>
-    </div>
-</section>
-<section className="section">
-            <div class=""><h2>Latest Updates</h2> </div>
+          <div class=""><h2>Our Features</h2> </div>
+          <section class="fdb-block fp-active" data-block-type="features" data-id="5" draggable="true">
+            <div class="row text-left">
+              <div class="col-12 col-md-8 m-auto col-lg-4">
+                <div class="fdb-box fdb-touch">
+                  <h2>Plugin Support</h2>
+                  <p>Load your own plugins with our external jar plugin support. Simple and easy! Code your own or use premade plugins!</p>
+                  <p><a href="https://github.com/runelite-extended/runelite/wiki/Plugin-Support">Read More</a></p>
+                </div>
+              </div>
+              <div class="col-12 col-md-8 m-auto col-lg-4 pt-5 pt-lg-0">
+                <div class="fdb-box fdb-touch">
+                  <h2>Open Source</h2>
+                  <p>This is meant to directly compete with 3rd party clients that are trying to sell their code</p>
+                  <p><a href="https://github.com/runelite-extended/runelite">View RL+ Source</a></p>
+                </div>
+              </div>
+              <div class="col-12 col-md-8 m-auto col-lg-4 pt-5 pt-lg-0">
+                <div class="fdb-box fdb-touch">
+                  <h2>Many Features</h2>
+                  <p>RuneLitePlus is jam packed full of features, check out our feature page for a full list of our features.</p>
+                  <p><a href="/features">Read Features</a></p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+
+          <section className="section">
+            <div class="">
+              <h2>Latest Updates</h2>
+            </div>
             <PostListing simple postEdges={latestPostEdges} />
           </section>
         </div>
