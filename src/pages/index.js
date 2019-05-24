@@ -25,15 +25,11 @@ export default class Index extends Component {
         <Helmet title={`${config.siteTitle} – Fork of RuneLite that provides more functionality.`} />
         <SEO />
         <div className="container">
-          <div class="row justify-content-center">
-            <h1>RuneLitePlus</h1>
-          </div>
           <section class="test">
 
             <div class="row justify-content-center">
               <div class="col-2 col-md-8 col-lg-6 text-center pb-md-2">
-                <p class="lead2">
-                </p>
+
                 <div class="lead">Fork of RuneLite that provides more functionality and less restrictions while staying open source.</div>
                 <p class="mt-4"><a class="btn btn-primary" href="https://runelitepl.us/RuneLitePlus.jar">Download</a></p>
               </div>
@@ -69,13 +65,13 @@ export default class Index extends Component {
               </div>
             </div>
           </section>
-          <h1>
+          <h2>
         Plugins{' '}
         <Link href="/features" style={{ fontSize: 18 }}>
           See all...
         </Link>
-      </h1>
-      <hr />
+          </h2>
+
       <div class="roww2">
         {features
           .filter(feature => feature.home)
@@ -91,6 +87,8 @@ export default class Index extends Component {
             <PostListing simple postEdges={latestPostEdges} />
           </section>
         </div>
+        
+
       </Layout>
     )
   }
