@@ -25,7 +25,7 @@ export default class Index extends Component {
             <p class="lead2">
               <h1>RuneLitePlus</h1>
               </p>
-              <p class="lead">Fork of RuneLite that provides more functionality and less restrictions while staying open source.</p>
+              <div class="lead">Fork of RuneLite that provides more functionality and less restrictions while staying open source.</div>
               <p class="mt-4"><a class="btn btn-primary" href="https://runelitepl.us/RuneLitePlus.jar">Download</a></p>
           </div>
 

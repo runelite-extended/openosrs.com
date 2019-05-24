@@ -18,23 +18,23 @@ export default class MainLayout extends Component {
   static contextType = ThemeContext
 
   render() {
-    const { dark, notFound } = this.context
+    const { notFound } = this.context
     const { children } = this.props
     let themeClass = ''
     
-    if (dark && !notFound) {
-      themeClass = 'dark'
-    } else if (notFound) {
+    if (notFound) {
       themeClass = 'not-found'
     }
 
     return (
       <>
+      
         <Helmet
           bodyAttributes={{
             class: `theme ${themeClass}`,
           }}
         >
+          
           <meta name="description" content={config.siteDescription} />
           <meta name="keywords" content={config.metaKeywords} />
           <link rel="shortcut icon" type="image/png" href={favicon} />
