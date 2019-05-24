@@ -377,6 +377,7 @@ hr {
     background: rgb(0, 0, 0); /* fallback color */
     background: rgba(0, 0, 0, 0.7);
     padding: 15px;
+    margin-top: 50px;
 }
 .display-1,
 .display-2,
