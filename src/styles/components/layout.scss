@@ -16,6 +16,17 @@
   margin-top: 22px;
 }
 
+.roww2 {
+  box-sizing: border-box;
+  display: flex;
+  flex: 0 1 auto;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-right: -2.3rem;
+  margin-left: -2.3rem;
+
+}
+
 .footer22 {
   margin-top: 4px;
 }

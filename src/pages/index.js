@@ -2,9 +2,12 @@ import React, { Component } from 'react'
 import Helmet from 'react-helmet'
 import { graphql, Link } from 'gatsby'
 import Layout from '../layout'
+import Feature from '../components/Feature'
 import PostListing from '../components/PostListing'
 import SEO from '../components/SEO'
 import config from '../../data/SiteConfig'
+import features from '../../data/features'
+
 
 export default class Index extends Component {
   render() {
@@ -62,7 +65,20 @@ export default class Index extends Component {
               </div>
             </div>
           </section>
-
+          <h1>
+        Plugins{' '}
+        <Link href="/features" style={{ fontSize: 18 }}>
+          See all...
+        </Link>
+      </h1>
+      <hr />
+      <div class="roww2">
+        {features
+          .filter(feature => feature.home)
+          .map(feature => (
+            <Feature key={feature.title} {...feature} />
+          ))}
+      </div>
 
           <section className="section">
             <div class="">

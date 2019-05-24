@@ -1,21 +1,30 @@
 const features = [
     {
-      image: '/img/features/mousehighlight.png',
+      image: '/img/features/aoe.png',
       title: 'AoE Warnings',
-      description: 'Shows the final destination for AoE Attack projectiles.',
-      link: ''
+      description: 'Shows the final destination for AoE Attack projectiles and more.',
+      link: 'https://github.com/runelite-extended/runelite/wiki/Aoe-Warnings',
+      home: true
     },
     {
-      image: '/img/features/zoom.png',
+      image: '/img/features/egg.png',
       title: 'Barbarian Assault+',
-      description: 'Custom barbarian assault plugin, overlay of eggs counted, highlight eggs and more.',
-      link: ''
+      description: 'Custom barbarian assault plugin, highlight eggs and a lot more.',
+      link: 'https://github.com/runelite-extended/runelite/wiki/Barbarian-Assault-',
+      home: true
     },
     {
       image: '/img/features/zoom.png',
       title: 'BA Tools',
       description: 'Custom tools for Barbarian Assault.',
       link: ''
+    },
+    {
+      image: '/img/features/tracker.png',
+      title: 'Supplies tracker',
+      description: 'Track your supplies while pvping or pvming, very useful.',
+      link: 'https://github.com/runelite-extended/runelite/wiki/Supplies-tracker',
+      home: true
     },
     {
       image: '/img/features/zoom.png',
@@ -76,6 +85,13 @@ const features = [
       title: 'Loot Assist Plugin',
       description: 'Creates a tile overlay with a timer that counts down to when the loot will appear to you.',
       link: ''
+    },
+    {
+      image: '/img/features/zulrah.png',
+      title: 'Zulrah',
+      description: 'Kill zulrah no problem with our zulrah helper. Raise that KC!',
+      link: 'https://github.com/runelite-extended/runelite/wiki',
+      home: true
     }
 ]
 
