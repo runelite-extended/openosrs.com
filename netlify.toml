@@ -6,15 +6,6 @@
   [[headers]]
 for = "/*"
   [headers.values]
-    for = "/img/*"
-  [headers.values]
-    Cache-Control = "public, s-max-age=604800"
-for = "/*.css"
-  [headers.values]
-    Cache-Control = "public, s-max-age=604800"
-for = "/*.js"
-  [headers.values]
-    Cache-Control = "public, s-max-age=604800"
     X-Frame-Options = "DENY"
     X-XSS-Protection = "1; mode=block"
     Content-Security-Policy = "form-action https:"
