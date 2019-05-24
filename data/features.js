@@ -2,7 +2,7 @@ const features = [
     {
       image: '/img/features/zoom.png',
       title: '1 Way Safe Spots',
-      description: 'This plugin will introduce 1 way safespots to your PVP and PVM fights. this will highlight floor tiles with where you can stand do you can attack your opponent without them attacking you back.',
+      description: 'This will highlight floor tiles with where you can stand do you can attack your opponent without them attacking you back.',
       link: ''
     },
     {
@@ -64,7 +64,7 @@ const features = [
     {
       image: '/img/features/zoom.png',
       title: 'Freeze Timers',
-      description: 'Timers for Ice Barrage/TeleBlock/Vengeance displayed over players and NPCs.',
+      description: 'Timers for Ice Barrage, TeleBlock, Vengeance displayed over players or NPCs.',
       link: ''
     },
     {
@@ -100,7 +100,7 @@ const features = [
     {
         image: '/img/features/zoom.png',
         title: 'Learn to Click',
-        description: 'A few modifications to prevent misclicks',
+        description: 'A few modifications to prevent misclicks.',
         link: ''
     },
     {
@@ -118,7 +118,7 @@ const features = [
     {
         image: '/img/features/zoom.png',
         title: 'Loot Assist Plugin',
-        description: 'Hides certain prayers so you dont mislick. ',
+        description: 'Creates a tile overlay with a timer that counts down to when the loot will appear to you.',
         link: ''
     },
     {
@@ -142,19 +142,13 @@ const features = [
     {
         image: '/img/features/zoom.png',
         title: 'Music Track Customizer',
-        description: '#',
+        description: '',
         link: ''
     },
     {
         image: '/img/features/zoom.png',
         title: 'Player Indicators',
         description: 'Advanced player indicators for PKing.',
-        link: ''
-    },
-    {
-        image: '/img/features/zoom.png',
-        title: 'Hide Prayers',
-        description: 'Hides certain prayers so you dont mislick. ',
         link: ''
     },
     {
@@ -177,14 +171,8 @@ const features = [
     },
     {
         image: '/img/features/zoom.png',
-        title: 'Hide Prayers',
-        description: 'Hides certain prayers so you dont mislick. ',
-        link: ''
-    },
-    {
-        image: '/img/features/zoom.png',
         title: 'Puro-Puro Impling Spawns',
-        description: '#',
+        description: '',
         link: ''
     },
     {
@@ -257,7 +245,7 @@ const features = [
     {
         image: '/img/features/zoom.png',
         title: 'Tarn\'s Lair',
-        description: 'Mark tiles and clickboxes to help traverse the maze.',
+        description: 'Mark tiles and click boxes to help traverse the maze.',
         link: ''
     },
     {
