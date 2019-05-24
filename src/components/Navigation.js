@@ -50,7 +50,7 @@ export default class Navigation extends Component {
             <a target="_blank" rel="noopener noreferrer" href="https://github.com/runelite-extended/runelite">
               GitHub
             </a>
-            <a target="_blank" rel="noopener noreferrer" href="https://www.patreon.com/join/RuneLitePlus" ><img src="/img/like.svg" alt="RuneLitePlus"></img>
+            <a target="_blank" rel="noopener noreferrer" href="https://www.patreon.com/join/RuneLitePlus" ><img src="/img/like.png" alt="RuneLitePlus"></img>
             </a>
           </div>
         </div>
