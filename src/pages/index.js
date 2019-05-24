@@ -1,4 +1,6 @@
-import React, { Component } from 'react'
+/* eslint-disable react/jsx-indent */
+/* eslint-disable react/no-unknown-property */
+import React,  { Component } from 'react'
 import Helmet from 'react-helmet'
 import { graphql, Link } from 'gatsby'
 import Layout from '../layout'
@@ -9,7 +11,9 @@ import config from '../../data/SiteConfig'
 import features from '../../data/features'
 
 
+
 export default class Index extends Component {
+
   render() {
     const { data } = this.props
 
@@ -24,7 +28,7 @@ export default class Index extends Component {
           <div class="row justify-content-center">
             <h1>RuneLitePlus</h1>
           </div>
-          <section class="test" >
+          <section class="test">
 
             <div class="row justify-content-center">
               <div class="col-2 col-md-8 col-lg-6 text-center pb-md-2">
@@ -91,6 +95,7 @@ export default class Index extends Component {
     )
   }
 }
+
 
 export const pageQuery = graphql`
   query IndexQuery {
