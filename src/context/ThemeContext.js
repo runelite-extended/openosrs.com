@@ -15,7 +15,7 @@ class ThemeProvider extends Component {
   }
 
   componentDidMount() {
-    const lsDark = JSON.parse(localStorage.getItem('dark'))
+    const lsDark = JSON.parse(localStorage.getItem('darkk'))
 
     if (lsDark) {
       this.setState({ dark: lsDark })
@@ -26,7 +26,7 @@ class ThemeProvider extends Component {
     const { dark } = this.state
 
     if (prevState.dark !== dark) {
-      localStorage.setItem('dark', JSON.stringify(dark))
+      localStorage.setItem('darkk', JSON.stringify(dark))
     }
   }
 
