@@ -8,15 +8,8 @@ export default class Footer extends Component {
         <a href="https://twitter.com/runeliteplus" target="_blank" rel="noopener noreferrer">
           Twitter
         </a>
-        <a href="https://github.com/runelite-extended" target="_blank" rel="noopener noreferrer">
-          GitHub
-        </a>
-        <a
-          href="https://github.com/runelite-extended/runelitepl.us"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          View source
+        <a href="https://www.netlify.com"  class="footer22" target="_blank" rel="noopener noreferrer">
+          Hosted by netlify<img src="/img/net32.png"  class="footer23" alt="netlify"></img>
         </a>
         <a href="http://gatsbyjs.org/"  class="footer22" target="_blank" rel="noopener noreferrer">
         Developed with GatsbyJS<img src="/img/gjs.svg"  class="footer23" alt="RuneLitePlus"></img>
