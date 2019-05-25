@@ -3,7 +3,7 @@
 import React,  { Component } from 'react'
 import Helmet from 'react-helmet'
 import { graphql, Link } from 'gatsby'
-import WidgetBot from '@widgetbot/react-embed'
+
 import Layout from '../layout'
 import Feature from '../components/Feature'
 import PostListing from '../components/PostListing'
@@ -11,16 +11,17 @@ import SEO from '../components/SEO'
 import config from '../../data/SiteConfig'
 import features from '../../data/features'
 
-if (typeof window === 'undefined') {
-  global.window = {}
-}
 export default class Index extends Component {
 
   render() {
     const { data } = this.props
 
     const latestPostEdges = data.latest.edges
-
+    try {
+  let iInnerHeight = window.innerHeight;
+} catch(oError) {
+  console.log(oError);
+}
 
     return (
       <Layout>
