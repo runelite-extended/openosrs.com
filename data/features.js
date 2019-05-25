@@ -112,7 +112,7 @@ const features = [
     {
         image: '/img/features/zoom.png',
         title: 'Location Chatter',
-        description: '#',
+        description: '',
         link: ''
     },
     {
@@ -122,7 +122,7 @@ const features = [
         link: ''
     },
     {
-        image: '/img/features/zoom.png',
+        image: '/img/features/maxhit.png',
         title: 'Max Hit',
         description: 'Shows you your max hit in equipment screen.',
         link: ''
@@ -224,7 +224,7 @@ const features = [
         link: ''
     },
     {
-        image: '/img/features/zoom.png',
+        image: '/img/features/specbar.png',
         title: 'Spec Bar',
         description: 'Adds a spec bar for every weapon, so you can easily 1 tick swap.',
         link: ''
