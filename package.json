@@ -5,6 +5,7 @@
   "author": "James",
   "repository": "git@github.com:runelite-extended/runelitepl.us.git",
   "dependencies": {
+    "@widgetbot/react-embed": "^1.2.1",
     "better-opn": "^0.1.4",
     "disqus-react": "^1.0.5",
     "gatsby": "2.1.23",

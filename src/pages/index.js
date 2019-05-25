@@ -3,12 +3,14 @@
 import React,  { Component } from 'react'
 import Helmet from 'react-helmet'
 import { graphql, Link } from 'gatsby'
+import WidgetBot from '@widgetbot/react-embed'
 import Layout from '../layout'
 import Feature from '../components/Feature'
 import PostListing from '../components/PostListing'
 import SEO from '../components/SEO'
 import config from '../../data/SiteConfig'
 import features from '../../data/features'
+
 
 export default class Index extends Component {
 
@@ -79,6 +81,18 @@ export default class Index extends Component {
               <h2>Latest Updates</h2>
             </div>
             <PostListing simple postEdges={latestPostEdges} />
+          </section>
+          <section className="section">
+            <div class="">
+              <h1>Discord</h1>
+            </div>
+            <WidgetBot
+              server="373382904769675265"
+              channel="568435580980035594"
+              shard="https://disweb.deploys.io"
+              width="990"
+              height="500"
+            />
           </section>
         </div>
       </Layout>
