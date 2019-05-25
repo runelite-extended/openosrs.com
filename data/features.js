@@ -86,7 +86,7 @@ const features = [
         link: ''
     },
     {
-        image: '/img/features/zoom.png',
+        image: '/img/features/inventorysetups.png',
         title: 'Inventory Setups',
         description: 'Saves your inventory setups.',
         link: ''
@@ -134,7 +134,7 @@ const features = [
         link: ''
     },
     {
-        image: '/img/features/zoom.png',
+        image: '/img/features/multilines.png',
         title: 'Multi-Lines',
         description: 'Shows you where multi-lines start and end for DMM. PVP worlds and the wilderness.',
         link: ''
