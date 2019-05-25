@@ -3,7 +3,7 @@
 import React,  { Component } from 'react'
 import Helmet from 'react-helmet'
 import { graphql, Link } from 'gatsby'
-
+import WidgetBot from '@widgetbot/react-embed'
 import Layout from '../layout'
 import Feature from '../components/Feature'
 import PostListing from '../components/PostListing'
