@@ -6,6 +6,8 @@
     "react/prefer-stateless-function": "off",
     "react/prop-types": "off",
     "react/no-danger": "off",
+    "react/forbid-prop-types": 0,
+    "react/no-unknown-property": 0,
     "react/button-has-type": "off",
     "react/jsx-filename-extension": "off",
     "react/no-array-index-key": "off",
