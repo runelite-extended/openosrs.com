@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/iframe-has-title */
 /* eslint-disable react/jsx-indent */
 
 import React,  { Component } from 'react'
@@ -9,18 +10,12 @@ import PostListing from '../components/PostListing'
 import SEO from '../components/SEO'
 import config from '../../data/SiteConfig'
 import features from '../../data/features'
-import WidgetBot from '@widgetbot/react-embed'
 export default class Index extends Component {
 
   render() {
     const { data } = this.props
 
     const latestPostEdges = data.latest.edges
-    try {
-  let iInnerHeight = window.innerHeight;
-} catch(oError) {
-  console.log(oError);
-}
 
     return (
       <Layout>
@@ -88,12 +83,7 @@ export default class Index extends Component {
             <div class="">
               <h1>Discord</h1>
             </div>
-            <WidgetBot
-    server="373382904769675265"
-    channel="568435580980035594"
-    shard="https://disweb.deploys.io"
-  />
-
+            <iframe src="https://disweb.deploys.io/channels/373382904769675265/568435580980035594" height="500" width="990" frameborder="0" />
           </section>
         </div>
       </Layout>
