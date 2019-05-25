@@ -72,22 +72,26 @@ export default class SEO extends Component {
     return (
       <Helmet>
         <meta name="description" content={description} />
-        <meta name="image" content={image} />
+        {postSEO ? <meta property="image" content="" /> : <meta property="image" content={image} />}
+        {postSEO ? <meta property="og:image" content="" /> : null}
 
         <script type="application/ld+json">{JSON.stringify(schemaOrgJSONLD)}</script>
 
         <meta property="og:url" content={postSEO ? postURL : blogURL} />
         {postSEO ? <meta property="og:type" content="article" /> : null}
+        
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
-        <meta property="og:image" content={image} />
+        {postSEO ? <meta property="og:image" content="" /> : <meta property="og:image" content={image} />}
+
+  
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:creator" content={config.userTwitter} />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
-        <meta name="twitter:image" content={image} />
+        {postSEO ? <meta property="twitter:image" content="" /> : <meta property="twitter:image" content={image} />}
       </Helmet>
     )
   }
