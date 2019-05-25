@@ -6,10 +6,10 @@ const features = [
       link: ''
     },
     {
-      image: '/img/features/zoom.png',
+      image: '/img/features/acc.png',
       title: 'Account Switcher',
       description: 'This will allow you to switch between accounts at the hit of a button.',
-      link: ''
+      link: 'https://github.com/runelite-extended/runelite/wiki/Account-Switcher'
     },
     {
       image: '/img/features/zoom.png',
@@ -38,10 +38,10 @@ const features = [
       home: true
     },
     {
-      image: '/img/features/zoom.png',
+      image: '/img/features/cox.png',
       title: 'Chambers of Xeric',
       description: 'Tick Timer for Olm, Overlays for all special attacks, and Olm Prayer Helper showing you what to pray.',
-      link: ''
+      link: 'https://github.com/runelite-extended/runelite/wiki/CoX-Helper'
     },
     {
       image: '/img/features/zoom.png',
@@ -110,13 +110,13 @@ const features = [
         link: ''
     },
     {
-        image: '/img/features/zoom.png',
-        title: 'Location Chatter',
-        description: '',
+        image: '/img/features/ftimer.png',
+        title: 'Flinching Timer',
+        description: 'Time your attacks while flinching',
         link: ''
     },
     {
-        image: '/img/features/zoom.png',
+        image: '/img/features/loot.png',
         title: 'Loot Assist Plugin',
         description: 'Creates a tile overlay with a timer that counts down to when the loot will appear to you.',
         link: ''
