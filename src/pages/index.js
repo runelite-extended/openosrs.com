@@ -5,9 +5,8 @@
 
 import React,  { Component } from 'react'
 import Helmet from 'react-helmet'
-import Iframe from 'react-iframe'
 import { graphql, Link } from 'gatsby'
-import { faGithub, faDiscord } from '@fortawesome/free-brands-svg-icons'
+import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Layout from '../layout'
 import Feature from '../components/Feature'
@@ -15,7 +14,6 @@ import PostListing from '../components/PostListing'
 import SEO from '../components/SEO'
 import config from '../../data/SiteConfig'
 import features from '../../data/features'
-
 
 
 export default class Index extends Component {
