@@ -98,6 +98,9 @@ export default class Index extends Component {
         </p>
       </div>
     </div>
+    <div class="row3 align-items-center text-right">
+    <iframe src="https://disweb.deploys.io/channels/373382904769675265/568435580980035594" height="350" width="600" frameborder="0">Browser not compatible.</iframe>
+    </div>
   </div>
 </section>
       </Layout>

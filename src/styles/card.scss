@@ -28,6 +28,17 @@
   margin-bottom: -10px;
 }
 
+.row3 {
+  box-sizing: border-box;
+  /* display: flex; */
+  flex: 0 1 auto;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-right: -.5rem;
+  margin-left: -.5rem;
+  margin-top: -4.5rem;
+}
+
 .card-header {
   color: black;
   text-align: center;
