@@ -84,9 +84,8 @@ export default class SEO extends Component {
         <meta property="og:description" content={description} />
         {postSEO ? <meta property="og:image" content="" /> : <meta property="og:image" content={image} />}
 
-  
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
+        {postSEO ? <meta property="og:image:width" content="" /> : <meta property="og:image:width" content="1200" />}
+        {postSEO ? <meta property="og:image:height" content="" /> : <meta property="og:image:height" content="630" />}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:creator" content={config.userTwitter} />
         <meta name="twitter:title" content={title} />
