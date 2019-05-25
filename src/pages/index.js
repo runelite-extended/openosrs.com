@@ -1,5 +1,5 @@
 /* eslint-disable react/jsx-indent */
-/* eslint-disable react/no-unknown-property */
+
 import React,  { Component } from 'react'
 import Helmet from 'react-helmet'
 import { graphql, Link } from 'gatsby'
@@ -9,8 +9,6 @@ import PostListing from '../components/PostListing'
 import SEO from '../components/SEO'
 import config from '../../data/SiteConfig'
 import features from '../../data/features'
-
-
 
 export default class Index extends Component {
 
@@ -60,18 +58,15 @@ export default class Index extends Component {
                 <div class="fdb-box fdb-touch">
                   <h2>Many Features</h2>
                   <p>RuneLitePlus is jam packed full of features, check out our feature page for a full list of our features.</p>
-                  <p><a href="/features">Read Features</a></p>
+                  <p><a href="https://runelitepl.us/features/">Read Features</a></p>
                 </div>
               </div>
             </div>
           </section>
           <h2>
         Plugins{' '}
-        <Link href="/features" style={{ fontSize: 18 }}>
-          See all...
-        </Link>
+        <Link to="/features" style={{ fontSize: 18 }}>See all...</Link>
           </h2>
-
       <div class="roww2">
         {features
           .filter(feature => feature.home)
@@ -79,7 +74,6 @@ export default class Index extends Component {
             <Feature key={feature.title} {...feature} />
           ))}
       </div>
-
           <section className="section">
             <div class="">
               <h2>Latest Updates</h2>
@@ -87,8 +81,6 @@ export default class Index extends Component {
             <PostListing simple postEdges={latestPostEdges} />
           </section>
         </div>
-        
-
       </Layout>
     )
   }
