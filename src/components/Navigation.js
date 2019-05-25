@@ -9,11 +9,6 @@ export default class Navigation extends Component {
     scrolled: false,
   }
 
-  componentDidMount() {
-    if (typeof window !== `undefined`) {
-      window.addEventListener('scroll', this.navOnScroll)
-    }
-  }
 
   componentWillUnmount() {
     window.removeEventListener('scroll', this.navOnScroll)
