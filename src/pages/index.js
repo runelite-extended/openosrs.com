@@ -5,6 +5,7 @@
 
 import React,  { Component } from 'react'
 import Helmet from 'react-helmet'
+import Iframe from 'react-iframe'
 import { graphql, Link } from 'gatsby'
 import { faGithub, faDiscord } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -98,9 +99,14 @@ export default class Index extends Component {
         </p>
       </div>
     </div>
-    <div class="row3 align-items-center text-right">
-    <iframe src="https://disweb.deploys.io/channels/373382904769675265/568435580980035594" height="350" width="600" frameborder="0">Browser not compatible.</iframe>
-    </div>
+
+    <Iframe url="https://disweb.deploys.io/channels/373382904769675265/568435580980035594"
+      width="600px"
+      height="350px"
+      frameBorder="0"
+      className="row3"
+    />
+
   </div>
 </section>
       </Layout>
