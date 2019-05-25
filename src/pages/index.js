@@ -1,3 +1,5 @@
+/* eslint-disable no-plusplus */
+/* eslint-disable no-loop-func */
 /* eslint-disable jsx-a11y/iframe-has-title */
 /* eslint-disable react/jsx-indent */
 
@@ -14,7 +16,7 @@ export default class Index extends Component {
 
   render() {
     const { data } = this.props
-
+    
     const latestPostEdges = data.latest.edges
 
     return (
@@ -83,7 +85,7 @@ export default class Index extends Component {
             <div class="">
               <h1>Discord</h1>
             </div>
-            <iframe src="https://disweb.deploys.io/channels/373382904769675265/568435580980035594" height="500" width="990" frameborder="0" />
+            <iframe src="https://disweb.deploys.io/channels/373382904769675265/568435580980035594" height="500" width="950" frameBorder="0">Browser not compatible.</iframe>
           </section>
         </div>
       </Layout>
