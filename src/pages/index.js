@@ -6,12 +6,17 @@
 import React,  { Component } from 'react'
 import Helmet from 'react-helmet'
 import { graphql, Link } from 'gatsby'
+import { faGithub, faDiscord } from '@fortawesome/free-brands-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Layout from '../layout'
 import Feature from '../components/Feature'
 import PostListing from '../components/PostListing'
 import SEO from '../components/SEO'
 import config from '../../data/SiteConfig'
 import features from '../../data/features'
+
+
+
 export default class Index extends Component {
 
   render() {
@@ -81,13 +86,20 @@ export default class Index extends Component {
             </div>
             <PostListing simple postEdges={latestPostEdges} />
           </section>
-          <section className="section">
-            <div class="">
-              <h1>Discord</h1>
-            </div>
-            <iframe src="https://disweb.deploys.io/channels/373382904769675265/568435580980035594" height="500" width="950" frameBorder="0">Browser not compatible.</iframe>
-          </section>
         </div>
+        <section class="fdb-block fdb-viewport bg-dark">
+  <div class="container align-items-center justify-content-center d-flex">
+    <div class="row align-items-center text-left">
+      <div class="col-12 col-sm-10 col-md-8 col-lg-8">
+        <h1>RuneLitePlus is free and we support open source!</h1>
+        <p class="lead2">RuneLitePlus is a fork of RuneLite that provides more functionality and less restrictions while staying open source. This is meant to directly compete with 3rd party RL clients that are trying to sell their code. Compile our client for yourself and try it out!</p>
+        <p class="mt-5">
+          <a href="https://github.com/runelite-extended/runelite" class="btn btn-light"><FontAwesomeIcon icon={faGithub} /> Source Code</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
       </Layout>
     )
   }

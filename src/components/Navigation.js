@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import { Link } from 'gatsby'
+import { faGithub, faDiscord } from '@fortawesome/free-brands-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import logos from '../images/logos.png'
+
 
 
 export default class Navigation extends Component {
@@ -45,10 +48,10 @@ export default class Navigation extends Component {
               </Link>
             ))}
             <a target="_blank" rel="noopener noreferrer" href="https://discord.gg/Q7wFtCe">
-              Discord
+            <FontAwesomeIcon icon={faDiscord} />
             </a>
             <a target="_blank" rel="noopener noreferrer" href="https://github.com/runelite-extended">
-              GitHub
+            <FontAwesomeIcon icon={faGithub} />
             </a>
             <a target="_blank" rel="noopener noreferrer" href="https://www.patreon.com/join/RuneLitePlus" ><img src="/img/like.png" class="patreon" alt="RuneLitePlus"></img>
             </a>

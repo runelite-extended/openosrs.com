@@ -5,6 +5,10 @@
   "author": "James",
   "repository": "git@github.com:runelite-extended/runelitepl.us.git",
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.18",
+    "@fortawesome/free-brands-svg-icons": "^5.8.2",
+    "@fortawesome/free-solid-svg-icons": "^5.8.2",
+    "@fortawesome/react-fontawesome": "^0.1.4",
     "@widgetbot/react-embed": "^1.2.1",
     "better-opn": "^0.1.4",
     "disqus-react": "^1.0.5",
