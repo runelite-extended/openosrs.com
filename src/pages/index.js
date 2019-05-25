@@ -11,7 +11,9 @@ import SEO from '../components/SEO'
 import config from '../../data/SiteConfig'
 import features from '../../data/features'
 
-
+if (typeof window === 'undefined') {
+  global.window = {}
+}
 export default class Index extends Component {
 
   render() {
@@ -86,6 +88,9 @@ export default class Index extends Component {
             <div class="">
               <h1>Discord</h1>
             </div>
+        
+             
+
             <WidgetBot
               server="373382904769675265"
               channel="568435580980035594"
@@ -93,6 +98,7 @@ export default class Index extends Component {
               width="990"
               height="500"
             />
+            
           </section>
         </div>
       </Layout>
