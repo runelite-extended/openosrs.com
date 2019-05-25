@@ -8,6 +8,7 @@
     "@widgetbot/react-embed": "^1.2.1",
     "better-opn": "^0.1.4",
     "disqus-react": "^1.0.5",
+    "fs": "^0.0.1-security",
     "gatsby": "2.1.23",
     "gatsby-cli": "^2.5.14",
     "gatsby-image": "2.0.31",
@@ -36,6 +37,7 @@
     "lodash": "^4.17.11",
     "lodash.kebabcase": "^4.1.1",
     "moment": "^2.24.0",
+    "net": "^1.0.2",
     "node-sass": "^4.11.0",
     "platform": "^1.3.5",
     "preact": "^8.4.2",
@@ -53,8 +55,10 @@
     "reselect": "^4.0.0",
     "s-ago": "^2.0.1",
     "sharp": "^0.21.3",
+    "tls": "^0.0.1",
     "typography": "^0.16.19",
-    "url-join": "^4.0.0"
+    "url-join": "^4.0.0",
+    "window": "^4.2.6"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.1",
