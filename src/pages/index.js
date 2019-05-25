@@ -99,14 +99,6 @@ export default class Index extends Component {
         </p>
       </div>
     </div>
-
-    <Iframe url="https://disweb.deploys.io/channels/373382904769675265/568435580980035594"
-      width="600px"
-      height="350px"
-      frameBorder="0"
-      className="row3"
-    />
-
   </div>
 </section>
       </Layout>
