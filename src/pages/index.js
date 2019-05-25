@@ -3,14 +3,13 @@
 import React,  { Component } from 'react'
 import Helmet from 'react-helmet'
 import { graphql, Link } from 'gatsby'
-import WidgetBot from '@widgetbot/react-embed'
 import Layout from '../layout'
 import Feature from '../components/Feature'
 import PostListing from '../components/PostListing'
 import SEO from '../components/SEO'
 import config from '../../data/SiteConfig'
 import features from '../../data/features'
-
+import WidgetBot from '@widgetbot/react-embed'
 export default class Index extends Component {
 
   render() {
@@ -89,17 +88,12 @@ export default class Index extends Component {
             <div class="">
               <h1>Discord</h1>
             </div>
-        
-             
-
             <WidgetBot
-              server="373382904769675265"
-              channel="568435580980035594"
-              shard="https://disweb.deploys.io"
-              width="990"
-              height="500"
-            />
-            
+    server="373382904769675265"
+    channel="568435580980035594"
+    shard="https://disweb.deploys.io"
+  />
+
           </section>
         </div>
       </Layout>
