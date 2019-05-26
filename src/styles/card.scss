@@ -1,4 +1,12 @@
 .card {
+  width: 250px;                 /* Set width of cards */
+  border: 1px solid rgba(0,0,0,.125);
+  border-radius: 4px;           /* Slightly Curve edges */
+  overflow: hidden;             /* Fixes the corners */
+  display: flex;                /* Children use Flexbox */
+  flex-direction: column;       /* Rotate Axis */
+}
+.card2 {
   width: 230px;                 /* Set width of cards */
   border: 1px solid rgba(0,0,0,.125);
   border-radius: 4px;           /* Slightly Curve edges */

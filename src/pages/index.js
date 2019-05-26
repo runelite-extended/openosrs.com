@@ -9,7 +9,7 @@ import { graphql, Link } from 'gatsby'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Layout from '../layout'
-import Feature from '../components/Feature'
+import FeatureHome from '../components/FeatureHome'
 import PostListing from '../components/PostListing'
 import SEO from '../components/SEO'
 import config from '../../data/SiteConfig'
@@ -76,7 +76,7 @@ export default class Index extends Component {
         {features
           .filter(feature => feature.home)
           .map(feature => (
-            <Feature key={feature.title} {...feature} />
+            <FeatureHome key={feature.title} {...feature} />
           ))}
       </div>
           <section className="section">
