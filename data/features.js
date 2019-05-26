@@ -224,7 +224,7 @@ const features = [
         link: ''
     },
     {
-        image: '/img/features/specbar.png',
+        image: '/img/features/spec.png',
         title: 'Spec Bar',
         description: 'Adds a spec bar for every weapon, so you can easily 1 tick swap.',
         link: ''
