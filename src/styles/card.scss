@@ -23,7 +23,15 @@
   flex: 1 1 auto;
   padding: 1.25rem;
 }
-
+.row3 {
+  box-sizing: border-box;
+  display: flex;
+  flex: 0 1 auto;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-right: -.8rem;
+  margin-left: -.8rem;
+}
 .row2 {
   box-sizing: border-box;
   display: flex;

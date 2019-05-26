@@ -1602,7 +1602,7 @@ p {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizelegibility;
-    padding: 3.5rem 5px;
+    padding: 3.5rem 0;
     padding-left: 10px;
     padding-right: 10px;
     position: relative;
