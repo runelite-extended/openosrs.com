@@ -44,7 +44,7 @@ export default class Index extends Component {
         <div className="container">
           <div class="ez"><h2>Our Features</h2> </div>
           <section class="fdb-block fp-active" data-block-type="features" data-id="5" draggable="true">
-            <div class="row3 text-left">
+            <div class="row text-left">
               <div class="col-12 col-md-8 m-auto col-lg-4">
                 <div class="fdb-box fdb-touch">
                   <h2>Plugin Support</h2>
