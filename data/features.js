@@ -2,11 +2,11 @@ const features = [
     {
       image: '/img/features/zoom.png',
       title: '1 Way Safe Spots',
-      description: 'This will highlight floor tiles with where you can stand do you can attack your opponent without them attacking you back.',
+      description: 'This will highlight the floor tiles with where you can stand, so you can attack your opponents without them attacking.',
       link: ''
     },
     {
-      image: '/img/features/acc.png',
+      image: '/img/features/accountswitcher.png',
       title: 'Account Switcher',
       description: 'This will allow you to switch between accounts at the hit of a button.',
       link: 'https://github.com/runelite-extended/runelite/wiki/Account-Switcher'
@@ -110,14 +110,14 @@ const features = [
         link: ''
     },
     {
-        image: '/img/features/ftimer.png',
+        image: '/img/features/flinchingtimer.png',
         title: 'Flinching Timer',
         description: 'Time your attacks while flinching',
         link: ''
     },
     {
-        image: '/img/features/loot.png',
-        title: 'Loot Assist Plugin',
+        image: '/img/features/lootassist.png',
+        title: 'Loot Assist',
         description: 'Creates a tile overlay with a timer that counts down to when the loot will appear to you.',
         link: ''
     },
@@ -152,13 +152,13 @@ const features = [
         link: ''
     },
     {
-        image: '/img/features/zoom.png',
+        image: '/img/features/playerinformation.png',
         title: 'Player Information',
         description: 'An alternative to the minimap orbs.',
         link: ''
     },
     {
-        image: '/img/features/zoom.png',
+        image: '/img/features/pluginorganizer.png',
         title: 'Plugin Organizer',
         description: 'This is what allows us to sort plugins, and give them color.',
         link: ''
@@ -206,7 +206,7 @@ const features = [
         link: ''
     },
     {
-        image: '/img/features/zoom.png',
+        image: '/img/features/shayzieninfirmary.png',
         title: 'Shayzien Infirmary',
         description: 'Shows the status of wounded soldiers.',
         link: ''
@@ -224,19 +224,19 @@ const features = [
         link: ''
     },
     {
-        image: '/img/features/spec.png',
+        image: '/img/features/specbar.png',
         title: 'Spec Bar',
         description: 'Adds a spec bar for every weapon, so you can easily 1 tick swap.',
         link: ''
     },
     {
-        image: '/img/features/zoom.png',
+        image: '/img/features/spellbookmodifier.png',
         title: 'Spellbook Modifier',
         description: 'Modifications to the spellbook, such as reorder, resizer and more.',
         link: ''
     },
     {
-        image: '/img/features/tracker.png',
+        image: '/img/features/suppliestracker.png',
         title: 'Supplies Used Tracker',
         description: 'Track your supplies while pvping or pvming, very useful.',
         link: 'https://github.com/runelite-extended/runelite/wiki/Supplies-tracker',
@@ -273,7 +273,7 @@ const features = [
         link: ''
     },
     {
-        image: '/img/features/zoom.png',
+        image: '/img/features/vorkathhelper.png',
         title: 'Vorkath Helper',
         description: 'Counts Vorkath attacks, and which phases are coming.',
         link: ''
@@ -297,9 +297,9 @@ const features = [
         link: ''
     },
     {
-        image: '/img/features/zulrah.png',
+        image: '/img/features/zulrahhelper.png',
         title: 'Zulrah Helper',
-        description: 'Kill zulrah no problem with our zulrah helper. Raise that KC!',
+        description: 'Kill Zulrah no problem with our zulrah helper. Raise that KC!',
         link: 'https://github.com/runelite-extended/runelite/wiki',
         home: true
     }
