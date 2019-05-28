@@ -1,6 +1,6 @@
 const features = [
     {
-      image: '/img/features/zoom.png',
+      image: '/img/features/1waysafespots.png',
       title: '1 Way Safe Spots',
       description: 'This will highlight the floor tiles with where you can stand, so you can attack your opponents without them attacking.',
       link: ''
@@ -56,6 +56,12 @@ const features = [
       link: ''
     },
     {
+        image: '/img/features/equipmentinspector.png',
+        title: 'Equipment Inspector',
+        description: 'Look up player\'s equipment and show the vaule of the items.',
+        link: ''
+    },
+    {
       image: '/img/features/zoom.png',
       title: 'Fight Cave',
       description: 'Fight cave wave helper, includes Jad helper.',
@@ -74,7 +80,7 @@ const features = [
       link: ''
     },
     {
-      image: '/img/features/zoom.png',
+      image: '/img/features/hideprayers.png',
       title: 'Hide Prayers',
       description: 'Hides certain prayers so you don\'t misclick.',
       link: ''
@@ -128,7 +134,7 @@ const features = [
         link: ''
     },
     {
-        image: '/img/features/zoom.png',
+        image: '/img/features/menumodifier.png',
         title: 'Menu Modifier',
         description: 'Removes unnecessary menu entries.',
         link: ''
@@ -164,7 +170,13 @@ const features = [
         link: ''
     },
     {
-        image: '/img/features/zoom.png',
+        image: '/img/features/prayagainstplayer.png',
+        title: 'Pray Against Player',
+        description: 'Shows different prayers to use against players in PvP.',
+        link: ''
+    },
+    {
+        image: '/img/features/prayeralert.png',
         title: 'Prayer Alert',
         description: 'Alert the player when the prayer points are low.',
         link: ''
@@ -182,7 +194,7 @@ const features = [
         link: ''
     },
     {
-        image: '/img/features/zoom.png',
+        image: '/img/features/pvptools.png',
         title: 'PvP Tools',
         description: 'Enables the PvP tools panel',
         link: ''
@@ -194,7 +206,7 @@ const features = [
         link: ''
     },
     {
-        image: '/img/features/zoom.png',
+        image: '/img/features/rememberclan.png',
         title: 'Remember Clan',
         description: 'Sets a default clan chat to join.',
         link: ''
@@ -212,7 +224,7 @@ const features = [
         link: ''
     },
     {
-        image: '/img/features/zoom.png',
+        image: '/img/features/shifttowalk.png',
         title: 'Shift to Walk',
         description: 'Removes all menu entries allowing you to click anywhere with shift and not interact.',
         link: ''
@@ -291,7 +303,7 @@ const features = [
         link: ''
     },
     {
-        image: '/img/features/zoom.png',
+        image: '/img/features/wildernesslocation.png',
         title: 'Wild Locations',
         description: 'Indicates the player\'s current location in the wild and sends it to your current Clan Chat.',
         link: ''
