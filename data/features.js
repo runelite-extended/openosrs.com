@@ -291,7 +291,7 @@ const features = [
         link: ''
     },
     {
-        image: '/img/features/zoom.png',
+        image: '/img/features/warcallingindicators.png',
         title: 'War Calling Indicators',
         description: 'War War War.',
         link: ''
