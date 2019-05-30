@@ -6,7 +6,7 @@ const features = [
       link: ''
     },
     {
-      image: '/img/features/accountswitcher.png',
+      image: '/img/features/switch.png',
       title: 'Account Switcher',
       description: 'This will allow you to switch between accounts at the hit of a button.',
       link: 'https://github.com/runelite-extended/runelite/wiki/Account-Switcher'
