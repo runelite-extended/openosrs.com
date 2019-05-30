@@ -2,7 +2,7 @@ const features = [
     {
       image: '/img/features/1waysafespots.png',
       title: '1 Way Safe Spots',
-      description: 'This will highlight the floor tiles with where you can stand, so you can attack your opponents without them attacking.',
+      description: 'This will highlight the floor tiles safespots with where you can stand and not get hit.',
       link: ''
     },
     {
