@@ -16,12 +16,12 @@ const config = {
   postDefaultCategoryID: 'Updates',
   menuLinks: [
     {
-      name: 'Updates',
-      link: '/blog/',
-    },
-    {
       name: 'Features',
       link: '/features/',
+    },
+    {
+      name: 'Updates',
+      link: '/blog/',
     },
   ],
   themeColor: '#3F80FF', // Used for setting manifest and progress theme colors.
