@@ -35,7 +35,7 @@ export default class Navigation extends Component {
         <div className="nav-container">
           <div className="brand">
             <Link to="/">
-              <img src={logos} className="favicon" alt="Runelite" />
+              <img src={logos} className="favicon" alt="RuneLite Plus" />
               <span className="text">RuneLitePlus</span>
             </Link>
           </div>
@@ -51,7 +51,7 @@ export default class Navigation extends Component {
             <a target="_blank" rel="noopener noreferrer" href="https://github.com/runelite-extended">
             Github
             </a>
-            <a target="_blank" rel="noopener noreferrer" href="https://www.patreon.com/join/RuneLitePlus" ><img src="/img/like.png" class="patreon" alt="RuneLitePlus"></img>
+            <a target="_blank" rel="noopener noreferrer" href="https://www.patreon.com/join/RuneLitePlus" ><img src="/img/like.png" class="patreon" alt="RuneLite Plus"></img>
             </a>
           </div>
         </div>
