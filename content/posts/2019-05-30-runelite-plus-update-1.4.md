@@ -11,8 +11,7 @@ tags:
   - runelite 1.5
 ---
 
-> As always, we appreciate the staff for their efforts this week. Also, a special mention to the following users who have contributed on github this week: icyredstar, xperiaclash, ocekyled, farhan1666,
-SRLJustin, sunha7, se7enAte9, and tomcylke. We are delivering a hurtful blow to P2W clients with every update, and every new user.
+> As always, we appreciate the staff for their efforts this week. Also, a special mention to the following users who have contributed on github this week: Lyzrds, Nagi, Loudpacks, icyredstar, xperiaclash, ocekyled, farhan1666, SRLJustin, sunha7, se7enAte9, and tomcylke. We are delivering a hurtful blow to P2W clients with every update, and every new user.
 
 
 ## RuneLite Plus 1.4
@@ -44,6 +43,19 @@ SRLJustin, sunha7, se7enAte9, and tomcylke. We are delivering a hurtful blow to 
 - COX had a complete overhaul on the config, allowing for greater customization. it has also had many, many bug fixes. Additional features have been added to, these include: Tekton Tick Tracker, Vanguards Highlight Overlay and HP Counter, and Olm Teleport Targets and Solo Targets (huge shoutout to Ganom on this one).
 - Menu entry swapper for Construction is now working correctly (wooo!).
 - Additional object indictators configuration options have been added.
+- Pker notifier is now turned off by default.
+- Highlight friends is now turned off by default.
+- Highlight team members is now turned off by default.
+- Show clan ranks is now turned off by default.
+- Highlight callers is now turned off by default.
+- Max Hit plugin has now had its description updated to be more user friendly.
+- Zulrah plugin has now had its description updated to be more user friendly.
+- Added CLI SOCKS5 proxy support. Usage: --proxy ip:port:user:pass | ip:port.
+- Music track unlock indication plugin added, this will add a chat message if you unlock a new music track.
+- Theatre of Blood has had a overhaul and is now more effective.
+- combat counter added. this will count the amount of perfect combat ticks performed by each player.
+- Spawn timer has been added. this will show an NPC'S time since it spawned.
+- Pyramid Plunder bug fixes. this plugin now works as expected.
 
 ## RuneLite 1.5.24.1
 ```
