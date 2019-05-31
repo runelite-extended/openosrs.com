@@ -2,12 +2,8 @@
 date: 2019-05-16
 title: 'RuneLite+ has been updated to 1.2!'
 template: post
-<<<<<<< HEAD:content/posts/2019-05-16-update.md
-slug: update-1.2
-=======
 slug: runelite-plus-update-1.2
 thumbnail: '../thumbnails/update.png'
->>>>>>> 2f4603d3a2b2fb507721b9ea38ee6ee827dd4512:content/posts/2019-05-16-runelite-plus-update-1.2.md
 categories:
   - updates
 tags:
