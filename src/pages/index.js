@@ -25,7 +25,7 @@ export default class Index extends Component {
 
     return (
       <Layout>
-        <Helmet title={`${config.siteTitle} – Fork of RuneLite that provides more functionality.`} />
+        <Helmet title={`${config.siteTitle} – RuneLite Plus provides more functionality than runelite!`} />
         <SEO />
         <div className="container">
           <section class="test">
