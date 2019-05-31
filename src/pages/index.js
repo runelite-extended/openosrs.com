@@ -91,9 +91,9 @@ export default class Index extends Component {
     <div class="row align-items-center text-left">
       <div class="col-12 col-sm-10 col-md-8 col-lg-8">
         <h1>RuneLitePlus is free and we support open source!</h1>
-        <p class="lead2">RuneLitePlus is a fork of RuneLite that provides more functionality and less restrictions while staying open source. This is meant to directly compete with 3rd party RL clients that are trying to sell their code. Compile our client for yourself and try it out!</p>
+        <p class="lead2">RuneLitePlus is a fork of RuneLite that provides more functionality and less restrictions while staying open source. This is meant to directly compete with 3rd party RL clients that are trying to sell their code.</p>
         <p class="mt-5">
-          <a href="https://github.com/runelite-extended/runelite" class="btn btn-light"><FontAwesomeIcon icon={faGithub} /> Source Code</a>
+          <a href="https://github.com/runelite-extended/runelite" class="btn btn-light">Github</a>
         </p>
       </div>
     </div>
