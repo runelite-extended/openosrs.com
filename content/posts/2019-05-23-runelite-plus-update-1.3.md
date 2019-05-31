@@ -2,7 +2,7 @@
 date: 2019-05-23
 title: 'RuneLite+ has been updated to 1.3!'
 template: post
-slug: update-1.3
+slug: runelite-plus-update-1.3
 thumbnail: '../thumbnails/update.png'
 categories:
   - updates
