@@ -13,7 +13,6 @@ export default class PostTemplate extends Component {
     const { slug } = this.props.pageContext
     const postNode = this.props.data.markdownRemark
     const post = postNode.frontmatter
-    let thumbnail
 
     if (!post.id) {
       post.id = slug
@@ -23,13 +22,8 @@ export default class PostTemplate extends Component {
       post.category_id = config.postDefaultCategoryID
     }
 
-    if (post.thumbnail) {
-      thumbnail = post.thumbnail.childImageSharp.fixed
-    }
-
     const date = formatDate(post.date)
     const githubLink = editOnGithub(post)
-    const twitterUrl = `https://twitter.com/search?q=${config.siteUrl}/${post.slug}/`
     const twitterShare = `http://twitter.com/share?text=${encodeURIComponent(post.title)}&url=${
       config.siteUrl
     }/${post.slug}/&via=runeliteplus`
@@ -41,8 +35,7 @@ export default class PostTemplate extends Component {
         </Helmet>
         <SEO postPath={slug} postNode={postNode} postSEO />
         <article className="single container">
-          <header className={`single-header ${!thumbnail ? 'no-thumbnail' : ''}`}>
-            {thumbnail ? <Img fixed={post.thumbnail.childImageSharp.fixed} /> : null}
+          <header className="single-header no-thumbnail">
             <div className="flex">
               <h1>{post.title}</h1>
               <div className="post-meta">
@@ -77,13 +70,6 @@ export const pageQuery = graphql`
       excerpt
       frontmatter {
         title
-        thumbnail {
-          childImageSharp {
-            fixed(width: 150, height: 150) {
-              ...GatsbyImageSharpFixed
-            }
-          }
-        }
         slug
         date
         categories
