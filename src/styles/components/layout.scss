@@ -257,7 +257,7 @@ a.article-callout {
     .each {
       display: grid;
       align-items: center;
-      grid-template-columns: 60px 1fr 0;
+      grid-template-columns: 10px 1fr 0;
       padding: 1rem 0;
       margin: 0;
       border: 2px solid transparent;
@@ -299,7 +299,7 @@ a.article-callout {
   &.simple {
     a {
       .each {
-        grid-template-columns: 50px 2fr auto;
+        grid-template-columns: 10px 2fr auto;
         align-items: center;
         padding: 1rem 0;
         margin: 0;
@@ -336,7 +336,7 @@ a.article-callout {
 
     a {
       .each {
-        grid-template-columns: 80px 1fr 90px;
+        grid-template-columns: 10px 1fr 90px;
         align-items: start;
         padding: 1rem 2rem;
         margin: 0 -2rem;
