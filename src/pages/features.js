@@ -8,11 +8,12 @@ import SEO from '../components/SEO'
 
 export default class FeaturesPage extends Component {
     render() {
+      const { slug } = this.props.pageContext
   
       return (
         <Layout>
           <Helmet title={`Features – ${config.siteTitle}`} />
-          <SEO featureSEO />
+          <SEO postPath={slug} featureSEO />
           <div className="container2">
             <hr />
             <div class="row">

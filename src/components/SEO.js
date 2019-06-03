@@ -23,9 +23,6 @@ export default class SEO extends Component {
       image = config.siteLogo
     }
 
-    if (featureSEO) {
-      description = config.siteDescriptionFeatures
-      }
 
     image = urljoin(config.siteUrl, image)
     const blogURL = urljoin(config.siteUrl, config.pathPrefix)
@@ -73,7 +70,7 @@ export default class SEO extends Component {
     }
     return (
       <Helmet>
-        <meta name="description" content={description} />
+        {featureSEO ? <meta property="description" content={config.siteDescriptionFeatures} /> : <meta property="description" content={description} /> }
         {postSEO ? <meta property="image" content="" /> : <meta property="image" content={image} />}
         {postSEO ? <meta property="og:image" content="" /> : null}
 
