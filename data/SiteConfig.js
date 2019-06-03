@@ -12,7 +12,7 @@ const config = {
   siteDescription:
     'RuneLitePlus provides more functionality and less restrictions while staying open source. We have lots of RuneLite Plus plugins!',
   siteDescriptionFeatures:
-    'We have a lot features compared to runelite, we have a zulrah helper, blackjack helper, pvp plugins, pvm plugins and more! Use Runelite plus over runelite and have tons of fun!',
+    'We have a lot features compared to RuneLite, zulrah helper, better runelite plugins, pvp plugins, pvm plugins and more. Use RunelitePlus over RuneLite!',
   siteRss: '/rss.xml',
   googleAnalyticsID: 'UA-73292863-4',
   postDefaultCategoryID: 'Updates',

@@ -3,7 +3,6 @@ import Helmet from 'react-helmet'
 import features from '../../data/features'
 import Feature from '../components/Feature'
 import Layout from '../layout'
-import config from '../../data/SiteConfig'
 import SEO from '../components/SEO'
 
 export default class FeaturesPage extends Component {
@@ -12,7 +11,7 @@ export default class FeaturesPage extends Component {
   
       return (
         <Layout>
-          <Helmet title={`Features – ${config.siteTitle}`} />
+          <Helmet title="RuneLite Plus - Better features than runelite!" />
           <SEO postPath={slug} featureSEO />
           <div className="container2">
             <hr />
