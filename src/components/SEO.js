@@ -5,11 +5,12 @@ import config from '../../data/SiteConfig'
 
 export default class SEO extends Component {
   render() {
-    const { postNode, postPath, postSEO } = this.props
+    const { postNode, postPath, postSEO, featureSEO } = this.props
     let title
     let description
     let image = ''
     let postURL
+
 
     if (postSEO) {
       const postMeta = postNode.frontmatter
@@ -21,6 +22,10 @@ export default class SEO extends Component {
       description = config.siteDescription
       image = config.siteLogo
     }
+
+    if (featureSEO) {
+      description = config.siteDescriptionFeatures
+      }
 
     image = urljoin(config.siteUrl, image)
     const blogURL = urljoin(config.siteUrl, config.pathPrefix)
