@@ -39,6 +39,7 @@ export default class MainLayout extends Component {
           <meta name="description" content={config.siteDescription} />
           <meta name="keywords" content={config.metaKeywords} />
           <link rel="shortcut icon" type="image/png" href={favicon} />
+          <link rel="preconnect" href="https://www.google-analytics.com" />
 
         </Helmet>
         <Navigation menuLinks={config.menuLinks} />
