@@ -34,6 +34,10 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-manifest`
+    },
+    'gatsby-plugin-offline',
+    {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'assets',
