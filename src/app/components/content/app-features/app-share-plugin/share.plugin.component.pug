@@ -1,0 +1,13 @@
+mat-nav-list
+  a(mat-list-item, [attr.href]="'https://www.facebook.com/sharer/sharer.php?u=https://runelitepl.us/features/' + replaceAll(plugin.name, ' ', '%20').toLowerCase()", (click)="openLink()", target="_blank", rel="noopener noreferrer")
+    span(mat-line) Facebook
+    span(mat-line) Share on Facebook
+  a(mat-list-item, [attr.href]="'https://twitter.com/home?status=https://runelitepl.us/features/' + replaceAll(plugin.name, ' ', '%20').toLowerCase() + ' ' + replaceAll(plugin.name, ' ', '%20').toLowerCase()", (click)="openLink()", target="_blank", rel="noopener noreferrer")
+    span(mat-line) Twitter
+    span(mat-line) Share on Twitter
+  a(mat-list-item, [attr.href]="'mailto:?&body=https://runelitepl.us/features/' + replaceAll(plugin.name, ' ', '%20').toLowerCase()", (click)="openLink()", target="_blank", rel="noopener noreferrer")
+    span(mat-line) Email
+    span(mat-line) Share using email
+  a(mat-list-item, (click)="copyLink($event)")
+    span(mat-line) Copy
+    span(mat-line) Copy link

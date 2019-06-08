@@ -4,11 +4,12 @@ import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FormsModule} from '@angular/forms';
 import {
+  MatBottomSheetModule,
   MatButtonModule,
   MatCardModule,
   MatExpansionModule,
   MatIconModule,
-  MatInputModule,
+  MatInputModule, MatListModule,
   MatSelectModule,
   MatSnackBarModule,
   MatToolbarModule
@@ -22,6 +23,7 @@ import {AppFooterComponent} from './components/layout/app-footer/footer.componen
 import {AppHomeComponent} from './components/content/app-home/home.component';
 import {AppUpdatesComponent} from './components/content/app-updates/updates.component';
 import {AppFeaturesComponent} from './components/content/app-features/features.component';
+import {SharePluginComponent} from './components/content/app-features/app-share-plugin/share.plugin.component';
 
 import {HttpErrorInterceptor} from './interceptor/http-error.interceptor';
 
@@ -43,6 +45,7 @@ import {NotificationService} from './services/notification.service';
     AppHomeComponent,
     AppUpdatesComponent,
     AppFeaturesComponent,
+    SharePluginComponent,
 
     CommitMessagePipe,
     PluginCategoriesPipe,
@@ -64,7 +67,9 @@ import {NotificationService} from './services/notification.service';
     MatExpansionModule,
     MatInputModule,
     MatSelectModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatListModule,
+    MatBottomSheetModule
   ],
   providers: [
     PluginsJsonService,
@@ -76,6 +81,9 @@ import {NotificationService} from './services/notification.service';
       useClass: HttpErrorInterceptor,
       multi: true
     }
+  ],
+  entryComponents: [
+    SharePluginComponent
   ],
   bootstrap: [
     AppComponent
