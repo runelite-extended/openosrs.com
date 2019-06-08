@@ -4,7 +4,7 @@
   .header-image {
     display: flex;
     flex-direction: column;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.33), rgba(0, 0, 0, 0.33)), url("/assets/header.png");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.33), rgba(0, 0, 0, 0.33)), url("/assets/header.webp");
     min-height: 10em;
     height: 50%;
     align-self: center;
@@ -13,6 +13,10 @@
     background-attachment: fixed;
     align-items: center;
     justify-content: center;
+  }
+
+  .no-webp.header-image {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.33), rgba(0, 0, 0, 0.33)), url("/assets/header.png");
   }
 
   .header-text {
