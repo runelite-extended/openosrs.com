@@ -11,7 +11,5 @@ export class AppHomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.webp = document.createElement('canvas').toDataURL('image/webp').indexOf('data:image/webp') === 0;
-
-    console.log(this.webp);
   }
 }
