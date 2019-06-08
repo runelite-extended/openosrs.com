@@ -1,0 +1,38 @@
+.wrapper
+  .content-header.mat-toolbar.mat-primary
+    span Features
+
+  .content
+    div(fxLayout="row wrap", fxLayoutAlign="flex-start")
+      mat-form-field.filter-field(fxFlex='0 1 50%')
+        input(matInput, type="text", placeholder="Filter", [(ngModel)]="filter")
+        button(mat-button, *ngIf="filter", matSuffix, mat-icon-button, aria-label="Clear", (click)="filter=''")
+          mat-icon close
+
+      mat-form-field(fxFlex='0 1 50%')
+        mat-label Category
+        mat-select([(value)]="selectedCategory")
+          mat-option(*ngFor="let category of categories", [value]="category", [innerText]="category")
+
+
+    div(fxLayout="row wrap", fxLayoutAlign="flex-start")
+
+      ng-container(*ngFor="let plugin of (plugins$ | async) | pluginFilter:filter | pluginCategoryFilter:selectedCategory")
+
+        .card-container(fxFlex="0 1 20%", fxFlex.lt-xl="0 1 25%",  fxFlex.lt-lg="0 1 33.3%", fxFlex.lt-md="0 1 50%", fxFlex.lt-sm="100%")
+          mat-card
+            mat-card-header
+              mat-card-title([innerText]="plugin.name")
+              mat-card-subtitle([innerText]="plugin.categories | pluginCategories")
+
+
+            picture(*ngIf="plugin.image != ''")
+              source(type="image/webp", [attr.srcSet]="'/assets/plugins/images/' + plugin.image + '.webp'")
+              source(type="image/png", [attr.srcSet]="'/assets/plugins/images/' + plugin.image + '.png'")
+              img(mat-card-image="", [attr.src]="'/assets/plugins/images/' + plugin.image + '.png'", [attr.alt]="plugin.name")
+
+            img(mat-card-image="", *ngIf="plugin.image == ''", src="https://material.angular.io/assets/img/examples/shiba2.jpg", [attr.alt]="plugin.name")
+            mat-card-content
+              p([innerText]="plugin.description")
+            mat-card-actions(*ngIf="plugin.wiki")
+              a(mat-raised-button="", color="accent", target='_blank', rel='noopener noreferrer', [attr.href]="plugin.wiki") Wiki

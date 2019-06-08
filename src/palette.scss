@@ -1,0 +1,75 @@
+@import '~@angular/material/theming';
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+$mat-myapp-primary: (
+  50 : #e0e4e5,
+  100 : #b3bcbf,
+  200 : #808f95,
+  300 : #4d626a,
+  400 : #26404a,
+  500 : #001e2a,
+  600 : #001a25,
+  700 : #00161f,
+  800 : #001219,
+  900 : #000a0f,
+  A100 : #52a8ff,
+  A200 : #1f8fff,
+  A400 : #0075eb,
+  A700 : #0069d1,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #ffffff,
+    400 : #ffffff,
+    500 : #ffffff,
+    600 : #ffffff,
+    700 : #ffffff,
+    800 : #ffffff,
+    900 : #ffffff,
+    A100 : #000000,
+    A200 : #ffffff,
+    A400 : #ffffff,
+    A700 : #ffffff,
+  )
+);
+
+$mat-myapp-accent: (
+  50 : #e0f2f9,
+  100 : #b3def0,
+  200 : #80c8e6,
+  300 : #4db2dc,
+  400 : #26a2d5,
+  500 : #0091cd,
+  600 : #0089c8,
+  700 : #007ec1,
+  800 : #0074ba,
+  900 : #0062ae,
+  A100 : #d8ebff,
+  A200 : #a5d2ff,
+  A400 : #72b8ff,
+  A700 : #58acff,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #000000,
+    400 : #000000,
+    500 : #ffffff,
+    600 : #ffffff,
+    700 : #ffffff,
+    800 : #ffffff,
+    900 : #ffffff,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #000000,
+    A700 : #000000,
+  )
+);
+
+$primary: mat-palette($mat-myapp-primary);
+$accent: mat-palette($mat-myapp-accent);
+
+$theme: mat-light-theme($primary, $accent);
+
+@include angular-material-theme($theme);
