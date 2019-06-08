@@ -8,11 +8,11 @@
       h2 Client updates
 
       mat-accordion
-        mat-expansion-panel(*ngFor="let commit of commits$ | async")
+        mat-expansion-panel
           mat-expansion-panel-header
-            mat-panel-title([innerText]="commit.commit.message | commitMessage")
-          p
-            a(mat-raised-button, color="primary", target="_blank", rel="noopener noreferrer", [attr.href]="commit.html_url") Github
+            mat-panel-title Title stub
+            mat-panel-description This is a summary of the content
+          p stub
 
     div(fxFlex="0 1 45%", fxFlex.lt-lg="0 1 70%", fxFlex.lt-md="0 1 80%", fxFlex.lt-sm="90%")
       h2 Latest Github commits
@@ -21,6 +21,7 @@
         mat-expansion-panel(*ngFor="let commit of commits")
           mat-expansion-panel-header
             mat-panel-title([innerText]="commit.commit.message | commitMessage")
+            mat-panel-description([innerText]="commit.commit.committer.date | commitTime")
           p
             a(mat-raised-button, color="primary", target="_blank", rel="noopener noreferrer", [attr.href]="commit.html_url") Github
 

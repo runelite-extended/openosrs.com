@@ -28,6 +28,7 @@ import {SharePluginComponent} from './components/content/app-features/app-share-
 import {HttpErrorInterceptor} from './interceptor/http-error.interceptor';
 
 import {CommitMessagePipe} from './pipes/commit.message.pipe';
+import {CommitTitlePipe} from './pipes/commit.time.pipe';
 import {PluginCategoriesPipe} from './pipes/plugin.categories.pipe';
 import {PluginFilterPipe} from './pipes/plugin.filter.pipe';
 import {PluginCategoryFilterPipe} from './pipes/plugin.category.filter.pipe';
@@ -49,6 +50,7 @@ import {NotificationService} from './services/notification.service';
     SharePluginComponent,
 
     CommitMessagePipe,
+    CommitTitlePipe,
     PluginCategoriesPipe,
     PluginFilterPipe,
     PluginCategoryFilterPipe
