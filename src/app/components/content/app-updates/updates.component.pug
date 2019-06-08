@@ -21,9 +21,25 @@
         mat-expansion-panel(*ngFor="let commit of commits")
           mat-expansion-panel-header
             mat-panel-title([innerText]="commit.commit.message | commitMessage")
-            mat-panel-description([innerText]="commit.commit.committer.date | commitTime")
-          p
-            a(mat-raised-button, color="primary", target="_blank", rel="noopener noreferrer", [attr.href]="commit.html_url") Github
+            mat-panel-description(fxHide.lt-md="true", [innerText]="commit.commit.committer.date | commitDate")
+          mat-action-row
+            h1 Author:
+            p
+              span([innerText]="commit.commit.author.name")
+              span(*ngIf="commit.commit.author.name !== commit.author.login", [innerText]="' (Github name: ' + commit.author.login + ')'")
+          mat-action-row(*ngIf="commit.commit.author.name !== commit.commit.committer.name && commit.commit.committer.name !== 'GitHub'")
+            h1 Commiter:
+            span([innerText]="commit.commit.committer.name")
+            p
+              span([innerText]="commit.commit.committer.name")
+              span(*ngIf="commit.commit.committer.name !== commit.committer.login", [innerText]="'(Github name: ' + commit.committer.login + ')'")
+          mat-action-row
+            h1 Full commit message:
+            p([innerText]="commit.commit.message")
+          mat-action-row.github-links
+            a(mat-raised-button, color="primary", target="_blank", rel="noopener noreferrer", [attr.href]="commit.html_url") Github commit
+            a(mat-raised-button, color="primary", target="_blank", rel="noopener noreferrer", [attr.href]="commit.author.html_url") Github author
+            a(*ngIf="commit.commit.author.name !== commit.commit.committer.name && commit.commit.committer.name !== 'GitHub'", mat-raised-button, color="primary", target="_blank", rel="noopener noreferrer", [attr.href]="commit.committer.html_url") Github comitter
 
       ng-template(#noCommits)
         p The latest github commits could not be fetched.

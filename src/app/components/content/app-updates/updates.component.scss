@@ -38,6 +38,29 @@
       justify-content: flex-end;
     }
 
+    mat-action-row {
+      flex-direction: column;
+      justify-content: flex-start;
+
+      h1 {
+        font-weight: 600;
+        font-size: larger;
+      }
+
+      p {
+        margin-top: 5px;
+      }
+    }
+
+    mat-action-row.github-links {
+      flex-direction: row;
+
+      a {
+        flex-grow: 1;
+        margin: 0 5px;
+      }
+    }
+
     .full-message {
       margin-top: 10px;
     }
