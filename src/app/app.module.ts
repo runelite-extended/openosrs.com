@@ -34,6 +34,7 @@ import {PluginCategoryFilterPipe} from './pipes/plugin.category.filter.pipe';
 
 import {PluginsJsonService} from './services/plugins.json.service';
 import {GithubService} from './services/github.service';
+import {SessionService} from './services/session.service';
 import {NotificationService} from './services/notification.service';
 
 @NgModule({
@@ -74,6 +75,7 @@ import {NotificationService} from './services/notification.service';
   providers: [
     PluginsJsonService,
     GithubService,
+    SessionService,
     NotificationService,
 
     {

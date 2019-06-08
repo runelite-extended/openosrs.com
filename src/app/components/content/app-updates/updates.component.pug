@@ -17,8 +17,8 @@
     div(fxFlex="0 1 45%", fxFlex.lt-lg="0 1 70%", fxFlex.lt-md="0 1 80%", fxFlex.lt-sm="90%")
       h2 Latest Github commits
 
-      mat-accordion(*ngIf="!fatalError; else noCommits")
-        mat-expansion-panel(*ngFor="let commit of commits$ | async")
+      mat-accordion(*ngIf="!fatalError && (commits$ | async) as commits; else noCommits")
+        mat-expansion-panel(*ngFor="let commit of commits")
           mat-expansion-panel-header
             mat-panel-title([innerText]="commit.commit.message | commitMessage")
           p

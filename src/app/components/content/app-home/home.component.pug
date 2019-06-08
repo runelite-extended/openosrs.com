@@ -4,7 +4,9 @@
     .header-text
       h1 RuneLitePlus
       
-      p Fork of RuneLite that provides more functionality and less restrictions while staying open source.
+      span
+        p Fork of RuneLite that provides more functionality and less restrictions while staying open source.
+        p(*ngIf="!fatalError && (session$ | async) as count", [innerText]="'Current player count: ' + count")
 
       a(href="https://runelitepl.us/RuneLitePlus.jar", mat-raised-button, color="primary") Download exe
       a(href="https://runelitepl.us/RuneLitePlus.jar", mat-raised-button, color="primary") Download jar
