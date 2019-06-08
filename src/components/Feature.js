@@ -6,7 +6,11 @@ const Feature = ({ image, title, description, link }) => (
       style={{ marginBottom: 15 }}
     >
       <div class="card">
-        <img class="material-icons" alt={title} src={image} />
+        <picture>
+          <source type="image/webp" srcSet={`/img/features/${image}.webp`} />
+          <source type="image/png" srcSet={`/img/features/${image}.png`} />
+          <img class="material-icons" src={`/img/features/${image}.png`} alt={title} />
+        </picture>
         <div class="card-body">
           <h5 class="card-title">
             {link ? (
