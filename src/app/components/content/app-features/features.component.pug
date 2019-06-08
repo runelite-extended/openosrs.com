@@ -3,24 +3,23 @@
     span Features
 
   .content
-    div(fxLayout="row wrap", fxLayoutAlign="start")
-      mat-form-field.filter-field(fxFlex="0 1 50%")
+    div(fxLayout="row wrap", fxLayoutAlign="center")
+      mat-form-field.filter-field(fxFlex="0 1 42.5%", fxFlex.lt-xl="0 1 41%", fxFlex.lt-lg="0 1 45%", fxFlex.lt-md="0 1 45%", fxFlex.lt-sm="42.5%")
         input(matInput, type="text", placeholder="Filter", [(ngModel)]="filter")
         button(mat-button, *ngIf="filter", matSuffix, mat-icon-button, aria-label="Clear", (click)="filter=''")
           mat-icon close
 
-      mat-form-field(fxFlex="0 1 50%")
+      mat-form-field(fxFlex="0 1 42.5%", fxFlex.lt-xl="0 1 41%", fxFlex.lt-lg="0 1 45%", fxFlex.lt-md="0 1 45%", fxFlex.lt-sm="42.5%")
         mat-label Category
         mat-select([(value)]="selectedCategory")
           mat-option(*ngFor="let category of categories", [value]="category", [innerText]="category")
 
 
     ng-container(*ngIf="(plugins$ | async) | pluginFilter:filter | pluginCategoryFilter:selectedCategory; let plugins")
-      ng-container(*ngIf="plugins.length !== 0; else noPluginsMatch")
+      div(fxLayout="row wrap", fxLayoutAlign="center")
+        ng-container(*ngIf="plugins.length !== 0; else noPluginsMatch")
 
-        div(fxLayout="row wrap", fxLayoutAlign="start")
-
-          .card-container(*ngFor="let plugin of plugins", fxFlex="0 1 20%", fxFlex.lt-xl="0 1 25%",  fxFlex.lt-lg="0 1 33.3%", fxFlex.lt-md="0 1 50%", fxFlex.lt-sm="100%")
+          .card-container(*ngFor="let plugin of plugins", fxFlex="0 1 17%", fxFlex.lt-xl="0 1 20.5%", fxFlex.lt-lg="0 1 30%", fxFlex.lt-md="0 1 45%", fxFlex.lt-sm="85%")
             mat-card
               mat-card-header
                 mat-card-title([innerText]="plugin.name")
@@ -38,5 +37,5 @@
               mat-card-actions(*ngIf="plugin.wiki")
                 a(mat-raised-button, color="accent", target="_blank", rel="noopener noreferrer", [attr.href]="plugin.wiki") Wiki
 
-      ng-template(#noPluginsMatch)
-        p(fxLayout="row wrap", fxLayoutAlign="center") No plugins found for this search query.
+        ng-template(#noPluginsMatch)
+          p(fxLayout="row wrap") No plugins found for this search query.
