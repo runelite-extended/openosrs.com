@@ -32,6 +32,9 @@
 
     mat-panel-title {
       height: 16px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     mat-panel-description {
