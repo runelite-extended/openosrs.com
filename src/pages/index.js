@@ -62,7 +62,7 @@ export default class Index extends Component {
               <div class="col-12 col-md-8 m-auto col-lg-4 pt-5 pt-lg-0">
                 <div class="fdb-box fdb-touch">
                   <h2>Many Features</h2>
-                  <p>RuneLitePlus is jam packed full of features, check out our feature page for a full list of our features.</p>
+                  <p>RuneLite Plus is jam packed full of features, check out our feature page for a full list of our features.</p>
                   <p><a href="https://runelitepl.us/features/">Read Features</a></p>
                 </div>
               </div>
