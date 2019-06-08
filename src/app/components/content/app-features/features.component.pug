@@ -16,27 +16,29 @@
 
 
     ng-container(*ngIf="(plugins$ | async) | pluginFilter:filter | pluginCategoryFilter:selectedCategory; let plugins")
-      div(fxLayout="row wrap", fxLayoutAlign="center")
+      div(fxLayoutAlign="center")
         ng-container(*ngIf="plugins.length !== 0; else noPluginsMatch")
 
-          .card-container(*ngFor="let plugin of plugins", fxFlex="0 1 17%", fxFlex.lt-xl="0 1 20.5%", fxFlex.lt-lg="0 1 30%", fxFlex.lt-md="0 1 45%", fxFlex.lt-sm="85%")
-            mat-card
-              mat-card-header
-                mat-card-title([innerText]="plugin.name")
-                mat-card-subtitle([innerText]="plugin.categories | pluginCategories")
+          div(fxFlex="0 1 85%", fxFlex.lt-xl="0 1 82%", fxFlex.lt-lg="0 1 90%", fxFlex.lt-md="0 1 90%", fxFlex.lt-sm="85%")
+            div(fxLayout="row wrap", fxLayoutAlign="start")
+              .card-container(*ngFor="let plugin of plugins", fxFlex="0 1 20%", fxFlex.lt-xl="0 1 25%", fxFlex.lt-lg="0 1 33.33%", fxFlex.lt-md="0 1 50%", fxFlex.lt-sm="100%")
+                mat-card
+                  mat-card-header
+                    mat-card-title([innerText]="plugin.name")
+                    mat-card-subtitle([innerText]="plugin.categories | pluginCategories")
 
 
-              picture(*ngIf="plugin.image != ''")
-                source(type="image/webp", [attr.srcSet]="'/assets/plugins/images/' + plugin.image + '.webp'")
-                source(type="image/png", [attr.srcSet]="'/assets/plugins/images/' + plugin.image + '.png'")
-                img(mat-card-image, [attr.src]="'/assets/plugins/images/' + plugin.image + '.png'", [attr.alt]="plugin.name")
+                  picture(*ngIf="plugin.image != ''")
+                    source(type="image/webp", [attr.srcSet]="'/assets/plugins/images/' + plugin.image + '.webp'")
+                    source(type="image/png", [attr.srcSet]="'/assets/plugins/images/' + plugin.image + '.png'")
+                    img(mat-card-image, [attr.src]="'/assets/plugins/images/' + plugin.image + '.png'", [attr.alt]="plugin.name")
 
-              img(mat-card-image, *ngIf="plugin.image == ''", src="https://material.angular.io/assets/img/examples/shiba2.jpg", [attr.alt]="plugin.name")
-              mat-card-content
-                p([innerText]="plugin.description")
-              mat-card-actions()
-                button(mat-raised-button, color="accent", (click)="openBottomSheet(plugin)") Share
-                a(*ngIf="plugin.wiki", mat-raised-button, color="accent", target="_blank", rel="noopener noreferrer", [attr.href]="plugin.wiki") Wiki
+                  img(mat-card-image, *ngIf="plugin.image == ''", src="https://material.angular.io/assets/img/examples/shiba2.jpg", [attr.alt]="plugin.name")
+                  mat-card-content
+                    p([innerText]="plugin.description")
+                  mat-card-actions
+                    button(mat-raised-button, color="accent", (click)="openBottomSheet(plugin)") Share
+                    a(*ngIf="plugin.wiki", mat-raised-button, color="accent", target="_blank", rel="noopener noreferrer", [attr.href]="plugin.wiki") Wiki
 
         ng-template(#noPluginsMatch)
           p(fxLayout="row wrap") No plugins found for this search query.
