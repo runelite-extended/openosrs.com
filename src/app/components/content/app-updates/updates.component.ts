@@ -15,8 +15,8 @@ import {NotificationService} from '../../../services/notification.service';
 })
 export class AppUpdatesComponent implements OnInit {
 
-  private commits$: Observable<Github[]> | {};
-  private fatalError = false;
+  public commits$: Observable<Github[]> | {};
+  public fatalError = false;
 
   constructor(private githubService: GithubService,
               private notificationService: NotificationService) { }

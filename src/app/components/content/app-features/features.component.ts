@@ -13,10 +13,10 @@ import {Plugins} from '../../../interfaces/plugins.interface';
 })
 export class AppFeaturesComponent implements OnInit {
 
-  private plugins$: Observable<Plugins[]>;
-  private filter = '';
-  private selectedCategory = 'All';
-  private categories = [
+  public plugins$: Observable<Plugins[]>;
+  public filter = '';
+  public selectedCategory = 'All';
+  public categories = [
     'All',
     'PvM',
     'PvP',
