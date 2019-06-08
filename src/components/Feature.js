@@ -8,7 +8,7 @@ const Feature = ({ image, title, description, link }) => (
       <div class="card">
         <picture>
           <source type="image/webp" srcSet={`/img/features/${image}.webp`} />
-          <source type="image/jpeg" srcSet={`/img/features/${image}.png`} />
+          <source type="image/png" srcSet={`/img/features/${image}.png`} />
           <img class="material-icons" src={`/img/features/${image}.png`} alt={title} />
         </picture>
         <div class="card-body">
