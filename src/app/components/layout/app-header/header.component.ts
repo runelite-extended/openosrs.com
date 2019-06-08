@@ -5,7 +5,7 @@ import {MatIconRegistry} from '@angular/material';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.pug',
-  styleUrls: ['./header.component.styl']
+  styleUrls: ['./header.component.scss']
 })
 export class AppHeaderComponent {
 

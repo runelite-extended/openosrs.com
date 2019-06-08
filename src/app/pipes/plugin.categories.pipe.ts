@@ -7,10 +7,6 @@ export class PluginCategoriesPipe implements PipeTransform {
       return '';
     }
 
-    if (values.length > 1) {
-
-    }
-
     return `${values.length === 1 ? 'Category' : 'Categories'}: ${values.join(', ')}`;
   }
 }

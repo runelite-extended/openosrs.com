@@ -9,7 +9,7 @@ import {Plugins} from '../../../interfaces/plugins.interface';
 @Component({
   selector: 'app-features',
   templateUrl: './features.component.pug',
-  styleUrls: ['./features.component.styl']
+  styleUrls: ['./features.component.scss']
 })
 export class AppFeaturesComponent implements OnInit {
 

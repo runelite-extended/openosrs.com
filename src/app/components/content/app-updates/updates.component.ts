@@ -11,7 +11,7 @@ import {NotificationService} from '../../../services/notification.service';
 @Component({
   selector: 'app-features',
   templateUrl: './updates.component.pug',
-  styleUrls: ['./updates.component.styl']
+  styleUrls: ['./updates.component.scss']
 })
 export class AppUpdatesComponent implements OnInit {
 
