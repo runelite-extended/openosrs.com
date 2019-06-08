@@ -1,6 +1,7 @@
 import {Component, Inject} from '@angular/core';
-import {MAT_BOTTOM_SHEET_DATA, MatBottomSheetRef} from '@angular/material';
+import {MAT_BOTTOM_SHEET_DATA, MatBottomSheetRef, MatIconRegistry} from '@angular/material';
 import {Plugins} from '../../../../interfaces/plugins.interface';
+import {DomSanitizer} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-share-plugin',
@@ -12,8 +13,16 @@ export class SharePluginComponent {
 
   constructor(
     private matBottomSheetRef: MatBottomSheetRef<SharePluginComponent>,
-    @Inject(MAT_BOTTOM_SHEET_DATA) public data: {plugin: Plugins}) {
+    @Inject(MAT_BOTTOM_SHEET_DATA) public data: {plugin: Plugins},
+    private domSanitizer: DomSanitizer,
+    public matIconRegistry: MatIconRegistry) {
     this.plugin = data.plugin;
+
+
+    matIconRegistry.addSvgIcon('facebook', domSanitizer.bypassSecurityTrustResourceUrl('/assets/fa/facebook-square-brands.svg'));
+    matIconRegistry.addSvgIcon('twitter', domSanitizer.bypassSecurityTrustResourceUrl('/assets/fa/twitter-brands.svg'));
+    matIconRegistry.addSvgIcon('email', domSanitizer.bypassSecurityTrustResourceUrl('/assets/fa/at-solid.svg'));
+    matIconRegistry.addSvgIcon('copy', domSanitizer.bypassSecurityTrustResourceUrl('/assets/fa/copy-solid.svg'));
   }
 
   public replaceAll(str: string, find: string, replace: string) {
