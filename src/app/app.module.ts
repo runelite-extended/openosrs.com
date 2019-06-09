@@ -24,6 +24,8 @@ import {ShufflePluginsPipe} from './pipes/plugin.shuffle.pipe';
 import {PluginsJsonService} from './services/plugins.json.service';
 import {UpdatesJsonService} from './services/updates.service';
 import {SessionService} from './services/session.service';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -47,7 +49,9 @@ import {SessionService} from './services/session.service';
     MatCardModule,
     MatListModule,
 
-    SharedPipesModule
+    SharedPipesModule,
+
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [
     PluginsJsonService,
