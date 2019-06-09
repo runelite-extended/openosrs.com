@@ -5,7 +5,9 @@ import {Observable} from 'rxjs';
 
 import {Github} from '../interfaces/github.interface';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class GithubService {
 
   private baseUrl = 'https://api.github.com';

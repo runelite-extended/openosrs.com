@@ -22,9 +22,6 @@ import {PluginCategoriesPipe} from '../../../pipes/plugin.categories.pipe';
 import {PluginFilterPipe} from '../../../pipes/plugin.filter.pipe';
 import {PluginCategoryFilterPipe} from '../../../pipes/plugin.category.filter.pipe';
 
-import {PluginsJsonService} from '../../../services/plugins.json.service';
-import {NotificationService} from '../../../services/notification.service';
-
 
 @NgModule({
   imports: [
@@ -51,10 +48,6 @@ import {NotificationService} from '../../../services/notification.service';
     PluginCategoriesPipe,
     PluginFilterPipe,
     PluginCategoryFilterPipe
-  ],
-  providers: [
-    PluginsJsonService,
-    NotificationService
   ],
   entryComponents: [
     SharePluginComponent

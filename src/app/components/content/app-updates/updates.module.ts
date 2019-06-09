@@ -24,10 +24,6 @@ import {ShareUpdateComponent} from './app-share-plugin/share.update.component';
 
 import {CommitMessagePipe} from '../../../pipes/commit.message.pipe';
 
-import {UpdatesJsonService} from '../../../services/updates.service';
-import {GithubService} from '../../../services/github.service';
-import {NotificationService} from '../../../services/notification.service';
-
 import {HttpErrorInterceptor} from '../../../interceptor/http-error.interceptor';
 
 
@@ -61,10 +57,6 @@ import {HttpErrorInterceptor} from '../../../interceptor/http-error.interceptor'
     CommitMessagePipe
   ],
   providers: [
-    UpdatesJsonService,
-    GithubService,
-    NotificationService,
-
     {
       provide: HTTP_INTERCEPTORS,
       useClass: HttpErrorInterceptor,

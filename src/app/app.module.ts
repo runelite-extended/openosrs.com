@@ -7,6 +7,7 @@ import {
   MatCardModule,
   MatIconModule,
   MatListModule,
+  MatSnackBarModule,
   MatToolbarModule
 } from '@angular/material';
 import {FlexLayoutModule} from '@angular/flex-layout';
@@ -21,9 +22,6 @@ import {AppHomeComponent} from './components/content/app-home/home.component';
 
 import {ShufflePluginsPipe} from './pipes/plugin.shuffle.pipe';
 
-import {PluginsJsonService} from './services/plugins.json.service';
-import {UpdatesJsonService} from './services/updates.service';
-import {SessionService} from './services/session.service';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 
@@ -44,6 +42,7 @@ import { environment } from '../environments/environment';
 
     FlexLayoutModule,
     MatToolbarModule,
+    MatSnackBarModule,
     MatIconModule,
     MatButtonModule,
     MatCardModule,
@@ -52,11 +51,6 @@ import { environment } from '../environments/environment';
     SharedPipesModule,
 
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
-  ],
-  providers: [
-    PluginsJsonService,
-    UpdatesJsonService,
-    SessionService,
   ],
   bootstrap: [
     AppComponent

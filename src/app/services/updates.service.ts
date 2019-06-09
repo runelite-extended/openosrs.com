@@ -5,7 +5,9 @@ import {Observable} from 'rxjs';
 
 import {Updates} from '../interfaces/updates.interface';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class UpdatesJsonService {
 
   constructor(private http: HttpClient) { }
