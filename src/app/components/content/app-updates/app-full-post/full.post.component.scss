@@ -23,5 +23,9 @@
 
   .content {
     margin: 20px 0;
+
+    .chips {
+      justify-content: space-between;
+    }
   }
 }
