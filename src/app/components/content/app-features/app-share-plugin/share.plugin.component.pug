@@ -1,19 +1,19 @@
 mat-nav-list
-  a(mat-list-item, [attr.href]="'https://www.facebook.com/sharer/sharer.php?u=https://runelitepl.us/features/' + replaceAll(plugin.name, ' ', '%20').toLowerCase()", (click)="openLink()", target="_blank", rel="noopener noreferrer")
+  a(mat-list-item, [attr.href]="'https://www.facebook.com/sharer/sharer.php?u=https://runelitepl.us/features/' + replaceAll(plugin.name, ' ', '_').toLowerCase()", (click)="openLink()", target="_blank", rel="noopener noreferrer")
     mat-icon(mat-list-icon, aria-hidden="false", aria-label="Facebook", svgIcon="facebook")
     span(mat-line) Facebook
     span(mat-line) Share on Facebook
 
   mat-divider
 
-  a(mat-list-item, [attr.href]="'https://twitter.com/home?status=https://runelitepl.us/features/' + replaceAll(plugin.name, ' ', '%20').toLowerCase() + ' ' + replaceAll(plugin.name, ' ', '%20').toLowerCase()", (click)="openLink()", target="_blank", rel="noopener noreferrer")
+  a(mat-list-item, [attr.href]="'https://twitter.com/home?status=https://runelitepl.us/features/' + replaceAll(plugin.name, ' ', '_').toLowerCase() + ' ' + plugin.name", (click)="openLink()", target="_blank", rel="noopener noreferrer")
     mat-icon(mat-list-icon, aria-hidden="false", aria-label="Twitter", svgIcon="twitter")
     span(mat-line) Twitter
     span(mat-line) Share on Twitter
 
   mat-divider
 
-  a(mat-list-item, [attr.href]="'mailto:?&body=https://runelitepl.us/features/' + replaceAll(plugin.name, ' ', '%20').toLowerCase()", (click)="openLink()", target="_blank", rel="noopener noreferrer")
+  a(mat-list-item, [attr.href]="'mailto:?&body=https://runelitepl.us/features/' + replaceAll(plugin.name, ' ', '_').toLowerCase()", (click)="openLink()", target="_blank", rel="noopener noreferrer")
     mat-icon(mat-list-icon, aria-hidden="false", aria-label="Email", svgIcon="email")
     span(mat-line) E-mail
     span(mat-line) Share using email
