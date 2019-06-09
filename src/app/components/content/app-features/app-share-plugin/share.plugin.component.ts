@@ -23,6 +23,7 @@ export class SharePluginComponent {
     matIconRegistry.addSvgIcon('twitter', domSanitizer.bypassSecurityTrustResourceUrl('/assets/fa/twitter-brands.svg'));
     matIconRegistry.addSvgIcon('email', domSanitizer.bypassSecurityTrustResourceUrl('/assets/fa/at-solid.svg'));
     matIconRegistry.addSvgIcon('copy', domSanitizer.bypassSecurityTrustResourceUrl('/assets/fa/copy-solid.svg'));
+    matIconRegistry.addSvgIcon('close', domSanitizer.bypassSecurityTrustResourceUrl('/assets/fa/window-close-solid.svg'));
   }
 
   public replaceAll(str: string, find: string, replace: string) {
@@ -47,6 +48,11 @@ export class SharePluginComponent {
     document.body.removeChild(selBox);
     event.preventDefault();
     this.matBottomSheetRef.dismiss({ plugin: this.plugin, data: 'copy' });
+  }
+
+  public close(event: MouseEvent): void {
+    event.preventDefault();
+    this.matBottomSheetRef.dismiss({ plugin: this.plugin, data: 'close' });
   }
 
 }

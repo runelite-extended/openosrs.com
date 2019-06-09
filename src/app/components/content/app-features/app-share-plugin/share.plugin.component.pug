@@ -24,3 +24,10 @@ mat-nav-list
     mat-icon(mat-list-icon, aria-hidden="false", aria-label="Copy", svgIcon="copy")
     span(mat-line) Copy
     span(mat-line) Copy link
+
+  mat-divider
+
+  a(mat-list-item, (click)="close($event)")
+    mat-icon(mat-list-icon, aria-hidden="false", aria-label="Clase", svgIcon="close")
+    span(mat-line) Close
+    span(mat-line) Close this panel
