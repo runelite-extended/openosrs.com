@@ -9,12 +9,24 @@
   <meta name="theme-color" content="#001e2a">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 
-  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="manifest" href="manifest.json">
 </head>
 <body>
   <app-root></app-root>
   <noscript>Your browser does not support JavaScript!</noscript>
+
+  <script type="text/javascript">
+    WebFontConfig = {
+      google: { families: [ 'Roboto:300,400,500|Material+Icons' ] }
+    };
+    (function() {
+      var wf = document.createElement('script');
+      wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+      wf.type = 'text/javascript';
+      wf.async = 'true';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(wf, s);
+    })();
+  </script>
 </body>
 </html>
