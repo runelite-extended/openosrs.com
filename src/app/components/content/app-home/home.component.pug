@@ -1,5 +1,4 @@
-.spacer
-.wrapper
+.header-wrapper
   .header-image([class.no-webp]="!webp")
     .header-text
       h1 RuneLitePlus
@@ -11,11 +10,15 @@
       a(href="https://runelitepl.us/RuneLitePlus.jar", mat-raised-button, color="primary") Download exe
       a(href="https://runelitepl.us/RuneLitePlus.jar", mat-raised-button, color="primary") Download jar
 
+.wrapper
+  .content(fxLayout="column wrap")
+    div.header(fxLayout="row wrap", fxLayoutAlign="center")
+      div(fxFlex="0 1 60%", fxFlex.lt-xl="0 1 80%", fxFlex.lt-lg="0 1 100%")
+        h2 Our features
 
-  .content
     div(fxLayout="row wrap")
       .card-container(fxFlex="0 1 20%", fxFlex.lt-xl="0 1 30%", fxFlex.lt-lg="0 1 33.3%", fxFlex.lt-md="0 1 100%", fxFlex.lt-sm="100%")
-        mat-card.example-card
+        mat-card
           mat-card-header
             mat-card-title Plugin Support
           mat-card-content
@@ -24,7 +27,7 @@
             a(mat-raised-button, color="accent", target="_blank", rel="noopener noreferrer", href="https://github.com/runelite-extended/runelite/wiki/Plugin-Support") Read more
 
       .card-container(fxFlex="0 1 20%", fxFlex.lt-xl="0 1 25%",  fxFlex.lt-lg="0 1 33.3%", fxFlex.lt-md="0 1 100%", fxFlex.lt-sm="100%")
-        mat-card.example-card
+        mat-card
           mat-card-header
             mat-card-title Open source
           mat-card-content
@@ -33,7 +36,7 @@
             a(mat-raised-button, color="accent", target="_blank", rel="noopener noreferrer", href="https://github.com/runelite-extended/runelite") View RL+ source
 
       .card-container(fxFlex="0 1 20%", fxFlex.lt-xl="0 1 25%",  fxFlex.lt-lg="0 1 33.3%", fxFlex.lt-md="0 1 100%", fxFlex.lt-sm="100%")
-        mat-card.example-card
+        mat-card
           mat-card-header
             mat-card-title Many features
           mat-card-content
@@ -41,4 +44,48 @@
           mat-card-actions
             a(mat-raised-button, color="accent", target="_blank", rel="noopener noreferrer", href="https://runelitepl.us/features/") Read features
 
+    div(fxLayout="row wrap")
+      mat-divider.divider(fxFlex="0 1 60%", fxFlex.lt-xl="0 1 80%", fxFlex.lt-lg="0 1 100%")
 
+    div.header
+      div(fxLayout="row wrap", fxFlex="0 1 60%", fxFlex.lt-xl="0 1 80%", fxFlex.lt-lg="0 1 100%")
+        h2 Plugins
+        button(mat-raised-button, color="primary", routerLink="/features") See all
+
+    div(fxLayout="row wrap")
+      div(fxFlex="0 1 60%", fxFlex.lt-xl="0 1 80%", fxFlex.lt-lg="0 1 100%")
+        div(fxLayout="row wrap", fxLayoutAlign="center start")
+          ng-container(*ngFor="let plugin of (plugins$ | async) | shuffelPlugins | slice:0:4; index as i")
+            .card-container(fxFlex="0 1 25%", fxFlex.lt-lg="0 1 33.3%", fxFlex.lt-md="0 1 50%", fxFlex.lt-sm="100%", [fxHide.lt-lg]="i == 3", fxHide.lt-md="false")
+              mat-card
+                mat-card-header
+                  mat-card-title([innerText]="plugin.name")
+
+                picture(*ngIf="plugin.image != ''")
+                  source(type="image/webp", [attr.srcSet]="'/assets/plugins/images/' + plugin.image + '.webp'")
+                  source(type="image/png", [attr.srcSet]="'/assets/plugins/images/' + plugin.image + '.png'")
+                  img(mat-card-image, [attr.src]="'/assets/plugins/images/' + plugin.image + '.png'", [attr.alt]="plugin.name")
+
+                img(mat-card-image, *ngIf="plugin.image == ''", src="https://material.angular.io/assets/img/examples/shiba2.jpg", [attr.alt]="plugin.name")
+                mat-card-content
+                  p([innerText]="plugin.description")
+                mat-card-actions
+                  button(mat-raised-button, color="accent", (click)="openBottomSheet(plugin)") Share
+                  a(*ngIf="plugin.wiki", mat-raised-button, color="accent", target="_blank", rel="noopener noreferrer", [attr.href]="plugin.wiki") Wiki
+
+    div(fxLayout="row wrap")
+      mat-divider.divider(fxFlex="0 1 60%", fxFlex.lt-xl="0 1 80%", fxFlex.lt-lg="0 1 100%")
+
+    div.header
+      div(fxLayout="row wrap", fxFlex="0 1 60%", fxFlex.lt-xl="0 1 80%", fxFlex.lt-lg="0 1 100%")
+        h2 Latest updates
+        button(mat-raised-button, color="primary", routerLink="/updates") See all
+
+    div(fxLayout="row wrap")
+      mat-nav-list(fxFlex="0 1 60%", fxFlex.lt-xl="0 1 80%", fxFlex.lt-lg="0 1 100%")
+        ng-container(*ngFor="let update of (updates$ | async) | slice:0:3")
+          a(mat-list-item, [routerLink]="'/update/' + update.mdFile")
+            span(mat-line, [innerText]="update.title")
+            span(mat-line, [innerText]="update.date | commitDate")
+
+          mat-divider

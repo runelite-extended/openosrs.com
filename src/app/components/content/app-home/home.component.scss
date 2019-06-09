@@ -1,7 +1,6 @@
-.wrapper {
-  margin-top: 64px;
-
+.header-wrapper {
   .header-image {
+    padding-top: 64px;
     display: flex;
     flex-direction: column;
     background-image: linear-gradient(rgba(0, 0, 0, 0.33), rgba(0, 0, 0, 0.33)), url("/assets/header.webp");
@@ -23,7 +22,7 @@
     text-align: center;
     color: white;
 
-    @supports(padding: m#{a}x(0px)) {
+    @supports (padding: m#{a}x(0px)) {
       padding-left: m#{a}x(20px, env(safe-area-inset-left));
       padding-right: m#{a}x(20px, env(safe-area-inset-right));
     }
@@ -41,10 +40,34 @@
       margin: 25px 5px 0 15px;
     }
   }
+}
+
+.wrapper {
+  @supports (padding: m#{a}x(0px)) {
+    padding-left: m#{a}x(20px, env(safe-area-inset-left));
+    padding-right: m#{a}x(20px, env(safe-area-inset-right));
+  }
 
   .content {
     justify-content: center;
     margin: 20px 0;
+
+    .header {
+      padding: 0 24px;
+
+      div {
+        justify-content: space-between;
+      }
+    }
+
+    .divider {
+      margin: 15px 0;
+    }
+
+    .card-container {
+      padding: 10px 24px;
+      align-items: center;
+    }
 
     div {
       align-items: center;

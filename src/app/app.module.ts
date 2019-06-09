@@ -37,6 +37,7 @@ import {CommitDatePipe} from './pipes/commit.date.pipe';
 import {PluginCategoriesPipe} from './pipes/plugin.categories.pipe';
 import {PluginFilterPipe} from './pipes/plugin.filter.pipe';
 import {PluginCategoryFilterPipe} from './pipes/plugin.category.filter.pipe';
+import {ShufflePluginsPipe} from './pipes/plugin.shuffle.pipe';
 
 import {PluginsJsonService} from './services/plugins.json.service';
 import {UpdatesJsonService} from './services/updates.service';
@@ -63,7 +64,8 @@ import {NotificationService} from './services/notification.service';
     CommitDatePipe,
     PluginCategoriesPipe,
     PluginFilterPipe,
-    PluginCategoryFilterPipe
+    PluginCategoryFilterPipe,
+    ShufflePluginsPipe
   ],
   imports: [
     BrowserModule,
