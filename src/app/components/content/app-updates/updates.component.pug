@@ -35,7 +35,7 @@
               span(*ngIf="commit.commit.committer.name !== commit.committer.login", [innerText]="'(Github name: ' + commit.committer.login + ')'")
           mat-action-row
             h1 Full commit message:
-            p.full-message([innerText]="commit.commit.message")
+            p([innerText]="commit.commit.message")
           mat-action-row.github-links
             a(mat-raised-button, color="primary", target="_blank", rel="noopener noreferrer", [attr.href]="commit.html_url") Github commit
             a(mat-raised-button, color="primary", target="_blank", rel="noopener noreferrer", [attr.href]="commit.author.html_url") Github author
