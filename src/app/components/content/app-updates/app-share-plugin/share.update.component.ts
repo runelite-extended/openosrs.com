@@ -38,7 +38,7 @@ export class ShareUpdateComponent implements OnInit {
     selBox.style.left = '0';
     selBox.style.top = '0';
     selBox.style.opacity = '0';
-    selBox.value = `https://runelitepl.us/update/${this.update.mdFile}`;
+    selBox.value = `https://runelitepl.us/updates/${this.update.mdFile}`;
     document.body.appendChild(selBox);
     selBox.focus();
     selBox.select();

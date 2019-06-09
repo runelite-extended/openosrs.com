@@ -1,15 +1,15 @@
 footer {
   margin-top: 40px;
 
-  @supports(padding: m#{a}x(0px)) {
-    padding-left: m#{a}x(20px, env(safe-area-inset-left));
-    padding-right: m#{a}x(20px, env(safe-area-inset-right));
-  }
-
   mat-toolbar-row {
     padding: 12px 20px;
     justify-content: center;
     align-content: space-between;
+
+    @supports(padding: m#{a}x(0px)) {
+      padding-left: m#{a}x(20px, env(safe-area-inset-left));
+      padding-right: m#{a}x(20px, env(safe-area-inset-right));
+    }
 
     p {
       margin-block-start: 0;

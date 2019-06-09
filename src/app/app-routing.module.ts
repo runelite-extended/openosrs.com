@@ -1,9 +1,7 @@
 import {NgModule} from '@angular/core';
-import {RouterModule, Routes} from '@angular/router';
+import {PreloadAllModules, RouterModule, Routes} from '@angular/router';
+
 import {AppHomeComponent} from './components/content/app-home/home.component';
-import {AppFeaturesComponent} from './components/content/app-features/features.component';
-import {AppUpdatesComponent} from './components/content/app-updates/updates.component';
-import {AppFullPostComponent} from './components/content/app-updates/app-full-post/full.post.component';
 
 const routes: Routes = [
   {
@@ -17,21 +15,17 @@ const routes: Routes = [
   },
   {
     path: 'updates',
-    component: AppUpdatesComponent
+    loadChildren: './components/content/app-updates/updates.module#UpdatesModule',
   },
   {
     path: 'features',
-    component: AppFeaturesComponent
-  },
-  {
-    path: 'update/:name',
-    component: AppFullPostComponent
+    loadChildren: './components/content/app-features/features.module#FeaturesModule',
   }
 ];
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
   ],
   exports: [
     RouterModule

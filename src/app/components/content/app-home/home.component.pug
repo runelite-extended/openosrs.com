@@ -69,9 +69,6 @@
                 img(mat-card-image, *ngIf="plugin.image == ''", src="https://material.angular.io/assets/img/examples/shiba2.jpg", [attr.alt]="plugin.name")
                 mat-card-content
                   p([innerText]="plugin.description")
-                mat-card-actions
-                  button(mat-raised-button, color="accent", (click)="openBottomSheet(plugin)") Share
-                  a(*ngIf="plugin.wiki", mat-raised-button, color="accent", target="_blank", rel="noopener noreferrer", [attr.href]="plugin.wiki") Wiki
 
     div(fxLayout="row wrap")
       mat-divider.divider(fxFlex="0 1 60%", fxFlex.lt-xl="0 1 80%", fxFlex.lt-lg="0 1 100%")
@@ -84,7 +81,7 @@
     div(fxLayout="row wrap")
       mat-nav-list(fxFlex="0 1 60%", fxFlex.lt-xl="0 1 80%", fxFlex.lt-lg="0 1 100%")
         ng-container(*ngFor="let update of (updates$ | async) | slice:0:3")
-          a(mat-list-item, [routerLink]="'/update/' + update.mdFile")
+          a(mat-list-item, [routerLink]="'/updates/' + update.mdFile")
             span(mat-line, [innerText]="update.title")
             span(mat-line, [innerText]="update.date | commitDate")
 

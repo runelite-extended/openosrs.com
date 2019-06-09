@@ -22,7 +22,7 @@
               mat-chip(*ngFor="let tag of update.tags", [innerText]="tag", color="accent", selected)
           mat-action-row.github-links
             a(mat-raised-button, color="primary", (click)="openBottomSheet(update)") Share
-            a(mat-raised-button, color="primary", [routerLink]="'/update/' + update.mdFile") Full page
+            a(mat-raised-button, color="primary", [routerLink]="'/updates/' + update.mdFile") Full page
             a(mat-raised-button, color="primary", target="_blank", rel="noopener noreferrer", [attr.href]="'https://github.com/runelite-extended/runelitepl.us/blob/master/src/assets/posts/' + update.mdFile + '.md'") Edit on github
           mat-action-row
             app-post([update]="update")
