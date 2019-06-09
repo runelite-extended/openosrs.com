@@ -1,23 +1,23 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {DomSanitizer} from '@angular/platform-browser';
 import {MAT_BOTTOM_SHEET_DATA, MatBottomSheetRef, MatIconRegistry} from '@angular/material';
-import {Plugins} from '../../../../interfaces/plugins.interface';
+import {Updates} from '../../../../interfaces/updates.interface';
 
 @Component({
   selector: 'app-share-plugin',
-  templateUrl: './share.plugin.component.pug'
+  templateUrl: './share.update.component.pug'
 })
-export class SharePluginComponent implements OnInit {
+export class ShareUpdateComponent implements OnInit {
 
-  public plugin: Plugins;
+  public update: Updates;
 
   constructor(
-    private matBottomSheetRef: MatBottomSheetRef<SharePluginComponent>,
-    @Inject(MAT_BOTTOM_SHEET_DATA) public data: {plugin: Plugins},
+    private matBottomSheetRef: MatBottomSheetRef<ShareUpdateComponent>,
+    @Inject(MAT_BOTTOM_SHEET_DATA) public data: {update: Updates},
     private domSanitizer: DomSanitizer,
     public matIconRegistry: MatIconRegistry
   ) {
-    this.plugin = data.plugin;
+    this.update = data.update;
   }
 
   ngOnInit(): void {
@@ -28,12 +28,8 @@ export class SharePluginComponent implements OnInit {
     this.matIconRegistry.addSvgIcon('close', this.domSanitizer.bypassSecurityTrustResourceUrl('/assets/fa/window-close-solid.svg'));
   }
 
-  public replaceAll(str: string, find: string, replace: string) {
-    return str.replace(new RegExp(find, 'g'), replace);
-  }
-
   public openLink(): void {
-    this.matBottomSheetRef.dismiss({ plugin: this.plugin, data: 'share' });
+    this.matBottomSheetRef.dismiss({ plugin: this.update, data: 'share' });
   }
 
   public copyLink(event: MouseEvent): void {
@@ -42,19 +38,19 @@ export class SharePluginComponent implements OnInit {
     selBox.style.left = '0';
     selBox.style.top = '0';
     selBox.style.opacity = '0';
-    selBox.value = `https://runelitepl.us/features/${this.replaceAll(this.plugin.name, ' ', '%20').toLowerCase()}`;
+    selBox.value = `https://runelitepl.us/update/${this.update.mdFile}`;
     document.body.appendChild(selBox);
     selBox.focus();
     selBox.select();
     document.execCommand('copy');
     document.body.removeChild(selBox);
     event.preventDefault();
-    this.matBottomSheetRef.dismiss({ plugin: this.plugin, data: 'copy' });
+    this.matBottomSheetRef.dismiss({ plugin: this.update, data: 'copy' });
   }
 
   public close(event: MouseEvent): void {
     event.preventDefault();
-    this.matBottomSheetRef.dismiss({ plugin: this.plugin, data: 'close' });
+    this.matBottomSheetRef.dismiss({ plugin: this.update, data: 'close' });
   }
 
 }

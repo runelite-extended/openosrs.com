@@ -9,6 +9,10 @@ import {catchError} from 'rxjs/operators';
 import {NotificationService} from '../../../services/notification.service';
 import {Updates} from '../../../interfaces/updates.interface';
 import {UpdatesJsonService} from '../../../services/updates.service';
+import {MatBottomSheet} from '@angular/material';
+import {Plugins} from '../../../interfaces/plugins.interface';
+import {SharePluginComponent} from '../app-features/app-share-plugin/share.plugin.component';
+import {ShareUpdateComponent} from './app-share-plugin/share.update.component';
 
 @Component({
   selector: 'app-features',
@@ -24,6 +28,7 @@ export class AppUpdatesComponent implements OnInit {
   constructor(
     private updatesJsonService: UpdatesJsonService,
     private githubService: GithubService,
+    private matBottomSheet: MatBottomSheet,
     private notificationService: NotificationService
   ) {}
 
@@ -36,5 +41,17 @@ export class AppUpdatesComponent implements OnInit {
         return of({}); // return empty array
       })
     );
+  }
+
+  public openBottomSheet(update: Updates): void {
+    const sheet = this.matBottomSheet.open(ShareUpdateComponent, {
+      data: { update },
+    });
+
+    sheet.afterDismissed().subscribe((data) => {
+      if (data.data === 'copy') {
+        this.notificationService.showError('Update link copied to the clipboard!');
+      }
+    });
   }
 }

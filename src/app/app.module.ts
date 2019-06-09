@@ -28,6 +28,7 @@ import {AppFullPostComponent} from './components/content/app-updates/app-full-po
 import {AppPostComponent} from './components/content/app-updates/app-post/post.component';
 import {AppFeaturesComponent} from './components/content/app-features/features.component';
 import {SharePluginComponent} from './components/content/app-features/app-share-plugin/share.plugin.component';
+import {ShareUpdateComponent} from './components/content/app-updates/app-share-plugin/share.update.component';
 
 import {HttpErrorInterceptor} from './interceptor/http-error.interceptor';
 
@@ -56,6 +57,7 @@ import {NotificationService} from './services/notification.service';
     AppPostComponent,
 
     SharePluginComponent,
+    ShareUpdateComponent,
 
     CommitMessagePipe,
     CommitDatePipe,
@@ -99,7 +101,8 @@ import {NotificationService} from './services/notification.service';
     }
   ],
   entryComponents: [
-    SharePluginComponent
+    SharePluginComponent,
+    ShareUpdateComponent
   ],
   bootstrap: [
     AppComponent

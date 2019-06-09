@@ -5,7 +5,8 @@ import {UpdatesJsonService} from '../../../../services/updates.service';
 
 @Component({
   selector: 'app-full-post',
-  templateUrl: './full.post.component.pug'
+  templateUrl: './full.post.component.pug',
+  styleUrls: ['./full.post.component.scss'],
 })
 export class AppFullPostComponent {
 

@@ -11,7 +11,7 @@
         mat-expansion-panel(*ngFor="let update of updates$ | async")
           mat-expansion-panel-header
             mat-panel-title([innerText]="update.title")
-            mat-panel-description(fxHide.lt-md="true", [innerText]="update.date")
+            mat-panel-description(fxHide.lt-md="true", [innerText]="update.date | commitDate")
           mat-action-row
             mat-chip-list(aria-label="Tags")
               mat-chip(*ngFor="let category of update.categories", [innerText]="category", color="primary", selected)
@@ -19,8 +19,9 @@
           mat-action-row
             app-post([update]="update")
           mat-action-row.github-links
-            a(mat-raised-button, color="primary") Share
-            a(mat-raised-button, color="primary") Edit on github
+            a(mat-raised-button, color="primary", (click)="openBottomSheet(update)") Share
+            a(mat-raised-button, color="primary", [routerLink]="'/update/' + update.mdFile") Full page
+            a(mat-raised-button, color="primary", target="_blank", rel="noopener noreferrer", [attr.href]="'https://github.com/runelite-extended/runelitepl.us/blob/master/src/assets/posts/' + update.mdFile + '.md'") Edit on github
 
 
     div(fxFlex="0 1 45%", fxFlex.lt-lg="0 1 70%", fxFlex.lt-md="0 1 80%", fxFlex.lt-sm="90%")
