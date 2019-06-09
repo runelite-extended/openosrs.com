@@ -12,6 +12,10 @@
           mat-expansion-panel-header
             mat-panel-title([innerText]="update.title")
             mat-panel-description(fxHide.lt-md="true", [innerText]="update.date | commitDate")
+          mat-action-row(fxHide="true", fxHide.lt-md="false")
+            h1 Update date:
+            p
+              span([innerText]="update.date | commitDate")
           mat-action-row
             mat-chip-list(aria-label="Tags")
               mat-chip(*ngFor="let category of update.categories", [innerText]="category", color="primary", selected)
@@ -32,6 +36,10 @@
           mat-expansion-panel-header
             mat-panel-title([innerText]="commit.commit.message | commitMessage")
             mat-panel-description(fxHide.lt-md="true", [innerText]="commit.commit.committer.date | commitDate")
+          mat-action-row(fxHide="true", fxHide.lt-md="false")
+            h1 Commit date:
+            p
+              span([innerText]="commit.commit.committer.date | commitDate")
           mat-action-row
             h1 Author:
             p
