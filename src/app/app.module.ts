@@ -1,12 +1,12 @@
 import {NgModule} from '@angular/core';
-import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClient, HttpClientModule} from '@angular/common/http';
 import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FormsModule} from '@angular/forms';
 import {
   MatBottomSheetModule,
   MatButtonModule,
-  MatCardModule,
+  MatCardModule, MatChipsModule,
   MatExpansionModule,
   MatIconModule,
   MatInputModule, MatListModule,
@@ -16,12 +16,16 @@ import {
 } from '@angular/material';
 import {FlexLayoutModule} from '@angular/flex-layout';
 
+import {MarkdownModule} from 'ngx-markdown';
+
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './components/layout/app-root/app.component';
 import {AppHeaderComponent} from './components/layout/app-header/header.component';
 import {AppFooterComponent} from './components/layout/app-footer/footer.component';
 import {AppHomeComponent} from './components/content/app-home/home.component';
 import {AppUpdatesComponent} from './components/content/app-updates/updates.component';
+import {AppFullPostComponent} from './components/content/app-updates/app-full-post/full.post.component';
+import {AppPostComponent} from './components/content/app-updates/app-post/post.component';
 import {AppFeaturesComponent} from './components/content/app-features/features.component';
 import {SharePluginComponent} from './components/content/app-features/app-share-plugin/share.plugin.component';
 
@@ -34,6 +38,7 @@ import {PluginFilterPipe} from './pipes/plugin.filter.pipe';
 import {PluginCategoryFilterPipe} from './pipes/plugin.category.filter.pipe';
 
 import {PluginsJsonService} from './services/plugins.json.service';
+import {UpdatesJsonService} from './services/updates.service';
 import {GithubService} from './services/github.service';
 import {SessionService} from './services/session.service';
 import {NotificationService} from './services/notification.service';
@@ -47,6 +52,9 @@ import {NotificationService} from './services/notification.service';
     AppHomeComponent,
     AppUpdatesComponent,
     AppFeaturesComponent,
+    AppFullPostComponent,
+    AppPostComponent,
+
     SharePluginComponent,
 
     CommitMessagePipe,
@@ -72,10 +80,14 @@ import {NotificationService} from './services/notification.service';
     MatSelectModule,
     MatSnackBarModule,
     MatListModule,
-    MatBottomSheetModule
+    MatBottomSheetModule,
+    MatChipsModule,
+
+    MarkdownModule.forRoot({ loader: HttpClient })
   ],
   providers: [
     PluginsJsonService,
+    UpdatesJsonService,
     GithubService,
     SessionService,
     NotificationService,

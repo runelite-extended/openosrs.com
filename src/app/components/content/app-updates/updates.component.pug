@@ -8,11 +8,20 @@
       h2 Client updates
 
       mat-accordion
-        mat-expansion-panel
+        mat-expansion-panel(*ngFor="let update of updates$ | async")
           mat-expansion-panel-header
-            mat-panel-title Title stub
-            mat-panel-description This is a summary of the content
-          p stub
+            mat-panel-title([innerText]="update.title")
+            mat-panel-description(fxHide.lt-md="true", [innerText]="update.date")
+          mat-action-row
+            mat-chip-list(aria-label="Tags")
+              mat-chip(*ngFor="let category of update.categories", [innerText]="category", color="primary", selected)
+              mat-chip(*ngFor="let tag of update.tags", [innerText]="tag", color="accent", selected)
+          mat-action-row
+            app-post([update]="update")
+          mat-action-row.github-links
+            a(mat-raised-button, color="primary") Share
+            a(mat-raised-button, color="primary") Edit on github
+
 
     div(fxFlex="0 1 45%", fxFlex.lt-lg="0 1 70%", fxFlex.lt-md="0 1 80%", fxFlex.lt-sm="90%")
       h2 Latest Github commits
