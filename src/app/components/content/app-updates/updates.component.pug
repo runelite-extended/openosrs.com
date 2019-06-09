@@ -19,7 +19,7 @@
           mat-action-row
             mat-chip-list(aria-label="Tags")
               mat-chip(*ngFor="let category of update.categories", [innerText]="category", color="primary", selected)
-              mat-chip(*ngFor="let tag of update.tags", [innerText]="tag", color="accent", selected)
+              mat-chip(*ngFor="let tag of update.tags", [innerText]="tag", selected)
           mat-action-row.github-links
             a(mat-raised-button, color="primary", (click)="openBottomSheet(update)") Share
             a(mat-raised-button, color="primary", [routerLink]="'/updates/' + update.mdFile") Full page

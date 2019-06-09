@@ -37,8 +37,8 @@
                   mat-card-content
                     p([innerText]="plugin.description")
                   mat-card-actions
-                    button(mat-raised-button, color="accent", (click)="openBottomSheet(plugin)") Share
-                    a(*ngIf="plugin.wiki", mat-raised-button, color="accent", target="_blank", rel="noopener noreferrer", [attr.href]="plugin.wiki") Wiki
+                    button(mat-raised-button, (click)="openBottomSheet(plugin)") Share
+                    a(*ngIf="plugin.wiki", mat-raised-button, target="_blank", rel="noopener noreferrer", [attr.href]="plugin.wiki") Wiki
 
         ng-template(#noPluginsMatch)
           p(fxLayout="row wrap") No plugins found for this search query.
