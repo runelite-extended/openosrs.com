@@ -10,8 +10,6 @@ import {NotificationService} from '../../../services/notification.service';
 import {Updates} from '../../../interfaces/updates.interface';
 import {UpdatesJsonService} from '../../../services/updates.service';
 import {MatBottomSheet} from '@angular/material';
-import {Plugins} from '../../../interfaces/plugins.interface';
-import {SharePluginComponent} from '../app-features/app-share-plugin/share.plugin.component';
 import {ShareUpdateComponent} from './app-share-plugin/share.update.component';
 
 @Component({
