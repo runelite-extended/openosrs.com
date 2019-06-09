@@ -1,7 +1,29 @@
-mat-toolbar-row {
-  padding: 0 20px;
+footer {
+  margin-top: 40px;
 
-  span {
-    margin-right: 10px;
+  @supports(padding: m#{a}x(0px)) {
+    padding-left: m#{a}x(20px, env(safe-area-inset-left));
+    padding-right: m#{a}x(20px, env(safe-area-inset-right));
+  }
+
+  mat-toolbar-row {
+    padding: 12px 20px;
+    justify-content: center;
+    align-content: space-between;
+
+    p {
+      margin-block-start: 0;
+      margin-block-end: 0;
+      font-weight: 300;
+      font-size: 12px;
+    }
+
+    a:link,
+    a:visited,
+    a:hover,
+    a:active {
+      color: white;
+      text-decoration: none;
+    }
   }
 }
