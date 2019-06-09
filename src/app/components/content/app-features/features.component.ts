@@ -30,7 +30,8 @@ export class AppFeaturesComponent implements OnInit {
   constructor(
     private pluginsJsonService: PluginsJsonService,
     private notificationService: NotificationService,
-    private matBottomSheet: MatBottomSheet) { }
+    private matBottomSheet: MatBottomSheet
+  ) {}
 
   ngOnInit() {
     this.plugins$ = this.pluginsJsonService.getJSON();

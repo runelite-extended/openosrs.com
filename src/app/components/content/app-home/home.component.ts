@@ -13,9 +13,11 @@ export class AppHomeComponent implements OnInit {
 
   public webp: boolean;
   public session$: Observable<string>;
-  public fatalError: boolean = false;
+  public fatalError = false;
 
-  constructor(private sessionService: SessionService) { }
+  constructor(
+    private sessionService: SessionService
+  ) { }
 
   ngOnInit(): void {
     this.webp = document.createElement('canvas').toDataURL('image/webp').indexOf('data:image/webp') === 0;

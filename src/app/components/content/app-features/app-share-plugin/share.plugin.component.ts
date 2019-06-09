@@ -1,4 +1,4 @@
-import {Component, Inject} from '@angular/core';
+import {Component, Inject, OnInit} from '@angular/core';
 import {MAT_BOTTOM_SHEET_DATA, MatBottomSheetRef, MatIconRegistry} from '@angular/material';
 import {Plugins} from '../../../../interfaces/plugins.interface';
 import {DomSanitizer} from '@angular/platform-browser';
@@ -7,7 +7,7 @@ import {DomSanitizer} from '@angular/platform-browser';
   selector: 'app-share-plugin',
   templateUrl: './share.plugin.component.pug'
 })
-export class SharePluginComponent {
+export class SharePluginComponent implements OnInit {
 
   public plugin: Plugins;
 
@@ -15,15 +15,17 @@ export class SharePluginComponent {
     private matBottomSheetRef: MatBottomSheetRef<SharePluginComponent>,
     @Inject(MAT_BOTTOM_SHEET_DATA) public data: {plugin: Plugins},
     private domSanitizer: DomSanitizer,
-    public matIconRegistry: MatIconRegistry) {
+    public matIconRegistry: MatIconRegistry
+  ) {
     this.plugin = data.plugin;
+  }
 
-
-    matIconRegistry.addSvgIcon('facebook', domSanitizer.bypassSecurityTrustResourceUrl('/assets/fa/facebook-square-brands.svg'));
-    matIconRegistry.addSvgIcon('twitter', domSanitizer.bypassSecurityTrustResourceUrl('/assets/fa/twitter-brands.svg'));
-    matIconRegistry.addSvgIcon('email', domSanitizer.bypassSecurityTrustResourceUrl('/assets/fa/at-solid.svg'));
-    matIconRegistry.addSvgIcon('copy', domSanitizer.bypassSecurityTrustResourceUrl('/assets/fa/copy-solid.svg'));
-    matIconRegistry.addSvgIcon('close', domSanitizer.bypassSecurityTrustResourceUrl('/assets/fa/window-close-solid.svg'));
+  ngOnInit(): void {
+    this.matIconRegistry.addSvgIcon('facebook', this.domSanitizer.bypassSecurityTrustResourceUrl('/assets/fa/facebook-square-brands.svg'));
+    this.matIconRegistry.addSvgIcon('twitter', this.domSanitizer.bypassSecurityTrustResourceUrl('/assets/fa/twitter-brands.svg'));
+    this.matIconRegistry.addSvgIcon('email', this.domSanitizer.bypassSecurityTrustResourceUrl('/assets/fa/at-solid.svg'));
+    this.matIconRegistry.addSvgIcon('copy', this.domSanitizer.bypassSecurityTrustResourceUrl('/assets/fa/copy-solid.svg'));
+    this.matIconRegistry.addSvgIcon('close', this.domSanitizer.bypassSecurityTrustResourceUrl('/assets/fa/window-close-solid.svg'));
   }
 
   public replaceAll(str: string, find: string, replace: string) {

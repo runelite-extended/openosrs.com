@@ -18,8 +18,10 @@ export class AppUpdatesComponent implements OnInit {
   public commits$: Observable<Github[]> | {};
   public fatalError: boolean = false;
 
-  constructor(private githubService: GithubService,
-              private notificationService: NotificationService) { }
+  constructor(
+    private githubService: GithubService,
+    private notificationService: NotificationService
+  ) {}
 
   ngOnInit() {
     this.commits$ = this.githubService.getCommits().pipe(

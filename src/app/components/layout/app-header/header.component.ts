@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {DomSanitizer} from '@angular/platform-browser';
 import {MatIconRegistry} from '@angular/material';
 
@@ -7,13 +7,16 @@ import {MatIconRegistry} from '@angular/material';
   templateUrl: './header.component.pug',
   styleUrls: ['./header.component.scss']
 })
-export class AppHeaderComponent {
+export class AppHeaderComponent implements OnInit {
 
   public constructor(
     private domSanitizer: DomSanitizer,
-    public matIconRegistry: MatIconRegistry) {
-    matIconRegistry.addSvgIcon('twitter', domSanitizer.bypassSecurityTrustResourceUrl('/assets/fa/twitter-brands.svg'));
-    matIconRegistry.addSvgIcon('discord', domSanitizer.bypassSecurityTrustResourceUrl('/assets/fa/discord-brands.svg'));
-    matIconRegistry.addSvgIcon('github', domSanitizer.bypassSecurityTrustResourceUrl('/assets/fa/github-brands.svg'));
+    public matIconRegistry: MatIconRegistry
+  ) {}
+
+  ngOnInit(): void {
+    this.matIconRegistry.addSvgIcon('twitter', this.domSanitizer.bypassSecurityTrustResourceUrl('/assets/fa/twitter-brands.svg'));
+    this.matIconRegistry.addSvgIcon('discord', this.domSanitizer.bypassSecurityTrustResourceUrl('/assets/fa/discord-brands.svg'));
+    this.matIconRegistry.addSvgIcon('github', this.domSanitizer.bypassSecurityTrustResourceUrl('/assets/fa/github-brands.svg'));
   }
 }
