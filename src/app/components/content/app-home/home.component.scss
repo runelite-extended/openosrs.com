@@ -23,13 +23,18 @@
     text-align: center;
     color: white;
 
+    @supports(padding: m#{a}x(0px)) {
+      padding-left: m#{a}x(20px, env(safe-area-inset-left));
+      padding-right: m#{a}x(20px, env(safe-area-inset-right));
+    }
+
     h1 {
       align-self: center;
       font-size: 50px;
     }
 
-    span {
-      margin-top: 15px;
+    span > p {
+      margin-top: 10px;
     }
 
     a {

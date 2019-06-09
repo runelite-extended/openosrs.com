@@ -1,7 +1,6 @@
 .wrapper {
-  margin-top: 64px;
-
   .content-header {
+    margin-top: 64px;
     height: 74px;
     display: flex;
     justify-content: center;
@@ -10,6 +9,11 @@
     span {
       font-weight: normal;
       padding: 0 20px;
+
+      @supports(padding: m#{a}x(0px)) {
+        padding-left: m#{a}x(20px, env(safe-area-inset-left));
+        padding-right: m#{a}x(20px, env(safe-area-inset-right));
+      }
     }
   }
 
