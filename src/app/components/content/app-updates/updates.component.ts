@@ -16,7 +16,7 @@ import {catchError} from 'rxjs/operators';
 
 @Component({
   selector: 'app-features',
-  templateUrl: './updates.component.pug',
+  templateUrl: './updates.component.html',
   styleUrls: ['./updates.component.scss']
 })
 export class AppUpdatesComponent implements OnInit {

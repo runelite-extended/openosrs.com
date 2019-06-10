@@ -1,0 +1,51 @@
+<div class="wrapper">
+  <div class="content-header mat-toolbar mat-primary"><span>Features</span></div>
+  <div class="content">
+    <div fxLayout="row wrap" fxLayoutAlign="center">
+      <mat-form-field class="filter-field" fxFlex="0 1 42.5%" fxFlex.lt-xl="0 1 41%" fxFlex.lt-lg="0 1 45%" fxFlex.lt-md="0 1 45%" fxFlex.lt-sm="42.5%">
+        <input matInput="matInput" type="text" placeholder="Filter" [(ngModel)]="filter" />
+        <button mat-button="mat-button" *ngIf="filter" matSuffix="matSuffix" mat-icon-button="mat-icon-button" aria-label="Clear" (click)="filter=''">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+      <mat-form-field fxFlex="0 1 42.5%" fxFlex.lt-xl="0 1 41%" fxFlex.lt-lg="0 1 45%" fxFlex.lt-md="0 1 45%" fxFlex.lt-sm="42.5%">
+        <mat-label>Category</mat-label>
+        <mat-select [(value)]="selectedCategory">
+          <mat-option *ngFor="let category of categories" [value]="category" [innerText]="category"></mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <ng-container *ngIf="(plugins$ | async) | pluginFilter:filter | pluginCategoryFilter:selectedCategory; let plugins">
+      <div fxLayoutAlign="center">
+        <ng-container *ngIf="plugins.length !== 0; else noPluginsMatch">
+          <div fxFlex="0 1 85%" fxFlex.lt-xl="0 1 82%" fxFlex.lt-lg="0 1 90%" fxFlex.lt-md="0 1 90%" fxFlex.lt-sm="85%">
+            <div fxLayout="row wrap" fxLayoutAlign="start">
+              <div class="card-container" *ngFor="let plugin of plugins" fxFlex="0 1 20%" fxFlex.lt-xl="0 1 25%" fxFlex.lt-lg="0 1 33.33%" fxFlex.lt-md="0 1 50%" fxFlex.lt-sm="100%">
+                <mat-card>
+                  <mat-card-header>
+                    <mat-card-title [innerText]="plugin.name"></mat-card-title>
+                    <mat-card-subtitle [innerText]="plugin.categories | pluginCategories"></mat-card-subtitle>
+                  </mat-card-header>
+                  <picture *ngIf="plugin.image != ''">
+                    <source type="image/webp" [attr.srcSet]="'/assets/plugins/images/' + plugin.image + '.webp'" />
+                    <source type="image/png" [attr.srcSet]="'/assets/plugins/images/' + plugin.image + '.png'" />
+                    <img mat-card-image="mat-card-image" [attr.src]="'/assets/plugins/images/' + plugin.image + '.png'" [attr.alt]="plugin.name" />
+                  </picture>
+                  <img mat-card-image="mat-card-image" *ngIf="plugin.image == ''" src="https://material.angular.io/assets/img/examples/shiba2.jpg" [attr.alt]="plugin.name" />
+                  <mat-card-content>
+                    <p [innerText]="plugin.description"></p>
+                  </mat-card-content>
+                  <mat-card-actions>
+                    <button mat-raised-button="mat-raised-button" (click)="openBottomSheet(plugin)">Share</button><a *ngIf="plugin.wiki" mat-raised-button="mat-raised-button" target="_blank" rel="noopener noreferrer" [attr.href]="plugin.wiki">Wiki</a></mat-card-actions>
+                </mat-card>
+              </div>
+            </div>
+          </div>
+        </ng-container>
+        <ng-template #noPluginsMatch>
+          <p fxLayout="row wrap">No plugins found for this search query.</p>
+        </ng-template>
+      </div>
+    </ng-container>
+  </div>
+</div>

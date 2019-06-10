@@ -4,7 +4,7 @@ import {MatIconRegistry} from '@angular/material';
 
 @Component({
   selector: 'app-header',
-  templateUrl: './header.component.pug',
+  templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
 export class AppHeaderComponent implements OnInit {

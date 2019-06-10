@@ -6,7 +6,7 @@ import {Updates} from '../../../../interfaces/updates.interface';
 
 @Component({
   selector: 'app-share-plugin',
-  templateUrl: './share.update.component.pug'
+  templateUrl: './share.update.component.html'
 })
 export class ShareUpdateComponent implements OnInit {
 

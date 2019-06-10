@@ -3,7 +3,7 @@ import {Updates} from '../../../../interfaces/updates.interface';
 
 @Component({
   selector: 'app-post',
-  templateUrl: './post.component.pug',
+  templateUrl: './post.component.html',
   styleUrls: ['./post.component.scss'],
   encapsulation: ViewEncapsulation.None
 })

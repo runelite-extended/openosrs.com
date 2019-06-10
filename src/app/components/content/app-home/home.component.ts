@@ -13,7 +13,7 @@ import {catchError} from 'rxjs/operators';
 
 @Component({
   selector: 'app-home',
-  templateUrl: './home.component.pug',
+  templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
 export class AppHomeComponent implements OnInit {

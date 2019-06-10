@@ -12,7 +12,7 @@ import {Updates} from '../../../../interfaces/updates.interface';
 
 @Component({
   selector: 'app-full-post',
-  templateUrl: './full.post.component.pug',
+  templateUrl: './full.post.component.html',
   styleUrls: ['./full.post.component.scss'],
 })
 export class AppFullPostComponent {

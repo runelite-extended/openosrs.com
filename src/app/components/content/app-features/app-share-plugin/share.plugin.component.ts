@@ -6,7 +6,7 @@ import {Plugins} from '../../../../interfaces/plugins.interface';
 
 @Component({
   selector: 'app-share-plugin',
-  templateUrl: './share.plugin.component.pug'
+  templateUrl: './share.plugin.component.html'
 })
 export class SharePluginComponent implements OnInit {
 
