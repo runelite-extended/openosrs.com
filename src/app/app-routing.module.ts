@@ -15,15 +15,15 @@ const routes: Routes = [
   },
   {
     path: 'updates',
-    loadChildren: './components/content/app-updates/updates.module#UpdatesModule',
+    loadChildren: () => import('./components/content/app-updates/updates.module').then(m => m.UpdatesModule),
   },
   {
     path: 'features',
-    loadChildren: './components/content/app-features/features.module#FeaturesModule',
+    loadChildren: () => import('./components/content/app-features/features.module').then(m => m.FeaturesModule),
   },
   {
     path: '**',
-    loadChildren: './components/content/app-not-found/not.found.module#NotFoundModule',
+    loadChildren: () => import('./components/content/app-not-found/not.found.module').then(m => m.NotFoundModule),
   }
 ];
 
