@@ -18,5 +18,6 @@ export class AppHeaderComponent implements OnInit {
     this.matIconRegistry.addSvgIcon('twitter', this.domSanitizer.bypassSecurityTrustResourceUrl('/assets/fa/twitter-brands.svg'));
     this.matIconRegistry.addSvgIcon('discord', this.domSanitizer.bypassSecurityTrustResourceUrl('/assets/fa/discord-brands.svg'));
     this.matIconRegistry.addSvgIcon('github', this.domSanitizer.bypassSecurityTrustResourceUrl('/assets/fa/github-brands.svg'));
+    this.matIconRegistry.addSvgIcon('patreon', this.domSanitizer.bypassSecurityTrustResourceUrl('/assets/fa/heart-solid.svg'));
   }
 }
