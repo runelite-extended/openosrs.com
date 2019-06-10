@@ -24,6 +24,7 @@
     "@angular/pwa": "0.12",
     "@angular/router": "~8.0.0",
     "@angular/service-worker": "~8.0.0",
+    "acorn": "^6.1.1",
     "classlist.js": "^1.1.20150312",
     "core-js": "^2.5.4",
     "hammerjs": "^2.0.8",
@@ -33,8 +34,7 @@
     "rxjs": "~6.5.2",
     "tslib": "^1.9.0",
     "web-animations-js": "github:angular/web-animations-js#release_pr208",
-    "zone.js": "~0.9.1",
-    "acorn": "^6.1.1"
+    "zone.js": "~0.9.1"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.800.0",
@@ -46,6 +46,7 @@
     "@types/node": "~8.9.4",
     "apply-loader": "^2.0.0",
     "codelyzer": "^5.0.1",
+    "fibers": "^4.0.1",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~4.0.0",

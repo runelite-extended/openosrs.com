@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
 import {Meta, Title} from '@angular/platform-browser';
 import {MatBottomSheet} from '@angular/material';
 
@@ -17,7 +17,8 @@ import {catchError} from 'rxjs/operators';
 @Component({
   selector: 'app-features',
   templateUrl: './updates.component.html',
-  styleUrls: ['./updates.component.scss']
+  styleUrls: ['./updates.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppUpdatesComponent implements OnInit {
 

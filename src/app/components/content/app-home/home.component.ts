@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
 import {Meta, Title} from '@angular/platform-browser';
 
 import {SessionService} from '../../../services/session.service';
@@ -14,7 +14,8 @@ import {catchError} from 'rxjs/operators';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppHomeComponent implements OnInit {
 

@@ -1,4 +1,4 @@
-import {Component, Inject, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, Inject, OnInit} from '@angular/core';
 import {DomSanitizer} from '@angular/platform-browser';
 import {MAT_BOTTOM_SHEET_DATA, MatBottomSheetRef, MatIconRegistry} from '@angular/material';
 
@@ -6,7 +6,8 @@ import {Plugins} from '../../../../interfaces/plugins.interface';
 
 @Component({
   selector: 'app-share-plugin',
-  templateUrl: './share.plugin.component.html'
+  templateUrl: './share.plugin.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SharePluginComponent implements OnInit {
 
