@@ -9,6 +9,6 @@ export class NotificationService {
   constructor(public snackBar: MatSnackBar) { }
 
   showError(message: string): void {
-    this.snackBar.open(message, 'X', {panelClass: ['error']});
+    this.snackBar.open(message, 'X', {panelClass: ['error'], duration: 2500});
   }
 }
