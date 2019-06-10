@@ -31,7 +31,7 @@
                     <source type="image/png" [attr.srcSet]="'/assets/plugins/images/' + plugin.image + '.png'" />
                     <img mat-card-image="mat-card-image" [attr.src]="'/assets/plugins/images/' + plugin.image + '.png'" [attr.alt]="plugin.name" />
                   </picture>
-                  <img mat-card-image="mat-card-image" *ngIf="plugin.image == ''" src="https://material.angular.io/assets/img/examples/shiba2.jpg" [attr.alt]="plugin.name" />
+                  <img mat-card-image="mat-card-image" *ngIf="plugin.image == ''" src="/assets/plugins/images/placeholder.png" [attr.alt]="plugin.name" />
                   <mat-card-content>
                     <p [innerText]="plugin.description"></p>
                   </mat-card-content>
