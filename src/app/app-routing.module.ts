@@ -20,6 +20,10 @@ const routes: Routes = [
   {
     path: 'features',
     loadChildren: './components/content/app-features/features.module#FeaturesModule',
+  },
+  {
+    path: '**',
+    loadChildren: './components/content/app-not-found/not.found.module#NotFoundModule',
   }
 ];
 

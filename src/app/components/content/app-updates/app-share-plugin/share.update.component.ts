@@ -1,6 +1,7 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {DomSanitizer} from '@angular/platform-browser';
 import {MAT_BOTTOM_SHEET_DATA, MatBottomSheetRef, MatIconRegistry} from '@angular/material';
+
 import {Updates} from '../../../../interfaces/updates.interface';
 
 @Component({

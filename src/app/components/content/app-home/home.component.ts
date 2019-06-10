@@ -1,15 +1,15 @@
 import {Component, OnInit} from '@angular/core';
+import {Meta, Title} from '@angular/platform-browser';
 
 import {SessionService} from '../../../services/session.service';
 import {UpdatesJsonService} from '../../../services/updates.service';
+import {PluginsJsonService} from '../../../services/plugins.json.service';
 
 import {Updates} from '../../../interfaces/updates.interface';
+import {Plugins} from '../../../interfaces/plugins.interface';
 
 import {Observable, of} from 'rxjs';
 import {catchError} from 'rxjs/operators';
-import {Plugins} from '../../../interfaces/plugins.interface';
-import {PluginsJsonService} from '../../../services/plugins.json.service';
-import {Meta, Title} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-home',

@@ -1,17 +1,18 @@
 import {Component, OnInit} from '@angular/core';
+import {Meta, Title} from '@angular/platform-browser';
+import {MatBottomSheet} from '@angular/material';
 
-import {Observable, of} from 'rxjs';
+import {ShareUpdateComponent} from './app-share-plugin/share.update.component';
 
 import {GithubService} from '../../../services/github.service';
+import {UpdatesJsonService} from '../../../services/updates.service';
+import {NotificationService} from '../../../services/notification.service';
 
 import {Github} from '../../../interfaces/github.interface';
-import {catchError} from 'rxjs/operators';
-import {NotificationService} from '../../../services/notification.service';
 import {Updates} from '../../../interfaces/updates.interface';
-import {UpdatesJsonService} from '../../../services/updates.service';
-import {MatBottomSheet} from '@angular/material';
-import {ShareUpdateComponent} from './app-share-plugin/share.update.component';
-import {Meta, Title} from '@angular/platform-browser';
+
+import {Observable, of} from 'rxjs';
+import {catchError} from 'rxjs/operators';
 
 @Component({
   selector: 'app-features',

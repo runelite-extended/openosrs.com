@@ -1,12 +1,14 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {Updates} from '../../../../interfaces/updates.interface';
-import {ActivatedRoute} from '@angular/router';
-import {UpdatesJsonService} from '../../../../services/updates.service';
-import {ShareUpdateComponent} from '../app-share-plugin/share.update.component';
-import {GithubService} from '../../../../services/github.service';
-import {MatBottomSheet} from '@angular/material';
-import {NotificationService} from '../../../../services/notification.service';
+import {Component} from '@angular/core';
 import {Meta, Title} from '@angular/platform-browser';
+import {ActivatedRoute} from '@angular/router';
+import {MatBottomSheet} from '@angular/material';
+
+import {ShareUpdateComponent} from '../app-share-plugin/share.update.component';
+
+import {UpdatesJsonService} from '../../../../services/updates.service';
+import {NotificationService} from '../../../../services/notification.service';
+
+import {Updates} from '../../../../interfaces/updates.interface';
 
 @Component({
   selector: 'app-full-post',
