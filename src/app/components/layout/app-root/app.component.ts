@@ -1,9 +1,19 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {UpdateService} from '../../../services/update.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.pug',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+
+  constructor(
+    private updateService: UpdateService
+  ) {}
+
+  ngOnInit(): void {
+    this.updateService.checkForUpdates();
+  }
+
 }
