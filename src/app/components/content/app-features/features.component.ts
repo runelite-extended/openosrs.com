@@ -50,7 +50,7 @@ export class AppFeaturesComponent implements OnInit {
     });
 
     sheet.afterDismissed().subscribe((data) => {
-      if (data.data === 'copy') {
+      if (typeof data !== 'undefined' && data.data === 'copy') {
         this.notificationService.showError(`${data.plugin.name} plugin link copied to the clipboard!`);
       }
     });

@@ -56,7 +56,7 @@ export class AppUpdatesComponent implements OnInit {
     });
 
     sheet.afterDismissed().subscribe((data) => {
-      if (data.data === 'copy') {
+      if (typeof data !== 'undefined' && data.data === 'copy') {
         this.notificationService.showError('Update link copied to the clipboard!');
       }
     });
