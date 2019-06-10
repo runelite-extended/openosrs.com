@@ -1,8 +1,8 @@
 {
-  "name": "runelite plus",
-  "short_name": "runelite plus",
+  "name": "Runelite Plus",
+  "short_name": "RL+",
   "theme_color": "#001e2a",
-  "background_color": "#fafafa",
+  "background_color": "#ffffff",
   "display": "standalone",
   "scope": "/",
   "start_url": "/",
