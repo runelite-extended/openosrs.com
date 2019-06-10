@@ -6,6 +6,7 @@ import {ShareUpdateComponent} from '../app-share-plugin/share.update.component';
 import {GithubService} from '../../../../services/github.service';
 import {MatBottomSheet} from '@angular/material';
 import {NotificationService} from '../../../../services/notification.service';
+import {Meta, Title} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-full-post',
@@ -20,13 +21,19 @@ export class AppFullPostComponent {
     private activatedRoute: ActivatedRoute,
     private updatesJsonService: UpdatesJsonService,
     private matBottomSheet: MatBottomSheet,
-    private notificationService: NotificationService
+    private notificationService: NotificationService,
+    private titleService: Title,
+    private metaTagService: Meta
   ) {
     this.activatedRoute.params.subscribe( params => {
       this.updatesJsonService.getJSON().subscribe((data: Updates[]) => {
         for (const update of data) {
           if (update.mdFile === params.name) {
             this.update = update;
+
+            this.titleService.setTitle(`Runelite Plus: ${update.title}`);
+            this.metaTagService.updateTag({ name: 'description', content: update.title });
+            this.metaTagService.updateTag({ name: 'keywords', content: `runelite, runeliteplus, runelite plus, runelite pvp plugins, runelite pvp, runelite plugins, ${update.categories.join(', ')}, ${update.tags.join(', ')}` });
           }
         }
       });

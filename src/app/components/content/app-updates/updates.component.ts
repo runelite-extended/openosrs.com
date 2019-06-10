@@ -11,6 +11,7 @@ import {Updates} from '../../../interfaces/updates.interface';
 import {UpdatesJsonService} from '../../../services/updates.service';
 import {MatBottomSheet} from '@angular/material';
 import {ShareUpdateComponent} from './app-share-plugin/share.update.component';
+import {Meta, Title} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-features',
@@ -27,10 +28,16 @@ export class AppUpdatesComponent implements OnInit {
     private updatesJsonService: UpdatesJsonService,
     private githubService: GithubService,
     private matBottomSheet: MatBottomSheet,
-    private notificationService: NotificationService
+    private notificationService: NotificationService,
+    private titleService: Title,
+    private metaTagService: Meta
   ) {}
 
   ngOnInit() {
+    this.titleService.setTitle('Runelite Plus: Updates');
+    this.metaTagService.updateTag({ name: 'description', content: 'RuneLitePlus provides more functionality and less restrictions while staying open source. We have lots of RuneLite Plus plugins!' });
+    this.metaTagService.updateTag({ name: 'keywords', content: 'runelite, runeliteplus, runelite plus, runelite pvp plugins, runelite pvp, runelite plugins, updates, github updates' });
+
     this.updates$ = this.updatesJsonService.getJSON();
     this.commits$ = this.githubService.getCommits().pipe(
       catchError(() => {
