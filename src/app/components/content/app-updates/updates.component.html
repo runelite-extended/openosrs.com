@@ -1,8 +1,14 @@
 <div class="wrapper">
-  <div class="content-header mat-toolbar mat-primary"><span>Updates</span></div>
+  <div class="content-header mat-toolbar mat-primary">
+    <span>
+      Updates
+    </span>
+  </div>
   <div class="content" fxLayout="row wrap" fxLayoutAlign="center">
     <div fxFlex="0 1 45%" fxFlex.lt-lg="0 1 70%" fxFlex.lt-md="0 1 80%" fxFlex.lt-sm="90%">
-      <h2>Client updates</h2>
+      <h2>
+        Client updates
+      </h2>
       <mat-accordion>
         <mat-expansion-panel *ngFor="let update of updates$ | async">
           <mat-expansion-panel-header>
@@ -10,8 +16,12 @@
             <mat-panel-description fxHide.lt-md="true" [innerText]="update.date | commitDate"></mat-panel-description>
           </mat-expansion-panel-header>
           <mat-action-row fxHide="true" fxHide.lt-md="false">
-            <h1>Update date:</h1>
-            <p><span [innerText]="update.date | commitDate"></span></p>
+            <h1>
+              Update date:
+            </h1>
+            <p>
+              <span [innerText]="update.date | commitDate"></span>
+            </p>
           </mat-action-row>
           <mat-action-row>
             <mat-chip-list aria-label="Tags">
@@ -19,7 +29,17 @@
               <mat-chip *ngFor="let tag of update.tags" [innerText]="tag" selected="selected"></mat-chip>
             </mat-chip-list>
           </mat-action-row>
-          <mat-action-row class="github-links"><a mat-raised-button="mat-raised-button" color="primary" (click)="openBottomSheet(update)">Share</a><a mat-raised-button="mat-raised-button" color="primary" [routerLink]="'/updates/' + update.mdFile">Full page</a><a mat-raised-button="mat-raised-button" color="primary" target="_blank" rel="noopener noreferrer" [attr.href]="'https://github.com/runelite-extended/runelitepl.us/blob/master/src/assets/posts/' + update.mdFile + '.md'">Edit on github</a></mat-action-row>
+          <mat-action-row class="github-links">
+            <a mat-raised-button="mat-raised-button" color="primary" (click)="openBottomSheet(update)">
+              Share
+            </a>
+            <a mat-raised-button="mat-raised-button" color="primary" [routerLink]="'/updates/' + update.mdFile">
+              Full page
+            </a>
+            <a mat-raised-button="mat-raised-button" color="primary" target="_blank" rel="noopener noreferrer" [attr.href]="'https://github.com/runelite-extended/runelitepl.us/blob/master/src/assets/posts/' + update.mdFile + '.md'">
+              Edit on github
+            </a>
+          </mat-action-row>
           <mat-action-row>
             <app-post [update]="update"></app-post>
           </mat-action-row>
@@ -27,36 +47,63 @@
       </mat-accordion>
     </div>
     <div fxFlex="0 1 45%" fxFlex.lt-lg="0 1 70%" fxFlex.lt-md="0 1 80%" fxFlex.lt-sm="90%">
-      <h2>Latest Github commits</h2>
-      <mat-accordion *ngIf="!fatalError &amp;&amp; (commits$ | async) as commits; else noCommits">
+      <h2>
+        Latest Github commits
+      </h2>
+      <mat-accordion *ngIf="!fatalError && (commits$ | async) as commits; else noCommits">
         <mat-expansion-panel *ngFor="let commit of commits">
           <mat-expansion-panel-header>
             <mat-panel-title [innerText]="commit.commit.message | commitMessage"></mat-panel-title>
             <mat-panel-description fxHide.lt-md="true" [innerText]="commit.commit.committer.date | commitDate"></mat-panel-description>
           </mat-expansion-panel-header>
           <mat-action-row fxHide="true" fxHide.lt-md="false">
-            <h1>Commit date:</h1>
+            <h1>
+              Commit date:
+            </h1>
             <p><span [innerText]="commit.commit.committer.date | commitDate"></span></p>
           </mat-action-row>
           <mat-action-row>
-            <h1>Author:</h1>
-            <p><span [innerText]="commit.commit.author.name"></span><span *ngIf="commit.commit.author.name !== commit.author.login" [innerText]="' (Github name: ' + commit.author.login + ')'"></span></p>
+            <h1>
+              Author:
+            </h1>
+            <p>
+              <span [innerText]="commit.commit.author.name"></span>
+              <span *ngIf="commit.commit.author.name !== commit.author.login" [innerText]="' (Github name: ' + commit.author.login + ')'"></span>
+            </p>
           </mat-action-row>
-          <mat-action-row *ngIf="commit.commit.author.name !== commit.commit.committer.name &amp;&amp; commit.commit.committer.name !== 'GitHub'">
-            <h1>Commiter:</h1>
+          <mat-action-row *ngIf="commit.commit.author.name !== commit.commit.committer.name && commit.commit.committer.name !== 'GitHub'">
+            <h1>
+              Commiter:
+            </h1>
             <span [innerText]="commit.commit.committer.name"></span>
-            <p><span [innerText]="commit.commit.committer.name"></span><span *ngIf="commit.commit.committer.name !== commit.committer.login" [innerText]="'(Github name: ' + commit.committer.login + ')'"></span></p>
+            <p>
+              <span [innerText]="commit.commit.committer.name"></span>
+              <span *ngIf="commit.commit.committer.name !== commit.committer.login" [innerText]="'(Github name: ' + commit.committer.login + ')'"></span>
+            </p>
           </mat-action-row>
           <mat-action-row>
-            <h1>Full commit message:</h1>
+            <h1>
+              Full commit message:
+            </h1>
             <p [innerText]="commit.commit.message"></p>
           </mat-action-row>
-          <mat-action-row class="github-links"><a mat-raised-button="mat-raised-button" color="primary" target="_blank" rel="noopener noreferrer" [attr.href]="commit.html_url">Github commit</a><a mat-raised-button="mat-raised-button" color="primary" target="_blank" rel="noopener noreferrer" [attr.href]="commit.author.html_url">Github author</a><a *ngIf="commit.commit.author.name !== commit.commit.committer.name &amp;&amp; commit.commit.committer.name !== 'GitHub'" mat-raised-button="mat-raised-button" color="primary" target="_blank" rel="noopener noreferrer" [attr.href]="commit.committer.html_url">Github comitter</a>
+          <mat-action-row class="github-links">
+            <a mat-raised-button="mat-raised-button" color="primary" target="_blank" rel="noopener noreferrer" [attr.href]="commit.html_url">
+              Github commit
+            </a>
+            <a mat-raised-button="mat-raised-button" color="primary" target="_blank" rel="noopener noreferrer" [attr.href]="commit.author.html_url">
+              Github author
+            </a>
+            <a *ngIf="commit.commit.author.name !== commit.commit.committer.name && commit.commit.committer.name !== 'GitHub'" mat-raised-button="mat-raised-button" color="primary" target="_blank" rel="noopener noreferrer" [attr.href]="commit.committer.html_url">
+              Github comitter
+            </a>
           </mat-action-row>
         </mat-expansion-panel>
       </mat-accordion>
       <ng-template #noCommits>
-        <p>The latest github commits could not be fetched.</p>
+        <p>
+          The latest github commits could not be fetched.
+        </p>
       </ng-template>
     </div>
   </div>

@@ -1,6 +1,9 @@
 <div class="wrapper" *ngIf="update !== null">
   <div class="content-header mat-toolbar mat-primary">
-    <p fxLayout="row wrap"><span [innerText]="update.title"></span><span class="date" [innerText]="update.date | commitDate" fxHide.lt-sm="true"></span></p>
+    <p fxLayout="row wrap">
+      <span [innerText]="update.title"></span>
+      <span class="date" [innerText]="update.date | commitDate" fxHide.lt-sm="true"></span>
+    </p>
   </div>
   <div class="content" fxLayout="row wrap" fxLayoutAlign="center">
     <div fxFlex="0 1 45%" fxFlex.lt-lg="0 1 70%" fxFlex.lt-md="0 1 80%" fxFlex.lt-sm="90%">
@@ -9,7 +12,9 @@
           <mat-chip *ngFor="let category of update.categories" [innerText]="category" color="primary" selected="selected"></mat-chip>
           <mat-chip *ngFor="let tag of update.tags" [innerText]="tag" selected="selected"></mat-chip>
         </mat-chip-list>
-        <a mat-raised-button="mat-raised-button" color="primary" (click)="openBottomSheet(update)">Share</a>
+        <a mat-raised-button="mat-raised-button" color="primary" (click)="openBottomSheet(update)">
+          Share
+        </a>
       </div>
       <app-post [update]="update"></app-post>
     </div>

@@ -1,12 +1,18 @@
 <div class="header-wrapper">
   <div class="header-image" [class.no-webp]="!webp">
     <div class="header-text">
-      <h1>RuneLitePlus</h1>
+      <h1>
+        RuneLitePlus
+      </h1>
       <span>
-            <p>Fork of RuneLite that provides more functionality and less restrictions while staying open source.</p>
-            <p *ngIf="!fatalError &amp;&amp; (session$ | async) as count" [innerText]="'Current player count: ' + count"></p>
-         </span>
-      <a href="https://runelitepl.us/RuneLitePlusSetup.exe" mat-raised-button="mat-raised-button" color="primary">Download exe</a><a href="https://runelitepl.us/RuneLitePlus.jar" mat-raised-button="mat-raised-button" color="primary">Download jar</a>
+        <p>
+          Fork of RuneLite that provides more functionality and less restrictions while staying open source.
+        </p>
+        <p *ngIf="!fatalError &amp;&amp; (session$ | async) as count" [innerText]="'Current player count: ' + count"></p>
+      </span>
+      <button routerLink="/downloads" mat-raised-button="mat-raised-button" color="primary">
+        Download
+      </button>
     </div>
   </div>
 </div>
@@ -14,41 +20,67 @@
   <div class="content" fxLayout="column wrap">
     <div class="header" fxLayout="row wrap" fxLayoutAlign="center">
       <div fxFlex="0 1 60%" fxFlex.lt-xl="0 1 80%" fxFlex.lt-lg="0 1 100%">
-        <h2>Our features</h2>
+        <h2>
+          Our features
+        </h2>
       </div>
     </div>
     <div fxLayout="row wrap">
       <div class="card-container" fxFlex="0 1 20%" fxFlex.lt-xl="0 1 30%" fxFlex.lt-lg="0 1 33.3%" fxFlex.lt-md="0 1 100%" fxFlex.lt-sm="100%">
         <mat-card>
           <mat-card-header>
-            <mat-card-title>Plugin Support</mat-card-title>
+            <mat-card-title>
+              Plugin Support
+            </mat-card-title>
           </mat-card-header>
           <mat-card-content>
-            <p>Load your own plugins with our external jar plugin support. Simple and easy! Code your own or use premade plugins!</p>
+            <p>
+              Load your own plugins with our external jar plugin support. Simple and easy! Code your own or use premade plugins!
+            </p>
           </mat-card-content>
-          <mat-card-actions><a mat-raised-button="mat-raised-button" target="_blank" rel="noopener noreferrer" href="https://github.com/runelite-extended/runelite/wiki/Plugin-Support">Read more</a></mat-card-actions>
+          <mat-card-actions>
+            <a mat-raised-button="mat-raised-button" target="_blank" rel="noopener noreferrer" href="https://github.com/runelite-extended/runelite/wiki/Plugin-Support">
+              Read more
+            </a>
+          </mat-card-actions>
         </mat-card>
       </div>
       <div class="card-container" fxFlex="0 1 20%" fxFlex.lt-xl="0 1 25%" fxFlex.lt-lg="0 1 33.3%" fxFlex.lt-md="0 1 100%" fxFlex.lt-sm="100%">
         <mat-card>
           <mat-card-header>
-            <mat-card-title>Open source</mat-card-title>
+            <mat-card-title>
+              Open source
+            </mat-card-title>
           </mat-card-header>
           <mat-card-content>
-            <p>This is meant to directly compete with 3rd party clients that are trying to sell their code</p>
+            <p>
+              This is meant to directly compete with 3rd party clients that are trying to sell their code
+            </p>
           </mat-card-content>
-          <mat-card-actions><a mat-raised-button="mat-raised-button" target="_blank" rel="noopener noreferrer" href="https://github.com/runelite-extended/runelite">View RL+ source</a></mat-card-actions>
+          <mat-card-actions>
+            <a mat-raised-button="mat-raised-button" target="_blank" rel="noopener noreferrer" href="https://github.com/runelite-extended/runelite">
+              View RL+ source
+            </a>
+          </mat-card-actions>
         </mat-card>
       </div>
       <div class="card-container" fxFlex="0 1 20%" fxFlex.lt-xl="0 1 25%" fxFlex.lt-lg="0 1 33.3%" fxFlex.lt-md="0 1 100%" fxFlex.lt-sm="100%">
         <mat-card>
           <mat-card-header>
-            <mat-card-title>Many features</mat-card-title>
+            <mat-card-title>
+              Many features
+            </mat-card-title>
           </mat-card-header>
           <mat-card-content>
-            <p>RuneLitePlus is jam packed full of features, check out our feature page for a full list of our features.</p>
+            <p>
+              RuneLitePlus is jam packed full of features, check out our feature page for a full list of our features.
+            </p>
           </mat-card-content>
-          <mat-card-actions><a mat-raised-button="mat-raised-button" target="_blank" rel="noopener noreferrer" href="https://runelitepl.us/features/">Read features</a></mat-card-actions>
+          <mat-card-actions>
+            <a mat-raised-button="mat-raised-button" target="_blank" rel="noopener noreferrer" href="https://runelitepl.us/features/">
+              Read features
+            </a>
+          </mat-card-actions>
         </mat-card>
       </div>
     </div>
@@ -57,8 +89,12 @@
     </div>
     <div class="header">
       <div fxLayout="row wrap" fxFlex="0 1 60%" fxFlex.lt-xl="0 1 80%" fxFlex.lt-lg="0 1 100%">
-        <h2>Plugins</h2>
-        <button mat-raised-button="mat-raised-button" color="primary" routerLink="/features">See all</button>
+        <h2>
+          Plugins
+        </h2>
+        <button mat-raised-button="mat-raised-button" color="primary" routerLink="/features">
+          See all
+        </button>
       </div>
     </div>
     <div fxLayout="row wrap">
@@ -90,14 +126,21 @@
     </div>
     <div class="header">
       <div fxLayout="row wrap" fxFlex="0 1 60%" fxFlex.lt-xl="0 1 80%" fxFlex.lt-lg="0 1 100%">
-        <h2>Latest updates</h2>
-        <button mat-raised-button="mat-raised-button" color="primary" routerLink="/updates">See all</button>
+        <h2>
+          Latest updates
+        </h2>
+        <button mat-raised-button="mat-raised-button" color="primary" routerLink="/updates">
+          See all
+        </button>
       </div>
     </div>
     <div fxLayout="row wrap">
       <mat-nav-list fxFlex="0 1 60%" fxFlex.lt-xl="0 1 80%" fxFlex.lt-lg="0 1 100%">
         <ng-container *ngFor="let update of (updates$ | async) | slice:0:3">
-          <a mat-list-item="mat-list-item" [routerLink]="'/updates/' + update.mdFile"><span mat-line="mat-line" [innerText]="update.title"></span><span mat-line="mat-line" [innerText]="update.date | commitDate"></span></a>
+          <a mat-list-item="mat-list-item" [routerLink]="'/updates/' + update.mdFile">
+            <span mat-line="mat-line" [innerText]="update.title"></span>
+            <span mat-line="mat-line" [innerText]="update.date | commitDate"></span>
+          </a>
           <mat-divider></mat-divider>
         </ng-container>
       </mat-nav-list>
