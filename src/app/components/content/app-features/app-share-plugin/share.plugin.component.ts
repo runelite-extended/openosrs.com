@@ -2,6 +2,8 @@ import {ChangeDetectionStrategy, Component, Inject, OnInit} from '@angular/core'
 import {DomSanitizer} from '@angular/platform-browser';
 import {MAT_BOTTOM_SHEET_DATA, MatBottomSheetRef, MatIconRegistry} from '@angular/material';
 
+import {GoogleAnalyticsService} from '../../../../services/google.analytics.service';
+
 import {Plugins} from '../../../../interfaces/plugins.interface';
 
 @Component({
@@ -17,9 +19,12 @@ export class SharePluginComponent implements OnInit {
     private matBottomSheetRef: MatBottomSheetRef<SharePluginComponent>,
     @Inject(MAT_BOTTOM_SHEET_DATA) public data: {plugin: Plugins},
     private domSanitizer: DomSanitizer,
-    public matIconRegistry: MatIconRegistry
+    public matIconRegistry: MatIconRegistry,
+    public googleAnalyticsService: GoogleAnalyticsService
   ) {
     this.plugin = data.plugin;
+
+    this.googleAnalyticsService.eventEmitter("sharePluginMenu", "openShareUpdateMenu", "Opening share menu", 1);
   }
 
   ngOnInit(): void {
@@ -34,8 +39,20 @@ export class SharePluginComponent implements OnInit {
     return str.replace(new RegExp(find, 'g'), replace);
   }
 
-  public openLink(): void {
+  public openLink(service: number): void {
     this.matBottomSheetRef.dismiss({ plugin: this.plugin, data: 'share' });
+
+    let eventLabel: string;
+
+    if (service === 1) {
+      eventLabel = "Facebook";
+    } else if (service === 2) {
+      eventLabel = "Twitter";
+    } else {
+      eventLabel = "Email";
+    }
+
+      this.googleAnalyticsService.eventEmitter("sharePluginMenu", `share${eventLabel}`, `Sharing plugin to ${eventLabel}`, 1);
   }
 
   public copyLink(event: MouseEvent): void {
@@ -51,12 +68,14 @@ export class SharePluginComponent implements OnInit {
     document.execCommand('copy');
     document.body.removeChild(selBox);
     event.preventDefault();
+
     this.matBottomSheetRef.dismiss({ plugin: this.plugin, data: 'copy' });
+    this.googleAnalyticsService.eventEmitter("sharePluginMenu", "copyLink", "Copy share plugin link to clipboard", 1);
   }
 
   public close(event: MouseEvent): void {
     event.preventDefault();
-    this.matBottomSheetRef.dismiss({ plugin: this.plugin, data: 'close' });
+    this.matBottomSheetRef.dismiss();
   }
 
 }

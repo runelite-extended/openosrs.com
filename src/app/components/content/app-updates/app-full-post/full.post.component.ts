@@ -1,7 +1,7 @@
 import {ChangeDetectionStrategy, ChangeDetectorRef, Component} from '@angular/core';
 import {Meta, Title} from '@angular/platform-browser';
 import {ActivatedRoute} from '@angular/router';
-import {MatBottomSheet} from '@angular/material';
+import {MatBottomSheet, MatIconRegistry} from '@angular/material';
 
 import {ShareUpdateComponent} from '../app-share-plugin/share.update.component';
 
@@ -10,6 +10,7 @@ import {NotificationService} from '../../../../services/notification.service';
 
 import {Updates} from '../../../../interfaces/updates.interface';
 import {take} from 'rxjs/operators';
+import {GoogleAnalyticsService} from '../../../../services/google.analytics.service';
 
 @Component({
   selector: 'app-full-post',
@@ -28,7 +29,8 @@ export class AppFullPostComponent {
     private notificationService: NotificationService,
     private titleService: Title,
     private metaTagService: Meta,
-    private changeDetectorRef: ChangeDetectorRef
+    private changeDetectorRef: ChangeDetectorRef,
+    public googleAnalyticsService: GoogleAnalyticsService
   ) {
     this.activatedRoute.params.pipe(take(1)).subscribe( params => {
       this.updatesJsonService.getJSON().pipe(take(1)).subscribe((data: Updates[]) => {
@@ -55,6 +57,8 @@ export class AppFullPostComponent {
     sheet.afterDismissed().subscribe((data) => {
       if (typeof data !== 'undefined' && data.data === 'copy') {
         this.notificationService.showError('Update link copied to the clipboard!');
+      } else if (typeof data === 'undefined') {
+        this.googleAnalyticsService.eventEmitter("shareUpdateMenu", "closeShareMenu", "Closing share menu", 1);
       }
     });
   }

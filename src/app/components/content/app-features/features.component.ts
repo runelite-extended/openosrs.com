@@ -1,5 +1,5 @@
 import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
-import {MatBottomSheet} from '@angular/material';
+import {MatBottomSheet, MatIconRegistry} from '@angular/material';
 
 import {Observable} from 'rxjs';
 
@@ -9,6 +9,7 @@ import {Plugins} from '../../../interfaces/plugins.interface';
 import {SharePluginComponent} from './app-share-plugin/share.plugin.component';
 import {NotificationService} from '../../../services/notification.service';
 import {Meta, Title} from '@angular/platform-browser';
+import {GoogleAnalyticsService} from '../../../services/google.analytics.service';
 
 @Component({
   selector: 'app-features',
@@ -34,7 +35,8 @@ export class AppFeaturesComponent implements OnInit {
     private notificationService: NotificationService,
     private matBottomSheet: MatBottomSheet,
     private titleService: Title,
-    private metaTagService: Meta
+    private metaTagService: Meta,
+    public googleAnalyticsService: GoogleAnalyticsService
   ) {}
 
   ngOnInit() {
@@ -52,6 +54,8 @@ export class AppFeaturesComponent implements OnInit {
     sheet.afterDismissed().subscribe((data) => {
       if (typeof data !== 'undefined' && data.data === 'copy') {
         this.notificationService.showError(`${data.plugin.name} plugin link copied to the clipboard!`);
+      } else if (typeof data === 'undefined') {
+        this.googleAnalyticsService.eventEmitter("sharePluginMenu", "closeShareMenu", "Closing share menu", 1);
       }
     });
   }
