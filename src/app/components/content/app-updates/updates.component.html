@@ -68,7 +68,7 @@
             </h1>
             <p>
               <span [innerText]="commit.commit.author.name"></span>
-              <span *ngIf="commit.commit.author.name !== commit.author.login" [innerText]="' (Github name: ' + commit.author.login + ')'"></span>
+              <span *ngIf="commit.author && commit.commit.author.name !== commit.author.login" [innerText]="' (Github name: ' + commit.author.login + ')'"></span>
             </p>
           </mat-action-row>
           <mat-action-row *ngIf="commit.commit.author.name !== commit.commit.committer.name && commit.commit.committer.name !== 'GitHub'">
@@ -88,10 +88,10 @@
             <p [innerText]="commit.commit.message"></p>
           </mat-action-row>
           <mat-action-row class="github-links">
-            <a mat-raised-button="mat-raised-button" color="primary" target="_blank" rel="noopener noreferrer" [attr.href]="commit.html_url">
+            <a *ngIf="commit.html_url" mat-raised-button="mat-raised-button" color="primary" target="_blank" rel="noopener noreferrer" [attr.href]="commit.html_url">
               Github commit
             </a>
-            <a mat-raised-button="mat-raised-button" color="primary" target="_blank" rel="noopener noreferrer" [attr.href]="commit.author.html_url">
+            <a *ngIf="commit.author" mat-raised-button="mat-raised-button" color="primary" target="_blank" rel="noopener noreferrer" [attr.href]="commit.author.html_url">
               Github author
             </a>
             <a *ngIf="commit.commit.author.name !== commit.commit.committer.name && commit.commit.committer.name !== 'GitHub'" mat-raised-button="mat-raised-button" color="primary" target="_blank" rel="noopener noreferrer" [attr.href]="commit.committer.html_url">
