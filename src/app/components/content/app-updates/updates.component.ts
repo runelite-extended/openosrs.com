@@ -34,7 +34,7 @@ export class AppUpdatesComponent implements OnInit {
     private notificationService: NotificationService,
     private titleService: Title,
     private metaTagService: Meta,
-    public googleAnalyticsService: GoogleAnalyticsService
+    private googleAnalyticsService: GoogleAnalyticsService
   ) {}
 
   ngOnInit() {
@@ -61,7 +61,7 @@ export class AppUpdatesComponent implements OnInit {
       if (typeof data !== 'undefined' && data.data === 'copy') {
         this.notificationService.showError('Update link copied to the clipboard!');
       } else if (typeof data === 'undefined') {
-        this.googleAnalyticsService.eventEmitter("shareUpdateMenu", "closeShareMenu", "Closing share menu", 1);
+        GoogleAnalyticsService.eventEmitter("shareUpdateMenu", "closeShareMenu", "Closing share menu", 1);
       }
     });
   }

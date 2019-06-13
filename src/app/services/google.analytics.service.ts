@@ -1,13 +1,11 @@
 import {Injectable} from '@angular/core';
 
-declare let ga: Function;
-
 @Injectable({
   providedIn: 'root'
 })
 export class GoogleAnalyticsService {
 
-  public eventEmitter(
+  public static eventEmitter(
     eventCategory: string,
     eventAction: string,
     eventLabel: string = null,

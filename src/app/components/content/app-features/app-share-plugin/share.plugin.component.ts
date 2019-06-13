@@ -19,12 +19,12 @@ export class SharePluginComponent implements OnInit {
     private matBottomSheetRef: MatBottomSheetRef<SharePluginComponent>,
     @Inject(MAT_BOTTOM_SHEET_DATA) public data: {plugin: Plugins},
     private domSanitizer: DomSanitizer,
-    public matIconRegistry: MatIconRegistry,
-    public googleAnalyticsService: GoogleAnalyticsService
+    private matIconRegistry: MatIconRegistry,
+    private googleAnalyticsService: GoogleAnalyticsService
   ) {
     this.plugin = data.plugin;
 
-    this.googleAnalyticsService.eventEmitter("sharePluginMenu", "openShareUpdateMenu", "Opening share menu", 1);
+    GoogleAnalyticsService.eventEmitter("sharePluginMenu", "openShareUpdateMenu", "Opening share menu", 1);
   }
 
   ngOnInit(): void {
@@ -52,7 +52,7 @@ export class SharePluginComponent implements OnInit {
       eventLabel = "Email";
     }
 
-      this.googleAnalyticsService.eventEmitter("sharePluginMenu", `share${eventLabel}`, `Sharing plugin to ${eventLabel}`, 1);
+      GoogleAnalyticsService.eventEmitter("sharePluginMenu", `share${eventLabel}`, `Sharing plugin to ${eventLabel}`, 1);
   }
 
   public copyLink(event: MouseEvent): void {
@@ -70,7 +70,7 @@ export class SharePluginComponent implements OnInit {
     event.preventDefault();
 
     this.matBottomSheetRef.dismiss({ plugin: this.plugin, data: 'copy' });
-    this.googleAnalyticsService.eventEmitter("sharePluginMenu", "copyLink", "Copy share plugin link to clipboard", 1);
+    GoogleAnalyticsService.eventEmitter("sharePluginMenu", "copyLink", "Copy share plugin link to clipboard", 1);
   }
 
   public close(event: MouseEvent): void {

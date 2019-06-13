@@ -1,15 +1,16 @@
 import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
-import {MatBottomSheet, MatIconRegistry} from '@angular/material';
+import {MatBottomSheet} from '@angular/material';
+import {Meta, Title} from '@angular/platform-browser';
 
-import {Observable} from 'rxjs';
+import {SharePluginComponent} from './app-share-plugin/share.plugin.component';
 
 import {PluginsJsonService} from '../../../services/plugins.json.service';
+import {NotificationService} from '../../../services/notification.service';
+import {GoogleAnalyticsService} from '../../../services/google.analytics.service';
 
 import {Plugins} from '../../../interfaces/plugins.interface';
-import {SharePluginComponent} from './app-share-plugin/share.plugin.component';
-import {NotificationService} from '../../../services/notification.service';
-import {Meta, Title} from '@angular/platform-browser';
-import {GoogleAnalyticsService} from '../../../services/google.analytics.service';
+
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-features',
@@ -36,7 +37,7 @@ export class AppFeaturesComponent implements OnInit {
     private matBottomSheet: MatBottomSheet,
     private titleService: Title,
     private metaTagService: Meta,
-    public googleAnalyticsService: GoogleAnalyticsService
+    private googleAnalyticsService: GoogleAnalyticsService
   ) {}
 
   ngOnInit() {
@@ -55,7 +56,7 @@ export class AppFeaturesComponent implements OnInit {
       if (typeof data !== 'undefined' && data.data === 'copy') {
         this.notificationService.showError(`${data.plugin.name} plugin link copied to the clipboard!`);
       } else if (typeof data === 'undefined') {
-        this.googleAnalyticsService.eventEmitter("sharePluginMenu", "closeShareMenu", "Closing share menu", 1);
+        GoogleAnalyticsService.eventEmitter("sharePluginMenu", "closeShareMenu", "Closing share menu", 1);
       }
     });
   }

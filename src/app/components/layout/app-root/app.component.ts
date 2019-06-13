@@ -3,8 +3,6 @@ import {NavigationEnd, Router} from '@angular/router';
 
 import {UpdateService} from '../../../services/update.service';
 
-declare let ga: Function;
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
