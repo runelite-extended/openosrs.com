@@ -27,7 +27,7 @@
     </div>
     <div fxLayout="row wrap">
       <div class="card-container" fxFlex="0 1 20%" fxFlex.lt-xl="0 1 30%" fxFlex.lt-lg="0 1 33.3%" fxFlex.lt-md="0 1 100%" fxFlex.lt-sm="100%">
-        <mat-card>
+        <mat-card class="mat-elevation-z3">
           <mat-card-header>
             <mat-card-title>
               Plugin Support
@@ -46,7 +46,7 @@
         </mat-card>
       </div>
       <div class="card-container" fxFlex="0 1 20%" fxFlex.lt-xl="0 1 25%" fxFlex.lt-lg="0 1 33.3%" fxFlex.lt-md="0 1 100%" fxFlex.lt-sm="100%">
-        <mat-card>
+        <mat-card  class="mat-elevation-z3">
           <mat-card-header>
             <mat-card-title>
               Open source
@@ -65,7 +65,7 @@
         </mat-card>
       </div>
       <div class="card-container" fxFlex="0 1 20%" fxFlex.lt-xl="0 1 25%" fxFlex.lt-lg="0 1 33.3%" fxFlex.lt-md="0 1 100%" fxFlex.lt-sm="100%">
-        <mat-card>
+        <mat-card class="mat-elevation-z3">
           <mat-card-header>
             <mat-card-title>
               Many features
@@ -102,7 +102,7 @@
         <div fxLayout="row wrap" fxLayoutAlign="center start">
           <ng-container *ngFor="let plugin of (plugins$ | async) | shuffelPlugins | slice:0:4; index as i">
             <div class="card-container" fxFlex="0 1 25%" fxFlex.lt-lg="0 1 33.3%" fxFlex.lt-md="0 1 50%" fxFlex.lt-sm="100%" [fxHide.lt-lg]="i == 3" fxHide.lt-md="false">
-              <mat-card>
+              <mat-card class="mat-elevation-z3">
                 <mat-card-header>
                   <mat-card-title [innerText]="plugin.name"></mat-card-title>
                 </mat-card-header>

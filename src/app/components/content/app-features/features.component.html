@@ -25,7 +25,7 @@
           <div fxFlex="0 1 85%" fxFlex.lt-xl="0 1 82%" fxFlex.lt-lg="0 1 90%" fxFlex.lt-md="0 1 90%" fxFlex.lt-sm="85%">
             <div fxLayout="row wrap" fxLayoutAlign="start">
               <div class="card-container" *ngFor="let plugin of plugins" fxFlex="0 1 20%" fxFlex.lt-xl="0 1 25%" fxFlex.lt-lg="0 1 33.33%" fxFlex.lt-md="0 1 50%" fxFlex.lt-sm="100%">
-                <mat-card>
+                <mat-card class="mat-elevation-z3">
                   <mat-card-header>
                     <mat-card-title [innerText]="plugin.name"></mat-card-title>
                     <mat-card-subtitle [innerText]="plugin.categories | pluginCategories"></mat-card-subtitle>

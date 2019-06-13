@@ -9,8 +9,8 @@
       <h2>
         Client updates
       </h2>
-      <mat-accordion>
-        <mat-expansion-panel *ngFor="let update of updates$ | async">
+      <mat-accordion class="mat-elevation-z3">
+        <mat-expansion-panel *ngFor="let update of updates$ | async" class="mat-elevation-z3">
           <mat-expansion-panel-header>
             <mat-panel-title [innerText]="update.title"></mat-panel-title>
             <mat-panel-description fxHide.lt-md="true" [innerText]="update.date | commitDate"></mat-panel-description>
@@ -50,8 +50,8 @@
       <h2>
         Latest Github commits
       </h2>
-      <mat-accordion *ngIf="!fatalError && (commits$ | async) as commits; else noCommits">
-        <mat-expansion-panel *ngFor="let commit of commits">
+      <mat-accordion *ngIf="!fatalError && (commits$ | async) as commits; else noCommits" class="mat-elevation-z3">
+        <mat-expansion-panel *ngFor="let commit of commits" class="mat-elevation-z3">
           <mat-expansion-panel-header>
             <mat-panel-title [innerText]="commit.commit.message | commitMessage"></mat-panel-title>
             <mat-panel-description fxHide.lt-md="true" [innerText]="commit.commit.committer.date | commitDate"></mat-panel-description>
