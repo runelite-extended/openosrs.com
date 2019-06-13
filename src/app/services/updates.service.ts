@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 
 import {Observable} from 'rxjs';
 
@@ -13,6 +13,7 @@ export class UpdatesJsonService {
   constructor(private http: HttpClient) { }
 
   public getJSON(): Observable<Updates[]> {
-    return this.http.get<Updates[]>('./assets/posts/posts.json');
+    const headers = new HttpHeaders({'ngsw-bybass': 'true'});
+    return this.http.get<Updates[]>('./assets/posts/posts.json', {headers: headers});
   }
 }
