@@ -6,7 +6,6 @@ html, body {
 }
 
 html {
-  content: "";
   background-color: #001e2a;
 
   @media (prefers-color-scheme: light) {
@@ -23,14 +22,5 @@ app-root {
   flex-direction: column;
   min-height: 100vh;
   background-color: white;
-
-  @media (prefers-color-scheme: light) {
-    background-color: white;
-    color: black;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    background-color: #323232;
-    color: white;
-  }
+  color: black;
 }
