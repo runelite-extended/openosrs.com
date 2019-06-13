@@ -1,5 +1,5 @@
-import {Injectable, OnInit} from '@angular/core';
-
+import {Inject, Injectable} from '@angular/core';
+import {DOCUMENT} from '@angular/common';
 import {MatSnackBar} from '@angular/material';
 import {SwUpdate} from '@angular/service-worker';
 
@@ -12,7 +12,8 @@ export class UpdateService {
 
   constructor(
     private swUpdate: SwUpdate,
-    private snackbar: MatSnackBar
+    private snackbar: MatSnackBar,
+    @Inject(DOCUMENT) private document: Document
   ) {
     if (swUpdate.isEnabled) {
       interval(300000).subscribe(() => swUpdate.checkForUpdate());
@@ -30,7 +31,7 @@ export class UpdateService {
     )
       .onAction()
       .subscribe(() => {
-        window.location.reload();
+        this.swUpdate.activateUpdate().then(() => document.location.reload());
       });
   }
 }
