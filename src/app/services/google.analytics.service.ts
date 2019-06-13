@@ -1,3 +1,5 @@
+/// <reference path="../../../node_modules/@types/google.analytics/index.d.ts" />
+
 import {Injectable} from '@angular/core';
 
 @Injectable({

@@ -1,3 +1,5 @@
+/// <reference path="../../../../../node_modules/@types/google.analytics/index.d.ts" />
+
 import {Component, OnInit} from '@angular/core';
 import {NavigationEnd, Router} from '@angular/router';
 
