@@ -26,10 +26,8 @@ export class UpdateService {
   private promptUser(): void {
     this.snackbar.open(
       'Website update available',
-      'Reload',
-      {
-        duration: 6000
-      })
+      'Reload'
+    )
       .onAction()
       .subscribe(() => {
         window.location.reload();
