@@ -2,8 +2,6 @@ import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
 import {MatBottomSheet} from '@angular/material';
 import {Meta, Title} from '@angular/platform-browser';
 
-import {SharePluginComponent} from './app-share-plugin/share.plugin.component';
-
 import {PluginsJsonService} from '../../../services/plugins.json.service';
 import {NotificationService} from '../../../services/notification.service';
 import {GoogleAnalyticsService} from '../../../services/google.analytics.service';
@@ -36,8 +34,7 @@ export class AppFeaturesComponent implements OnInit {
     private notificationService: NotificationService,
     private matBottomSheet: MatBottomSheet,
     private titleService: Title,
-    private metaTagService: Meta,
-    private googleAnalyticsService: GoogleAnalyticsService
+    private metaTagService: Meta
   ) {}
 
   ngOnInit() {
@@ -45,19 +42,5 @@ export class AppFeaturesComponent implements OnInit {
     this.metaTagService.updateTag({ name: 'description', content: 'Runelite Plus has a lot more features compared to RuneLite, zulrah helper, better runelite plugins, pvp plugins, pvm plugins and more. Use Runelite Plus over RuneLite!' });
     this.metaTagService.updateTag({ name: 'keywords', content: 'runelite, runeliteplus, runelite plus, runelite pvp plugins, runelite pvp, runelite plugins, updates, github updates' });
     this.plugins$ = this.pluginsJsonService.getJSON();
-  }
-
-  public openBottomSheet(plugin: Plugins): void {
-    const sheet = this.matBottomSheet.open(SharePluginComponent, {
-      data: { plugin },
-    });
-
-    sheet.afterDismissed().subscribe((data) => {
-      if (typeof data !== 'undefined' && data.data === 'copy') {
-        this.notificationService.showError(`${data.plugin.name} plugin link copied to the clipboard!`);
-      } else if (typeof data === 'undefined') {
-        this.googleAnalyticsService.eventEmitter("sharePluginMenu", "closeShareMenu", "Closing share menu", 1);
-      }
-    });
   }
 }

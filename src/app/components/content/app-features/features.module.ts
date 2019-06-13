@@ -16,7 +16,6 @@ import {
 import {FeaturesRoutingModule} from './features.routing';
 
 import {AppFeaturesComponent} from './features.component';
-import {SharePluginComponent} from './app-share-plugin/share.plugin.component';
 
 import {PluginCategoriesPipe} from '../../../pipes/plugin.categories.pipe';
 import {PluginFilterPipe} from '../../../pipes/plugin.filter.pipe';
@@ -43,14 +42,10 @@ import {PluginCategoryFilterPipe} from '../../../pipes/plugin.category.filter.pi
   ],
   declarations: [
     AppFeaturesComponent,
-    SharePluginComponent,
 
     PluginCategoriesPipe,
     PluginFilterPipe,
     PluginCategoryFilterPipe
-  ],
-  entryComponents: [
-    SharePluginComponent
   ]
 })
 
