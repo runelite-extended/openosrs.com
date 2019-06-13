@@ -32,7 +32,6 @@
 
     .card-container {
       padding: 10px 24px;
-      align-items: center;
 
       .card-image {
         margin-top: -16px;
@@ -51,6 +50,14 @@
       mat-card-content {
         line-height: 13pt;
         text-align: justify;
+        overflow: auto;
+      }
+
+      mat-card-actions {
+        position: absolute;
+        left: 22px;
+        bottom: 0;
+        margin-bottom: 7px;
       }
     }
   }

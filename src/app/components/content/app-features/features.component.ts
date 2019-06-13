@@ -4,7 +4,6 @@ import {Meta, Title} from '@angular/platform-browser';
 
 import {PluginsJsonService} from '../../../services/plugins.json.service';
 import {NotificationService} from '../../../services/notification.service';
-import {GoogleAnalyticsService} from '../../../services/google.analytics.service';
 
 import {Plugins} from '../../../interfaces/plugins.interface';
 

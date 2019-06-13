@@ -70,8 +70,7 @@
 
       .card-container {
         padding: 10px 24px;
-        align-items: center;
-        justify-content: center;
+        align-items: stretch;
 
         .card-image {
           margin-top: -16px;
@@ -90,6 +89,7 @@
         mat-card-content {
           line-height: 13pt;
           text-align: justify;
+          overflow: auto;
         }
       }
     }

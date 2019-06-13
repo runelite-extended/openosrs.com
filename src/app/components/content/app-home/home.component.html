@@ -97,30 +97,32 @@
         </button>
       </div>
     </div>
-    <div fxLayout="row wrap">
-      <div fxFlex="0 1 60%" fxFlex.lt-xl="0 1 80%" fxFlex.lt-lg="0 1 100%">
-        <div fxLayout="row wrap" fxLayoutAlign="center start">
-          <ng-container *ngFor="let plugin of (plugins$ | async) | shuffelPlugins | slice:0:4; index as i">
-            <div class="card-container" fxFlex="0 1 25%" fxFlex.lt-lg="0 1 33.3%" fxFlex.lt-md="0 1 50%" fxFlex.lt-sm="100%" [fxHide.lt-lg]="i == 3" fxHide.lt-md="false">
-              <mat-card class="mat-elevation-z3">
-                <picture *ngIf="plugin.image != ''">
-                  <source type="image/webp" [attr.srcSet]="'/assets/plugins/images/' + plugin.image + '.webp'" />
-                  <source type="image/png" [attr.srcSet]="'/assets/plugins/images/' + plugin.image + '.png'" />
-                  <img mat-card-image="mat-card-image" class="card-image" [attr.src]="'/assets/plugins/images/' + plugin.image + '.png'" [attr.alt]="plugin.name" />
-                </picture>
-                <img mat-card-image="mat-card-image" *ngIf="plugin.image == ''" src="/assets/plugins/images/placeholder.png" [attr.alt]="plugin.name" />
-                <mat-card-header>
-                  <mat-card-title [innerText]="plugin.name"></mat-card-title>
-                </mat-card-header>
-                <mat-card-content>
-                  <p [innerText]="plugin.description"></p>
-                </mat-card-content>
-              </mat-card>
+    <ng-container *ngIf="(plugins$ | async) | shuffelPlugins | slice:0:4; let plugins">
+      <div fxLayoutAlign="center">
+        <ng-container *ngIf="plugins.length !== 0">
+          <div fxFlex="1 1 85%" fxFlex.lt-xl="0 1 82%" fxFlex.lt-lg="0 1 90%" fxFlex.lt-md="0 1 90%" fxFlex.lt-sm="0 1 85%">
+            <div fxLayout="row wrap" fxLayoutAlign="start">
+              <div class="card-container" *ngFor="let plugin of plugins; index as i" fxFlex="1 1 20%" fxFlex.lt-xl="1 1 25%" fxFlex.lt-lg="1 1 33.33%" fxFlex.lt-md="1 1 50%" fxFlex.lt-sm="1 1 100%">
+                <mat-card class="mat-elevation-z3"  fxFlex="1 1 auto">
+                  <picture *ngIf="plugin.image != ''">
+                    <source type="image/webp" [attr.srcSet]="'/assets/plugins/images/' + plugin.image + '.webp'" />
+                    <source type="image/png" [attr.srcSet]="'/assets/plugins/images/' + plugin.image + '.png'" />
+                    <img mat-card-image="mat-card-image" class="card-image" [attr.src]="'/assets/plugins/images/' + plugin.image + '.png'" [attr.alt]="plugin.name" />
+                  </picture>
+                  <img mat-card-image="mat-card-image" *ngIf="plugin.image == ''" src="/assets/plugins/images/placeholder.png" [attr.alt]="plugin.name" />
+                  <mat-card-header>
+                    <mat-card-title [innerText]="plugin.name"></mat-card-title>
+                  </mat-card-header>
+                  <mat-card-content>
+                    <p [innerText]="plugin.description"></p>
+                  </mat-card-content>
+                </mat-card>
+              </div>
             </div>
-          </ng-container>
-        </div>
+          </div>
+        </ng-container>
       </div>
-    </div>
+    </ng-container>
     <div fxLayout="row wrap">
       <mat-divider class="divider" fxFlex="0 1 60%" fxFlex.lt-xl="0 1 80%" fxFlex.lt-lg="0 1 100%"></mat-divider>
     </div>
