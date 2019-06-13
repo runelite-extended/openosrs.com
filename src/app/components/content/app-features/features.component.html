@@ -38,8 +38,8 @@
                   <mat-card-content>
                     <p [innerText]="plugin.description"></p>
                   </mat-card-content>
-                  <mat-card-actions>
-                    <a *ngIf="plugin.wiki" mat-raised-button="mat-raised-button" color="accent" target="_blank" rel="noopener noreferrer" [attr.href]="plugin.wiki">
+                  <mat-card-actions *ngIf="plugin.wiki" >
+                    <a mat-raised-button="mat-raised-button" color="accent" target="_blank" rel="noopener noreferrer" [attr.href]="plugin.wiki">
                       Wiki
                     </a>
                   </mat-card-actions>

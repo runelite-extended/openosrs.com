@@ -54,10 +54,14 @@
       }
 
       mat-card-actions {
-        position: absolute;
-        left: 22px;
-        bottom: 0;
-        margin-bottom: 7px;
+        padding-bottom: 22px;
+
+        a {
+          position: absolute;
+          left: 16px;
+          bottom: 0;
+          margin-bottom: 7px;
+        }
       }
     }
   }
