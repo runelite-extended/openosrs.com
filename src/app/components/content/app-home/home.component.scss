@@ -64,11 +64,6 @@
       margin: 15px 0;
     }
 
-    .card-container {
-      padding: 10px 24px;
-      align-items: center;
-    }
-
     div {
       align-items: center;
       justify-content: center;
@@ -78,8 +73,18 @@
         align-items: center;
         justify-content: center;
 
-        mat-card-title {
-          margin: 0 0 12px;
+        .card-image {
+          margin-top: -16px;
+        }
+
+        mat-card-header {
+          margin-left: -16px;
+          margin-bottom: 5px;
+
+          mat-card-title {
+            margin: 0;
+            font-size: 17px
+          }
         }
 
         mat-card-content {

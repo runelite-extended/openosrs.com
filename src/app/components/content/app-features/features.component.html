@@ -26,16 +26,15 @@
             <div fxLayout="row wrap" fxLayoutAlign="start">
               <div class="card-container" *ngFor="let plugin of plugins" fxFlex="0 1 20%" fxFlex.lt-xl="0 1 25%" fxFlex.lt-lg="0 1 33.33%" fxFlex.lt-md="0 1 50%" fxFlex.lt-sm="100%">
                 <mat-card class="mat-elevation-z3">
-                  <mat-card-header>
-                    <mat-card-title [innerText]="plugin.name"></mat-card-title>
-                    <mat-card-subtitle [innerText]="plugin.categories | pluginCategories"></mat-card-subtitle>
-                  </mat-card-header>
                   <picture *ngIf="plugin.image != ''">
                     <source type="image/webp" [attr.srcSet]="'/assets/plugins/images/' + plugin.image + '.webp'" />
                     <source type="image/png" [attr.srcSet]="'/assets/plugins/images/' + plugin.image + '.png'" />
-                    <img mat-card-image="mat-card-image" [attr.src]="'/assets/plugins/images/' + plugin.image + '.png'" [attr.alt]="plugin.name" />
+                    <img mat-card-image="mat-card-image" class="card-image" [attr.src]="'/assets/plugins/images/' + plugin.image + '.png'" [attr.alt]="plugin.name" />
                   </picture>
                   <img mat-card-image="mat-card-image" *ngIf="plugin.image == ''" src="/assets/plugins/images/placeholder.png" [attr.alt]="plugin.name" />
+                  <mat-card-header>
+                    <mat-card-title [innerText]="plugin.name"></mat-card-title>
+                  </mat-card-header>
                   <mat-card-content>
                     <p [innerText]="plugin.description"></p>
                   </mat-card-content>

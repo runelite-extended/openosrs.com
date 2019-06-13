@@ -26,11 +26,6 @@
       justify-content: center;
     }
 
-    .card-container {
-      padding: 10px 24px;
-      align-items: center;
-    }
-
     .filter-field {
       width: 200px;
     }
@@ -39,8 +34,18 @@
       padding: 10px 24px;
       align-items: center;
 
-      mat-card-title {
-        margin: 0 0 12px;
+      .card-image {
+        margin-top: -16px;
+      }
+
+      mat-card-header {
+        margin-left: -16px;
+        margin-bottom: 5px;
+
+        mat-card-title {
+          margin: 0;
+          font-size: 17px
+        }
       }
 
       mat-card-content {
