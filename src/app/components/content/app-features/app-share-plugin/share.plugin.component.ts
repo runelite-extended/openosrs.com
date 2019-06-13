@@ -24,7 +24,7 @@ export class SharePluginComponent implements OnInit {
   ) {
     this.plugin = data.plugin;
 
-    GoogleAnalyticsService.eventEmitter("sharePluginMenu", "openShareUpdateMenu", "Opening share menu", 1);
+    this.googleAnalyticsService.eventEmitter("sharePluginMenu", "openShareUpdateMenu", "Opening share menu", 1);
   }
 
   ngOnInit(): void {
@@ -52,7 +52,7 @@ export class SharePluginComponent implements OnInit {
       eventLabel = "Email";
     }
 
-      GoogleAnalyticsService.eventEmitter("sharePluginMenu", `share${eventLabel}`, `Sharing plugin to ${eventLabel}`, 1);
+    this.googleAnalyticsService.eventEmitter("sharePluginMenu", `share${eventLabel}`, `Sharing plugin to ${eventLabel}`, 1);
   }
 
   public copyLink(event: MouseEvent): void {
@@ -70,7 +70,7 @@ export class SharePluginComponent implements OnInit {
     event.preventDefault();
 
     this.matBottomSheetRef.dismiss({ plugin: this.plugin, data: 'copy' });
-    GoogleAnalyticsService.eventEmitter("sharePluginMenu", "copyLink", "Copy share plugin link to clipboard", 1);
+    this.googleAnalyticsService.eventEmitter("sharePluginMenu", "copyLink", "Copy share plugin link to clipboard", 1);
   }
 
   public close(event: MouseEvent): void {

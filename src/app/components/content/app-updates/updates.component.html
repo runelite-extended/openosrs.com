@@ -25,18 +25,18 @@
           </mat-action-row>
           <mat-action-row>
             <mat-chip-list aria-label="Tags">
-              <mat-chip *ngFor="let category of update.categories" [innerText]="category" color="primary" selected="selected"></mat-chip>
-              <mat-chip *ngFor="let tag of update.tags" [innerText]="tag" selected="selected"></mat-chip>
+              <mat-chip *ngFor="let category of update.categories" [innerText]="category" color="accent" selected="selected"></mat-chip>
+              <mat-chip *ngFor="let tag of update.tags" [innerText]="tag" color="accent" selected="selected"></mat-chip>
             </mat-chip-list>
           </mat-action-row>
           <mat-action-row class="github-links">
-            <a mat-raised-button="mat-raised-button" color="primary" (click)="openBottomSheet(update)">
+            <a mat-raised-button="mat-raised-button" color="accent" (click)="openBottomSheet(update)">
               Share
             </a>
-            <a mat-raised-button="mat-raised-button" color="primary" [routerLink]="'/updates/' + update.mdFile">
+            <a mat-raised-button="mat-raised-button" color="accent" [routerLink]="'/updates/' + update.mdFile">
               Full page
             </a>
-            <a mat-raised-button="mat-raised-button" color="primary" target="_blank" rel="noopener noreferrer" [attr.href]="'https://github.com/runelite-extended/runelitepl.us/blob/master/src/assets/posts/' + update.mdFile + '.md'">
+            <a mat-raised-button="mat-raised-button" color="accent" target="_blank" rel="noopener noreferrer" [attr.href]="'https://github.com/runelite-extended/runelitepl.us/blob/master/src/assets/posts/' + update.mdFile + '.md'">
               Edit on github
             </a>
           </mat-action-row>
@@ -88,13 +88,13 @@
             <p [innerText]="commit.commit.message"></p>
           </mat-action-row>
           <mat-action-row class="github-links">
-            <a *ngIf="commit.html_url" mat-raised-button="mat-raised-button" color="primary" target="_blank" rel="noopener noreferrer" [attr.href]="commit.html_url">
+            <a *ngIf="commit.html_url" mat-raised-button="mat-raised-button" color="accent" target="_blank" rel="noopener noreferrer" [attr.href]="commit.html_url">
               Github commit
             </a>
-            <a *ngIf="commit.author" mat-raised-button="mat-raised-button" color="primary" target="_blank" rel="noopener noreferrer" [attr.href]="commit.author.html_url">
+            <a *ngIf="commit.author" mat-raised-button="mat-raised-button" color="accent" target="_blank" rel="noopener noreferrer" [attr.href]="commit.author.html_url">
               Github author
             </a>
-            <a *ngIf="commit.commit.author.name !== commit.commit.committer.name && commit.commit.committer.name !== 'GitHub'" mat-raised-button="mat-raised-button" color="primary" target="_blank" rel="noopener noreferrer" [attr.href]="commit.committer.html_url">
+            <a *ngIf="commit.commit.author.name !== commit.commit.committer.name && commit.commit.committer.name !== 'GitHub'" mat-raised-button="mat-raised-button" color="accent" target="_blank" rel="noopener noreferrer" [attr.href]="commit.committer.html_url">
               Github comitter
             </a>
           </mat-action-row>

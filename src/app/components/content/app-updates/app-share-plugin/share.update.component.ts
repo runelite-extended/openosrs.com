@@ -24,7 +24,7 @@ export class ShareUpdateComponent implements OnInit {
   ) {
     this.update = data.update;
 
-    GoogleAnalyticsService.eventEmitter("shareUpdateMenu", "openShareUpdateMenu", "Opening share menu", 1);
+    this.googleAnalyticsService.eventEmitter("shareUpdateMenu", "openShareUpdateMenu", "Opening share menu", 1);
   }
 
   ngOnInit(): void {
@@ -48,7 +48,7 @@ export class ShareUpdateComponent implements OnInit {
       eventLabel = "Email";
     }
 
-    GoogleAnalyticsService.eventEmitter("shareUpdateMenu", `share${eventLabel}`, `Sharing plugin to ${eventLabel}`, 1);
+    this.googleAnalyticsService.eventEmitter("shareUpdateMenu", `share${eventLabel}`, `Sharing plugin to ${eventLabel}`, 1);
   }
 
   public copyLink(event: MouseEvent): void {
@@ -66,7 +66,7 @@ export class ShareUpdateComponent implements OnInit {
     event.preventDefault();
 
     this.matBottomSheetRef.dismiss({ plugin: this.update, data: 'copy' });
-    GoogleAnalyticsService.eventEmitter("shareUpdateMenu", "copyLink", "Copy share link to clipboard", 1);
+    this.googleAnalyticsService.eventEmitter("shareUpdateMenu", "copyLink", "Copy share link to clipboard", 1);
   }
 
   public close(event: MouseEvent): void {

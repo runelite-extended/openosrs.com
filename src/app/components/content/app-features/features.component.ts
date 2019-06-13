@@ -56,7 +56,7 @@ export class AppFeaturesComponent implements OnInit {
       if (typeof data !== 'undefined' && data.data === 'copy') {
         this.notificationService.showError(`${data.plugin.name} plugin link copied to the clipboard!`);
       } else if (typeof data === 'undefined') {
-        GoogleAnalyticsService.eventEmitter("sharePluginMenu", "closeShareMenu", "Closing share menu", 1);
+        this.googleAnalyticsService.eventEmitter("sharePluginMenu", "closeShareMenu", "Closing share menu", 1);
       }
     });
   }
