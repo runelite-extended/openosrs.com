@@ -8,7 +8,12 @@
     padding: 0 15px;
     color: #777;
 
-    .runelite-plus-dark-theme {
+    @media (prefers-color-scheme: light) {
+      border-left: 4px solid #DDD;
+      color: #777;
+    }
+
+    @media (prefers-color-scheme: dark) {
       border-left: 4px solid #222222;
       color: #aaaaaa;
     }
@@ -39,7 +44,13 @@
     font-size: 80%;
     color: #333333;
 
-    .runelite-plus-dark-theme {
+    @media (prefers-color-scheme: light) {
+      color: #333333;
+      background-color: #f8f8f8;
+      border: 1px solid #eaeaea;
+    }
+
+    @media (prefers-color-scheme: dark) {
       color: #f8f8f8;
       background-color: #333333;
       border: 1px solid #151515;
@@ -64,7 +75,13 @@
     border-radius: 3px;
     margin: 26px 0;
 
-    .runelite-plus-dark-theme {
+    @media (prefers-color-scheme: light) {
+      color: #333333;
+      background-color: #f8f8f8;
+      border: 1px solid #ccc;
+    }
+
+    @media (prefers-color-scheme: dark) {
       color: #f8f8f8;
       background-color: #333333;
       border: 0;
