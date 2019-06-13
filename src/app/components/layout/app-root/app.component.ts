@@ -1,6 +1,6 @@
 /// <reference path="../../../../../node_modules/@types/google.analytics/index.d.ts" />
 
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, Renderer2} from '@angular/core';
 import {NavigationEnd, Router} from '@angular/router';
 
 import {UpdateService} from '../../../services/update.service';
@@ -12,10 +12,18 @@ import {UpdateService} from '../../../services/update.service';
 })
 export class AppComponent implements OnInit {
 
+  public style: string;
+
   constructor(
     private updateService: UpdateService,
-    private router: Router
+    private router: Router,
+    private renderer: Renderer2
   ) {
+    this.style = getComputedStyle(document.documentElement).getPropertyValue('content');
+    if (this.style === 'dark') {
+      this.renderer.addClass(document.body, "runelite-plus-dark-theme");
+    }
+
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
         ga('set', 'page', event.urlAfterRedirects);

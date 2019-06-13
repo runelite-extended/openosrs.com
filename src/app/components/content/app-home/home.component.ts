@@ -45,7 +45,6 @@ export class AppHomeComponent implements OnInit {
     this.session$ = this.sessionService.getSessionCount().pipe(
       catchError(() => {
         this.fatalError = true;
-        console.log("session fatal error");
         return of(''); // return empty string
       })
     );

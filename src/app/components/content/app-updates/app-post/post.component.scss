@@ -8,6 +8,16 @@
     padding: 0 15px;
     color: #777;
 
+    @media (prefers-color-scheme: light) {
+      border-left: 4px solid #DDD;
+      color: #777;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      border-left: 4px solid #222222;
+      color: #aaaaaa;
+    }
+
     > {
       :first-child {
         margin-top: 0;
@@ -17,6 +27,10 @@
         margin-bottom: 10px;
       }
     }
+  }
+
+  a {
+    color: inherit;
   }
 
   code, tt {
@@ -29,6 +43,18 @@
     font-family: "Source Code Pro", Consolas, Courier, monospace;
     font-size: 80%;
     color: #333333;
+
+    @media (prefers-color-scheme: light) {
+      color: #333333;
+      background-color: #f8f8f8;
+      border: 1px solid #eaeaea;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      color: #f8f8f8;
+      background-color: #333333;
+      border: 1px solid #151515;
+    }
   }
 
   pre > code {
@@ -48,6 +74,18 @@
     padding: 6px 10px;
     border-radius: 3px;
     margin: 26px 0;
+
+    @media (prefers-color-scheme: light) {
+      color: #333333;
+      background-color: #f8f8f8;
+      border: 1px solid #ccc;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      color: #f8f8f8;
+      background-color: #333333;
+      border: 0;
+    }
 
     code, tt {
       background-color: transparent;
