@@ -1,0 +1,33 @@
+.wrapper {
+  .content-header {
+    padding-top: 64px;
+    height: 74px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    span {
+      font-weight: normal;
+      padding: 0 20px;
+
+      @supports(padding: m#{a}x(0px)) {
+        padding-left: m#{a}x(20px, env(safe-area-inset-left));
+        padding-right: m#{a}x(20px, env(safe-area-inset-right));
+      }
+    }
+  }
+
+  .content {
+    margin: 20px 0;
+
+    div {
+      margin-top: 20px;
+      padding: 0 24px;
+
+      h2 {
+        margin-bottom: 10px;
+        font-size: 1.5em;
+      }
+    }
+  }
+}

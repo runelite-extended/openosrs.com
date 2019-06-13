@@ -14,6 +14,10 @@ const routes: Routes = [
     component: AppHomeComponent
   },
   {
+    path: 'downloads',
+    loadChildren: () => import('./components/content/app-downloads/downloads.module').then(m => m.DownloadsModule),
+  },
+  {
     path: 'updates',
     loadChildren: () => import('./components/content/app-updates/updates.module').then(m => m.UpdatesModule),
   },
