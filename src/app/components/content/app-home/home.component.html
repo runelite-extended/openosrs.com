@@ -10,7 +10,7 @@
         </p>
         <p *ngIf="!fatalError &amp;&amp; (session$ | async) as count" [innerText]="'Current player count: ' + count"></p>
       </span>
-      <button routerLink="/downloads" mat-raised-button="mat-raised-button" color="primary">
+      <button routerLink="/downloads" mat-raised-button="mat-raised-button" color="accent">
         Download
       </button>
     </div>
