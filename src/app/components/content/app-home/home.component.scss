@@ -64,33 +64,45 @@
       margin: 15px 0;
     }
 
-    div {
+    .align-justify {
       align-items: center;
       justify-content: center;
+    }
 
-      .card-container {
-        padding: 10px 24px;
-        align-items: stretch;
+    .card-container {
+      padding: 10px 24px;
+      align-items: stretch;
 
-        .card-image {
-          margin-top: -16px;
+      .card-image {
+        margin-top: -16px;
+      }
+
+      mat-card-header {
+        margin-left: -16px;
+        margin-bottom: 5px;
+
+        mat-card-title {
+          margin: 0;
+          font-size: 17px
         }
+      }
 
-        mat-card-header {
-          margin-left: -16px;
-          margin-bottom: 5px;
+      mat-card-content {
+        line-height: 13pt;
+        text-align: justify;
+      }
 
-          mat-card-title {
-            margin: 0;
-            font-size: 17px
-          }
-        }
+      mat-card-actions {
+        padding-bottom: 22px;
 
-        mat-card-content {
-          line-height: 13pt;
-          text-align: justify;
+        a {
+          position: absolute;
+          left: 16px;
+          bottom: 0;
+          margin-bottom: 7px;
         }
       }
     }
+
   }
 }
