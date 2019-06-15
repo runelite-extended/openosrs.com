@@ -12,6 +12,10 @@
     background-attachment: fixed;
     align-items: center;
     justify-content: center;
+    
+    @media screen and (max-width: 599px) {
+      padding-top: 94px;
+    }
   }
 
   .no-webp.header-image {

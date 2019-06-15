@@ -6,6 +6,10 @@
     justify-content: center;
     flex-direction: column;
 
+    @media screen and (max-width: 599px) {
+      padding-top: 94px;
+    }
+
     span {
       font-weight: normal;
       padding: 0 20px;
