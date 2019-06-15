@@ -80,3 +80,7 @@ $dark-theme: mat-dark-theme($primary, $accent);
 @media (prefers-color-scheme: dark) {
   @include angular-material-theme($dark-theme);
 }
+
+.mat-expansion-panel-body {
+  padding: 0 !important;
+}
