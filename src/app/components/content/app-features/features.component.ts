@@ -33,7 +33,7 @@ export class AppFeaturesComponent implements OnInit {
     private notificationService: NotificationService,
     private matBottomSheet: MatBottomSheet,
     private domSanitizer: DomSanitizer,
-    public matIconRegistry: MatIconRegistry,
+    private matIconRegistry: MatIconRegistry,
     private titleService: Title,
     private metaTagService: Meta
   ) {}

@@ -12,7 +12,7 @@ export class AppHeaderComponent implements OnInit {
 
   public constructor(
     private domSanitizer: DomSanitizer,
-    public matIconRegistry: MatIconRegistry
+    private matIconRegistry: MatIconRegistry
   ) {}
 
   ngOnInit(): void {

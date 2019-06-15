@@ -17,7 +17,7 @@ export class ShareUpdateComponent implements OnInit {
 
   constructor(
     private matBottomSheetRef: MatBottomSheetRef<ShareUpdateComponent>,
-    @Inject(MAT_BOTTOM_SHEET_DATA) public data: {update: Updates},
+    @Inject(MAT_BOTTOM_SHEET_DATA) private data: {update: Updates},
     private domSanitizer: DomSanitizer,
     private matIconRegistry: MatIconRegistry,
     private googleAnalyticsService: GoogleAnalyticsService
