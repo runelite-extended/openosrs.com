@@ -5,16 +5,12 @@
         RuneLitePlus
       </span>
     </a>
-    <a mat-button="mat-button" routerLink="/downloads" fxHide.xs="true">
-      Download
-    </a>
-    <a mat-button="mat-button" routerLink="/updates" fxHide.xs="true">
-      Updates
-    </a>
-    <a mat-button="mat-button" routerLink="/features" fxHide.xs="true">
-      Features
-    </a>
+    <button mat-button *ngFor="let item of menuItem" routerLinkActive #routerLinkActiveInstance="routerLinkActive" [attr.tabindex]="routerLinkActiveInstance.isActive ? 0 : -1" [class.list-item-active]="routerLinkActiveInstance.isActive" [routerLink]="item" fxHide.xs="true">
+      {{ item }}
+    </button>
+
     <span class="spacer"></span>
+
     <a mat-icon-button="mat-icon-button" target="_blank" rel="noopener noreferrer" href="https://discord.gg/Q7wFtCe">
       <mat-icon class="icon" aria-hidden="false" aria-label="Discord" svgIcon="discord"></mat-icon>
     </a>
@@ -29,15 +25,9 @@
     </a>
   </mat-toolbar-row>
   <mat-toolbar-row class="mobile-nav" fxHide.gt-xs="true" fxLayout="row wrap" fxLayoutAlign="start">
-    <a mat-button="mat-button" routerLink="/downloads" fxFlex="0 1 33.33%">
-      Download
-    </a>
-    <a mat-button="mat-button" routerLink="/updates" fxFlex="0 1 33.33%">
-      Updates
-    </a>
-    <a mat-button="mat-button" routerLink="/features" fxFlex="0 1 33.33%">
-      Features
-    </a>
+    <button mat-button *ngFor="let item of menuItem" routerLinkActive #routerLinkActiveInstance="routerLinkActive" [attr.tabindex]="routerLinkActiveInstance.isActive ? 0 : -1" [class.list-item-active]="routerLinkActiveInstance.isActive" [routerLink]="item" fxFlex="0 1 33.33%">
+      {{ item }}
+    </button>
   </mat-toolbar-row>
 </mat-toolbar>
 <router-outlet></router-outlet>

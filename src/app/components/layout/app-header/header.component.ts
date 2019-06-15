@@ -10,6 +10,8 @@ import {MatIconRegistry} from '@angular/material';
 })
 export class AppHeaderComponent implements OnInit {
 
+  public menuItem = ["downloads", "updates", "features"];
+
   public constructor(
     private domSanitizer: DomSanitizer,
     private matIconRegistry: MatIconRegistry
