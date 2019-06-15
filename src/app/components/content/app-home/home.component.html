@@ -101,13 +101,13 @@
         </button>
       </div>
     </div>
-    <ng-container *ngIf="(plugins$ | async) | shuffelPlugins | slice:0:4; let plugins">
+    <ng-container *ngIf="(plugins$ | async) | shuffelPlugins | slice:0:5; let plugins">
       <div fxLayoutAlign="center">
         <ng-container *ngIf="plugins.length !== 0">
           <div fxFlex="0 1 85%" fxFlex.lt-xl="0 1 82%" fxFlex.lt-lg="0 1 90%" fxFlex.lt-md="0 1 90%" fxFlex.lt-sm="0 1 85%">
             <div fxLayout="row wrap" fxLayoutAlign="start" class="">
-              <div class="card-container" *ngFor="let plugin of plugins; index as i" fxFlex="1 1 20%" fxFlex.lt-xl="1 1 25%" fxFlex.lt-lg="1 1 33.33%" fxFlex.lt-md="1 1 50%" fxFlex.lt-sm="1 1 100%">
-                <mat-card class="mat-elevation-z3"  fxFlex="1 1 auto" [fxHide.lt-lg]="i == 3" fxHide.lt-md="false">
+              <div class="card-container" *ngFor="let plugin of plugins; index as i" fxFlex="1 1 20%" fxFlex.lt-xl="1 1 25%" fxFlex.lt-lg="1 1 33.33%" fxFlex.lt-md="1 1 50%" fxFlex.lt-sm="1 1 100%" [fxHide.lt-lg]="i == 3 || i == 4" [fxHide.lt-xl]="i == 4" [fxHide.lt-md]="i == 3">
+                <mat-card class="mat-elevation-z3" fxFlex="1 1 auto">
                   <picture *ngIf="plugin.image != ''">
                     <source type="image/webp" [attr.srcSet]="'/assets/plugins/images/' + plugin.image + '.webp'" />
                     <source type="image/png" [attr.srcSet]="'/assets/plugins/images/' + plugin.image + '.png'" />
