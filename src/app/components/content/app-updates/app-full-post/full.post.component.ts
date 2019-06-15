@@ -59,7 +59,11 @@ export class AppFullPostComponent {
       if (typeof data !== 'undefined' && data.data === 'copy') {
         this.notificationService.showError('Update link copied to the clipboard!');
       } else if (typeof data === 'undefined') {
-        this.googleAnalyticsService.eventEmitter("shareUpdateMenu", "closeShareMenu", "Closing share menu", 1);
+        this.googleAnalyticsService.event("shareUpdateMenu", {
+          'event_category': "closeShareMenu",
+          'event_label': "Closing share menu",
+          'value': 1
+        });
       }
     });
   }
