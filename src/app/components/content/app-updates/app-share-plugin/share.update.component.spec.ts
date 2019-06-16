@@ -12,6 +12,9 @@ describe('ShareUpdateComponent', () => {
   let fixture: ComponentFixture<ShareUpdateComponent>;
   let de: DebugElement;
   let element: HTMLElement;
+  const mockBottomSheetRef = {
+    dismiss: jasmine.createSpy('dismiss')
+  };
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -21,15 +24,22 @@ describe('ShareUpdateComponent', () => {
       ],
       providers: [
         { provide: APP_BASE_HREF, useValue: '/' },
-        { provide: MatBottomSheetRef, useValue: {} },
+        { provide: MatBottomSheetRef, useValue: mockBottomSheetRef },
         { provide: MAT_BOTTOM_SHEET_DATA, useValue:
             {
-              "name": "Smelting",
-              "image": "",
-              "description": "Shows you an overview of your current Smelting session (Bars/Actions per hour).",
-              "categories": [
-                "Skilling"
-              ]
+              "update": {
+                "date": "2019-05-23T00:00:00Z",
+                "title": "RuneLite+ has been updated to 1.3!",
+                "mdFile": "runelite-plus-update-1.3",
+                "categories": [
+                  "updates"
+                ],
+                "tags": [
+                  "changes",
+                  "plugins",
+                  "runelite 1.5"
+                ]
+              }
             }
         },
         { provide: Window, useValue: { 'ga': null } }
@@ -43,6 +53,8 @@ describe('ShareUpdateComponent', () => {
     component = fixture.componentInstance;
     de = fixture.debugElement;
     element = de.nativeElement;
+
+    fixture.detectChanges();
   });
 
   describe('Component =>', () => {
@@ -86,6 +98,53 @@ describe('ShareUpdateComponent', () => {
 
     it('Should have close as the last button', () => {
       expect(element.querySelectorAll('mat-nav-list > a')[4].querySelector('span').innerHTML.trim()).toEqual("Close");
+    });
+
+    describe('Actions =>', () => {
+      it('Should close the bottom sheet when close function is called', () => {
+        const mouseEvent = new MouseEvent('mouseEvent');
+        const spy = spyOn(mouseEvent, 'preventDefault');
+
+        component.close(mouseEvent);
+        expect(mockBottomSheetRef.dismiss).toHaveBeenCalled();
+        expect(spy).toHaveBeenCalled();
+      });
+
+      it('Should close the bottom sheet when copying function is called', () => {
+        const mouseEvent = new MouseEvent('mouseEvent');
+        const spy = spyOn(mouseEvent, 'preventDefault');
+
+        component.copyLink(mouseEvent);
+        expect(mockBottomSheetRef.dismiss).toHaveBeenCalled();
+        expect(spy).toHaveBeenCalled();
+      });
+
+      it('Should close the bottom sheet when share function is called (Facebook)', () => {
+        const mouseEvent = new MouseEvent('mouseEvent');
+        const spy = spyOn(mouseEvent, 'preventDefault');
+
+        component.openLink(1);
+        expect(mockBottomSheetRef.dismiss).toHaveBeenCalled();
+        expect(spy).toHaveBeenCalledTimes(0);
+      });
+
+      it('Should close the bottom sheet when share function is called (Twitter)', () => {
+        const mouseEvent = new MouseEvent('mouseEvent');
+        const spy = spyOn(mouseEvent, 'preventDefault');
+
+        component.openLink(2);
+        expect(mockBottomSheetRef.dismiss).toHaveBeenCalled();
+        expect(spy).toHaveBeenCalledTimes(0);
+      });
+
+      it('Should close the bottom sheet when share function is called (Twitter)', () => {
+        const mouseEvent = new MouseEvent('mouseEvent');
+        const spy = spyOn(mouseEvent, 'preventDefault');
+
+        component.openLink(Infinity);
+        expect(mockBottomSheetRef.dismiss).toHaveBeenCalled();
+        expect(spy).toHaveBeenCalledTimes(0);
+      });
     });
   });
 });
