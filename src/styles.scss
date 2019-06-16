@@ -8,14 +8,6 @@ html, body {
 html {
   content: "";
   background-color: #001e2a;
-
-  @media (prefers-color-scheme: light) {
-    content: "light";
-  }
-
-  @media (prefers-color-scheme: dark) {
-    content: "dark";
-  }
 }
 
 app-root {

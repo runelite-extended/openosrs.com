@@ -1,11 +1,25 @@
-import {DebugElement} from '@angular/core';
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import {DebugElement, Renderer2, Type} from '@angular/core';
+import {async, ComponentFixture, TestBed, tick} from '@angular/core/testing';
 import {Title} from '@angular/platform-browser';
 import {APP_BASE_HREF} from '@angular/common';
 
 import {AppModule} from '../../../app.module';
 
 import {AppComponent} from './app.component';
+
+let test = '';
+
+Object.defineProperty(window, 'getComputedStyle', {
+  value: () => ({
+    getPropertyValue: (prop) => {
+      if (test === 'dark') {
+        return 'dark';
+      } else {
+        return '';
+      }
+    }
+  })
+});
 
 describe('AppComponent', () => {
   let component: AppComponent;
@@ -19,8 +33,7 @@ describe('AppComponent', () => {
         AppModule
       ],
       providers: [
-        { provide: APP_BASE_HREF, useValue: '/' },
-        Title
+        { provide: APP_BASE_HREF, useValue: '/' }
       ]
     }).compileComponents();
   }));

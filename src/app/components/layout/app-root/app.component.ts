@@ -2,7 +2,7 @@
 
 import {Component, Inject, OnInit, Renderer2} from '@angular/core';
 import {DOCUMENT} from '@angular/common';
-import {NavigationEnd, Router} from '@angular/router';
+import {Router} from '@angular/router';
 
 import {UpdateService} from '../../../services/update.service';
 import {GoogleAnalyticsService} from '../../../services/google.analytics.service';
@@ -18,16 +18,8 @@ export class AppComponent implements OnInit {
 
   constructor(
     private updateService: UpdateService,
-    private router: Router,
-    private renderer: Renderer2,
-    @Inject(DOCUMENT) private document: Document,
     private googleAnalyticsService: GoogleAnalyticsService
-  ) {
-    this.style = getComputedStyle(document.documentElement).getPropertyValue('content');
-    if (this.style === 'dark') {
-      this.renderer.addClass(document.body, "runelite-plus-dark-theme");
-    }
-  }
+  ) { }
 
   ngOnInit(): void {
     this.updateService.checkForUpdates();
