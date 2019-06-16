@@ -31,6 +31,8 @@ describe('AppComponent', () => {
     component = fixture.componentInstance;
     de = fixture.debugElement;
     element = de.nativeElement;
+
+    fixture.detectChanges();
   });
 
   describe('Component =>', () => {
