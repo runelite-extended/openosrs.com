@@ -5,6 +5,7 @@ import {APP_BASE_HREF} from '@angular/common';
 import {MAT_BOTTOM_SHEET_DATA, MatBottomSheetRef} from '@angular/material';
 
 import {UpdatesModule} from '../updates.module';
+
 import {ShareUpdateComponent} from './share.update.component';
 
 describe('ShareUpdateComponent', () => {

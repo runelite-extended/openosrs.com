@@ -1,4 +1,5 @@
 import {ShufflePluginsPipe} from './plugin.shuffle.pipe';
+
 import {Plugins} from '../interfaces/plugins.interface';
 
 function isSorted(a: Plugins[]) {

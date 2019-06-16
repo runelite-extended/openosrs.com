@@ -1,5 +1,6 @@
 import {HttpErrorInterceptor} from './http-error.interceptor';
-import { of, throwError, defer } from "rxjs";
+
+import {throwError} from 'rxjs';
 
 describe('ErrorInterceptor', () => {
   let errorInterceptor;

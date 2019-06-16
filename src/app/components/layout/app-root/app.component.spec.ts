@@ -1,5 +1,5 @@
-import {DebugElement, Renderer2, Type} from '@angular/core';
-import {async, ComponentFixture, TestBed, tick} from '@angular/core/testing';
+import {DebugElement} from '@angular/core';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 import {Title} from '@angular/platform-browser';
 import {APP_BASE_HREF} from '@angular/common';
 

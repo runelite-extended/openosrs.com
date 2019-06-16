@@ -1,4 +1,3 @@
-import {Plugins} from '../interfaces/plugins.interface';
 import {PluginFilterPipe} from './plugin.filter.pipe';
 
 describe('PluginFilterPipe', () => {
