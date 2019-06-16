@@ -4,12 +4,12 @@
       <h1>
         RuneLitePlus
       </h1>
-      <span>
-        <p>
+      <p>
+        <span>
           Fork of RuneLite that provides more functionality and less restrictions while staying open source.
-        </p>
-        <p *ngIf="!fatalError &amp;&amp; (session$ | async) as count" [innerText]="'Current player count: ' + count"></p>
-      </span>
+        </span>
+        <span *ngIf="!fatalError &amp;&amp; (session$ | async) as count" [innerText]="'Current player count: ' + count"></span>
+      </p>
       <button routerLink="/downloads" mat-raised-button="mat-raised-button" color="accent">
         Download
       </button>
@@ -101,7 +101,7 @@
         </button>
       </div>
     </div>
-    <ng-container *ngIf="(plugins$ | async) | shuffelPlugins | slice:0:5; let plugins">
+    <ng-container *ngIf="(plugins$ | async) | shufflePlugins | slice:0:5; let plugins">
       <div fxLayoutAlign="center">
         <ng-container *ngIf="plugins.length !== 0">
           <div fxFlex="0 1 85%" fxFlex.lt-xl="0 1 82%" fxFlex.lt-lg="0 1 90%" fxFlex.lt-md="0 1 90%" fxFlex.lt-sm="0 1 85%">

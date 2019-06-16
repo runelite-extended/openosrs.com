@@ -9,6 +9,6 @@ export class PluginCategoryFilterPipe implements PipeTransform {
       return plugins;
     }
 
-    return plugins.filter(plugin => plugin.categories.includes(filter));
+    return plugins.filter(plugin => plugin.categories.map((item) => item.toLowerCase()).includes(filter.toLowerCase()));
   }
 }
