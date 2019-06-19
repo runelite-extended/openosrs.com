@@ -24,9 +24,17 @@ describe('ShareUpdateComponent', () => {
         RouterTestingModule
       ],
       providers: [
-        { provide: APP_BASE_HREF, useValue: '/' },
-        { provide: MatBottomSheetRef, useValue: mockBottomSheetRef },
-        { provide: MAT_BOTTOM_SHEET_DATA, useValue:
+        {
+          provide: APP_BASE_HREF,
+          useValue: '/'
+        },
+        {
+          provide: MatBottomSheetRef,
+          useValue: mockBottomSheetRef
+        },
+        {
+          provide: MAT_BOTTOM_SHEET_DATA,
+          useValue:
             {
               "update": {
                 "date": "2019-05-23T00:00:00Z",
@@ -43,18 +51,25 @@ describe('ShareUpdateComponent', () => {
               }
             }
         },
-        { provide: Window, useValue: { 'ga': null } }
+        {
+          provide: Window,
+          useValue: {
+            'ga': null
+          }
+        }
       ]
     }).compileComponents();
   }));
 
-  beforeEach(() => {
+  beforeEach(async() => {
     //initialization
     fixture = TestBed.createComponent(ShareUpdateComponent);
     component = fixture.componentInstance;
     de = fixture.debugElement;
     element = de.nativeElement;
 
+    component.ngOnInit();
+    await fixture.whenStable();
     fixture.detectChanges();
   });
 

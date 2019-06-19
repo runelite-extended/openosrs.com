@@ -1,11 +1,8 @@
-/// <reference path="../../../../../node_modules/@types/google.analytics/index.d.ts" />
-
-import {Component, Inject, OnInit, Renderer2} from '@angular/core';
-import {DOCUMENT} from '@angular/common';
-import {Router} from '@angular/router';
+import {Component, OnInit} from '@angular/core';
 
 import {UpdateService} from '../../../services/update.service';
 import {GoogleAnalyticsService} from '../../../services/google.analytics.service';
+import {Title} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
@@ -18,12 +15,14 @@ export class AppComponent implements OnInit {
 
   constructor(
     private updateService: UpdateService,
-    private googleAnalyticsService: GoogleAnalyticsService
+    private googleAnalyticsService: GoogleAnalyticsService,
+    private titleService: Title,
   ) { }
 
   ngOnInit(): void {
     this.updateService.checkForUpdates();
     this.googleAnalyticsService.init();
+    this.titleService.setTitle('Runelite Plus');
   }
 
 }

@@ -13,6 +13,7 @@ export class GithubService {
   private baseUrl = 'https://api.github.com';
   private user = 'runelite-extended';
   private repository = 'runelite';
+  private bootstrap = 'maven-repo/master/bootstrap.json';
 
   constructor(private http: HttpClient) {
   }

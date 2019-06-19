@@ -60,7 +60,7 @@ export class AppUpdatesComponent implements OnInit {
     sheet.afterDismissed().subscribe((data) => {
       if (typeof data !== 'undefined' && data.data === 'copy') {
         this.notificationService.showError('Update link copied to the clipboard!');
-      } else if (typeof data === 'undefined') {
+      } else {
         this.googleAnalyticsService.event("shareUpdateMenu", {
           'event_category': "closeShareMenu",
           'event_label': "Closing share menu",

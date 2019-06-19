@@ -18,18 +18,23 @@ describe('FooterComponent', () => {
         AppModule
       ],
       providers: [
-        { provide: APP_BASE_HREF, useValue: '/' }
+        {
+          provide: APP_BASE_HREF,
+          useValue: '/'
+        }
       ]
     }).compileComponents();
   }));
 
-  beforeEach(() => {
+  beforeEach(async() => {
     //initialization
     fixture = TestBed.createComponent(AppFooterComponent);
     component = fixture.componentInstance;
     de = fixture.debugElement;
     element = de.nativeElement;
 
+    component.ngOnInit();
+    await fixture.whenStable();
     fixture.detectChanges();
   });
 

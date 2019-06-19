@@ -7,20 +7,6 @@ import {AppModule} from '../../../app.module';
 
 import {AppComponent} from './app.component';
 
-let test = '';
-
-Object.defineProperty(window, 'getComputedStyle', {
-  value: () => ({
-    getPropertyValue: (prop) => {
-      if (test === 'dark') {
-        return 'dark';
-      } else {
-        return '';
-      }
-    }
-  })
-});
-
 describe('AppComponent', () => {
   let component: AppComponent;
   let fixture: ComponentFixture<AppComponent>;
@@ -33,18 +19,23 @@ describe('AppComponent', () => {
         AppModule
       ],
       providers: [
-        { provide: APP_BASE_HREF, useValue: '/' }
+        {
+          provide: APP_BASE_HREF,
+          useValue: '/'
+        }
       ]
     }).compileComponents();
   }));
 
-  beforeEach(() => {
+  beforeEach(async() => {
     //initialization
     fixture = TestBed.createComponent(AppComponent);
     component = fixture.componentInstance;
     de = fixture.debugElement;
     element = de.nativeElement;
 
+    component.ngOnInit();
+    await fixture.whenStable();
     fixture.detectChanges();
   });
 
@@ -56,7 +47,7 @@ describe('AppComponent', () => {
 
   describe('Meta =>', () => {
     it('Shouldn\'t set the page title', () => {
-      expect(TestBed.get(Title).getTitle()).toEqual('');
+      expect(TestBed.get(Title).getTitle()).toEqual('Runelite Plus');
     });
   });
 
