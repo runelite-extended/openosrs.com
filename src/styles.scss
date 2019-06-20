@@ -24,5 +24,9 @@ app-root {
   @media (prefers-color-scheme: dark) {
     background-color: #323232;
     color: white;
+
+    .mat-stepper-horizontal, .mat-stepper-vertical {
+      background-color: #323232;
+      }
   }
 }

@@ -44,29 +44,33 @@
             <mat-step completed='false'>
               <ng-template matStepLabel>Select download</ng-template>
               <div fxLayoutAlign="center" class="stepper-content">
-                <div fxFlex="1 1 85%" fxFlex.lt-xl="0 1 82%" fxFlex.lt-lg="0 1 90%" fxFlex.lt-md="0 1 90%"
-                  fxFlex.lt-sm="0 1 85%">
+                <div fxFlex="1 1 85%" fxFlex.lt-xl="0 1 82%" fxFlex.lt-lg="0 1 100%">
                   <div fxLayout="row wrap" fxLayoutAlign="start">
                     <div class="card-container" fxFlex="1 1 50%" fxFlex.lt-md="1 1 100%">
-                      <mat-card class="mat-elevation-z3" fxFlex="1 1 auto" [style.opacity]="selectedOperatingSystem == 'Windows' ? 1 : 0.35">
+                      <mat-card class="mat-elevation-z3" fxFlex="1 1 auto"
+                        [style.opacity]="selectedOperatingSystem == 'Windows' ? 1 : 0.35">
                         <mat-card-header>
                           <mat-card-title>
-                            Windows launcher
+                            Launcher
                           </mat-card-title>
                         </mat-card-header>
                         <mat-card-content>
                           <h4 *ngIf="selectedOperatingSystem == 'Windows'">
                             Best choice
                           </h4>
+                          <h4 *ngIf="selectedOperatingSystem != 'Windows'">
+                            Not yet availble for your operating system
+                          </h4>
                           <p>
-                            This is a launcher for Runelite Plus that comes bundled with a java executable. It'll auto update itself when
+                            This is a launcher for Runelite Plus that comes bundled with a java executable. It'll auto
+                            update itself when
                             there is a update for the Runelite Plus client available. No further configuration required!
                           </p>
                         </mat-card-content>
                         <mat-card-actions>
                           <a mat-raised-button="mat-raised-button" color="accent" rel="noopener noreferrer"
-                          href="https://runelitepl.us/assets/RuneLitePlusSetup.exe" (click)="downloadClick(0)"
-                          [disabled]="selectedOperatingSystem != 'Windows'"target="_blank" >
+                            href="https://runelitepl.us/assets/RuneLitePlusSetup.exe" (click)="downloadClick(0)"
+                            [disabled]="selectedOperatingSystem != 'Windows'" target="_blank">
                             Download
                           </a>
                         </mat-card-actions>
@@ -80,16 +84,21 @@
                           </mat-card-title>
                         </mat-card-header>
                         <mat-card-content>
+                          <h4 [innerText]="'Jar version: v' + clientVersion"></h4>
                           <p *ngIf="selectedOperatingSystem == 'Windows'">
-                            Already have java installed and don't want to have it bundled in a launcher, wanting to have control over your java settings, whatever your motivation is you can also download the jar file! (The jar file will not update itself when there is a client update available unlike the launcher).
+                            Already have java installed and don't want to have it bundled in a launcher, wanting to have
+                            control over your java settings, whatever your motivation is you can also download the jar
+                            file! (The jar file will not update itself when there is a client update available unlike
+                            the launcher).
                           </p>
                           <p *ngIf="selectedOperatingSystem != 'Windows'">
-                            We currently only realease a jar file for your operating system. The jar file will not update itself when there is an update available. Stay tuned for more download options!
+                            We currently only realease a jar file for your operating system. The jar file will not
+                            update itself when there is an update available. Stay tuned for more download options!
                           </p>
                         </mat-card-content>
                         <mat-card-actions *ngIf="downloadUrl">
                           <a mat-raised-button="mat-raised-button" color="accent" rel="noopener noreferrer"
-                          [attr.href]="downloadUrl" (click)="downloadClick(1)">
+                            [attr.href]="downloadUrl" (click)="downloadClick(1)">
                             Download
                           </a>
                         </mat-card-actions>
@@ -105,14 +114,14 @@
             <mat-step optional>
               <ng-template matStepLabel>Compare hashes</ng-template>
               <div class="stepper-content">
-                  <p>
-                    MD5 hash: <span [innerText]="getHash(0)"></span>
-                  </p>
-                  <p>
-                    SHA1 hash: <span [innerText]="getHash(1)"></span>
-                  </p>
+                <p>
+                  MD5 hash: <span [innerText]="getHash(0)"></span>
+                </p>
+                <p>
+                  SHA1 hash: <span [innerText]="getHash(1)"></span>
+                </p>
                 <div>
-                    <button mat-button matStepperPrevious>Back</button>
+                  <button mat-button matStepperPrevious>Back</button>
                 </div>
               </div>
             </mat-step>

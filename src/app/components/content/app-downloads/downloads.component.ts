@@ -19,8 +19,8 @@ export class AppDownloadsComponent implements OnInit {
   public fatalMdError = false;
   public sha1hash: HashReturn;
   public fatalShaError = false;
+  public clientVersion: string;
 
-  private clientVersion: string;
   private selectedDownload: number;
 
   public hideHashes = true;
