@@ -1,10 +1,10 @@
-import {ShufflePluginsPipe} from './plugin.shuffle.pipe';
+import { ShufflePluginsPipe } from './plugin.shuffle.pipe';
 
-import {Plugins} from '../interfaces/plugins.interface';
+import { Plugins } from '../interfaces/plugins.interface';
 
 function isSorted(a: Plugins[]) {
   for (let i = 0; i < a.length - 1; i++) {
-    if (Number(a[i]['name']) > Number(a[i + 1]['name'])) {
+    if (Number(a[i].name) > Number(a[i + 1].name)) {
       return false;
     }
   }
@@ -14,17 +14,17 @@ function isSorted(a: Plugins[]) {
 
 describe('ShufflePluginsPipe', () => {
   const pluginJson = [
-    {"name": "1" , "image": "", "description": "", "categories": [""], "wiki": ""},
-    {"name": "2" , "image": "", "description": "", "categories": [""], "wiki": ""},
-    {"name": "3" , "image": "", "description": "", "categories": [""], "wiki": ""},
-    {"name": "4" , "image": "", "description": "", "categories": [""], "wiki": ""},
-    {"name": "5" , "image": "", "description": "", "categories": [""], "wiki": ""},
-    {"name": "6" , "image": "", "description": "", "categories": [""], "wiki": ""},
-    {"name": "7" , "image": "", "description": "", "categories": [""], "wiki": ""},
-    {"name": "8" , "image": "", "description": "", "categories": [""], "wiki": ""},
-    {"name": "9" , "image": "", "description": "", "categories": [""], "wiki": ""},
-    {"name": "10", "image": "", "description": "", "categories": [""], "wiki": ""}
-    ];
+    { name: '1', image: '', description: '', categories: [''], wiki: '' },
+    { name: '2', image: '', description: '', categories: [''], wiki: '' },
+    { name: '3', image: '', description: '', categories: [''], wiki: '' },
+    { name: '4', image: '', description: '', categories: [''], wiki: '' },
+    { name: '5', image: '', description: '', categories: [''], wiki: '' },
+    { name: '6', image: '', description: '', categories: [''], wiki: '' },
+    { name: '7', image: '', description: '', categories: [''], wiki: '' },
+    { name: '8', image: '', description: '', categories: [''], wiki: '' },
+    { name: '9', image: '', description: '', categories: [''], wiki: '' },
+    { name: '10', image: '', description: '', categories: [''], wiki: '' }
+  ];
 
   let pipe: ShufflePluginsPipe;
 

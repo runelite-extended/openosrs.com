@@ -1,11 +1,11 @@
-import {PluginCategoryFilterPipe} from './plugin.category.filter.pipe';
+import { PluginCategoryFilterPipe } from './plugin.category.filter.pipe';
 
 describe('PluginCategoriesPipe', () => {
   const pluginJson = [
-    {"name": "1", "image": "", "description": "", "categories": ["PvM", "UC"], "wiki": ""},
-    {"name": "2", "image": "", "description": "", "categories": ["PvP", "uc"], "wiki": ""},
-    {"name": "3", "image": "", "description": "", "categories": ["Skilling", "Stub", "Uc"], "wiki": ""},
-    {"name": "4", "image": "", "description": "", "categories": ["Stub", "uC"], "wiki": ""}
+    { name: '1', image: '', description: '', categories: ['PvM', 'UC'], wiki: '' },
+    { name: '2', image: '', description: '', categories: ['PvP', 'uc'], wiki: '' },
+    { name: '3', image: '', description: '', categories: ['Skilling', 'Stub', 'Uc'], wiki: '' },
+    { name: '4', image: '', description: '', categories: ['Stub', 'uC'], wiki: '' }
   ];
 
   let pipe: PluginCategoryFilterPipe;

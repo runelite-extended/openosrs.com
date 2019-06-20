@@ -1,9 +1,9 @@
-import {Inject, Injectable} from '@angular/core';
-import {DOCUMENT} from '@angular/common';
-import {MatSnackBar} from '@angular/material';
-import {SwUpdate} from '@angular/service-worker';
+import { Inject, Injectable } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+import { MatSnackBar } from '@angular/material';
+import { SwUpdate } from '@angular/service-worker';
 
-import {interval} from 'rxjs';
+import { interval } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'

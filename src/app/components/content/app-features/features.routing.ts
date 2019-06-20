@@ -1,8 +1,7 @@
-import {NgModule} from '@angular/core';
-import {RouterModule, Routes} from '@angular/router';
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 
-import {AppFeaturesComponent} from './features.component';
-
+import { AppFeaturesComponent } from './features.component';
 
 const routes: Routes = [
   {
@@ -10,7 +9,6 @@ const routes: Routes = [
     component: AppFeaturesComponent
   }
 ];
-
 
 @NgModule({
   imports: [

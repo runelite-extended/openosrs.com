@@ -1,5 +1,6 @@
 .header {
-  box-shadow: 0 3px 5px -1px rgba(0, 0, 0, .2), 0 6px 10px -10px rgba(0, 0, 0, .14), 0 1px 18px -18px rgba(0, 0, 0, .12);
+  box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2), 0 6px 10px -10px rgba(0, 0, 0, 0.14),
+    0 1px 18px -18px rgba(0, 0, 0, 0.12);
   position: fixed;
   z-index: 999;
 }
@@ -7,7 +8,7 @@
 mat-toolbar-row {
   padding: 0 20px;
 
-  @supports(padding: m#{a}x(0px)) {
+  @supports (padding: m#{a}x(0px)) {
     padding-left: m#{a}x(20px, env(safe-area-inset-left));
     padding-right: m#{a}x(20px, env(safe-area-inset-right));
   }

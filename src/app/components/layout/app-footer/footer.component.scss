@@ -6,7 +6,7 @@ footer {
     justify-content: center;
     align-content: space-between;
 
-    @supports(padding: m#{a}x(0px)) {
+    @supports (padding: m#{a}x(0px)) {
       padding-left: m#{a}x(20px, env(safe-area-inset-left));
       padding-right: m#{a}x(20px, env(safe-area-inset-right));
     }

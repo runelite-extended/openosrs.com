@@ -1,8 +1,8 @@
-import {Pipe, PipeTransform} from '@angular/core';
+import { Pipe, PipeTransform } from '@angular/core';
 
-import {Plugins} from '../interfaces/plugins.interface';
+import { Plugins } from '../interfaces/plugins.interface';
 
-@Pipe({name: 'shufflePlugins'})
+@Pipe({ name: 'shufflePlugins' })
 export class ShufflePluginsPipe implements PipeTransform {
   transform(input: Plugins[]): Plugins[] {
 

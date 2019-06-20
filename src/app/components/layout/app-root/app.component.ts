@@ -1,8 +1,8 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
-import {UpdateService} from '../../../services/update.service';
-import {GoogleAnalyticsService} from '../../../services/google.analytics.service';
-import {Title} from '@angular/platform-browser';
+import { UpdateService } from '../../../services/update.service';
+import { GoogleAnalyticsService } from '../../../services/google.analytics.service';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',

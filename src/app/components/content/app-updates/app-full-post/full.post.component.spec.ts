@@ -1,19 +1,19 @@
-import {DebugElement} from '@angular/core';
-import {Title} from '@angular/platform-browser';
-import {NoopAnimationsModule} from '@angular/platform-browser/animations';
-import {ActivatedRoute} from '@angular/router';
-import {async, ComponentFixture, fakeAsync, TestBed} from '@angular/core/testing';
-import {RouterTestingModule} from '@angular/router/testing';
-import {APP_BASE_HREF} from '@angular/common';
-import {MatBottomSheet} from '@angular/material';
+import { DebugElement } from '@angular/core';
+import { Title } from '@angular/platform-browser';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { ActivatedRoute } from '@angular/router';
+import { async, ComponentFixture, fakeAsync, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+import { APP_BASE_HREF } from '@angular/common';
+import { MatBottomSheet } from '@angular/material';
 
-import {UpdatesModule} from '../updates.module';
+import { UpdatesModule } from '../updates.module';
 
-import {AppFullPostComponent} from './full.post.component';
-import {NotificationService} from '../../../../services/notification.service';
-import {GoogleAnalyticsService} from '../../../../services/google.analytics.service';
+import { AppFullPostComponent } from './full.post.component';
+import { NotificationService } from '../../../../services/notification.service';
+import { GoogleAnalyticsService } from '../../../../services/google.analytics.service';
 
-import {of} from 'rxjs';
+import { of } from 'rxjs';
 
 describe('FullPostComponent', () => {
   let component: AppFullPostComponent;
@@ -36,31 +36,31 @@ describe('FullPostComponent', () => {
         {
           provide: ActivatedRoute,
           useValue: {
-            params: of({name: "runelite-plus-update-1.3"})
+            params: of({ name: 'runelite-plus-update-1.3' })
           }
         }
       ]
     }).compileComponents();
   }));
 
-  beforeEach(async() => {
-    //initialization
+  beforeEach(async () => {
+    // initialization
     fixture = TestBed.createComponent(AppFullPostComponent);
     component = fixture.componentInstance;
     de = fixture.debugElement;
     element = de.nativeElement;
 
     component.update = {
-      "date": "2019-05-23T00:00:00Z",
-      "title": "RuneLite+ has been updated to 1.3!",
-      "mdFile": "runelite-plus-update-1.3",
-      "categories": [
-        "updates"
+      date: '2019-05-23T00:00:00Z',
+      title: 'RuneLite+ has been updated to 1.3!',
+      mdFile: 'runelite-plus-update-1.3',
+      categories: [
+        'updates'
       ],
-      "tags": [
-        "changes",
-        "plugins",
-        "runelite 1.5"
+      tags: [
+        'changes',
+        'plugins',
+        'runelite 1.5'
       ]
     };
 
@@ -88,7 +88,7 @@ describe('FullPostComponent', () => {
 
   describe('Actions =>', () => {
     it('Should open the share sheet when clicking share', () => {
-      let bottomsheetSpy = spyOn(component, 'openBottomSheet').and.callThrough();
+      const bottomsheetSpy = spyOn(component, 'openBottomSheet').and.callThrough();
 
       component.openBottomSheet(component.update);
 
@@ -98,7 +98,7 @@ describe('FullPostComponent', () => {
     it('Should notify when bottom sheet return {data: copy}', () => {
       const notificationService = spyOn(de.injector.get(NotificationService), 'showError').and.callThrough();
       spyOn(TestBed.get(MatBottomSheet), 'open').and.returnValue({
-        afterDismissed: () => of({data: 'copy'})
+        afterDismissed: () => of({ data: 'copy' })
       });
 
       component.openBottomSheet(component.update);

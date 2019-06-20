@@ -1,10 +1,10 @@
-import {DebugElement} from '@angular/core';
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
-import {APP_BASE_HREF} from '@angular/common';
+import { DebugElement } from '@angular/core';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { APP_BASE_HREF } from '@angular/common';
 
-import {AppModule} from '../../../app.module';
+import { AppModule } from '../../../app.module';
 
-import {AppFooterComponent} from './footer.component';
+import { AppFooterComponent } from './footer.component';
 
 describe('FooterComponent', () => {
   let component: AppFooterComponent;
@@ -26,8 +26,8 @@ describe('FooterComponent', () => {
     }).compileComponents();
   }));
 
-  beforeEach(async() => {
-    //initialization
+  beforeEach(async () => {
+    // initialization
     fixture = TestBed.createComponent(AppFooterComponent);
     component = fixture.componentInstance;
     de = fixture.debugElement;

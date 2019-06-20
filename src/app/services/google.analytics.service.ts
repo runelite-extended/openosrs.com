@@ -1,9 +1,10 @@
-import {Inject, Injectable} from '@angular/core';
-import {DOCUMENT} from '@angular/common';
-import {NavigationEnd, Router} from '@angular/router';
+import { Inject, Injectable } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+import { NavigationEnd, Router } from '@angular/router';
 
-import {environment} from '../../environments/environment';
+import { environment } from '../../environments/environment';
 
+// tslint:disable-next-line: ban-types
 declare var gtag: Function;
 
 @Injectable({
@@ -51,7 +52,7 @@ export class GoogleAnalyticsService {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
         gtag('config', environment.googleAnalyticsKey, {
-          'page_path': event.urlAfterRedirects,
+          page_path: event.urlAfterRedirects,
         });
       }
     });

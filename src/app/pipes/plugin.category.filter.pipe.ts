@@ -1,8 +1,8 @@
-import {Pipe, PipeTransform} from '@angular/core';
+import { Pipe, PipeTransform } from '@angular/core';
 
-import {Plugins} from '../interfaces/plugins.interface';
+import { Plugins } from '../interfaces/plugins.interface';
 
-@Pipe({name: 'pluginCategoryFilter'})
+@Pipe({ name: 'pluginCategoryFilter' })
 export class PluginCategoryFilterPipe implements PipeTransform {
   transform(plugins: Plugins[], filter: string): Plugins[] {
     if (!plugins || !filter || filter === 'All') {

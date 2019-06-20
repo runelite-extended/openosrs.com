@@ -1,15 +1,16 @@
 #wrapper {
-  blockquote, pre {
+  blockquote,
+  pre {
     margin: 3px 0;
   }
 
   blockquote {
-    border-left: 4px solid #DDD;
+    border-left: 4px solid #ddd;
     padding: 0 15px;
     color: #777;
 
     @media (prefers-color-scheme: light) {
-      border-left: 4px solid #DDD;
+      border-left: 4px solid #ddd;
       color: #777;
     }
 
@@ -33,7 +34,8 @@
     color: inherit;
   }
 
-  code, tt {
+  code,
+  tt {
     margin: 0 2px;
     padding: 0 5px;
     white-space: nowrap;
@@ -87,7 +89,8 @@
       border: 1px solid #ccc;
     }
 
-    code, tt {
+    code,
+    tt {
       background-color: transparent;
       border: none;
     }

@@ -1,11 +1,11 @@
-import {DebugElement} from '@angular/core';
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
-import {Title} from '@angular/platform-browser';
-import {APP_BASE_HREF} from '@angular/common';
+import { DebugElement } from '@angular/core';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { Title } from '@angular/platform-browser';
+import { APP_BASE_HREF } from '@angular/common';
 
-import {AppModule} from '../../../app.module';
+import { AppModule } from '../../../app.module';
 
-import {AppComponent} from './app.component';
+import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
   let component: AppComponent;
@@ -27,8 +27,8 @@ describe('AppComponent', () => {
     }).compileComponents();
   }));
 
-  beforeEach(async() => {
-    //initialization
+  beforeEach(async () => {
+    // initialization
     fixture = TestBed.createComponent(AppComponent);
     component = fixture.componentInstance;
     de = fixture.debugElement;

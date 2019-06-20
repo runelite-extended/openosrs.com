@@ -1,15 +1,15 @@
-import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
-import {Meta, Title} from '@angular/platform-browser';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { Meta, Title } from '@angular/platform-browser';
 
-import {SessionService} from '../../../services/session.service';
-import {UpdatesJsonService} from '../../../services/updates.service';
-import {PluginsJsonService} from '../../../services/plugins.json.service';
+import { SessionService } from '../../../services/session.service';
+import { UpdatesJsonService } from '../../../services/updates.service';
+import { PluginsJsonService } from '../../../services/plugins.json.service';
 
-import {Updates} from '../../../interfaces/updates.interface';
-import {Plugins} from '../../../interfaces/plugins.interface';
+import { Updates } from '../../../interfaces/updates.interface';
+import { Plugins } from '../../../interfaces/plugins.interface';
 
-import {Observable, of} from 'rxjs';
-import {catchError} from 'rxjs/operators';
+import { Observable, of } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 
 @Component({
   selector: 'app-home',
@@ -35,8 +35,15 @@ export class AppHomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.titleService.setTitle('Runelite Plus: Homepage');
-    this.metaTagService.updateTag({ name: 'description', content: 'RuneLitePlus provides more functionality and less restrictions while staying open source. We have lots of RuneLite Plus plugins!' });
-    this.metaTagService.updateTag({ name: 'keywords', content: 'runelite, runeliteplus, runelite plus, runelite pvp plugins, runelite pvp, runelite plugins' });
+    this.metaTagService.updateTag({
+      name: 'description',
+      content: 'RuneLitePlus provides more functionality and less restrictions ' +
+        'while staying open source. We have lots of RuneLite Plus plugins!'
+    });
+    this.metaTagService.updateTag({
+      name: 'keywords',
+      content: 'runelite, runeliteplus, runelite plus, runelite pvp plugins, runelite pvp, runelite plugins'
+    });
 
     this.updates$ = this.updatesJsonService.getJSON();
     this.plugins$ = this.pluginsJsonService.getJSON();

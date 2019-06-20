@@ -1,6 +1,6 @@
-import {HttpErrorInterceptor} from './http-error.interceptor';
+import { HttpErrorInterceptor } from './http-error.interceptor';
 
-import {throwError} from 'rxjs';
+import { throwError } from 'rxjs';
 
 describe('ErrorInterceptor', () => {
   let errorInterceptor;
@@ -20,7 +20,7 @@ describe('ErrorInterceptor', () => {
     let httpHandlerSpy;
 
     it('should return a server side error', () => {
-      const error = {status: 404, message: 'test-error'};
+      const error = { status: 404, message: 'test-error' };
 
       httpRequestSpy = jasmine.createSpyObj('HttpRequest', ['doesNotMatter']);
       httpHandlerSpy = jasmine.createSpyObj('HttpHandler', ['handle']);
@@ -34,17 +34,17 @@ describe('ErrorInterceptor', () => {
     });
 
     it('should return a client side error', () => {
-      const error = {error: new ErrorEvent('ugh', { message: 'joe'})};
+      const error = { error: new ErrorEvent('ugh', { message: 'joe' }) };
 
       httpRequestSpy = jasmine.createSpyObj('HttpRequest', ['doesNotMatter']);
       httpHandlerSpy = jasmine.createSpyObj('HttpHandler', ['handle']);
       httpHandlerSpy.handle.and.returnValue(throwError(error));
 
       errorInterceptor.intercept(httpRequestSpy, httpHandlerSpy).subscribe(
-        result => console.log('good', result),
-        err => {
+        (result: any) => console.log('good', result),
+        (err: any) => {
           expect(err).toEqual('Error: joe');
         });
     });
-  })
+  });
 });

@@ -1,4 +1,4 @@
-import {PluginCategoriesPipe} from './plugin.categories.pipe';
+import { PluginCategoriesPipe } from './plugin.categories.pipe';
 
 describe('PluginCategoriesPipe', () => {
   let pipe: PluginCategoriesPipe;

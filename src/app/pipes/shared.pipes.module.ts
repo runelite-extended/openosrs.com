@@ -1,6 +1,6 @@
-import {NgModule} from '@angular/core';
+import { NgModule } from '@angular/core';
 
-import {CommitDatePipe} from './commit.date.pipe';
+import { CommitDatePipe } from './commit.date.pipe';
 
 @NgModule({
   declarations: [

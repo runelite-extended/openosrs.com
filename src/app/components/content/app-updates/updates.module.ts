@@ -1,7 +1,7 @@
-import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
-import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
-import {FlexLayoutModule} from '@angular/flex-layout';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import {
   MatBottomSheetModule,
   MatButtonModule,
@@ -12,19 +12,19 @@ import {
   MatSnackBarModule
 } from '@angular/material';
 
-import {UpdatesRoutingModule} from './updates.routing';
-import {SharedPipesModule} from '../../../pipes/shared.pipes.module';
+import { UpdatesRoutingModule } from './updates.routing';
+import { SharedPipesModule } from '../../../pipes/shared.pipes.module';
 
-import {MarkdownModule} from 'ngx-markdown';
+import { MarkdownModule } from 'ngx-markdown';
 
-import {AppFullPostComponent} from './app-full-post/full.post.component';
-import {AppUpdatesComponent} from './updates.component';
-import {AppPostComponent} from './app-post/post.component';
-import {ShareUpdateComponent} from './app-share-plugin/share.update.component';
+import { AppFullPostComponent } from './app-full-post/full.post.component';
+import { AppUpdatesComponent } from './updates.component';
+import { AppPostComponent } from './app-post/post.component';
+import { ShareUpdateComponent } from './app-share-plugin/share.update.component';
 
-import {CommitMessagePipe} from '../../../pipes/commit.message.pipe';
+import { CommitMessagePipe } from '../../../pipes/commit.message.pipe';
 
-import {HttpErrorInterceptor} from '../../../interceptor/http-error.interceptor';
+import { HttpErrorInterceptor } from '../../../interceptor/http-error.interceptor';
 
 
 @NgModule({

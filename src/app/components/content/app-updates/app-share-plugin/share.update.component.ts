@@ -1,10 +1,10 @@
-import {ChangeDetectionStrategy, Component, Inject, OnInit} from '@angular/core';
-import {DomSanitizer} from '@angular/platform-browser';
-import {MAT_BOTTOM_SHEET_DATA, MatBottomSheetRef, MatIconRegistry} from '@angular/material';
+import { ChangeDetectionStrategy, Component, Inject, OnInit } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
+import { MAT_BOTTOM_SHEET_DATA, MatBottomSheetRef, MatIconRegistry } from '@angular/material';
 
-import {GoogleAnalyticsService} from '../../../../services/google.analytics.service';
+import { GoogleAnalyticsService } from '../../../../services/google.analytics.service';
 
-import {Updates} from '../../../../interfaces/updates.interface';
+import { Updates } from '../../../../interfaces/updates.interface';
 
 @Component({
   selector: 'app-share-plugin',
@@ -17,17 +17,17 @@ export class ShareUpdateComponent implements OnInit {
 
   constructor(
     private matBottomSheetRef: MatBottomSheetRef<ShareUpdateComponent>,
-    @Inject(MAT_BOTTOM_SHEET_DATA) private data: {update: Updates},
+    @Inject(MAT_BOTTOM_SHEET_DATA) private data: { update: Updates },
     private domSanitizer: DomSanitizer,
     private matIconRegistry: MatIconRegistry,
     private googleAnalyticsService: GoogleAnalyticsService
   ) {
     this.update = data.update;
 
-    this.googleAnalyticsService.event("shareUpdateMenu", {
-      'event_category': "openShareUpdateMenu",
-      'event_label': "Opening share menu",
-      'value': 1
+    this.googleAnalyticsService.event('shareUpdateMenu', {
+      event_category: 'openShareUpdateMenu',
+      event_label: 'Opening share menu',
+      value: 1
     });
   }
 
@@ -45,17 +45,17 @@ export class ShareUpdateComponent implements OnInit {
     let eventLabel: string;
 
     if (service === 1) {
-      eventLabel = "Facebook";
+      eventLabel = 'Facebook';
     } else if (service === 2) {
-      eventLabel = "Twitter";
+      eventLabel = 'Twitter';
     } else {
-      eventLabel = "Email";
+      eventLabel = 'Email';
     }
 
-    this.googleAnalyticsService.event("shareUpdateMenu", {
-      'event_category': `share${eventLabel}`,
-      'event_label': `Sharing plugin to ${eventLabel}`,
-      'value': 1
+    this.googleAnalyticsService.event('shareUpdateMenu', {
+      event_category: `share${eventLabel}`,
+      event_label: `Sharing plugin to ${eventLabel}`,
+      value: 1
     });
   }
 
@@ -75,10 +75,10 @@ export class ShareUpdateComponent implements OnInit {
 
     this.matBottomSheetRef.dismiss({ plugin: this.update, data: 'copy' });
 
-    this.googleAnalyticsService.event("shareUpdateMenu", {
-      'event_category': "copyLink",
-      'event_label': "Copy share link to clipboard",
-      'value': 1
+    this.googleAnalyticsService.event('shareUpdateMenu', {
+      event_category: 'copyLink',
+      event_label: 'Copy share link to clipboard',
+      value: 1
     });
   }
 

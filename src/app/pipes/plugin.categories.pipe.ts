@@ -1,6 +1,6 @@
-import {Pipe, PipeTransform} from '@angular/core';
+import { Pipe, PipeTransform } from '@angular/core';
 
-@Pipe({name: 'pluginCategories'})
+@Pipe({ name: 'pluginCategories' })
 export class PluginCategoriesPipe implements PipeTransform {
   transform(values: string[]): string {
     if (!values || typeof values === 'undefined') {

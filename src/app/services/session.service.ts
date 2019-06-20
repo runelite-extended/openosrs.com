@@ -1,7 +1,7 @@
-import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
-import {Observable} from 'rxjs';
+import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 @Injectable({
@@ -13,6 +13,6 @@ export class SessionService {
   }
 
   public getSessionCount(): Observable<string> {
-    return this.http.get('https://session.runelitepl.us/count', {responseType: 'text'});
+    return this.http.get('https://session.runelitepl.us/count', { responseType: 'text' });
   }
 }

@@ -1,18 +1,18 @@
-import {PluginFilterPipe} from './plugin.filter.pipe';
+import { PluginFilterPipe } from './plugin.filter.pipe';
 
 describe('PluginFilterPipe', () => {
   const pluginJson = [
-    {"name": "1" , "image": "", "description": "test", "categories": [""], "wiki": ""},
-    {"name": "2" , "image": "", "description": "", "categories": [""], "wiki": ""},
-    {"name": "3" , "image": "", "description": "", "categories": [""], "wiki": ""},
-    {"name": "4" , "image": "", "description": "", "categories": [""], "wiki": ""},
-    {"name": "5 test" , "image": "", "description": "", "categories": [""], "wiki": ""},
-    {"name": "6" , "image": "", "description": "", "categories": [""], "wiki": ""},
-    {"name": "7" , "image": "", "description": "", "categories": [""], "wiki": ""},
-    {"name": "8" , "image": "", "description": "", "categories": [""], "wiki": ""},
-    {"name": "9" , "image": "", "description": "", "categories": [""], "wiki": ""},
-    {"name": "10", "image": "", "description": "", "categories": [""], "wiki": ""}
-    ];
+    { name: '1', image: '', description: 'test', categories: [''], wiki: '' },
+    { name: '2', image: '', description: '', categories: [''], wiki: '' },
+    { name: '3', image: '', description: '', categories: [''], wiki: '' },
+    { name: '4', image: '', description: '', categories: [''], wiki: '' },
+    { name: '5 test', image: '', description: '', categories: [''], wiki: '' },
+    { name: '6', image: '', description: '', categories: [''], wiki: '' },
+    { name: '7', image: '', description: '', categories: [''], wiki: '' },
+    { name: '8', image: '', description: '', categories: [''], wiki: '' },
+    { name: '9', image: '', description: '', categories: [''], wiki: '' },
+    { name: '10', image: '', description: '', categories: [''], wiki: '' }
+  ];
 
   let pipe: PluginFilterPipe;
 

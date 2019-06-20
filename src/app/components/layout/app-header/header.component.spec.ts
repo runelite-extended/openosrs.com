@@ -1,10 +1,10 @@
-import {DebugElement} from '@angular/core';
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
-import {APP_BASE_HREF} from '@angular/common';
+import { DebugElement } from '@angular/core';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { APP_BASE_HREF } from '@angular/common';
 
-import {AppModule} from '../../../app.module';
+import { AppModule } from '../../../app.module';
 
-import {AppHeaderComponent} from './header.component';
+import { AppHeaderComponent } from './header.component';
 
 describe('HeaderComponent', () => {
   let component: AppHeaderComponent;
@@ -26,8 +26,8 @@ describe('HeaderComponent', () => {
     }).compileComponents();
   }));
 
-  beforeEach(async() => {
-    //initialization
+  beforeEach(async () => {
+    // initialization
     fixture = TestBed.createComponent(AppHeaderComponent);
     component = fixture.componentInstance;
     de = fixture.debugElement;
@@ -46,7 +46,7 @@ describe('HeaderComponent', () => {
 
   describe('Content =>', () => {
     it('Should have the RL+ title', () => {
-      expect(element.querySelector('.title > span').innerHTML.trim()).toEqual("RuneLite Plus");
+      expect(element.querySelector('.title > span').innerHTML.trim()).toEqual('RuneLite Plus');
     });
 
     it('Should have the desktop menu', () => {

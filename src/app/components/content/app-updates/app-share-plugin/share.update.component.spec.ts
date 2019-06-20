@@ -1,12 +1,12 @@
-import {DebugElement} from '@angular/core';
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
-import {RouterTestingModule} from '@angular/router/testing';
-import {APP_BASE_HREF} from '@angular/common';
-import {MAT_BOTTOM_SHEET_DATA, MatBottomSheetRef} from '@angular/material';
+import { DebugElement } from '@angular/core';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+import { APP_BASE_HREF } from '@angular/common';
+import { MAT_BOTTOM_SHEET_DATA, MatBottomSheetRef } from '@angular/material';
 
-import {UpdatesModule} from '../updates.module';
+import { UpdatesModule } from '../updates.module';
 
-import {ShareUpdateComponent} from './share.update.component';
+import { ShareUpdateComponent } from './share.update.component';
 
 describe('ShareUpdateComponent', () => {
   let component: ShareUpdateComponent;
@@ -35,34 +35,34 @@ describe('ShareUpdateComponent', () => {
         {
           provide: MAT_BOTTOM_SHEET_DATA,
           useValue:
-            {
-              "update": {
-                "date": "2019-05-23T00:00:00Z",
-                "title": "RuneLite+ has been updated to 1.3!",
-                "mdFile": "runelite-plus-update-1.3",
-                "categories": [
-                  "updates"
-                ],
-                "tags": [
-                  "changes",
-                  "plugins",
-                  "runelite 1.5"
-                ]
-              }
+          {
+            update: {
+              date: '2019-05-23T00:00:00Z',
+              title: 'RuneLite+ has been updated to 1.3!',
+              mdFile: 'runelite-plus-update-1.3',
+              categories: [
+                'updates'
+              ],
+              tags: [
+                'changes',
+                'plugins',
+                'runelite 1.5'
+              ]
             }
+          }
         },
         {
           provide: Window,
           useValue: {
-            'ga': null
+            ga: null
           }
         }
       ]
     }).compileComponents();
   }));
 
-  beforeEach(async() => {
-    //initialization
+  beforeEach(async () => {
+    // initialization
     fixture = TestBed.createComponent(ShareUpdateComponent);
     component = fixture.componentInstance;
     de = fixture.debugElement;
@@ -97,23 +97,23 @@ describe('ShareUpdateComponent', () => {
     });
 
     it('Should have Facebook as first button', () => {
-      expect(element.querySelectorAll('mat-nav-list > a')[0].querySelector('span').innerHTML.trim()).toEqual("Facebook");
+      expect(element.querySelectorAll('mat-nav-list > a')[0].querySelector('span').innerHTML.trim()).toEqual('Facebook');
     });
 
     it('Should have Twitter as second button', () => {
-      expect(element.querySelectorAll('mat-nav-list > a')[1].querySelector('span').innerHTML.trim()).toEqual("Twitter");
+      expect(element.querySelectorAll('mat-nav-list > a')[1].querySelector('span').innerHTML.trim()).toEqual('Twitter');
     });
 
     it('Should have e-mail as third button', () => {
-      expect(element.querySelectorAll('mat-nav-list > a')[2].querySelector('span').innerHTML.trim()).toEqual("E-mail");
+      expect(element.querySelectorAll('mat-nav-list > a')[2].querySelector('span').innerHTML.trim()).toEqual('E-mail');
     });
 
     it('Should have copy as fourth button', () => {
-      expect(element.querySelectorAll('mat-nav-list > a')[3].querySelector('span').innerHTML.trim()).toEqual("Copy");
+      expect(element.querySelectorAll('mat-nav-list > a')[3].querySelector('span').innerHTML.trim()).toEqual('Copy');
     });
 
     it('Should have close as the last button', () => {
-      expect(element.querySelectorAll('mat-nav-list > a')[4].querySelector('span').innerHTML.trim()).toEqual("Close");
+      expect(element.querySelectorAll('mat-nav-list > a')[4].querySelector('span').innerHTML.trim()).toEqual('Close');
     });
 
     describe('Actions =>', () => {

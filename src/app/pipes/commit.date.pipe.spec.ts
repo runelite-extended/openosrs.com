@@ -1,4 +1,4 @@
-import {CommitDatePipe} from './commit.date.pipe';
+import { CommitDatePipe } from './commit.date.pipe';
 
 describe('CommitDatePipe', () => {
   let pipe: CommitDatePipe;

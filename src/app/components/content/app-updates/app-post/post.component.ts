@@ -1,5 +1,5 @@
-import {ChangeDetectionStrategy, Component, Input, ViewEncapsulation} from '@angular/core';
-import {Updates} from '../../../../interfaces/updates.interface';
+import { ChangeDetectionStrategy, Component, Input, ViewEncapsulation } from '@angular/core';
+import { Updates } from '../../../../interfaces/updates.interface';
 
 @Component({
   selector: 'app-post',

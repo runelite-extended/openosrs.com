@@ -1,4 +1,4 @@
-import {CommitMessagePipe} from './commit.message.pipe';
+import { CommitMessagePipe } from './commit.message.pipe';
 
 describe('CommitDatePipe', () => {
   let pipe: CommitMessagePipe;

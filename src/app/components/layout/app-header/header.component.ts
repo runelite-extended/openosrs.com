@@ -1,6 +1,6 @@
-import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
-import {DomSanitizer} from '@angular/platform-browser';
-import {MatIconRegistry} from '@angular/material';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
+import { MatIconRegistry } from '@angular/material';
 
 @Component({
   selector: 'app-header',
@@ -10,12 +10,12 @@ import {MatIconRegistry} from '@angular/material';
 })
 export class AppHeaderComponent implements OnInit {
 
-  public menuItem = ["downloads", "updates", "features"];
+  public menuItem = ['downloads', 'updates', 'features'];
 
   public constructor(
     private domSanitizer: DomSanitizer,
     private matIconRegistry: MatIconRegistry
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.matIconRegistry.addSvgIcon('twitter', this.domSanitizer.bypassSecurityTrustResourceUrl('/assets/fa/twitter-brands.svg'));
