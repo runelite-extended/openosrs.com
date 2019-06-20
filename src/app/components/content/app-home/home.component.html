@@ -8,7 +8,7 @@
         <span>
           Fork of RuneLite that provides more functionality and less restrictions while staying open source.
         </span>
-        <span *ngIf="!fatalError &amp;&amp; (session$ | async) as count"
+        <span *ngIf="!fatalCountError && (session$ | async) as count"
           [innerText]="'Current player count: ' + count"></span>
       </p>
       <button routerLink="/downloads" mat-raised-button="mat-raised-button" color="accent">
@@ -157,7 +157,7 @@
       </div>
     </div>
     <div fxLayout="row wrap" class="align-justify">
-      <mat-nav-list fxFlex="1 1 85%" fxFlex.lt-xl="0 1 82%" fxFlex.lt-lg="0 1 90%" fxFlex.lt-md="0 1 90%"
+      <mat-nav-list *ngIf="!fatalPostError" fxFlex="1 1 85%" fxFlex.lt-xl="0 1 82%" fxFlex.lt-lg="0 1 90%" fxFlex.lt-md="0 1 90%"
         fxFlex.lt-sm="0 1 85%">
         <ng-container *ngFor="let update of (updates$ | async) | slice:0:3">
           <a mat-list-item="mat-list-item" [routerLink]="'/updates/' + update.mdFile">
@@ -167,6 +167,9 @@
           <mat-divider></mat-divider>
         </ng-container>
       </mat-nav-list>
+      <p *ngIf="fatalPostError">
+        The update posts could not be fetched.
+      </p>
     </div>
   </div>
 </div>

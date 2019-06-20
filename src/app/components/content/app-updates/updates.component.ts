@@ -12,19 +12,20 @@ import { GoogleAnalyticsService } from '../../../services/google.analytics.servi
 import { GithubFlat } from '../../../interfaces/github.interface';
 import { Updates } from '../../../interfaces/updates.interface';
 
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 
 @Component({
   selector: 'app-features',
   templateUrl: './updates.component.html',
-  styleUrls: ['./updates.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  styleUrls: ['./updates.component.scss']
 })
 export class AppUpdatesComponent implements OnInit {
 
   public commits: GithubFlat[];
-  public updates$: Observable<Updates[]>;
-  public fatalError = false;
+  public updates$: Observable<Updates[]> | {};
+  public fatalPostError = false;
+  public fatalGithubError = false;
 
   constructor(
     private updatesJsonService: UpdatesJsonService,
@@ -34,7 +35,7 @@ export class AppUpdatesComponent implements OnInit {
     private titleService: Title,
     private metaTagService: Meta,
     private googleAnalyticsService: GoogleAnalyticsService,
-    private changeDetectorRef: ChangeDetectorRef,
+    private changeDetectorRef: ChangeDetectorRef
   ) { }
 
   ngOnInit() {
@@ -49,7 +50,16 @@ export class AppUpdatesComponent implements OnInit {
       content: 'runelite, runeliteplus, runelite plus, runelite pvp plugins, runelite pvp, runelite plugins, updates, github updates'
     });
 
-    this.updates$ = this.updatesJsonService.getJSON();
+    this.updates$ = this.updatesJsonService.getJSON().pipe(
+      catchError(() => {
+        this.fatalPostError = true;
+        this.notificationService.showError('The latest update posts could not be fetched.');
+
+        this.changeDetectorRef.detectChanges();
+
+        return of({}); // return empty array
+      })
+    );
 
     this.githubService.getCommits().then(
       (commits) => {
@@ -57,7 +67,10 @@ export class AppUpdatesComponent implements OnInit {
         this.changeDetectorRef.detectChanges();
       }
     ).catch(
-      () => this.fatalError = true
+      () => {
+        this.fatalGithubError = true;
+        this.changeDetectorRef.detectChanges();
+      }
     );
   }
 
