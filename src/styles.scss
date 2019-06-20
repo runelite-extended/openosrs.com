@@ -1,0 +1,32 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~normalize.css/normalize.css';
+
+html, body {
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+html {
+  content: "";
+  background-color: #001e2a;
+}
+
+app-root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: white;
+
+  @media (prefers-color-scheme: light) {
+    background-color: white;
+    color: black;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    background-color: #323232;
+    color: white;
+
+    .mat-stepper-horizontal, .mat-stepper-vertical {
+      background-color: #323232;
+      }
+  }
+}

@@ -1,0 +1,133 @@
+<div class="wrapper">
+  <div class="content-header mat-toolbar mat-primary">
+    <span>
+      Downloads
+    </span>
+  </div>
+  <div class="content" fxLayout="column wrap">
+    <div class="header" fxLayout="row wrap" fxLayoutAlign="center">
+      <div fxLayout="row wrap" fxFlex="1 1 85%" fxFlex.lt-xl="0 1 82%" fxFlex.lt-lg="0 1 90%" fxFlex.lt-md="0 1 90%"
+        fxFlex.lt-sm="0 1 85%" class="align-justify">
+        <h2>
+          Downloads
+        </h2>
+      </div>
+    </div>
+    <div>
+      <div class="header" fxLayout="row wrap" fxLayoutAlign="center">
+        <div fxLayout="row wrap" fxFlex="1 1 85%" fxFlex.lt-xl="0 1 82%" fxFlex.lt-lg="0 1 90%" fxFlex.lt-md="0 1 90%"
+          fxFlex.lt-sm="0 1 85%" class="align-justify">
+          <mat-vertical-stepper linear #stepper fxFlex="1 1 100%">
+            <ng-template matStepperIcon="edit" let-index="index">
+              {{ index + 1 }}
+            </ng-template>
+            <ng-template matStepperIcon="number" let-index="index">
+              {{ index + 1 }}
+            </ng-template>
+            <mat-step>
+              <ng-template matStepLabel>Select operating system</ng-template>
+              <div class="stepper-content">
+                <mat-form-field color="accent">
+                  <mat-label>
+                    Operating System
+                  </mat-label>
+                  <mat-select [(value)]="selectedOperatingSystem">
+                    <mat-option *ngFor="let os of ['Windows', 'MacOS', 'Linux', 'Other']" [value]="os" [innerText]="os">
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+                <div>
+                  <button mat-button matStepperNext>Next</button>
+                </div>
+              </div>
+            </mat-step>
+            <mat-step completed='false'>
+              <ng-template matStepLabel>Select download</ng-template>
+              <div fxLayoutAlign="center" class="stepper-content">
+                <div fxFlex="1 1 85%" fxFlex.lt-xl="0 1 82%" fxFlex.lt-lg="0 1 100%">
+                  <div fxLayout="row wrap" fxLayoutAlign="start">
+                    <div class="card-container" fxFlex="1 1 50%" fxFlex.lt-md="1 1 100%">
+                      <mat-card class="mat-elevation-z3" fxFlex="1 1 auto"
+                        [style.opacity]="selectedOperatingSystem == 'Windows' ? 1 : 0.35">
+                        <mat-card-header>
+                          <mat-card-title>
+                            Launcher
+                          </mat-card-title>
+                        </mat-card-header>
+                        <mat-card-content>
+                          <h4 *ngIf="selectedOperatingSystem == 'Windows'">
+                            Best choice
+                          </h4>
+                          <h4 *ngIf="selectedOperatingSystem != 'Windows'">
+                            Not yet availble for your operating system
+                          </h4>
+                          <p>
+                            This is a launcher for Runelite Plus that comes bundled with a java executable. It'll auto
+                            update itself when
+                            there is a update for the Runelite Plus client available. No further configuration required!
+                          </p>
+                        </mat-card-content>
+                        <mat-card-actions>
+                          <a mat-raised-button="mat-raised-button" color="accent" rel="noopener noreferrer"
+                            href="https://runelitepl.us/assets/RuneLitePlusSetup.exe" (click)="downloadClick(0)"
+                            [disabled]="selectedOperatingSystem != 'Windows'" target="_blank">
+                            Download
+                          </a>
+                        </mat-card-actions>
+                      </mat-card>
+                    </div>
+                    <div class="card-container" fxFlex="1 1 50%" fxFlex.lt-md="1 1 100%">
+                      <mat-card class="mat-elevation-z3" fxFlex="1 1 auto">
+                        <mat-card-header>
+                          <mat-card-title>
+                            Jar file
+                          </mat-card-title>
+                        </mat-card-header>
+                        <mat-card-content>
+                          <h4 [innerText]="'Jar version: v' + clientVersion"></h4>
+                          <p *ngIf="selectedOperatingSystem == 'Windows'">
+                            Already have java installed and don't want to have it bundled in a launcher, wanting to have
+                            control over your java settings, whatever your motivation is you can also download the jar
+                            file! (The jar file will not update itself when there is a client update available unlike
+                            the launcher).
+                          </p>
+                          <p *ngIf="selectedOperatingSystem != 'Windows'">
+                            We currently only realease a jar file for your operating system. The jar file will not
+                            update itself when there is an update available. Stay tuned for more download options!
+                          </p>
+                        </mat-card-content>
+                        <mat-card-actions *ngIf="downloadUrl">
+                          <a mat-raised-button="mat-raised-button" color="accent" rel="noopener noreferrer"
+                            [attr.href]="downloadUrl" (click)="downloadClick(1)">
+                            Download
+                          </a>
+                        </mat-card-actions>
+                      </mat-card>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div fxLayout="row wrap" fxLayoutAlign="start" class="stepper-content">
+                <button mat-button matStepperPrevious>Back</button>
+              </div>
+            </mat-step>
+            <mat-step optional>
+              <ng-template matStepLabel>Compare hashes</ng-template>
+              <div class="stepper-content">
+                <p>
+                  MD5 hash: <span [innerText]="getHash(0)"></span>
+                </p>
+                <p>
+                  SHA1 hash: <span [innerText]="getHash(1)"></span>
+                </p>
+                <div>
+                  <button mat-button matStepperPrevious>Back</button>
+                </div>
+              </div>
+            </mat-step>
+          </mat-vertical-stepper>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,117 @@
+.header-wrapper {
+  .header-image {
+    padding-top: 64px;
+    display: flex;
+    flex-direction: column;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.33), rgba(0, 0, 0, 0.33)), url("/assets/header.webp");
+    min-height: 17.5em;
+    height: 50%;
+    align-self: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    align-items: center;
+    justify-content: center;
+
+    @media screen and (max-width: 599px) {
+      padding-top: 94px;
+    }
+  }
+
+  .no-webp.header-image {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.33), rgba(0, 0, 0, 0.33)), url("/assets/header.png");
+  }
+
+  .header-text {
+    text-align: center;
+    color: white;
+
+    @supports (padding: m#{a}x(0px)) {
+      padding-left: m#{a}x(20px, env(safe-area-inset-left));
+      padding-right: m#{a}x(20px, env(safe-area-inset-right));
+    }
+
+    h1 {
+      align-self: center;
+      font-size: 50px;
+    }
+
+    span > p {
+      margin-top: 10px;
+    }
+
+    button {
+      margin: 25px 5px 0 15px;
+    }
+  }
+}
+
+.wrapper {
+  @supports (padding: m#{a}x(0px)) {
+    padding-left: m#{a}x(20px, env(safe-area-inset-left));
+    padding-right: m#{a}x(20px, env(safe-area-inset-right));
+  }
+
+  .content {
+    justify-content: center;
+    margin: 20px 0;
+
+    .header {
+      padding: 0 24px;
+
+      div {
+        justify-content: space-between;
+
+        h2 {
+          margin-left: -20px;
+        }
+      }
+    }
+
+    .divider {
+      margin: 15px 0;
+    }
+
+    .align-justify {
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card-container {
+      padding: 10px 24px;
+      align-items: stretch;
+
+      .card-image {
+        margin-top: -16px;
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+      }
+
+      mat-card-header {
+        margin-left: -16px;
+        margin-bottom: 5px;
+
+        mat-card-title {
+          margin: 0;
+          font-size: 17px;
+        }
+      }
+
+      mat-card-content {
+        line-height: 13pt;
+        text-align: justify;
+      }
+
+      mat-card-actions {
+        padding-bottom: 22px;
+
+        a {
+          position: absolute;
+          left: 16px;
+          bottom: 0;
+          margin-bottom: 7px;
+        }
+      }
+    }
+  }
+}

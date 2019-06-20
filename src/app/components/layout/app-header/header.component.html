@@ -1,0 +1,41 @@
+<mat-toolbar class="header" color="primary">
+  <mat-toolbar-row>
+    <a class="title" routerLink="/home"><img class="logo"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAXCAMAAADX9CSSAAABsFBMVEVHcEwBBAH7sE7/t0f7qUkDAwP+pkfKlWLquI/kizf9nkLWaybecCeXl5bwoEAIAQD/r0avgTX1lD72jjb/vEz9u0ruejD9rkLzgjLviDH6gzT4hjIAAADnhTDXZSNKLxjQz85zWTBXV1fbcivYojy6urr1hjaHh4j2kTnqhTH3ijT+qD7srkz+tkhkZGPwkzzxjzr4kDnnq0jLYSLrdirxeCjyfi7PYyHBXiDjdSf1hS76nULiei70cSfrdTD/lTnmhTPdcigQEBGoqKh3d3evr6/nkjSMUyLtdCr+kzfbcSs6MhMBAgKZYjDFgTIREBCpqanlnUXUiznFcSyEcmLaZyddQy44MizxfDChkoSEZU34iy6wsLC9vbynp6egYjKCf3zwey6DYESeXCbHcyzfmTtfUkX7y116enuoqKhNOCSoqKhFRURfRiP6pUP2l0D4kj5QUVEyMjCtbS78tUv0ljlvZ1hCQkHDjkTtiDBoTyv5rET3nkLtey+3hkLugzLpo0TcfzSeczbIkU3yhTDvq07ClUKvrq6npKG1tbXwfzPsdC2mpqaoqKipqqp1a1c8tIUwAAAAhnRSTlMABhEwDAIJAQIDBhQdBiMLHkjn0TUn/UPmgBFEEIjuFg4/1fUtjt772s/tYRsj9NXB4jgoNEcqU2OMaoV4XfA2VboZsYpaIAq9O9ImKVhrPXTCq7i+9mZz3OPvnp4ZxvHi2fPm9k/rCWzJ1eXx59HJ8b338M3L4tB7p+7Lvfb5tXLxuPyK7E8qt2gAAAEtSURBVCjPY2CgImDHLsrGxoEpysXFYi/NpyvCLMrCwokkzsLG5BktnFdSrVkpns7BAdfJwskkoK1lqC3eUltqlBETwAsV52Bg0RGXMGRm0TUQqyjsjVOAO4Kdg1lCQ4RJp767qbwnMxYhwcAsISxq1CDUXKbXl62q6gq3g9mwoEa/ta5fvaezs73dGWYFg4CaWn5XY1VRjl67upKSC0I8IjHVQKw4NyutIyHc34kVJi4qpKEiqC+WkpzUERnmIwMXFxESVuEX1OxWjo8KUZRnZGeHeFzK2s6DiZVfMLBLOdhX3p2VgdsY7CQWPmlbKQZWfsWgUDlZN04GHgtumKeluBjYGWW8/bzkHGUlLc2RA5CBlZGRkc/BRtLKlIcTS3RwmZmwYI0obqzKobEKALXKMnsp5KXdAAAAAElFTkSuQmCC"
+        alt="RunelitePlus" />
+      <span>
+        RuneLite Plus
+      </span>
+    </a>
+    <button mat-button *ngFor="let item of menuItem" routerLinkActive #routerLinkActiveInstance="routerLinkActive"
+      [attr.tabindex]="routerLinkActiveInstance.isActive ? 0 : -1"
+      [class.list-item-active]="routerLinkActiveInstance.isActive" [routerLink]="item" fxHide.xs="true">
+      {{ item }}
+    </button>
+
+    <span class="spacer"></span>
+
+    <a mat-icon-button="mat-icon-button" target="_blank" rel="noopener noreferrer" href="https://discord.gg/Q7wFtCe">
+      <mat-icon class="icon" aria-hidden="false" aria-label="Discord" svgIcon="discord"></mat-icon>
+    </a>
+    <a mat-icon-button="mat-icon-button" target="_blank" rel="noopener noreferrer"
+      href="https://twitter.com/runeliteplus">
+      <mat-icon class="icon" aria-hidden="false" aria-label="Twitter" svgIcon="twitter"></mat-icon>
+    </a>
+    <a mat-icon-button="mat-icon-button" target="_blank" rel="noopener noreferrer"
+      href="https://github.com/runelite-extended">
+      <mat-icon class="icon" aria-hidden="false" aria-label="Github" svgIcon="github"></mat-icon>
+    </a>
+    <a mat-icon-button="mat-icon-button" target="_blank" rel="noopener noreferrer"
+      href="https://www.patreon.com/join/RuneLitePlus">
+      <mat-icon class="icon" aria-hidden="false" aria-label="Patreon" svgIcon="patreon" color="accent"></mat-icon>
+    </a>
+  </mat-toolbar-row>
+  <mat-toolbar-row class="mobile-nav" fxHide.gt-xs="true" fxLayout="row wrap" fxLayoutAlign="start">
+    <button mat-button *ngFor="let item of menuItem" routerLinkActive #routerLinkActiveInstance="routerLinkActive"
+      [attr.tabindex]="routerLinkActiveInstance.isActive ? 0 : -1"
+      [class.list-item-active]="routerLinkActiveInstance.isActive" [routerLink]="item" fxFlex="0 1 33.33%">
+      {{ item }}
+    </button>
+  </mat-toolbar-row>
+</mat-toolbar>
