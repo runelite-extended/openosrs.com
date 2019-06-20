@@ -9,6 +9,11 @@
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "ng lint"
+    }
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "~8.0.0",
@@ -49,6 +54,7 @@
     "apply-loader": "^2.0.0",
     "codelyzer": "^5.0.1",
     "fibers": "^4.0.1",
+    "husky": "^2.4.1",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~4.0.0",
