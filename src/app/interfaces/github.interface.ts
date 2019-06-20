@@ -79,6 +79,11 @@ export interface Parent {
   url: string;
   html_url: string;
 }
+export interface Links {
+  self: string;
+  git: string;
+  html: string;
+}
 
 export interface Github {
   sha: string;
@@ -102,4 +107,60 @@ export interface GithubFlat {
   commiter_name: string;
   commiter_login: string;
   commiter_html_url: string;
+}
+
+export interface GithubContent {
+  name: string;
+  path: string;
+  sha: string;
+  size: number;
+  url: string;
+  html_url: string;
+  git_url: string;
+  download_url: string;
+  type: string;
+  _links: Links;
+}
+
+export interface GithubContentFile {
+  name: string;
+  path: string;
+  sha: string;
+  size: number;
+  url: string;
+  html_url: string;
+  git_url: string;
+  download_url: string;
+  type: string;
+  content: string;
+  encoding: string;
+  _links: Links;
+}
+
+export interface GithubContentFlat {
+  name: string;
+}
+
+export interface GithubBuildLinks {
+  download_link: string;
+  md_link: string;
+  sha_link: string;
+}
+
+export interface ClientHash {
+  version: string;
+  md: string;
+  sha: string;
+}
+
+export interface HashReturn {
+  version: string;
+  hash: string;
+}
+
+export interface LatestClient {
+  download: string;
+  version: string;
+  md5: Promise<HashReturn>;
+  sha1: Promise<HashReturn>;
 }
