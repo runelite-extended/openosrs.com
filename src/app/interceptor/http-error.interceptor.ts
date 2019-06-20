@@ -1,5 +1,5 @@
 import {HttpErrorResponse, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest} from '@angular/common/http';
-import {Observable, throwError} from 'rxjs';
+import {Observable, of, throwError} from 'rxjs';
 import {catchError} from 'rxjs/operators';
 
 export class HttpErrorInterceptor implements HttpInterceptor {
@@ -13,6 +13,10 @@ export class HttpErrorInterceptor implements HttpInterceptor {
             errorMessage = `Error: ${error.error.message}`;
           } else {
             // server-side error
+            if (error.status === 304) {
+              return of({type: 304});
+            }
+
             errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
           }
 

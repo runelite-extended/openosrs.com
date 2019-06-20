@@ -28,6 +28,7 @@
     "classlist.js": "^1.1.20150312",
     "core-js": "^2.5.4",
     "hammerjs": "^2.0.8",
+    "ngx-indexed-db": "^2.2.0",
     "ngx-markdown": "^8.0.2",
     "normalize.css": "^8.0.1",
     "reset-css": "^4.0.1",

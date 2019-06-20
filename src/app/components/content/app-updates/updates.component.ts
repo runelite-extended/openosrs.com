@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit} from '@angular/core';
 import {Meta, Title} from '@angular/platform-browser';
 import {MatBottomSheet, MatIconRegistry} from '@angular/material';
 
@@ -7,13 +7,13 @@ import {ShareUpdateComponent} from './app-share-plugin/share.update.component';
 import {GithubService} from '../../../services/github.service';
 import {UpdatesJsonService} from '../../../services/updates.service';
 import {NotificationService} from '../../../services/notification.service';
+import {GoogleAnalyticsService} from '../../../services/google.analytics.service';
 
-import {Github} from '../../../interfaces/github.interface';
+import {Github, GithubFlat} from '../../../interfaces/github.interface';
 import {Updates} from '../../../interfaces/updates.interface';
 
 import {Observable, of} from 'rxjs';
 import {catchError} from 'rxjs/operators';
-import {GoogleAnalyticsService} from '../../../services/google.analytics.service';
 
 @Component({
   selector: 'app-features',
@@ -23,7 +23,7 @@ import {GoogleAnalyticsService} from '../../../services/google.analytics.service
 })
 export class AppUpdatesComponent implements OnInit {
 
-  public commits$: Observable<Github[]> | {};
+  public commits: GithubFlat[];
   public updates$: Observable<Updates[]>;
   public fatalError = false;
 
@@ -34,7 +34,8 @@ export class AppUpdatesComponent implements OnInit {
     private notificationService: NotificationService,
     private titleService: Title,
     private metaTagService: Meta,
-    private googleAnalyticsService: GoogleAnalyticsService
+    private googleAnalyticsService: GoogleAnalyticsService,
+    private changeDetectorRef: ChangeDetectorRef,
   ) {}
 
   ngOnInit() {
@@ -43,12 +44,14 @@ export class AppUpdatesComponent implements OnInit {
     this.metaTagService.updateTag({ name: 'keywords', content: 'runelite, runeliteplus, runelite plus, runelite pvp plugins, runelite pvp, runelite plugins, updates, github updates' });
 
     this.updates$ = this.updatesJsonService.getJSON();
-    this.commits$ = this.githubService.getCommits().pipe(
-      catchError(() => {
-        this.fatalError = true;
-        this.notificationService.showError('The latest github commits could not be fetched.');
-        return of({}); // return empty array
-      })
+
+    this.githubService.getCommits().then(
+      (commits) => {
+        this.commits = commits;
+        this.changeDetectorRef.detectChanges();
+      }
+    ).catch(
+      () => this.fatalError = true
     );
   }
 

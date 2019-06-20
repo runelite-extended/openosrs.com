@@ -52,52 +52,51 @@
       <h2>
         Latest Github commits
       </h2>
-      <mat-accordion *ngIf="!fatalError && (commits$ | async) as commits; else noCommits" class="mat-elevation-z3">
+      <mat-accordion *ngIf="commits; else noCommits" class="mat-elevation-z3">
         <mat-expansion-panel *ngFor="let commit of commits" class="mat-elevation-z3">
           <mat-expansion-panel-header>
-            <mat-panel-title [innerText]="commit.commit.message | commitMessage"></mat-panel-title>
-            <mat-panel-description fxHide.lt-md="true" [innerText]="commit.commit.committer.date | commitDate"></mat-panel-description>
+            <mat-panel-title [innerText]="commit.message | commitMessage"></mat-panel-title>
+            <mat-panel-description fxHide.lt-md="true" [innerText]="commit.date | commitDate"></mat-panel-description>
           </mat-expansion-panel-header>
           <ng-template matExpansionPanelContent>
             <mat-action-row fxHide="true" fxHide.lt-md="false">
               <h1>
                 Commit date:
               </h1>
-              <p><span [innerText]="commit.commit.committer.date | commitDate"></span></p>
+              <p><span [innerText]="commit.date | commitDate"></span></p>
             </mat-action-row>
             <mat-action-row>
               <h1>
                 Author:
               </h1>
               <p>
-                <span [innerText]="commit.commit.author.name"></span>
-                <span *ngIf="commit.author && commit.commit.author.name !== commit.author.login" [innerText]="' (Github name: ' + commit.author.login + ')'"></span>
+                <span [innerText]="commit.author_name"></span>
+                <span *ngIf="commit.author_name && commit.author_login && commit.author_name !== commit.author_login" [innerText]="' (Github name: ' + commit.author_login + ')'"></span>
               </p>
             </mat-action-row>
-            <mat-action-row *ngIf="commit.commit.author.name !== commit.commit.committer.name && commit.commit.committer.name !== 'GitHub'">
+            <mat-action-row *ngIf="commit.author_name !== commit.committer_name && commit.committer_name !== 'GitHub'">
               <h1>
                 Commiter:
               </h1>
-              <span [innerText]="commit.commit.committer.name"></span>
               <p>
-                <span [innerText]="commit.commit.committer.name"></span>
-                <span *ngIf="commit.commit.committer.name !== commit.committer.login" [innerText]="'(Github name: ' + commit.committer.login + ')'"></span>
+                <span [innerText]="commit.committer_name"></span>
+                <span *ngIf="commit.committer_name !== commit.committer_login" [innerText]="' (Github name: ' + commit.committer_login + ')'"></span>
               </p>
             </mat-action-row>
             <mat-action-row>
               <h1>
                 Full commit message:
               </h1>
-              <p [innerText]="commit.commit.message"></p>
+              <p [innerText]="commit.message"></p>
             </mat-action-row>
             <mat-action-row class="github-links">
               <a *ngIf="commit.html_url" mat-raised-button="mat-raised-button" color="accent" target="_blank" rel="noopener noreferrer" [attr.href]="commit.html_url">
                 Github commit
               </a>
-              <a *ngIf="commit.author" mat-raised-button="mat-raised-button" color="accent" target="_blank" rel="noopener noreferrer" [attr.href]="commit.author.html_url">
+              <a *ngIf="commit.author_html_url" mat-raised-button="mat-raised-button" color="accent" target="_blank" rel="noopener noreferrer" [attr.href]="commit.author_html_url">
                 Github author
               </a>
-              <a *ngIf="commit.commit.author.name !== commit.commit.committer.name && commit.commit.committer.name !== 'GitHub'" mat-raised-button="mat-raised-button" color="accent" target="_blank" rel="noopener noreferrer" [attr.href]="commit.committer.html_url">
+              <a *ngIf="commit.author_name !== commit.committer_name && commit.committer_name !== 'GitHub'" mat-raised-button="mat-raised-button" color="accent" target="_blank" rel="noopener noreferrer" [attr.href]="commit.committer_html_url">
                 Github comitter
               </a>
             </mat-action-row>
@@ -105,6 +104,11 @@
         </mat-expansion-panel>
       </mat-accordion>
       <ng-template #noCommits>
+        <p>
+          Fetching the latest github commits.
+        </p>
+      </ng-template>
+      <ng-template *ngIf="fatalError">
         <p>
           The latest github commits could not be fetched.
         </p>

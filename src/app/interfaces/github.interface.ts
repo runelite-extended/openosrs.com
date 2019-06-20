@@ -91,3 +91,15 @@ export interface Github {
   committer: Committer2;
   parents: Parent[];
 }
+
+export interface GithubFlat {
+  message: string;
+  date: string;
+  html_url: string;
+  author_name: string;
+  author_login: string;
+  author_html_url: string;
+  commiter_name: string;
+  commiter_login: string;
+  commiter_html_url: string;
+}
