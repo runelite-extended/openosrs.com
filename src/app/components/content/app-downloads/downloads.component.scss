@@ -1,4 +1,9 @@
 .wrapper {
+  @supports (padding: m#{a}x(0px)) {
+    padding-left: m#{a}x(20px, env(safe-area-inset-left));
+    padding-right: m#{a}x(20px, env(safe-area-inset-right));
+  }
+
   .content-header {
     padding-top: 64px;
     height: 74px;
@@ -28,8 +33,53 @@
     .header {
       padding: 0 24px;
 
-      div > h2 {
-        margin-left: -20px;
+      div {
+        justify-content: space-between;
+
+        h2 {
+          margin-left: -20px;
+        }
+      }
+    }
+
+    .stepper-content {
+      margin-top: 15px;
+      margin-left: 35px;
+    }
+
+    .align-justify {
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card-container {
+      padding: 10px 24px;
+      align-items: stretch;
+
+      mat-card-header {
+        margin-left: -16px;
+        margin-bottom: 5px;
+
+        mat-card-title {
+          margin: 0;
+          font-size: 17px;
+        }
+      }
+
+      mat-card-content {
+        line-height: 13pt;
+        text-align: justify;
+      }
+
+      mat-card-actions {
+        padding-bottom: 22px;
+
+        a {
+          position: absolute;
+          left: 16px;
+          bottom: 0;
+          margin-bottom: 7px;
+        }
       }
     }
   }
