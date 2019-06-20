@@ -207,7 +207,15 @@ export class GithubService {
         } else {
           this.fetchCommitsConditionally(date)
             .then((data) => resolve(data))
-            .catch(() => reject());
+            .catch(async () => {
+              const savedCommits = await this.getSavedCommits();
+
+              if (typeof savedCommits !== 'undefined') {
+                resolve(savedCommits);
+              } else {
+                reject();
+              }
+            });
         }
       } else {
         this.fetchCommits(true)
