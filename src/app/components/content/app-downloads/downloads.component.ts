@@ -1,16 +1,18 @@
 import { HashReturn } from './../../../interfaces/github.interface';
-import { ChangeDetectionStrategy, Component, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, ViewChild, ChangeDetectorRef, OnDestroy } from '@angular/core';
 
 import { NotificationService } from '../../../services/notification.service';
 import { GithubService } from 'src/app/services/github.service';
 import { MatStepper } from '@angular/material';
+import { from } from 'rxjs';
 
 @Component({
   selector: 'app-downloads',
   templateUrl: './downloads.component.html',
-  styleUrls: ['./downloads.component.scss']
+  styleUrls: ['./downloads.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AppDownloadsComponent implements OnInit {
+export class AppDownloadsComponent implements OnInit, OnDestroy {
 
   @ViewChild('stepper', { static: false }) stepper: MatStepper;
 
@@ -26,31 +28,54 @@ export class AppDownloadsComponent implements OnInit {
   public hideHashes = true;
   public selectedOperatingSystem = 'Windows';
 
+  private obs = [];
+
   constructor(
     private notificationService: NotificationService,
     private githubService: GithubService,
+    private changeDetectorRef: ChangeDetectorRef
   ) {
   }
 
   ngOnInit(): void {
-    this.githubService.getLatestClient().then(
-      (client) => {
-        this.downloadUrl = client.download;
-        this.clientVersion = client.version;
+    const obs = from(
+      this.githubService.getLatestClient()
+    ).subscribe((client) => {
+      this.downloadUrl = client.download;
+      this.clientVersion = client.version;
 
+      const md5obs = from(
         client.md5
-          .then((data) => this.md5hash = data)
-          .catch(() => this.fatalMdError = true);
+      ).subscribe((data) => {
+        this.md5hash = data;
+        this.changeDetectorRef.detectChanges();
+      }, () => {
+        this.fatalMdError = true;
+        this.changeDetectorRef.detectChanges();
+      });
 
+      const sha1obs = from(
         client.sha1
-          .then((data) => this.sha1hash = data)
-          .catch(() => this.fatalShaError = true);
-      }
-    ).catch(
-      () => {
-        console.log('oei');
-      }
-    );
+      ).subscribe((data) => {
+        this.sha1hash = data;
+        this.changeDetectorRef.detectChanges();
+      }, () => {
+        this.fatalShaError = true;
+        this.changeDetectorRef.detectChanges();
+      });
+
+      this.obs.push(md5obs);
+      this.obs.push(sha1obs);
+    });
+
+
+    this.obs.push(obs);
+  }
+
+  ngOnDestroy(): void {
+    for (const ob of this.obs) {
+      ob.unsubscribe();
+    }
   }
 
   public getHash(item: number): string {

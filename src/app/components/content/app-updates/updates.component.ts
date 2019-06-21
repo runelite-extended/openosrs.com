@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit, OnDestroy } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { MatBottomSheet } from '@angular/material';
 
@@ -12,20 +12,23 @@ import { GoogleAnalyticsService } from '../../../services/google.analytics.servi
 import { GithubFlat } from '../../../interfaces/github.interface';
 import { Updates } from '../../../interfaces/updates.interface';
 
-import { Observable, of } from 'rxjs';
+import { Observable, of, Subscription, from } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
 @Component({
   selector: 'app-features',
   templateUrl: './updates.component.html',
-  styleUrls: ['./updates.component.scss']
+  styleUrls: ['./updates.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AppUpdatesComponent implements OnInit {
+export class AppUpdatesComponent implements OnInit, OnDestroy {
 
   public commits: GithubFlat[];
   public updates$: Observable<Updates[]> | {};
   public fatalPostError = false;
   public fatalGithubError = false;
+
+  private githubOb: Subscription;
 
   constructor(
     private updatesJsonService: UpdatesJsonService,
@@ -61,17 +64,19 @@ export class AppUpdatesComponent implements OnInit {
       })
     );
 
-    this.githubService.getCommits().then(
-      (commits) => {
-        this.commits = commits;
-        this.changeDetectorRef.detectChanges();
-      }
-    ).catch(
-      () => {
-        this.fatalGithubError = true;
-        this.changeDetectorRef.detectChanges();
-      }
-    );
+    this.githubOb = from(
+      this.githubService.getCommits()
+    ).subscribe((commits) => {
+      this.commits = commits;
+      this.changeDetectorRef.detectChanges();
+    }, () => {
+      this.fatalGithubError = true;
+      this.changeDetectorRef.detectChanges();
+    });
+  }
+
+  ngOnDestroy(): void {
+    this.githubOb.unsubscribe();
   }
 
   public openBottomSheet(update: Updates): void {
