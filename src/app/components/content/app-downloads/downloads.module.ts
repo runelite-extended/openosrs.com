@@ -2,9 +2,11 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { MatButtonModule, MatStepperModule, MatFormFieldModule, MatSelectModule, MatCardModule } from '@angular/material';
+import { MatButtonModule, MatStepperModule, MatSelectModule, MatCardModule } from '@angular/material';
 
 import { DownloadsRoutingModule } from './downloads.routing';
+
+import { SharedPipesModule } from 'src/app/pipes/shared.pipes.module';
 
 import { AppDownloadsComponent } from './downloads.component';
 
@@ -19,6 +21,8 @@ import { AppDownloadsComponent } from './downloads.component';
     MatCardModule,
 
     DownloadsRoutingModule,
+
+    SharedPipesModule
   ],
   declarations: [
     AppDownloadsComponent

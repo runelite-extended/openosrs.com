@@ -157,7 +157,7 @@ export class GithubService {
     );
   }
 
-  private saveHash(version: string, hash: string, key: number): void {
+  private saveClientHashDate(version: string, hash: string, key: number): void {
     this.db.delete('github_client_hashes', key - 2).then(
       () => {
         this.db.add('github_client_hashes', {
@@ -181,7 +181,7 @@ export class GithubService {
     );
   }
 
-  private async getHash(key: number): Promise<HashReturn> {
+  private async getClientHashDate(key: number): Promise<HashReturn> {
     return this.db.getByKey('github_client_hashes', key - 2).then(
       (hash) => {
         if (typeof hash === 'undefined') {
@@ -236,7 +236,7 @@ export class GithubService {
     });
   }
 
-  private async fetchHash(databaseError: boolean, version: string, url: string, key: number): Promise<HashReturn> {
+  private async fetchClientHashDate(databaseError: boolean, version: string, url: string, key: number, hash: boolean): Promise<HashReturn> {
     return new Promise((resolve, reject) => {
       this.http.get<GithubContentFile>(
         url,
@@ -247,12 +247,18 @@ export class GithubService {
         .subscribe((resp) => {
           if (!databaseError) {
             this.setLastModified(resp.headers, key);
-            this.saveHash(version, atob(resp.body.content.replace(/(\r\n|\n|\r)/gm, '')), key);
+            this.saveClientHashDate(
+              version,
+              hash ?
+                atob(resp.body.content.replace(/(\r\n|\n|\r)/gm, '')) :
+                resp.body[0].commit.committer.date,
+              key
+            );
           }
 
           resolve({
             version,
-            hash: atob(resp.body.content.replace(/(\r\n|\n|\r)/gm, ''))
+            hash: hash ? atob(resp.body.content.replace(/(\r\n|\n|\r)/gm, '')) : resp.body[0].commit.committer.date
           });
         }, () => reject());
     });
@@ -332,7 +338,7 @@ export class GithubService {
     });
   }
 
-  private async fetchHashConditionally(date: string, version: string, url: string, key: number): Promise<HashReturn> {
+  private async fetchHashConditionally(date: string, version: string, url: string, key: number, hashing: boolean): Promise<HashReturn> {
     return new Promise((resolve, reject) => {
       const httpHeaders = new HttpHeaders({
         'If-Modified-Since': date
@@ -353,12 +359,12 @@ export class GithubService {
           });
         }, async (error: HttpErrorResponse) => {
           if (error.status === 304) {
-            const hash = await this.getHash(key);
+            const hash = await this.getClientHashDate(key);
 
             if (typeof hash !== 'undefined') {
               resolve(hash);
             } else {
-              this.fetchHash(false, version, url, key).then(
+              this.fetchClientHashDate(false, version, url, key, hashing).then(
                 (data) => resolve(data)
               ).catch(() => reject());
             }
@@ -455,7 +461,7 @@ export class GithubService {
     });
   }
 
-  private async getClientHash(version: string, url: string, key: number): Promise<HashReturn> {
+  private async getClientHash(version: string, url: string, key: number, hashing = true): Promise<HashReturn> {
     return new Promise(async (resolve, reject) => {
       const databaseError = await this.openDatabase().then(
         () => {
@@ -473,14 +479,14 @@ export class GithubService {
         );
 
         if (typeof date === 'undefined') {
-          this.fetchHash(false, version, url, key)
+          this.fetchClientHashDate(false, version, url, key, hashing)
             .then((data) => resolve(data))
             .catch(() => reject());
         } else {
-          this.fetchHashConditionally(date, version, url, key)
+          this.fetchHashConditionally(date, version, url, key, hashing)
             .then((data) => resolve(data))
             .catch(async () => {
-              const hash = await this.getHash(key);
+              const hash = await this.getClientHashDate(key);
 
               if (typeof hash !== 'undefined') {
                 resolve(hash);
@@ -490,7 +496,7 @@ export class GithubService {
             });
         }
       } else {
-        this.fetchHash(false, version, url, key)
+        this.fetchClientHashDate(false, version, url, key, hashing)
           .then((data) => resolve(data))
           .catch(() => reject());
       }
@@ -508,11 +514,15 @@ export class GithubService {
 
   private buildUrls(clientVersion: string): GithubBuildLinks {
     const jarPath = `${this.runelitPath}/${clientVersion}/client-${clientVersion}.jar`;
+    const mavenPath = `${this.user}/${this.mavenRepository}`;
+    const mavenApiPath = `${this.baseUrlApi}/repos/${mavenPath}`;
+    const mavenRawPath = `${this.baseUrlRaw}/${mavenPath}`;
 
     return {
-      download_link: `${this.baseUrlRaw}/${this.user}/${this.mavenRepository}/master/${jarPath}`,
-      md_link: `${this.baseUrlApi}/repos/${this.user}/${this.mavenRepository}/contents/${jarPath}.md5`,
-      sha_link: `${this.baseUrlApi}/repos/${this.user}/${this.mavenRepository}/contents/${jarPath}.sha1`,
+      download_link: `${mavenRawPath}/master/${jarPath}`,
+      md_link: `${mavenApiPath}/contents/${jarPath}.md5`,
+      sha_link: `${mavenApiPath}/contents/${jarPath}.sha1`,
+      commit_link: `${mavenApiPath}/commits?path=${jarPath}&page=1&per_page=1`
     };
   }
 
@@ -526,11 +536,14 @@ export class GithubService {
           const md = this.getClientHash(latestClient.name, links.md_link, 3);
           const sha = this.getClientHash(latestClient.name, links.sha_link, 4);
 
+          const date = this.getClientHash(latestClient.name, links.commit_link, 5, false);
+
           resolve({
             download: links.download_link,
             version: latestClient.name,
             md5: md,
-            sha1: sha
+            sha1: sha,
+            date
           });
         }
       );

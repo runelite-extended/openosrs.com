@@ -3,7 +3,7 @@ import { ChangeDetectionStrategy, Component, OnInit, ViewChild, ChangeDetectorRe
 
 import { NotificationService } from '../../../services/notification.service';
 import { GithubService } from 'src/app/services/github.service';
-import { MatStepper } from '@angular/material';
+import { MatStepper, MatTableDataSource } from '@angular/material';
 import { from } from 'rxjs';
 
 @Component({
@@ -22,12 +22,13 @@ export class AppDownloadsComponent implements OnInit, OnDestroy {
   public sha1hash: HashReturn;
   public fatalShaError = false;
   public clientVersion: string;
-
-  private selectedDownload: number;
-
+  public jarDate: string;
   public hideHashes = true;
   public selectedOperatingSystem = 'Windows';
+  public displayedColumns = [];
+  public dataSource = new MatTableDataSource([]);
 
+  private selectedDownload: number;
   private obs = [];
 
   constructor(
@@ -64,8 +65,17 @@ export class AppDownloadsComponent implements OnInit, OnDestroy {
         this.changeDetectorRef.detectChanges();
       });
 
+      const dateobs = from(
+        client.date
+      ).subscribe((data) => {
+        this.jarDate = data.hash;
+        console.log(this.jarDate);
+        this.changeDetectorRef.detectChanges();
+      });
+
       this.obs.push(md5obs);
       this.obs.push(sha1obs);
+      this.obs.push(dateobs);
     });
 
 

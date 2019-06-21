@@ -145,6 +145,7 @@ export interface GithubBuildLinks {
   download_link: string;
   md_link: string;
   sha_link: string;
+  commit_link: string;
 }
 
 export interface ClientHash {
@@ -163,4 +164,5 @@ export interface LatestClient {
   version: string;
   md5: Promise<HashReturn>;
   sha1: Promise<HashReturn>;
+  date: Promise<HashReturn>;
 }

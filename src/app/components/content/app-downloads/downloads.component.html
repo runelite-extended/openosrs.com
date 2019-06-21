@@ -84,7 +84,10 @@
                           </mat-card-title>
                         </mat-card-header>
                         <mat-card-content>
-                          <h4 [innerText]="'Jar version: v' + clientVersion"></h4>
+                          <h4>
+                            <span [innerText]="'Jar version: v' + clientVersion"></span>
+                            <span *ngIf="jarDate" [innerText]="' - ' + (jarDate | commitDate)"></span>
+                          </h4>
                           <p *ngIf="selectedOperatingSystem == 'Windows'">
                             Already have java installed and don't want to have it bundled in a launcher, wanting to have
                             control over your java settings, whatever your motivation is you can also download the jar
@@ -114,12 +117,20 @@
             <mat-step optional>
               <ng-template matStepLabel>Compare hashes</ng-template>
               <div class="stepper-content">
-                <p>
-                  MD5 hash: <span [innerText]="getHash(0)"></span>
-                </p>
-                <p>
-                  SHA1 hash: <span [innerText]="getHash(1)"></span>
-                </p>
+                <table class="mat-table">
+                  <tr class="mat-header-row">
+                    <th class="mat-header-cell">Hashing algorithm</th>
+                    <th class="mat-header-cell">Hashing value</th>
+                  </tr>
+                  <tr class="mat-row">
+                    <td class="mat-cell">MD5</td>
+                    <td class="mat-cell" [innerText]="getHash(0)"></td>
+                  </tr>
+                  <tr class="mat-row">
+                    <td class="mat-cell">SHA1</td>
+                    <td class="mat-cell" [innerText]="getHash(1)"></td>
+                  </tr>
+                </table>
                 <div>
                   <button mat-button matStepperPrevious>Back</button>
                 </div>
