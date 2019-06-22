@@ -149,9 +149,11 @@ export class GithubService {
     this.db.clear('github_clients').then(
       () => {
         for (const client of clients) {
-          this.db.add('github_clients', {
-            name: client.name
-          });
+          if (!client.name.includes('maven') && client.type === 'dir') {
+            this.db.add('github_clients', {
+              name: client.name
+            });
+          }
         }
       }
     );
