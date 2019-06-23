@@ -21,8 +21,6 @@ export class MetaService {
     for (const tag of tags) {
       let tagObj: { name?: string, property?: string, content: string };
 
-      console.log(`Updating ${tag.name}: property? ${tag.property}`);
-
       if (typeof tag.property !== 'undefined' && tag.property) {
         tagObj = { property: tag.name, content: tag.content };
       } else {
