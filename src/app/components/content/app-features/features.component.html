@@ -2,7 +2,7 @@
   <div class="content-header mat-toolbar mat-primary"><span>Features</span></div>
   <div class="content">
     <div fxLayout="row wrap" fxLayoutAlign="center">
-      <mat-form-field color="accent" class="filter-field" fxFlex="0 1 42.5%" fxFlex.lt-xl="0 1 41%"
+      <mat-form-field color="primary" class="filter-field" fxFlex="0 1 42.5%" fxFlex.lt-xl="0 1 41%"
         fxFlex.lt-lg="0 1 45%" fxFlex.lt-md="0 1 45%" fxFlex.lt-sm="42.5%">
         <input matInput="matInput" type="text" placeholder="Filter" [(ngModel)]="filter" />
         <button mat-button="mat-button" *ngIf="filter" matSuffix="matSuffix" mat-icon-button="mat-icon-button"
@@ -10,7 +10,7 @@
           <mat-icon class="icon" aria-hidden="false" aria-label="Empty" svgIcon="times"></mat-icon>
         </button>
       </mat-form-field>
-      <mat-form-field color="accent" fxFlex="0 1 42.5%" fxFlex.lt-xl="0 1 41%" fxFlex.lt-lg="0 1 45%"
+      <mat-form-field color="primary" fxFlex="0 1 42.5%" fxFlex.lt-xl="0 1 41%" fxFlex.lt-lg="0 1 45%"
         fxFlex.lt-md="0 1 45%" fxFlex.lt-sm="42.5%">
         <mat-label>
           Category
@@ -44,7 +44,7 @@
                     <p [innerText]="plugin.description"></p>
                   </mat-card-content>
                   <mat-card-actions *ngIf="plugin.wiki">
-                    <a mat-raised-button="mat-raised-button" color="accent" target="_blank" rel="noopener noreferrer"
+                    <a mat-raised-button="mat-raised-button" color="primary" target="_blank" rel="noopener noreferrer"
                       [attr.href]="plugin.wiki">
                       Wiki
                     </a>

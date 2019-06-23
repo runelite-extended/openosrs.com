@@ -27,7 +27,7 @@
             <mat-step>
               <ng-template matStepLabel>Select operating system</ng-template>
               <div class="stepper-content">
-                <mat-form-field color="accent">
+                <mat-form-field color="primary">
                   <mat-label>
                     Operating System
                   </mat-label>
@@ -68,7 +68,7 @@
                           </p>
                         </mat-card-content>
                         <mat-card-actions>
-                          <a mat-raised-button="mat-raised-button" color="accent" rel="noopener noreferrer"
+                          <a mat-raised-button="mat-raised-button" color="primary" rel="noopener noreferrer"
                             href="https://runelitepl.us/assets/RuneLitePlusSetup.exe" (click)="downloadClick(0)"
                             [disabled]="selectedOperatingSystem != 'Windows'">
                             Download
@@ -100,7 +100,7 @@
                           </p>
                         </mat-card-content>
                         <mat-card-actions *ngIf="downloadUrl">
-                          <a mat-raised-button="mat-raised-button" color="accent" rel="noopener noreferrer"
+                          <a mat-raised-button="mat-raised-button" color="primary" rel="noopener noreferrer"
                             [attr.href]="downloadUrl" (click)="downloadClick(1)">
                             Download
                           </a>

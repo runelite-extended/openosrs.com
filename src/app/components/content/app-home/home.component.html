@@ -11,7 +11,7 @@
         <span *ngIf="!fatalCountError && (session$ | async) as count"
           [innerText]="'Current player count: ' + count"></span>
       </p>
-      <button routerLink="/downloads" mat-raised-button="mat-raised-button" color="accent">
+      <button routerLink="/downloads" mat-raised-button="mat-raised-button" color="primary">
         Download
       </button>
     </div>
@@ -44,7 +44,7 @@
                 </p>
               </mat-card-content>
               <mat-card-actions>
-                <a mat-raised-button="mat-raised-button" color="accent" target="_blank" rel="noopener noreferrer"
+                <a mat-raised-button="mat-raised-button" color="primary" target="_blank" rel="noopener noreferrer"
                   href="https://github.com/runelite-extended/runelite/wiki/Plugin-Support">
                   Read more
                 </a>
@@ -64,7 +64,7 @@
                 </p>
               </mat-card-content>
               <mat-card-actions>
-                <a mat-raised-button="mat-raised-button" color="accent" target="_blank" rel="noopener noreferrer"
+                <a mat-raised-button="mat-raised-button" color="primary" target="_blank" rel="noopener noreferrer"
                   href="https://github.com/runelite-extended/runelite">
                   View RL+ source
                 </a>
@@ -85,7 +85,7 @@
                 </p>
               </mat-card-content>
               <mat-card-actions>
-                <a mat-raised-button="mat-raised-button" color="accent" target="_blank" rel="noopener noreferrer"
+                <a mat-raised-button="mat-raised-button" color="primary" target="_blank" rel="noopener noreferrer"
                   href="https://runelitepl.us/features/">
                   Read features
                 </a>
@@ -105,7 +105,7 @@
         <h2>
           Plugins
         </h2>
-        <button mat-raised-button="mat-raised-button" color="accent" routerLink="/features">
+        <button mat-raised-button="mat-raised-button" color="primary" routerLink="/features">
           See all
         </button>
       </div>
@@ -151,7 +151,7 @@
         <h2>
           Latest updates
         </h2>
-        <button mat-raised-button="mat-raised-button" color="accent" routerLink="/updates">
+        <button mat-raised-button="mat-raised-button" color="primary" routerLink="/updates">
           See all
         </button>
       </div>
