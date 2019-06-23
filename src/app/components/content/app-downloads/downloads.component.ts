@@ -1,9 +1,12 @@
-import { HashReturn } from './../../../interfaces/github.interface';
 import { ChangeDetectionStrategy, Component, OnInit, ViewChild, ChangeDetectorRef, OnDestroy } from '@angular/core';
+import { MatStepper } from '@angular/material';
 
 import { NotificationService } from '../../../services/notification.service';
 import { GithubService } from 'src/app/services/github.service';
-import { MatStepper, MatTableDataSource } from '@angular/material';
+import { MetaService } from 'src/app/services/meta.service';
+
+import { HashReturn } from './../../../interfaces/github.interface';
+
 import { from } from 'rxjs';
 
 @Component({
@@ -25,8 +28,6 @@ export class AppDownloadsComponent implements OnInit, OnDestroy {
   public jarDate: string;
   public hideHashes = true;
   public selectedOperatingSystem = 'Windows';
-  public displayedColumns = [];
-  public dataSource = new MatTableDataSource([]);
 
   private selectedDownload: number;
   private obs = [];
@@ -34,11 +35,27 @@ export class AppDownloadsComponent implements OnInit, OnDestroy {
   constructor(
     private notificationService: NotificationService,
     private githubService: GithubService,
-    private changeDetectorRef: ChangeDetectorRef
-  ) {
-  }
+    private changeDetectorRef: ChangeDetectorRef,
+    private metaService: MetaService
+  ) { }
 
   ngOnInit(): void {
+    const description = 'Runelite Plus has a lot more features compared to RuneLite, zulrah helper, ' +
+      'improved runelite plugins, pvp plugins, pvm plugins and more. Use Runelite Plus over RuneLite!';
+
+    this.metaService.updateTags([
+      {
+        name: 'keywords',
+        content: 'runelite, runeliteplus, runelite plus, runelite pvp plugins, runelite pvp, runelite plugins, download, downloads'
+      },
+      { name: 'description', content: description },
+      { name: 'twitter:description', content: description },
+      { name: 'og:url', content: 'http://runelitepl.us/downloads', property: true },
+      { name: 'og:secure_url', content: 'https://runelitepl.us/downloads', property: true },
+      { name: 'og:type', content: 'website', property: true },
+      { name: 'og:description', content: description, property: true },
+    ]);
+
     const obs = from(
       this.githubService.getLatestClient()
     ).subscribe((client) => {
@@ -69,7 +86,6 @@ export class AppDownloadsComponent implements OnInit, OnDestroy {
         client.date
       ).subscribe((data) => {
         this.jarDate = data.hash;
-        console.log(this.jarDate);
         this.changeDetectorRef.detectChanges();
       });
 

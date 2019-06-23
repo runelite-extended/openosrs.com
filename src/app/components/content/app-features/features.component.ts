@@ -1,8 +1,9 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { MatIconRegistry } from '@angular/material';
-import { DomSanitizer, Meta, Title } from '@angular/platform-browser';
+import { DomSanitizer } from '@angular/platform-browser';
 
 import { PluginsJsonService } from '../../../services/plugins.json.service';
+import { MetaService } from 'src/app/services/meta.service';
 
 import { Plugins } from '../../../interfaces/plugins.interface';
 
@@ -31,21 +32,25 @@ export class AppFeaturesComponent implements OnInit {
     private pluginsJsonService: PluginsJsonService,
     private domSanitizer: DomSanitizer,
     private matIconRegistry: MatIconRegistry,
-    private titleService: Title,
-    private metaTagService: Meta
+    private metaService: MetaService
   ) { }
 
   ngOnInit() {
-    this.titleService.setTitle('Runelite Plus: Features');
-    this.metaTagService.updateTag({
-      name: 'description',
-      content: 'Runelite Plus has a lot more features compared to RuneLite, zulrah helper, ' +
-        'better runelite plugins, pvp plugins, pvm plugins and more. Use Runelite Plus over RuneLite!'
-    });
-    this.metaTagService.updateTag({
-      name: 'keywords',
-      content: 'runelite, runeliteplus, runelite plus, runelite pvp plugins, runelite pvp, runelite plugins, updates, github updates'
-    });
+    const description = 'Runelite Plus has a lot more features compared to RuneLite, zulrah helper, ' +
+      'improved runelite plugins, pvp plugins, pvm plugins and more. Use Runelite Plus over RuneLite!';
+
+    this.metaService.updateTags([
+      {
+        name: 'keywords',
+        content: 'runelite, runeliteplus, runelite plus, runelite pvp plugins, runelite pvp, runelite plugins, zulrah, vorkath'
+      },
+      { name: 'description', content: description },
+      { name: 'twitter:description', content: description },
+      { name: 'og:url', content: 'http://runelitepl.us/features', property: true },
+      { name: 'og:secure_url', content: 'https://runelitepl.us/features', property: true },
+      { name: 'og:type', content: 'website', property: true },
+      { name: 'og:description', content: description, property: true },
+    ]);
 
     this.plugins$ = this.pluginsJsonService.getJSON();
 

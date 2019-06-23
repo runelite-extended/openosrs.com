@@ -1,5 +1,4 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component } from '@angular/core';
-import { Meta, Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { MatBottomSheet } from '@angular/material';
 
@@ -12,6 +11,7 @@ import { GoogleAnalyticsService } from '../../../../services/google.analytics.se
 import { Updates } from '../../../../interfaces/updates.interface';
 
 import { take } from 'rxjs/operators';
+import { MetaService } from 'src/app/services/meta.service';
 
 @Component({
   selector: 'app-full-post',
@@ -28,10 +28,9 @@ export class AppFullPostComponent {
     private updatesJsonService: UpdatesJsonService,
     private matBottomSheet: MatBottomSheet,
     private notificationService: NotificationService,
-    private titleService: Title,
-    private metaTagService: Meta,
     private changeDetectorRef: ChangeDetectorRef,
-    private googleAnalyticsService: GoogleAnalyticsService
+    private googleAnalyticsService: GoogleAnalyticsService,
+    private metaService: MetaService
   ) {
     this.activatedRoute.params.pipe(take(1)).subscribe(params => {
       this.updatesJsonService.getJSON().pipe(take(1)).subscribe((data: Updates[]) => {
@@ -39,16 +38,22 @@ export class AppFullPostComponent {
           if (update.mdFile === params.name) {
             this.update = update;
 
-            this.titleService.setTitle(`Runelite Plus: ${update.title}`);
-            this.metaTagService.updateTag({
-              name: 'description',
-              content: update.title
-            });
-            this.metaTagService.updateTag({
-              name: 'keywords',
-              content: `runelite, runeliteplus, runelite plus, runelite pvp plugins, runelite pvp, ` +
-                `runelite plugins, ${update.categories.join(', ')}, ${update.tags.join(', ')}`
-            });
+            this.metaService.updateTitle(`Runelite Plus: ${update.title}`);
+            this.metaService.updateTags([
+              {
+                name: 'keywords',
+                content: `runelite, runeliteplus, runelite plus, runelite pvp plugins, runelite pvp, ` +
+                  `runelite plugins, ${update.categories.join(', ')}, ${update.tags.join(', ')}`
+              },
+              { name: 'description', content: update.title },
+              { name: 'twitter:description', content: update.title },
+              { name: 'og:url', content: 'http://runelitepl.us/updates', property: true },
+              { name: 'og:secure_url', content: 'https://runelitepl.us/updates', property: true },
+              { name: 'og:type', content: 'website', property: true },
+              { name: 'og:description', content: update.title, property: true },
+            ]);
+
+            this.metaService.addArticleTags(update.date.slice(0, -1), update.title);
 
             this.changeDetectorRef.detectChanges();
           }

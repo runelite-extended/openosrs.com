@@ -1,10 +1,10 @@
 import { ChangeDetectionStrategy, Component, OnInit, ChangeDetectorRef } from '@angular/core';
-import { Meta, Title } from '@angular/platform-browser';
 
 import { SessionService } from '../../../services/session.service';
 import { UpdatesJsonService } from '../../../services/updates.service';
 import { PluginsJsonService } from '../../../services/plugins.json.service';
 import { NotificationService } from 'src/app/services/notification.service';
+import { MetaService } from 'src/app/services/meta.service';
 
 import { Updates } from '../../../interfaces/updates.interface';
 import { Plugins } from '../../../interfaces/plugins.interface';
@@ -31,23 +31,24 @@ export class AppHomeComponent implements OnInit {
     private sessionService: SessionService,
     private pluginsJsonService: PluginsJsonService,
     private updatesJsonService: UpdatesJsonService,
-    private titleService: Title,
-    private metaTagService: Meta,
     private notificationService: NotificationService,
-    private changeDetectorRef: ChangeDetectorRef
+    private changeDetectorRef: ChangeDetectorRef,
+    private metaService: MetaService
   ) { }
 
   ngOnInit(): void {
-    this.titleService.setTitle('Runelite Plus: Homepage');
-    this.metaTagService.updateTag({
-      name: 'description',
-      content: 'RuneLitePlus provides more functionality and less restrictions ' +
-        'while staying open source. We have lots of RuneLite Plus plugins!'
-    });
-    this.metaTagService.updateTag({
-      name: 'keywords',
-      content: 'runelite, runeliteplus, runelite plus, runelite pvp plugins, runelite pvp, runelite plugins'
-    });
+    const description = 'RuneLite Plus provides more functionality and less restrictions while staying open source. ' +
+      'We have lots of custom RuneLite plugins!';
+
+    this.metaService.updateTags([
+      { name: 'keywords', content: 'runelite, runeliteplus, runelite plus, runelite pvp plugins, runelite pvp, runelite plugins' },
+      { name: 'description', content: description },
+      { name: 'twitter:description', content: description },
+      { name: 'og:url', content: 'http://runelitepl.us/home', property: true },
+      { name: 'og:secure_url', content: 'https://runelitepl.us/home', property: true },
+      { name: 'og:type', content: 'website', property: true },
+      { name: 'og:description', content: description, property: true },
+    ]);
 
     this.updates$ = this.updatesJsonService.getJSON().pipe(
       catchError(() => {

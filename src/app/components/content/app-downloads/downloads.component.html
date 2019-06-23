@@ -9,7 +9,7 @@
       <div fxLayout="row wrap" fxFlex="1 1 85%" fxFlex.lt-xl="0 1 82%" fxFlex.lt-lg="0 1 90%" fxFlex.lt-md="0 1 90%"
         fxFlex.lt-sm="0 1 85%" class="align-justify">
         <h2>
-          Downloads
+          Download selection
         </h2>
       </div>
     </div>
@@ -70,7 +70,7 @@
                         <mat-card-actions>
                           <a mat-raised-button="mat-raised-button" color="accent" rel="noopener noreferrer"
                             href="https://runelitepl.us/assets/RuneLitePlusSetup.exe" (click)="downloadClick(0)"
-                            [disabled]="selectedOperatingSystem != 'Windows'" target="_blank">
+                            [disabled]="selectedOperatingSystem != 'Windows'">
                             Download
                           </a>
                         </mat-card-actions>
@@ -95,7 +95,7 @@
                             the launcher).
                           </p>
                           <p *ngIf="selectedOperatingSystem != 'Windows'">
-                            We currently only realease a jar file for your operating system. The jar file will not
+                            We currently only release a jar file for your operating system. The jar file will not
                             update itself when there is an update available. Stay tuned for more download options!
                           </p>
                         </mat-card-content>

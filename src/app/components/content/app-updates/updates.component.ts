@@ -1,5 +1,4 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit, OnDestroy } from '@angular/core';
-import { Meta, Title } from '@angular/platform-browser';
 import { MatBottomSheet } from '@angular/material';
 
 import { ShareUpdateComponent } from './app-share-plugin/share.update.component';
@@ -8,6 +7,7 @@ import { GithubService } from '../../../services/github.service';
 import { UpdatesJsonService } from '../../../services/updates.service';
 import { NotificationService } from '../../../services/notification.service';
 import { GoogleAnalyticsService } from '../../../services/google.analytics.service';
+import { MetaService } from 'src/app/services/meta.service';
 
 import { GithubFlat } from '../../../interfaces/github.interface';
 import { Updates } from '../../../interfaces/updates.interface';
@@ -35,23 +35,27 @@ export class AppUpdatesComponent implements OnInit, OnDestroy {
     private githubService: GithubService,
     private matBottomSheet: MatBottomSheet,
     private notificationService: NotificationService,
-    private titleService: Title,
-    private metaTagService: Meta,
     private googleAnalyticsService: GoogleAnalyticsService,
-    private changeDetectorRef: ChangeDetectorRef
+    private changeDetectorRef: ChangeDetectorRef,
+    private metaService: MetaService
   ) { }
 
   ngOnInit() {
-    this.titleService.setTitle('Runelite Plus: Updates');
-    this.metaTagService.updateTag({
-      name: 'description',
-      content: 'RuneLitePlus provides more functionality and less restrictions ' +
-        'while staying open source. We have lots of RuneLite Plus plugins!'
-    });
-    this.metaTagService.updateTag({
-      name: 'keywords',
-      content: 'runelite, runeliteplus, runelite plus, runelite pvp plugins, runelite pvp, runelite plugins, updates, github updates'
-    });
+    const description = 'RuneLite Plus provides more functionality and less restrictions while staying open source. ' +
+      'We have lots of custom RuneLite plugins!';
+
+    this.metaService.updateTags([
+      {
+        name: 'keywords',
+        content: 'runelite, runeliteplus, runelite plus, runelite pvp plugins, runelite pvp, runelite plugins, updates, github updates'
+      },
+      { name: 'description', content: description },
+      { name: 'twitter:description', content: description },
+      { name: 'og:url', content: 'http://runelitepl.us/updates', property: true },
+      { name: 'og:secure_url', content: 'https://runelitepl.us/updates', property: true },
+      { name: 'og:type', content: 'website', property: true },
+      { name: 'og:description', content: description, property: true },
+    ]);
 
     this.updates$ = this.updatesJsonService.getJSON().pipe(
       catchError(() => {

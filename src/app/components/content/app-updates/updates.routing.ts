@@ -12,7 +12,10 @@ const routes: Routes = [
   },
   {
     path: ':name',
-    component: AppFullPostComponent
+    component: AppFullPostComponent,
+    data: {
+      title: ''
+    }
   }
 ];
 
