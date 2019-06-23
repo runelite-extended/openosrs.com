@@ -47,8 +47,7 @@ export class AppFullPostComponent {
               },
               { name: 'description', content: update.title },
               { name: 'twitter:description', content: update.title },
-              { name: 'og:url', content: 'http://runelitepl.us/updates', property: true },
-              { name: 'og:secure_url', content: 'https://runelitepl.us/updates', property: true },
+              { name: 'og:url', content: `https://runelitepl.us/updates/${params.name}`, property: true },
               { name: 'og:type', content: 'website', property: true },
               { name: 'og:description', content: update.title, property: true },
             ]);

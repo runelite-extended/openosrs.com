@@ -51,8 +51,7 @@ export class AppUpdatesComponent implements OnInit, OnDestroy {
       },
       { name: 'description', content: description },
       { name: 'twitter:description', content: description },
-      { name: 'og:url', content: 'http://runelitepl.us/updates', property: true },
-      { name: 'og:secure_url', content: 'https://runelitepl.us/updates', property: true },
+      { name: 'og:url', content: 'https://runelitepl.us/updates', property: true },
       { name: 'og:type', content: 'website', property: true },
       { name: 'og:description', content: description, property: true },
     ]);

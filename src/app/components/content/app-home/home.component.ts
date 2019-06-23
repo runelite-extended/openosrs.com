@@ -44,8 +44,7 @@ export class AppHomeComponent implements OnInit {
       { name: 'keywords', content: 'runelite, runeliteplus, runelite plus, runelite pvp plugins, runelite pvp, runelite plugins' },
       { name: 'description', content: description },
       { name: 'twitter:description', content: description },
-      { name: 'og:url', content: 'http://runelitepl.us/home', property: true },
-      { name: 'og:secure_url', content: 'https://runelitepl.us/home', property: true },
+      { name: 'og:url', content: 'https://runelitepl.us/home', property: true },
       { name: 'og:type', content: 'website', property: true },
       { name: 'og:description', content: description, property: true },
     ]);
