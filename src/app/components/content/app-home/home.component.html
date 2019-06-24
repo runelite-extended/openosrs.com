@@ -157,8 +157,8 @@
       </div>
     </div>
     <div fxLayout="row wrap" class="align-justify">
-      <mat-nav-list *ngIf="!fatalPostError" fxFlex="1 1 85%" fxFlex.lt-xl="0 1 82%" fxFlex.lt-lg="0 1 90%" fxFlex.lt-md="0 1 90%"
-        fxFlex.lt-sm="0 1 85%">
+      <mat-nav-list *ngIf="!fatalPostError" fxFlex="1 1 85%" fxFlex.lt-xl="0 1 82%" fxFlex.lt-lg="0 1 90%"
+        fxFlex.lt-md="0 1 90%" fxFlex.lt-sm="0 1 85%">
         <ng-container *ngFor="let update of (updates$ | async) | slice:0:3">
           <a mat-list-item="mat-list-item" [routerLink]="'/updates/' + update.mdFile">
             <span mat-line="mat-line" [innerText]="update.title"></span>
