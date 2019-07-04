@@ -92,6 +92,10 @@ export default class Index extends Component {
       <div class="col-12 col-sm-10 col-md-8 col-lg-8">
         <h1>RuneLitePlus is free and we support open source!</h1>
         <p class="lead2">RuneLitePlus is a fork of RuneLite that provides more functionality and less restrictions while staying open source. This is meant to directly compete with 3rd party RL clients that are trying to sell their code.</p>
+	  <div class="img-container">
+          <img src="https://yourkit.com/images/yklogo.png" />
+        </div>	  
+		<p class="lead2">YourKit supports Open Source projects with innovative and intelligent tools for monitoring and profiling java and .net applications. yourKil is the creator of <a href="https://www.yourkit.com/java/profiler/">YourKit Java Profiler</a>, <a href="https://www.yourkit.com/.NET/profiler/">YourKit .NET Profiler</a> and <a href="https://www.yourkit.com/youmonitor/">YourKit YouMonitor</a>.</p>
         <p class="mt-5">
           <a href="https://github.com/runelite-extended/runelite" class="btn btn-light">Github</a>
         </p>
