@@ -99,7 +99,6 @@ export default class Index extends Component {
           <img src="https://yourkit.com/images/yklogo.png" />
         </div>	  
 	<p class="lead2">YourKit supports Open Source projects with innovative and intelligent tools for monitoring and profiling java and .net applications. yourKit is the creator of <a href="https://www.yourkit.com/java/profiler/">YourKit Java Profiler</a>, <a href="https://www.yourkit.com/.NET/profiler/">YourKit .NET Profiler</a> and <a href="https://www.yourkit.com/youmonitor/">YourKit YouMonitor</a>.</p>
-       
       </div>
     </div>
   </div>
