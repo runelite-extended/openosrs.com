@@ -38,7 +38,7 @@ for = "/*"
   headers = {Accepts = "application/json"}
 [[redirects]]
   from = "/mac"
-  to = "https://github.com/runelite-extended/launcher/releases/download/binaries/RuneLitePlus.zip"
+  to = "https://github.com/runelite-extended/launcher/releases/download/binaries/RuneLitePlus.MacOS.zip"
   status = 200
   force = true
   headers = {Accepts = "application/json"}
