@@ -24,3 +24,9 @@ for = "/*"
     Referrer-Policy = "strict-origin-when-cross-origin"
     Strict-Transport-Security = "max-age=2592000"
     Feature-Policy = "geolocation 'none'; midi 'none'; sync-xhr 'none'; microphone 'none'; camera 'none'; magnetometer 'none'; gyroscope 'none'; speaker 'none'; fullscreen 'none'; payment 'none'"
+[[redirects]]
+  from = "/download"
+  to = "https://github.com/runelite-extended/launcher/releases/download/binaries/RuneLitePlusSetup.Windows64.exe"
+  status = 200
+  force = true
+  headers = {Accepts = "application/json"}
