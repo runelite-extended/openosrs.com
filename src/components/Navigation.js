@@ -51,6 +51,9 @@ export default class Navigation extends Component {
             <a target="_blank" rel="noopener noreferrer" href="https://github.com/runelite-extended">
             Github
             </a>
+            <a target="_blank" rel="noopener noreferrer" href="https://runelitepl.us/download">
+              Download
+            </a>
             <a target="_blank" rel="noopener noreferrer" href="https://www.patreon.com/join/RuneLitePlus" ><img src="/img/like.png" class="patreon" alt="RuneLite Plus"></img>
             </a>
           </div>
