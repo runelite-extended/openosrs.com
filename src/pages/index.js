@@ -34,7 +34,7 @@ export default class Index extends Component {
               <div class="col-2 col-md-8 col-lg-6 text-center pb-md-2">
 
                 <div class="lead">Fork of RuneLite that provides more functionality and less restrictions while staying open source.</div>
-                <p class="mt-4"><a class="btn btn-primary" href="https://github.com/runelite-extended/launcher/releases/download/binaries/RuneLitePlusSetup.Windows.exe">Download</a></p>
+                <p class="mt-4"><a class="btn btn-primary" href="https://runelitepl.us/download">Download</a></p>
               </div>
 
             </div>
