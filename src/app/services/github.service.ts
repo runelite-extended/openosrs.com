@@ -5,12 +5,7 @@ import { NgxIndexedDB } from 'ngx-indexed-db';
 
 import {
   GithubContent,
-  GithubContentFlat,
-  GithubBuildLinks,
-  GithubContentFile,
-  ClientHash,
-  HashReturn,
-  LatestClient
+  GithubContentFlat
 } from './../interfaces/github.interface';
 import { Github, GithubFlat } from '../interfaces/github.interface';
 
@@ -22,11 +17,8 @@ import { take } from 'rxjs/operators';
 export class GithubService {
 
   private baseUrlApi = 'https://api.github.com';
-  private baseUrlRaw = 'https://raw.githubusercontent.com';
   private user = 'runelite-extended';
   private repository = 'runelite';
-  private mavenRepository = 'maven-repo';
-  private runelitPath = 'net/runelit/client';
 
   private db = new NgxIndexedDB('runelite-plus', 1);
 
@@ -71,13 +63,6 @@ export class GithubService {
 
       // Last modified
       objectStoreGithubModified.createIndex('update', 'update', { unique: false });
-
-      const objectStoreGithubClient = evt.currentTarget.result.createObjectStore('github_clients', { keyPath: 'id', autoIncrement: true });
-      objectStoreGithubClient.createIndex('name', 'name', { unique: true });
-
-      const objectStoreGithubClientHashes = evt.currentTarget.result.createObjectStore('github_client_hashes');
-      objectStoreGithubClientHashes.createIndex('version', 'version', { unique: false });
-      objectStoreGithubClientHashes.createIndex('hash', 'hash', { unique: true });
 
       const objectStoreGithubCommits = evt.currentTarget.result.createObjectStore('github_commits', { keyPath: 'id', autoIncrement: true });
 
@@ -145,52 +130,10 @@ export class GithubService {
     );
   }
 
-  private saveClients(clients: GithubContent[]): void {
-    this.db.clear('github_clients').then(
-      () => {
-        for (const client of clients) {
-          if (!client.name.includes('maven') && client.type === 'dir') {
-            this.db.add('github_clients', {
-              name: client.name
-            });
-          }
-        }
-      }
-    );
-  }
-
-  private saveClientHashDate(version: string, hash: string, key: number): void {
-    this.db.delete('github_client_hashes', key - 2).then(
-      () => {
-        this.db.add('github_client_hashes', {
-          // tslint:disable-next-line: object-literal-shorthand
-          version: version,
-          // tslint:disable-next-line: object-literal-shorthand
-          hash: hash
-        }, key - 2);
-      }
-    );
-  }
-
-  private async getSaveditems(objectStore: string): Promise<GithubFlat[] | GithubContentFlat[] | ClientHash> {
+  private async getSaveditems(objectStore: string): Promise<GithubFlat[] | GithubContentFlat[]> {
     return this.db.getAll(objectStore).then(
       (items) => {
         return items;
-      },
-      () => {
-        return undefined;
-      }
-    );
-  }
-
-  private async getClientHashDate(key: number): Promise<HashReturn> {
-    return this.db.getByKey('github_client_hashes', key - 2).then(
-      (hash) => {
-        if (typeof hash === 'undefined') {
-          return undefined;
-        }
-
-        return hash;
       },
       () => {
         return undefined;
@@ -213,55 +156,6 @@ export class GithubService {
           }
 
           resolve(GithubService.githubToGithubFlat(resp.body));
-        }, () => reject());
-    });
-  }
-
-  private async fetchClients(databaseError: boolean): Promise<GithubContentFlat[]> {
-    return new Promise((resolve, reject) => {
-      this.http.get<GithubContent[]>(
-        `${this.baseUrlApi}/repos/${this.user}/${this.mavenRepository}/contents/${this.runelitPath}`,
-        { observe: 'response' })
-        .pipe(
-          take(1)
-        )
-        .subscribe((resp) => {
-          const clients = resp.body.filter((x) => x.type === 'dir');
-
-          if (!databaseError) {
-            this.setLastModified(resp.headers, 2);
-            this.saveClients(clients);
-          }
-
-          resolve(GithubService.githubContentsToName(clients));
-        }, () => reject());
-    });
-  }
-
-  private async fetchClientHashDate(databaseError: boolean, version: string, url: string, key: number, hash: boolean): Promise<HashReturn> {
-    return new Promise((resolve, reject) => {
-      this.http.get<GithubContentFile>(
-        url,
-        { observe: 'response' })
-        .pipe(
-          take(1)
-        )
-        .subscribe((resp) => {
-          if (!databaseError) {
-            this.setLastModified(resp.headers, key);
-            this.saveClientHashDate(
-              version,
-              hash ?
-                atob(resp.body.content.replace(/(\r\n|\n|\r)/gm, '')) :
-                resp.body[0].commit.committer.date,
-              key
-            );
-          }
-
-          resolve({
-            version,
-            hash: hash ? atob(resp.body.content.replace(/(\r\n|\n|\r)/gm, '')) : resp.body[0].commit.committer.date
-          });
         }, () => reject());
     });
   }
@@ -291,82 +185,6 @@ export class GithubService {
               resolve(savedCommits as GithubFlat[]);
             } else {
               this.fetchCommits(false).then(
-                (data) => resolve(data)
-              ).catch(() => reject());
-            }
-
-            reject();
-          }
-
-          reject();
-        });
-    });
-  }
-
-  private async fetchClientsConditionally(date: string): Promise<GithubContentFlat[]> {
-    return new Promise((resolve, reject) => {
-      const httpHeaders = new HttpHeaders({
-        'If-Modified-Since': date
-      });
-
-      this.http.get<GithubContent[]>(
-        `${this.baseUrlApi}/repos/${this.user}/${this.mavenRepository}/contents/${this.runelitPath}`,
-        { observe: 'response', headers: httpHeaders })
-        .pipe(
-          take(1)
-        )
-        .subscribe(async (resp) => {
-          this.setLastModified(resp.headers, 2);
-          this.saveClients(resp.body);
-
-          resolve(GithubService.githubContentsToName(resp.body));
-        }, async (error: HttpErrorResponse) => {
-          if (error.status === 304) {
-            const savedClients = await this.getSaveditems('github_clients');
-
-            if (typeof savedClients !== 'undefined') {
-              resolve(savedClients as GithubContentFlat[]);
-            } else {
-              this.fetchClients(false).then(
-                (data) => resolve(data)
-              ).catch(() => reject());
-            }
-
-            reject();
-          }
-
-          reject();
-        });
-    });
-  }
-
-  private async fetchHashConditionally(date: string, version: string, url: string, key: number, hashing: boolean): Promise<HashReturn> {
-    return new Promise((resolve, reject) => {
-      const httpHeaders = new HttpHeaders({
-        'If-Modified-Since': date
-      });
-
-      this.http.get<GithubContentFile>(
-        url,
-        { observe: 'response', headers: httpHeaders })
-        .pipe(
-          take(1)
-        )
-        .subscribe(async (resp) => {
-          this.setLastModified(resp.headers, key);
-
-          resolve({
-            version,
-            hash: atob(resp.body.content.replace(/(\r\n|\n|\r)/gm, ''))
-          });
-        }, async (error: HttpErrorResponse) => {
-          if (error.status === 304) {
-            const hash = await this.getClientHashDate(key);
-
-            if (typeof hash !== 'undefined') {
-              resolve(hash);
-            } else {
-              this.fetchClientHashDate(false, version, url, key, hashing).then(
                 (data) => resolve(data)
               ).catch(() => reject());
             }
@@ -418,137 +236,6 @@ export class GithubService {
           .then((data) => resolve(data))
           .catch(() => reject());
       }
-    });
-  }
-
-  private async getAllClients(): Promise<GithubContentFlat[]> {
-    return new Promise(async (resolve, reject) => {
-      const databaseError = await this.openDatabase().then(
-        () => {
-          return false;
-        }, () => {
-          return true;
-        }
-      );
-
-      if (!databaseError) {
-        const date = await this.getLastmodified(2).then(
-          (modifiedDate) => {
-            return modifiedDate;
-          }
-        );
-
-        if (typeof date === 'undefined') {
-          this.fetchClients(false)
-            .then((data) => resolve(data))
-            .catch(() => reject());
-        } else {
-          this.fetchClientsConditionally(date)
-            .then((data) => resolve(data))
-            .catch(async () => {
-              const savedClients = await this.getSaveditems('github_clients');
-
-              if (typeof savedClients !== 'undefined') {
-                resolve(savedClients as GithubContentFlat[]);
-              } else {
-                reject();
-              }
-            });
-        }
-      } else {
-        this.fetchClients(true)
-          .then((data) => resolve(data))
-          .catch(() => reject());
-      }
-    });
-  }
-
-  private async getClientHash(version: string, url: string, key: number, hashing = true): Promise<HashReturn> {
-    return new Promise(async (resolve, reject) => {
-      const databaseError = await this.openDatabase().then(
-        () => {
-          return false;
-        }, () => {
-          return true;
-        }
-      );
-
-      if (!databaseError) {
-        const date = await this.getLastmodified(key).then(
-          (modifiedDate) => {
-            return modifiedDate;
-          }
-        );
-
-        if (typeof date === 'undefined') {
-          this.fetchClientHashDate(false, version, url, key, hashing)
-            .then((data) => resolve(data))
-            .catch(() => reject());
-        } else {
-          this.fetchHashConditionally(date, version, url, key, hashing)
-            .then((data) => resolve(data))
-            .catch(async () => {
-              const hash = await this.getClientHashDate(key);
-
-              if (typeof hash !== 'undefined') {
-                resolve(hash);
-              } else {
-                reject();
-              }
-            });
-        }
-      } else {
-        this.fetchClientHashDate(false, version, url, key, hashing)
-          .then((data) => resolve(data))
-          .catch(() => reject());
-      }
-    });
-  }
-
-  private sortArrayMultiple(arr: GithubContentFlat[]): GithubContentFlat {
-    return arr.sort((a, b) => {
-      const itemA = a.name.split('.');
-      const itemB = b.name.split('.');
-
-      return Number(itemA[0]) - Number(itemB[0]) || Number(itemA[1]) - Number(itemB[1]) || Number(itemA[2]) - Number(itemB[2]);
-    }).slice(-1)[0];
-  }
-
-  private buildUrls(clientVersion: string): GithubBuildLinks {
-    const jarPath = `${this.runelitPath}/${clientVersion}/client-${clientVersion}.jar`;
-    const mavenPath = `${this.user}/${this.mavenRepository}`;
-    const mavenApiPath = `${this.baseUrlApi}/repos/${mavenPath}`;
-    const mavenRawPath = `${this.baseUrlRaw}/${mavenPath}`;
-
-    return {
-      download_link: `${mavenRawPath}/master/${jarPath}`,
-      md_link: `${mavenApiPath}/contents/${jarPath}.md5`,
-      sha_link: `${mavenApiPath}/contents/${jarPath}.sha1`,
-      commit_link: `${mavenApiPath}/commits?path=${jarPath}&page=1&per_page=1`
-    };
-  }
-
-  public async getLatestClient(): Promise<LatestClient> {
-    return new Promise(async (resolve, reject) => {
-      this.getAllClients().then(
-        async (data) => {
-          const latestClient = this.sortArrayMultiple(data);
-          const links = this.buildUrls(latestClient.name);
-
-          const md = this.getClientHash(latestClient.name, links.md_link, 3);
-          const sha = this.getClientHash(latestClient.name, links.sha_link, 4);
-
-          const date = this.getClientHash(latestClient.name, links.commit_link, 5, false);
-
-          resolve({
-            download: links.download_link,
-            version: latestClient.name,
-            md5: md,
-            sha1: sha,
-            date
-          });
-        }
-      );
     });
   }
 }

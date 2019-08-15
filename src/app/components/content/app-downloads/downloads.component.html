@@ -48,17 +48,17 @@
                   <div fxLayout="row wrap" fxLayoutAlign="start">
                     <div class="card-container" fxFlex="1 1 50%" fxFlex.lt-md="1 1 100%">
                       <mat-card class="mat-elevation-z3" fxFlex="1 1 auto"
-                        [style.opacity]="selectedOperatingSystem == 'Windows' ? 1 : 0.35">
+                        [style.opacity]="selectedOperatingSystem == 'Windows' || selectedOperatingSystem == 'MacOS' ? 1 : 0.35">
                         <mat-card-header>
                           <mat-card-title>
                             Launcher
                           </mat-card-title>
                         </mat-card-header>
                         <mat-card-content>
-                          <h4 *ngIf="selectedOperatingSystem == 'Windows'">
+                          <h4 *ngIf="selectedOperatingSystem == 'Windows' || selectedOperatingSystem == 'MacOS'">
                             Best choice
                           </h4>
-                          <h4 *ngIf="selectedOperatingSystem != 'Windows'">
+                          <h4 *ngIf="selectedOperatingSystem != 'Windows' && selectedOperatingSystem != 'MacOS'">
                             Not yet availble for your operating system
                           </h4>
                           <p>
@@ -69,8 +69,8 @@
                         </mat-card-content>
                         <mat-card-actions>
                           <a mat-raised-button="mat-raised-button" color="primary" rel="noopener noreferrer"
-                            href="https://runelitepl.us/assets/RuneLitePlusSetup.exe" (click)="downloadClick(0)"
-                            [disabled]="selectedOperatingSystem != 'Windows'">
+                            [href]="selectedOperatingSystem == 'Windows' ? 'https://github.com/runelite-extended/launcher/releases/download/binaries/RuneLitePlusSetup.Windows64.exe' : 'https://github.com/runelite-extended/launcher/releases/download/binaries/RuneLitePlus.MacOS.zip'"
+                            (click)="downloadClick(0)" [disabled]="selectedOperatingSystem != 'Windows' && selectedOperatingSystem != 'MacOS'">
                             Download
                           </a>
                         </mat-card-actions>
@@ -85,23 +85,22 @@
                         </mat-card-header>
                         <mat-card-content>
                           <h4>
-                            <span [innerText]="'Jar version: v' + clientVersion"></span>
-                            <span *ngIf="jarDate" [innerText]="' - ' + (jarDate | commitDate)"></span>
+                            &nbsp;
                           </h4>
-                          <p *ngIf="selectedOperatingSystem == 'Windows'">
+                          <p *ngIf="selectedOperatingSystem == 'Windows' || selectedOperatingSystem == 'MacOS'">
                             Already have java installed and don't want to have it bundled in a launcher, wanting to have
                             control over your java settings, whatever your motivation is you can also download the jar
                             file! (The jar file will not update itself when there is a client update available unlike
                             the launcher).
                           </p>
-                          <p *ngIf="selectedOperatingSystem != 'Windows'">
+                          <p *ngIf="selectedOperatingSystem != 'Windows' && selectedOperatingSystem != 'MacOS'">
                             We currently only release a jar file for your operating system. The jar file will not
                             update itself when there is an update available. Stay tuned for more download options!
                           </p>
                         </mat-card-content>
-                        <mat-card-actions *ngIf="downloadUrl">
+                        <mat-card-actions>
                           <a mat-raised-button="mat-raised-button" color="primary" rel="noopener noreferrer"
-                            [attr.href]="downloadUrl" (click)="downloadClick(1)">
+                            href="https://github.com/runelite-extended/launcher/releases/download/binaries/RuneLitePlus.jar" (click)="downloadClick(1)">
                             Download
                           </a>
                         </mat-card-actions>

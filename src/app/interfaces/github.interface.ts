@@ -140,29 +140,3 @@ export interface GithubContentFile {
 export interface GithubContentFlat {
   name: string;
 }
-
-export interface GithubBuildLinks {
-  download_link: string;
-  md_link: string;
-  sha_link: string;
-  commit_link: string;
-}
-
-export interface ClientHash {
-  version: string;
-  md: string;
-  sha: string;
-}
-
-export interface HashReturn {
-  version: string;
-  hash: string;
-}
-
-export interface LatestClient {
-  download: string;
-  version: string;
-  md5: Promise<HashReturn>;
-  sha1: Promise<HashReturn>;
-  date: Promise<HashReturn>;
-}
