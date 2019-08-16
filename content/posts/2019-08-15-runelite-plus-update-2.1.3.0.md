@@ -21,6 +21,7 @@ tags:
 * [damagecounter](https://github.com/runelite-extended/runelite/pull/1307): updated grammar
 * [itemvariations](https://github.com/runelite-extended/runelite/pull/1229): added SOTE items
 * [menuentryswapper](https://github.com/runelite-extended/runelite/pull/1251): fixed max cape swap
+
 ##### [Ganom](https://github.com/Ganom)
 * [blackjack](https://github.com/runelite-extended/runelite/pull/1265): Swap blackjack back to priority system.
 * [config](https://github.com/runelite-extended/runelite/pull/1262): Change slider to white, so its easier to see.
@@ -38,8 +39,10 @@ tags:
 * [pluginsorter](https://github.com/runelite-extended/runelite/pull/1282): Fix Alpha
 * [runeliteplus](https://github.com/runelite-extended/runelite/pull/1331): add detach cam toggle
 * [theatre](https://github.com/runelite-extended/runelite/pull/1264): Fix sote projectiles.
+
 ##### [Gazivodag](https://github.com/Gazivodag)
 * [menuentryswapper](https://github.com/runelite-extended/runelite/pull/1297):remove looting bag destroy option
+
 ##### [HSJ-OSRS](https://github.com/HSJ-OSRS)
 * [cox scouter](https://github.com/runelite-extended/runelite/pull/1226): fix layout message
 * [coxhelper](https://github.com/runelite-extended/runelite/pull/1244): small code cleanup
@@ -47,8 +50,10 @@ tags:
 * [raidsthieving](https://github.com/runelite-extended/runelite/pull/1243): update and fix
 * [raidsthieving](https://github.com/runelite-extended/runelite/pull/1259): ignore room rotation
 * [screenshot](https://github.com/runelite-extended/runelite/pull/1245): use playerdeath events
+
 ##### [Judaxx](https://github.com/Judaxx)
 * [kingdomofmiscellania](https://github.com/runelite-extended/runelite/pull/1324): add login chat notification for favor and coffer amount
+
 ##### [Kyleeld](https://github.com/Kyleeld)
 * [account](https://github.com/runelite-extended/runelite/pull/1335): remove login button
 * [bankedxp](https://github.com/runelite-extended/runelite/pull/1225): Fix Wyrm bones
@@ -56,6 +61,7 @@ tags:
 * [gauntlet](https://github.com/runelite-extended/runelite/pull/1246): various updates
 * [pluginsorter](https://github.com/runelite-extended/runelite/pull/1255): pastel colorscheme
 * [pluginsorter](https://github.com/runelite-extended/runelite/pull/1352): fix top entries
+
 ##### [Lucwousin](https://github.com/Lucwousin)
 * [menumanager](https://github.com/runelite-extended/runelite/pull/1261): various fixes
 * [menumanager](https://github.com/runelite-extended/runelite/pull/1268): Make comparable entries abstract for more specific .matches()'s
@@ -63,9 +69,11 @@ tags:
 * [menumanager](https://github.com/runelite-extended/runelite/pull/1283): Lowercase strings
 * [rs-client](https://github.com/runelite-extended/runelite/pull/1236): Refactoring (also gradle compiler args)
 * [rs-client](https://github.com/runelite-extended/runelite/pull/1258): Fix project for deob test
+
 ##### [Netami1](https://github.com/Netami1)
 * [freezetimers](https://github.com/runelite-extended/runelite/pull/1349): fix concurrent modification exception
 * [npcunaggroarea](https://github.com/runelite-extended/runelite/pull/1350): Local Player NPE Fix
+
 ##### [Owain94](https://github.com/Owain94)
 * [barrows](https://github.com/runelite-extended/runelite/pull/1337): Remove chest value option
 * [client-api](https://github.com/runelite-extended/runelite/pull/1298): fix runscript
@@ -83,17 +91,22 @@ tags:
 * [timetracking](https://github.com/runelite-extended/runelite/pull/1301): Use localized time format
 * [wiki-scraper/cache](https://github.com/runelite-extended/runelite/pull/1351): Fix NPE
 * [xptracker](https://github.com/runelite-extended/runelite/pull/1340): Fix adding skill to canvas from skill tab
+
 ##### [Pklite](https://github.com/Pklite)
 * [multilines](https://github.com/runelite-extended/runelite/pull/1272): fix bug that caused lag/fps spikes after leaving client open and hopping lots of worlds
 * [profilespanel](https://github.com/runelite-extended/runelite/pull/1332): fix panel switching
+
 ##### [ReeeMan](https://github.com/ReeeMan)
 * [theatre](https://github.com/runelite-extended/runelite/pull/1310): Fix Sotes Big balls
 * [theatre](https://github.com/runelite-extended/runelite/pull/1304): remove unnecessary reset.
+
 ##### [SRLJustin](https://github.com/SRLJustin)
 * [customcursor](https://github.com/runelite-extended/runelite/pull/1330): add skill specs as a cursor
 * [tearsofguthix](https://github.com/runelite-extended/runelite/pull/1333): fix npe
+
 ##### [Sunha7](https://github.com/Sunha7)
 * [raidsshortcuts](https://github.com/runelite-extended/runelite/pull/1314): Add PVM plugintype to plugin
+
 ##### [ThatGamerBlue](https://github.com/ThatGamerBlue)
 * [client](https://github.com/runelite-extended/runelite/pull/1257): fix and enable tests
 * [client](https://github.com/runelite-extended/runelite/pull/1302): remove flexo for splitting
@@ -102,14 +115,17 @@ tags:
 * [gradle](https://github.com/runelite-extended/runelite/pull/1309): fix "repository not found"
 * [httpapi](https://github.com/runelite-extended/runelite/pull/1233): fix rlp api using the wrong url
 * [rs-client](https://github.com/runelite-extended/runelite/pull/1290): fix injector getting confused with two menuAction methods
+
 ##### [Tomcylke](https://github.com/Tomcylke)
 * [clientui](https://github.com/runelite-extended/runelite/pull/1341): fix typo
 * [itemcharges](https://github.com/runelite-extended/runelite/pull/1342): Add sacks of vegetables
 * [menuentryswapper](https://github.com/runelite-extended/runelite/pull/1242): Prevent Left Click Configure Shift-Click
 * [menuentryswapper](https://github.com/runelite-extended/runelite/pull/1270): Fix Swaps for Coal Bag
 * [slayer](https://github.com/runelite-extended/runelite/pull/1249): Font Fix
+
 ##### [Tyhi](https://github.com/Tyhi)
 * [fightcaves](https://github.com/runelite-extended/runelite/pull/1271): Fix typo
+
 ##### [Zeruth](https://github.com/Zeruth)
 * [bootstrapper](https://github.com/runelite-extended/runelite/pull/1311): remove
 * [grounditems](https://github.com/runelite-extended/runelite/pull/1303): lighten default highlight color
@@ -134,6 +150,7 @@ tags:
 * [osbuddy client](https://github.com/runelite-extended/runelite/commit/d77134893a0a9b7e043790e1ccca97564ecc82f8): set UA to RuneLite
 * [overlay renderer](https://github.com/runelite-extended/runelite/commit/eb118c24dee7694535bca8ee0dd3d557738b2ca7): reduce graphics properties copying
 * [overlay renderer](https://github.com/runelite-extended/runelite/commit/fbb82a3b0a263efc6be27479617af47884079f6c): remove unnecessary color resetting
+
 ##### [Alexsuperfly](https://github.com/Alexsuperfly):
 * [clue](https://github.com/runelite-extended/runelite/commit/a5a0e2645821691bb6e8496620a322754af127bc): add RUE GO anagram
 * [clue](https://github.com/runelite-extended/runelite/commit/068071997200bfb5d4fc91c1ad96169110141163): add Lady Trahaearn cryptic
@@ -145,6 +162,7 @@ tags:
 * [agility](https://github.com/runelite-extended/runelite/commit/896e2eaeca724641fabb87505095e385a9b629ec): update prif last obstacle exp
 * [agility](https://github.com/runelite-extended/runelite/commit/3a883f5c313bb2d5134225bdfe359129d4dd55bc): update prif whole course exp
 * [clue](https://github.com/runelite-extended/runelite/commit/f430381f089a7f2070f07a650d70d042799f54cc): update Falo crystal bow items
+
 ##### [Hydrox6](https://github.com/Hydrox6):
 * [idle notifier](https://github.com/runelite-extended/runelite/commit/905240b50ed481c750a13def96d6f4d79a3c1015): notify when adding feathers or heads to shafts
 * [clues](https://github.com/runelite-extended/runelite/commit/02311b996e85ac95595a2448640c09fa5b1d0ae7): Move Item Requirement code from EmoteClue to its own sub-package
@@ -154,6 +172,7 @@ tags:
 * [item mapping](https://github.com/runelite-extended/runelite/commit/9a35a04ca0b255a0f84f5264c9c77e235715ff22): Add new crystal equipment IDs
 * [item prices](https://github.com/runelite-extended/runelite/commit/4b543d9dc2836cd9d7c5e3bbb608860e01b46414): show alch price while selecting item to alch
 * [item prices](https://github.com/runelite-extended/runelite/commit/effad44e17f1e0538da8472d24740f4a30eab8d7): show alch price when alching with Explorer's Ring interface
+
 ##### [dekvall](https://github.com/dekvall):
 * [inventorygrid](https://github.com/runelite-extended/runelite/commit/2f15420a847404239954db6cd56012412875308a): Disable inventory grid if the dragged item is removed
 * [attack styles](https://github.com/runelite-extended/runelite/commit/688ab5064768da1d4b83da1862596879c9f536c6): fix NPE in overlay
@@ -162,6 +181,7 @@ tags:
 * [loottracker](https://github.com/runelite-extended/runelite/commit/1abadb0c9c36dddbd3ccdff83ec04eac4cac0c8c): fix order on client reload
 * [examine](https://github.com/runelite-extended/runelite/commit/c2111810d835921339526c23f6bf55df990c51d7): remove examine value for coins
 * [mining](https://github.com/runelite-extended/runelite/commit/ce4f90f6fa721b7013054277f6455868c1ad8c7c): fix respawn timers in misc and resource area
+
 ##### [trimbe](https://github.com/trimbe):
 * [gpu plugin](https://github.com/runelite-extended/runelite/commit/f3319df4a15098eb8017a118c641f51f0ae98503): fix camera effects used for drunkeness and fishing trawler
 * [runelite-api](https://github.com/runelite-extended/runelite/commit/e5ebd5a0513f771537a42041bf395bd71a10936d): remove devtools annotation and rename setSetting
@@ -169,6 +189,7 @@ tags:
 * [bank tags](https://github.com/runelite-extended/runelite/commit/a0aac8797130848b2e4491171624c3f06394a013): properly open saved tab
 * [clue](https://github.com/runelite-extended/runelite/commit/e0d1f408ccfe8cb5de99c3a28106f4a719f0e9df): center 'west of farming guild' location
 * [world map](https://github.com/runelite-extended/runelite/commit/76dfd6232ed3e22d8e8548278f24560d1053eb93): correct canvas bounds location and clip tooltips properly
+
 ##### [abextm](https://github.com/abextm):
 * [ClanManager](https://github.com/runelite-extended/runelite/commit/0e8d377adfe688e5b9a98f5564ae2e2b4f46692f): handle startup with an empty cache
 * [runelite-api](https://github.com/runelite-extended/runelite/commit/a019d39361232aba563f5e74b387626470c90003): Annotate script ids with their argument counts
@@ -176,44 +197,62 @@ tags:
 * [runelite-client](https://github.com/runelite-extended/runelite/commit/56f7d09c923751d1b41dae225946bb53c229d2ef): Call scripts with the correct number of arguments
 * [runelite-client](https://github.com/runelite-extended/runelite/commit/944064b1b58823a0123edee250e20467e5c4ca2e): Make RuneLiteProperties fully static
 * [runelite-client](https://github.com/runelite-extended/runelite/commit/944064b1b58823a0123edee250e20467e5c4ca2e): Make RuneLiteProperties fully static
+
 ##### [TheStonedTurtle](https://github.com/TheStonedTurtle):
 * [menuentryswapper](https://github.com/runelite-extended/runelite/commit/f2cdc8a1d8913a25617913b1eebbe8805de98c80): Add volcanic mine entrance to swapQuick
 * [brokenondeathitem](https://github.com/runelite-extended/runelite/commit/742133e456daa2b5fa1f9fc57aac910fd51ac223): Fix death value by adding repair price
+
 ##### [dabolink](https://github.com/dabolink):
 * [achievmentdiary](https://github.com/runelite-extended/runelite/commit/139b97920ef0b3ee3b78016c9e7b91f372384e50): Update Ardougne Hard diary text
 * [loot tracker](https://github.com/runelite-extended/runelite/commit/345f07d20ff298fb814d568091bf4af880980448): add Kingdom of Miscellania
+
 ##### [Dava96](https://github.com/Dava96):
 * [skill calc](https://github.com/runelite-extended/runelite/commit/eb2d1d72597dc31bc0e5227853328ae306f2e64b): Add Dragon bolts
 * [ge](https://github.com/runelite-extended/runelite/commit/f71860fc6abd03950a36fced12af16bb7ff93a80): Add item limits for redwood and celastrus seeds/saplings
+
 ##### [tortuga69](https://github.com/tortuga69):
 * [grandexchange](https://github.com/runelite-extended/runelite/commit/4b239d26006efabbc8d2d380cd44f3713a9f5743): Add Forthos Dungeon item buy limits
 * [agility](https://github.com/runelite-extended/runelite/commit/21a188730b3829f2ce64d30bf49f10f3bf50efac): Add support for Trollweiss Mountain Cave agility shortcut
+
 ##### [Trevor159](https://github.com/Trevor159):
 * [clues](https://github.com/runelite-extended/runelite/commit/c7f8b6c6e1253937e0e8f3552c2c436248d9a60e): center northern blast mine dig location
 * [clues](https://github.com/runelite-extended/runelite/commit/535eef858397b979a2035bb6c4deecd818bcfbf9): center eastern part of piscatoris hunter area dig location
+
 ##### [deathbeam](https://github.com/deathbeam):
 * [overlayrenderer](https://github.com/runelite-extended/runelite/commit/480b4ad77304ea069af85b4384b5736993c3fb38): Snapshot all grahics2d properties in safeRender
+
 ##### [Darkkgreen](https://github.com/Darkkgreen):
 * [hunter](https://github.com/runelite-extended/runelite/commit/e0442fc03ade7ccadf1075b3eae5ae5ea301a5dd): Add support for ferrets
+
 ##### [xdesr](https://github.com/xdesr):
 * [item stats](https://github.com/runelite-extended/runelite/commit/502c7b6379604b3f9e31352229097b35832410cc): Add divine potions
+
 ##### [Serpa88](https://github.com/Serpa88):
 * [Loot Tracker](https://github.com/runelite-extended/runelite/commit/1082b1b86337cdeb100a1095608b6e67ebd753b1): Allow loot boxes to be collapsed
+
 ##### [Bjdufre1](https://github.com/Bjdufre1):
 * [skill calc](https://github.com/runelite-extended/runelite/commit/e9fae0dbe431aa898d31944fe6901e108e21198c): Add four dose stamina to herblore calculator
+
 ##### [charredgrass](https://github.com/charredgrass):
 * [discord](https://github.com/runelite-extended/runelite/commit/26855079fe3839164d8b20fb3c555c0f20bbd9f1): Fix spelling errors in Discord status locations
+
 ##### [Toocanzs](https://github.com/Toocanzs):
 * [gpu](https://github.com/runelite-extended/runelite/commit/bb4ef3298ef219023310b45c260b36b1635c820c): fix MSAA white pixels
+
 ##### [Nightfirecat](https://github.com/Nightfirecat):
 * [gpu](https://github.com/runelite-extended/runelite/commit/1c6333410ac3f9c6f97d7a40fc0b0bbe599d5e5e): Center level 5 wilderness location
+
 ##### [DylPickle96](https://github.com/DylPickle96):
 * [clue](https://github.com/runelite-extended/runelite/commit/3e277a503930dd6c05cd1309ac80b6fd5171589d): Add the new General Hining cryptic clue
+
 ##### [nateisonfire](https://github.com/nateisonfire):
 * [slayer](https://github.com/runelite-extended/runelite/commit/2af3b47455eb47bc64b089c9ae7cf2228789cc68): add Sarachnis task
+
 ##### [Bonsaigin](https://github.com/Bonsaigin):
 * [clue](https://github.com/runelite-extended/runelite/commit/e18acd6de9277b98ca3a4f7d494659b9b68af91c): update Monk camp clue location
+
 ##### [Krysaczek](https://github.com/Krysaczek):
 * [agility](https://github.com/runelite-extended/runelite/commit/d1193a78ff4eb139cb00a4f1a2e2974f4b1969ef): add Isafdar tripwire
+
 ##### [raiyni](https://github.com/raiyni):
 * [colorpicker](https://github.com/runelite-extended/runelite/commit/ac5b2ff82a8509da825e7e5341a17d562c93b7a7): force hex color to update on window close
