@@ -11,9 +11,9 @@ tags:
   - runelite 2.1.3.0
 ---
 
-> As always, we appreciate the staff for their efforts this week. Also, a special mention to the following users who have contributed on github this week: 
->Crystalknoct, HSJ-OSRS, Judaxx, Netami1, ReeeMan, SRLJustin, Sunha7, Tomcylke, Tyhi
->We are delivering a hurtful blow to P2W clients with every update, and every new user.
+> As always, we appreciate the staff for their efforts this week. Also, a special mention to the following users who have contributed on github this week:
+>**Crystalknoct, HSJ-OSRS, Judaxx, Netami1, ReeeMan, SRLJustin, Sunha7, Tomcylke, and Tyhi**.
+> We are delivering a hurtful blow to P2W clients with every update, and every new user.
 
 ## RuneLitePlus 2.1.3.0
 
