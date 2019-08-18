@@ -4,7 +4,7 @@ As always, I appreciate the staff and our end users. We are delivering a hurtful
 
 
 
-#### RuneLite+ 1.2
+#### RuneLitePlus 1.2
 
 
 ```

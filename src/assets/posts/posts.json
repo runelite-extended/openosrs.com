@@ -1,7 +1,21 @@
 [
   {
+    "date": "2019-08-18T00:00:00Z",
+    "title": "RuneLitePlus has been updated to 2.1.3.1!",
+    "mdFile": "runelite-plus-update-2.1.3.1",
+    "categories": [
+      "updates"
+    ],
+    "tags": [
+      "changes",
+      "plugins",
+      "runelite 1.5",
+      "runelite plus 2.1.3.1"
+    ]
+  },
+  {
     "date": "2019-08-15T00:00:00Z",
-    "title": "RuneLite+ has been updated to 2.1.3.0!",
+    "title": "RuneLitePlus has been updated to 2.1.3.0!",
     "mdFile": "runelite-plus-update-2.1.3.0",
     "categories": [
       "updates"
@@ -15,7 +29,7 @@
   },
   {
     "date": "2019-05-30T00:00:00Z",
-    "title": "RuneLite+ has been updated to 1.4!",
+    "title": "RuneLitePlus has been updated to 1.4!",
     "mdFile": "runelite-plus-update-1.4",
     "categories": [
       "updates"
@@ -28,7 +42,7 @@
   },
   {
     "date": "2019-05-23T00:00:00Z",
-    "title": "RuneLite+ has been updated to 1.3!",
+    "title": "RuneLitePlus has been updated to 1.3!",
     "mdFile": "runelite-plus-update-1.3",
     "categories": [
       "updates"
@@ -41,7 +55,7 @@
   },
   {
     "date": "2019-05-16T00:00:00Z",
-    "title": "RuneLite+ has been updated to 1.2!",
+    "title": "RuneLitePlus has been updated to 1.2!",
     "mdFile": "runelite-plus-update-1.2",
     "categories": [
       "updates"
