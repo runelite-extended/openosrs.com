@@ -5,11 +5,11 @@
         RuneLitePlus
       </h1>
       <p>
-        <span>
+        <span class="sub-header">
           Fork of RuneLite that provides more functionality and less restrictions whilst staying open source.
         </span>
         <span *ngIf="!fatalCountError && (session$ | async) as count"
-          [innerText]="'Current player count: ' + count"></span>
+          [innerText]="'Players online: ' + count"></span>
       </p>
       <button routerLink="/downloads" mat-raised-button="mat-raised-button" color="primary">
         Download

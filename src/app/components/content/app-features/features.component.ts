@@ -36,7 +36,7 @@ export class AppFeaturesComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    const description = 'RunelitePlus has a lot more features compared to RuneLite, zulrah helper, ' +
+    const description = 'RuneLitePlus has a lot more features compared to RuneLite, zulrah helper, ' +
       'improved runelite plugins, pvp plugins, pvm plugins and more. Use Runelite Plus over RuneLite!';
 
     this.metaService.updateTags([
