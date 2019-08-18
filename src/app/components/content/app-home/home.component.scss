@@ -40,6 +40,11 @@
       margin-top: 10px;
     }
 
+    .sub-header:after {
+      content: '\A';
+      white-space: pre;
+    }
+
     button {
       margin: 25px 5px 0 15px;
     }

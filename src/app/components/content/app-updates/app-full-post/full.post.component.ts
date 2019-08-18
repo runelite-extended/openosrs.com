@@ -38,7 +38,7 @@ export class AppFullPostComponent {
           if (update.mdFile === params.name) {
             this.update = update;
 
-            this.metaService.updateTitle(`RunelitePlus: ${update.title}`);
+            this.metaService.updateTitle(`RuneLitePlus: ${update.title}`);
             this.metaService.updateTags([
               {
                 name: 'keywords',
