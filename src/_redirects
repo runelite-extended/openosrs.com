@@ -1,1 +1,5 @@
-/*    /index.html    200
+/home       /index.html    200
+/downloads  /index.html    200
+/features   /index.html    200
+/updates  /index.html    200
+/updates/*  /index.html    200
