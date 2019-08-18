@@ -20,9 +20,9 @@ export class AppDownloadsComponent implements OnInit {
   public hideHashes = true;
   public selectedOperatingSystem = 'Windows';
   public hashes = [
-    ['b8842939dc4e218e15d7bada13d680c8', 'fc0cbc5cf3e7ca0f80018e0bdb2aa8fe9ba42426'],
-    ['2c5dba97e6bd779e595cfc793709c713', '688797bd689b036830016d47b02e660b82e7c609'],
-    ['8f85e5d2c329449bdb64a95ac577f6c4', '5e6d293ccb27f278fc2a435415dc64f42ad1462f']
+    ['B8842939DC4E218E15D7BADA13D680C8', 'FC0CBC5CF3E7CA0F80018E0BDB2AA8FE9BA42426'], // Windows; md5, sha1
+    ['2C5DBA97E6BD779E595CFC793709C713', '688797BD689B036830016D47B02E660B82E7C609'], // MacOS; md5, sha1
+    ['6B7FC3032C67B3240B9CF25EF7F6B1BC', '502D6622E272674AF943B8D831063B46EC614646']  // Jar; md5, sha1
   ];
 
   private selectedDownload: number;
