@@ -62,14 +62,14 @@
                             Not yet availble for your operating system
                           </h4>
                           <p>
-                            This is a launcher for Runelite Plus that comes bundled with a java executable. It'll auto
+                            This is a launcher for RunelitePlus that comes bundled with a java executable. It'll auto
                             update itself when
-                            there is a update for the Runelite Plus client available. No further configuration required!
+                            there is a update for the RunelitePlus client available. No further configuration required!
                           </p>
                         </mat-card-content>
                         <mat-card-actions>
                           <a mat-raised-button="mat-raised-button" color="primary" rel="noopener noreferrer"
-                            [href]="selectedOperatingSystem == 'Windows' ? 'https://github.com/runelite-extended/launcher/releases/download/binaries/RuneLitePlusSetup.Windows64.exe' : 'https://github.com/runelite-extended/launcher/releases/download/binaries/RuneLitePlus.MacOS.zip'"
+                            [href]="selectedOperatingSystem == 'Windows' ? 'https://github.com/runelite-extended/launcher/releases/download/2.1.3.1/RuneLitePlusSetup.Windows64.exe' : 'https://github.com/runelite-extended/launcher/releases/download/2.1.3.1/RuneLitePlus.MacOS.zip'"
                             (click)="downloadClick(0)" [disabled]="selectedOperatingSystem != 'Windows' && selectedOperatingSystem != 'MacOS'">
                             Download
                           </a>
@@ -100,7 +100,7 @@
                         </mat-card-content>
                         <mat-card-actions>
                           <a mat-raised-button="mat-raised-button" color="primary" rel="noopener noreferrer"
-                            href="https://github.com/runelite-extended/launcher/releases/download/binaries/RuneLitePlus.jar" (click)="downloadClick(1)">
+                            href="https://github.com/runelite-extended/launcher/releases/download/2.1.3.1/RuneLitePlus.jar" (click)="downloadClick(1)">
                             Download
                           </a>
                         </mat-card-actions>

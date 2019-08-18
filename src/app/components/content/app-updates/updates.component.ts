@@ -41,7 +41,7 @@ export class AppUpdatesComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit() {
-    const description = 'RuneLite Plus provides more functionality and less restrictions whilst staying open source. ' +
+    const description = 'RuneLitePlus provides more functionality and less restrictions whilst staying open source. ' +
       'We have lots of custom RuneLite plugins!';
 
     this.metaService.updateTags([
