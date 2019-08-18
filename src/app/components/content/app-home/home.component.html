@@ -1,0 +1,175 @@
+<div class="header-wrapper">
+  <div class="header-image" [class.no-webp]="!webp">
+    <div class="header-text">
+      <h1>
+        RuneLite Plus
+      </h1>
+      <p>
+        <span>
+          Fork of RuneLite that provides more functionality and less restrictions whilst staying open source.
+        </span>
+        <span *ngIf="!fatalCountError && (session$ | async) as count"
+          [innerText]="'Current player count: ' + count"></span>
+      </p>
+      <button routerLink="/downloads" mat-raised-button="mat-raised-button" color="primary">
+        Download
+      </button>
+    </div>
+  </div>
+</div>
+<div class="wrapper">
+  <div class="content" fxLayout="column wrap">
+    <div class="header" fxLayout="row wrap" fxLayoutAlign="center">
+      <div fxLayout="row wrap" fxFlex="1 1 85%" fxFlex.lt-xl="0 1 82%" fxFlex.lt-lg="0 1 90%" fxFlex.lt-md="0 1 90%"
+        fxFlex.lt-sm="0 1 85%" class="align-justify">
+        <h2>
+          Our features
+        </h2>
+      </div>
+    </div>
+    <div fxLayoutAlign="center">
+      <div fxFlex="1 1 85%" fxFlex.lt-xl="0 1 82%" fxFlex.lt-lg="0 1 90%" fxFlex.lt-md="0 1 90%" fxFlex.lt-sm="0 1 85%">
+        <div fxLayout="row wrap" fxLayoutAlign="start">
+          <div class="card-container" fxFlex="1 1 33.33%" fxFlex.lt-md="1 1 100%">
+            <mat-card class="mat-elevation-z3" fxFlex="1 1 auto">
+              <mat-card-header>
+                <mat-card-title>
+                  Plugin Support
+                </mat-card-title>
+              </mat-card-header>
+              <mat-card-content>
+                <p>
+                  Load your own plugins with our external jar plugin support. Simple and easy! Code your own or use
+                  premade plugins!
+                </p>
+              </mat-card-content>
+              <mat-card-actions>
+                <a mat-raised-button="mat-raised-button" color="primary" target="_blank" rel="noopener noreferrer"
+                  href="https://github.com/runelite-extended/runelite/wiki/Plugin-Support">
+                  Read more
+                </a>
+              </mat-card-actions>
+            </mat-card>
+          </div>
+          <div class="card-container" fxFlex="1 1 33.33%" fxFlex.lt-md="1 1 100%">
+            <mat-card class="mat-elevation-z3" fxFlex="1 1 auto">
+              <mat-card-header>
+                <mat-card-title>
+                  Open source
+                </mat-card-title>
+              </mat-card-header>
+              <mat-card-content>
+                <p>
+                  This is meant to directly compete with 3rd party clients that are trying to sell their code
+                </p>
+              </mat-card-content>
+              <mat-card-actions>
+                <a mat-raised-button="mat-raised-button" color="primary" target="_blank" rel="noopener noreferrer"
+                  href="https://github.com/runelite-extended/runelite">
+                  View RL+ source
+                </a>
+              </mat-card-actions>
+            </mat-card>
+          </div>
+          <div class="card-container" fxFlex="1 1 33.33%" fxFlex.lt-md="1 1 100%">
+            <mat-card class="mat-elevation-z3" fxFlex="1 1 auto">
+              <mat-card-header>
+                <mat-card-title>
+                  Many features
+                </mat-card-title>
+              </mat-card-header>
+              <mat-card-content>
+                <p>
+                  RuneLitePlus is jam packed full of features, check out our feature page for a full list of our
+                  features.
+                </p>
+              </mat-card-content>
+              <mat-card-actions>
+                <a mat-raised-button="mat-raised-button" color="primary" target="_blank" rel="noopener noreferrer"
+                  href="https://runelitepl.us/features/">
+                  Read features
+                </a>
+              </mat-card-actions>
+            </mat-card>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div fxLayout="row wrap" class="align-justify">
+      <mat-divider class="divider" fxFlex="1 1 85%" fxFlex.lt-xl="0 1 82%" fxFlex.lt-lg="0 1 90%" fxFlex.lt-md="0 1 90%"
+        fxFlex.lt-sm="0 1 85%"></mat-divider>
+    </div>
+    <div class="header align-justify">
+      <div fxLayout="row wrap" fxFlex="1 1 85%" fxFlex.lt-xl="0 1 82%" fxFlex.lt-lg="0 1 90%" fxFlex.lt-md="0 1 90%"
+        fxFlex.lt-sm="0 1 85%" class="align-justify">
+        <h2>
+          Plugins
+        </h2>
+        <button mat-raised-button="mat-raised-button" color="primary" routerLink="/features">
+          See all
+        </button>
+      </div>
+    </div>
+    <ng-container *ngIf="(plugins$ | async) | shufflePlugins | slice:0:5; let plugins">
+      <div fxLayoutAlign="center">
+        <ng-container *ngIf="plugins.length !== 0">
+          <div fxFlex="0 1 85%" fxFlex.lt-xl="0 1 82%" fxFlex.lt-lg="0 1 90%" fxFlex.lt-md="0 1 90%"
+            fxFlex.lt-sm="0 1 85%">
+            <div fxLayout="row wrap" fxLayoutAlign="start" class="">
+              <div class="card-container" *ngFor="let plugin of plugins; index as i" fxFlex="1 1 20%"
+                fxFlex.lt-xl="1 1 25%" fxFlex.lt-lg="1 1 33.33%" fxFlex.lt-md="1 1 50%" fxFlex.lt-sm="1 1 100%"
+                [fxHide.lt-lg]="i == 3 || i == 4" [fxHide.lt-xl]="i == 4" [fxHide.lt-md]="i == 3">
+                <mat-card class="mat-elevation-z3" fxFlex="1 1 auto">
+                  <picture *ngIf="plugin.image != ''">
+                    <source type="image/webp" [attr.srcSet]="'/assets/plugins/images/' + plugin.image + '.webp'" />
+                    <source type="image/png" [attr.srcSet]="'/assets/plugins/images/' + plugin.image + '.png'" />
+                    <img mat-card-image="mat-card-image" class="card-image"
+                      [attr.src]="'/assets/plugins/images/' + plugin.image + '.png'" [attr.alt]="plugin.name" />
+                  </picture>
+                  <img mat-card-image="mat-card-image" *ngIf="plugin.image == ''"
+                    src="/assets/plugins/images/placeholder.png" [attr.alt]="plugin.name" />
+                  <mat-card-header>
+                    <mat-card-title [innerText]="plugin.name"></mat-card-title>
+                  </mat-card-header>
+                  <mat-card-content>
+                    <p [innerText]="plugin.description"></p>
+                  </mat-card-content>
+                </mat-card>
+              </div>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+    </ng-container>
+    <div fxLayout="row wrap" class="align-justify">
+      <mat-divider class="divider" fxFlex="1 1 85%" fxFlex.lt-xl="0 1 82%" fxFlex.lt-lg="0 1 90%" fxFlex.lt-md="0 1 90%"
+        fxFlex.lt-sm="0 1 85%"></mat-divider>
+    </div>
+    <div class="header align-justify">
+      <div fxLayout="row wrap" fxFlex="1 1 85%" fxFlex.lt-xl="0 1 82%" fxFlex.lt-lg="0 1 90%" fxFlex.lt-md="0 1 90%"
+        fxFlex.lt-sm="0 1 85%" class="align-justify">
+        <h2>
+          Latest updates
+        </h2>
+        <button mat-raised-button="mat-raised-button" color="primary" routerLink="/updates">
+          See all
+        </button>
+      </div>
+    </div>
+    <div fxLayout="row wrap" class="align-justify">
+      <mat-nav-list *ngIf="!fatalPostError" fxFlex="1 1 85%" fxFlex.lt-xl="0 1 82%" fxFlex.lt-lg="0 1 90%"
+        fxFlex.lt-md="0 1 90%" fxFlex.lt-sm="0 1 85%">
+        <ng-container *ngFor="let update of (updates$ | async) | slice:0:3">
+          <a mat-list-item="mat-list-item" [routerLink]="'/updates/' + update.mdFile">
+            <span mat-line="mat-line" [innerText]="update.title"></span>
+            <span mat-line="mat-line" [innerText]="update.date | commitDate"></span>
+          </a>
+          <mat-divider></mat-divider>
+        </ng-container>
+      </mat-nav-list>
+      <p *ngIf="fatalPostError">
+        The update posts could not be fetched.
+      </p>
+    </div>
+  </div>
+</div>

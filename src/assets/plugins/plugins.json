@@ -1,0 +1,411 @@
+[
+  {
+    "name": "1 Way Safe Spots",
+    "image": "one-way-safespots",
+    "description": "This will highlight the floor tiles with where you can stand, so you can attack your opponents without them attacking.",
+    "categories": [
+      "PvM",
+      "PvP"
+    ]
+  },
+  {
+    "name": "Account Switcher",
+    "image": "account-switcher",
+    "description": "This will allow you to switch between accounts at the hit of a button.",
+    "wiki": "https://github.com/runelite-extended/runelite/wiki/Account-Switcher",
+    "categories": [
+      "Utility"
+    ]
+  },
+  {
+    "name": "Alchemical Hydra",
+    "image": "",
+    "description": "This will show you what to pray against the Alchemical Hydra.",
+    "categories": [
+      "PvM"
+    ]
+  },
+  {
+    "name": "Anti-Drag",
+    "image": "",
+    "description": "Customisable antidrag which does not require you to hold down shift.",
+    "categories": [
+      "Utility"
+    ]
+  },
+  {
+    "name": "AoE Warnings",
+    "image": "aoe-warnings",
+    "description": "This will show you the projectiles of certain enemy attacks.",
+    "wiki": "https://github.com/runelite-extended/runelite/wiki/Aoe-Warnings",
+    "categories": [
+      "PvM"
+    ]
+  },
+  {
+    "name": "Barbarian Assault+",
+    "image": "barbarian-assault-plus",
+    "description": "Custom barbarian assault plugin, highlight eggs and a lot more.",
+    "wiki": "https://github.com/runelite-extended/runelite/wiki/Barbarian-Assault-",
+    "categories": [
+      "PvM"
+    ]
+  },
+  {
+    "name": "Chambers of Xeric",
+    "image": "chambers-of-xeric",
+    "description": "Tick Timer for Olm, Overlays for all special attacks, and Olm Prayer Helper showing you what to pray.",
+    "wiki": "https://github.com/runelite-extended/runelite/wiki/CoX-Helper",
+    "categories": [
+      "PvM"
+    ]
+  },
+  {
+    "name": "Clan Man Mode",
+    "image": "",
+    "description": "Highlights targets your clan is attacking, and highlights clan members to easily differentiate them.",
+    "categories": [
+      "PvP"
+    ]
+  },
+  {
+    "name": "Easyscape",
+    "image": "",
+    "description": "Bunch of menu entry swaps to make your life easier, for example 1 click construction.",
+    "categories": [
+      "Utility"
+    ]
+  },
+  {
+    "name": "Equipment Inspector",
+    "image": "equipment-inspector",
+    "description": "Look up player's equipment and show the vaule of the items.",
+    "categories": [
+      "PvP"
+    ]
+  },
+  {
+    "name": "Fight Cave",
+    "image": "",
+    "description": "Fight cave wave helper, includes Jad helper.",
+    "categories": [
+      "PvM"
+    ]
+  },
+  {
+    "name": "Flinching Timer",
+    "image": "flinching-timer",
+    "description": "Time your attacks while flinching",
+    "categories": [
+      "PvM"
+    ]
+  },
+  {
+    "name": "Freeze Timers",
+    "image": "",
+    "description": "Timers for Ice Barrage, TeleBlock, Vengeance displayed over players or NPCs.",
+    "categories": [
+      "PvP",
+      "PvM"
+    ]
+  },
+  {
+    "name": "Grotesque Guardians",
+    "image": "",
+    "description": "Overlays for Grotesque Guardians, showing you where not to stand.",
+    "categories": [
+      "PvM"
+    ]
+  },
+  {
+    "name": "Hide Prayers",
+    "image": "hide-prayers",
+    "description": "Hides certain prayers so you don't misclick.",
+    "categories": [
+      "Utility"
+    ]
+  },
+  {
+    "name": "Hydra Helper",
+    "image": "",
+    "description": "Helps you do hydra by showing what not to stand in, and what to pray.",
+    "categories": [
+      "PvM"
+    ]
+  },
+  {
+    "name": "Inventory Setups",
+    "image": "inventory-setups",
+    "description": "Saves your inventory setups.",
+    "categories": [
+      "Utility"
+    ]
+  },
+  {
+    "name": "Kept on Death",
+    "image": "",
+    "description": "Reworks the Items Kept on Death interface to be more accurate.",
+    "categories": [
+      "Utility",
+      "PvP"
+    ]
+  },
+  {
+    "name": "Learn to Click",
+    "image": "",
+    "description": "A few modifications to prevent misclicks.",
+    "categories": [
+      "PvP"
+    ]
+  },
+  {
+    "name": "Lizard Shamans",
+    "image": "",
+    "description": "Timer for lizardmen shaman add spawns.",
+    "categories": [
+      "PvM"
+    ]
+  },
+  {
+    "name": "Loot Assist Plugin",
+    "image": "loot-assist",
+    "description": "Creates a tile overlay with a timer that counts down to when the loot will appear to you.",
+    "categories": [
+      "PvP"
+    ]
+  },
+  {
+    "name": "Max Hit",
+    "image": "max-hit",
+    "description": "Shows you your max hit in equipment screen.",
+    "categories": [
+      "Utility"
+    ]
+  },
+  {
+    "name": "Menu Modifier",
+    "image": "menu-modifier",
+    "description": "Removes unnecessary menu entries.",
+    "categories": [
+      "Utility"
+    ]
+  },
+  {
+    "name": "Multi-Lines",
+    "image": "multi-lines",
+    "description": "Shows you where multi-lines start and end for DMM. PVP worlds and the wilderness.",
+    "categories": [
+      "Utility",
+      "PvP"
+    ]
+  },
+  {
+    "name": "Player Indicators",
+    "image": "",
+    "description": "Advanced player indicators for PKing.",
+    "categories": [
+      "PvP"
+    ]
+  },
+  {
+    "name": "Player Information",
+    "image": "player-information",
+    "description": "An alternative to the minimap orbs.",
+    "categories": [
+      "Utility"
+    ]
+  },
+  {
+    "name": "Plugin Organizer",
+    "image": "plugin-organizer",
+    "description": "This is what allows us to sort plugins, and give them color.",
+    "categories": [
+      "Utility"
+    ]
+  },
+  {
+    "name": "Prayer Alert",
+    "image": "prayer-alert",
+    "description": "Alert the player when the prayer points are low.",
+    "categories": [
+      "Utility",
+      "PvP"
+    ]
+  },
+  {
+    "name": "Puro-Puro Impling Spawns",
+    "image": "",
+    "description": "Shows dynamic spawns.",
+    "categories": [
+      "Utility"
+    ]
+  },
+  {
+    "name": "PvP Tools",
+    "image": "pvp-tools",
+    "description": "Enables the PvP tools panel",
+    "categories": [
+      "PvP"
+    ]
+  },
+  {
+    "name": "Pyramid Plunder",
+    "image": "",
+    "description": "Overlays for Pyramid Plunder.",
+    "categories": [
+      "Utility",
+      "Skilling"
+    ]
+  },
+  {
+    "name": "Remember Clan",
+    "image": "remember-clan",
+    "description": "Sets a default clan chat to join.",
+    "categories": [
+      "Utility"
+    ]
+  },
+  {
+    "name": "Runedoku Solver",
+    "image": "",
+    "description": "Show solutions for current Runedoku puzzle.",
+    "categories": [
+      "Utility"
+    ]
+  },
+  {
+    "name": "Shayzien Infirmary",
+    "image": "shayzien-infirmary",
+    "description": "Shows the status of wounded soldiers.",
+    "categories": [
+      "Utility"
+    ]
+  },
+  {
+    "name": "Shift to Walk",
+    "image": "shift-to-walk",
+    "description": "Removes all menu entries allowing you to click anywhere with shift and not interact.",
+    "categories": [
+      "Utility"
+    ]
+  },
+  {
+    "name": "Smelting",
+    "image": "",
+    "description": "Shows you an overview of your current Smelting session (Bars/Actions per hour).",
+    "categories": [
+      "Skilling"
+    ]
+  },
+  {
+    "name": "Spec Bar",
+    "image": "spec-bar",
+    "description": "Adds a spec bar for every weapon, so you can easily 1 tick swap.",
+    "categories": [
+      "PvP"
+    ]
+  },
+  {
+    "name": "Spellbook Modifier",
+    "image": "spellbook-modifier",
+    "description": "Modifications to the spellbook, such as reorder, resizer and more.",
+    "categories": [
+      "Utility",
+      "PvP",
+      "PvM",
+      "Skilling"
+    ]
+  },
+  {
+    "name": "Supplies Used Tracker",
+    "image": "supplies-used-tracker",
+    "description": "Track your supplies while pvping or pvming, very useful.",
+    "wiki": "https://github.com/runelite-extended/runelite/wiki/Supplies-tracker",
+    "categories": [
+      "Utility",
+      "PvP",
+      "PvM"
+    ]
+  },
+  {
+    "name": "Tarn's Lair",
+    "image": "",
+    "description": "Mark tiles and click boxes to help traverse the maze.",
+    "categories": [
+      "Utility"
+    ]
+  },
+  {
+    "name": "Theatre of Blood",
+    "image": "",
+    "description": "Learn Theatre of Blood easily with this plugin showing you where and where not to stand.",
+    "categories": [
+      "PvM"
+    ]
+  },
+  {
+    "name": "Tick Counter",
+    "image": "",
+    "description": "Compare yourself to your team mates by seeing who was in combat the longest.",
+    "categories": [
+      "Utility"
+    ]
+  },
+  {
+    "name": "ToB Damage Counter",
+    "image": "",
+    "description": "Compare yourself to your team mates by seeing who dealt the most damage during ToB.",
+    "categories": [
+      "PvM"
+    ]
+  },
+  {
+    "name": "Vetion Helper",
+    "image": "",
+    "description": "Tracks Vet’ion’s special attacks so you don't have to.",
+    "categories": [
+      "PvM"
+    ]
+  },
+  {
+    "name": "Vorkath Helper",
+    "image": "vorkath-helper",
+    "description": "Counts Vorkath attacks, and which phases are coming.",
+    "categories": [
+      "PvM"
+    ]
+  },
+  {
+    "name": "War Calling Indicators",
+    "image": "war-calling",
+    "description": "War War War.",
+    "categories": [
+      "PvP"
+    ]
+  },
+  {
+    "name": "Whale Watchers",
+    "image": "",
+    "description": "A plugin to save whales in the wild.",
+    "categories": [
+      "PvP"
+    ]
+  },
+  {
+    "name": "Wild Locations",
+    "image": "wilderness-locations",
+    "description": "Indicates the player's current location in the wild and sends it to your current Clan Chat.",
+    "categories": [
+      "PvP"
+    ]
+  },
+  {
+    "name": "Zulrah Helper",
+    "image": "zulrah-helper",
+    "description": "Kill Zulrah no problem with our zulrah helper. Raise that KC!",
+    "wiki": "https://github.com/runelite-extended/runelite/wiki",
+    "categories": [
+      "PvM"
+    ]
+  }
+]

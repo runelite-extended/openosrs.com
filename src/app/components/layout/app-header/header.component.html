@@ -1,0 +1,40 @@
+<mat-toolbar class="header" color="primary">
+  <mat-toolbar-row>
+    <a class="title" routerLink="/home">
+      <img class="logo" src="/assets/icons/icon-72x72.png" alt="RunelitePlus" height="23" width="23" />
+      <span>
+        RuneLite Plus
+      </span>
+    </a>
+    <button mat-button *ngFor="let item of menuItem" routerLinkActive #routerLinkActiveInstance="routerLinkActive"
+      [attr.tabindex]="routerLinkActiveInstance.isActive ? 0 : -1"
+      [class.list-item-active]="routerLinkActiveInstance.isActive" [routerLink]="item" fxHide.xs="true">
+      {{ item }}
+    </button>
+
+    <span class="spacer"></span>
+
+    <a mat-icon-button="mat-icon-button" target="_blank" rel="noopener noreferrer" href="https://discord.gg/Q7wFtCe">
+      <mat-icon class="icon" aria-hidden="false" aria-label="Discord" svgIcon="discord"></mat-icon>
+    </a>
+    <a mat-icon-button="mat-icon-button" target="_blank" rel="noopener noreferrer"
+      href="https://twitter.com/runeliteplus">
+      <mat-icon class="icon" aria-hidden="false" aria-label="Twitter" svgIcon="twitter"></mat-icon>
+    </a>
+    <a mat-icon-button="mat-icon-button" target="_blank" rel="noopener noreferrer"
+      href="https://github.com/runelite-extended">
+      <mat-icon class="icon" aria-hidden="false" aria-label="Github" svgIcon="github"></mat-icon>
+    </a>
+    <a mat-icon-button="mat-icon-button" target="_blank" rel="noopener noreferrer"
+      href="https://www.patreon.com/join/RuneLitePlus">
+      <mat-icon class="icon" aria-hidden="false" aria-label="Patreon" svgIcon="patreon" color="accent"></mat-icon>
+    </a>
+  </mat-toolbar-row>
+  <mat-toolbar-row class="mobile-nav" fxHide.gt-xs="true" fxLayout="row wrap" fxLayoutAlign="start">
+    <button mat-button *ngFor="let item of menuItem" routerLinkActive #routerLinkActiveInstance="routerLinkActive"
+      [attr.tabindex]="routerLinkActiveInstance.isActive ? 0 : -1"
+      [class.list-item-active]="routerLinkActiveInstance.isActive" [routerLink]="item" fxFlex="0 1 33.33%">
+      {{ item }}
+    </button>
+  </mat-toolbar-row>
+</mat-toolbar>

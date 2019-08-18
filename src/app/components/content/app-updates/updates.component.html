@@ -1,0 +1,128 @@
+<div class="wrapper">
+  <div class="content-header mat-toolbar mat-primary">
+    <span>
+      Updates
+    </span>
+  </div>
+  <div class="content" fxLayout="row wrap" fxLayoutAlign="center">
+    <div fxFlex="0 1 45%" fxFlex.lt-lg="0 1 70%" fxFlex.lt-md="0 1 80%" fxFlex.lt-sm="90%">
+      <h2>
+        Client updates
+      </h2>
+      <mat-accordion class="mat-elevation-z3" *ngIf="!fatalPostError">
+        <mat-expansion-panel *ngFor="let update of updates$ | async" class="mat-elevation-z3">
+          <mat-expansion-panel-header>
+            <mat-panel-title [innerText]="update.title"></mat-panel-title>
+            <mat-panel-description fxHide.lt-md="true" [innerText]="update.date | commitDate"></mat-panel-description>
+          </mat-expansion-panel-header>
+          <ng-template matExpansionPanelContent>
+            <mat-action-row fxHide="true" fxHide.lt-md="false">
+              <h1>
+                Update date:
+              </h1>
+              <p>
+                <span [innerText]="update.date | commitDate"></span>
+              </p>
+            </mat-action-row>
+            <mat-action-row>
+              <mat-chip-list aria-label="Tags">
+                <mat-chip *ngFor="let category of update.categories" [innerText]="category" color="primary"
+                  selected="selected"></mat-chip>
+                <mat-chip *ngFor="let tag of update.tags" [innerText]="tag" color="primary" selected="selected">
+                </mat-chip>
+              </mat-chip-list>
+            </mat-action-row>
+            <mat-action-row class="github-links">
+              <a mat-raised-button="mat-raised-button" color="primary" (click)="openBottomSheet(update)">
+                Share
+              </a>
+              <a mat-raised-button="mat-raised-button" color="primary" [routerLink]="'/updates/' + update.mdFile">
+                Full page
+              </a>
+              <a mat-raised-button="mat-raised-button" color="primary" target="_blank" rel="noopener noreferrer"
+                [attr.href]="'https://github.com/runelite-extended/runelitepl.us/blob/master/src/assets/posts/' + update.mdFile + '.md'">
+                Edit on github
+              </a>
+            </mat-action-row>
+            <mat-action-row>
+              <app-post [update]="update"></app-post>
+            </mat-action-row>
+          </ng-template>
+        </mat-expansion-panel>
+      </mat-accordion>
+      <p *ngIf="fatalPostError">
+        The update posts could not be fetched.
+      </p>
+    </div>
+    <div fxFlex="0 1 45%" fxFlex.lt-lg="0 1 70%" fxFlex.lt-md="0 1 80%" fxFlex.lt-sm="90%">
+      <h2>
+        Latest Github commits
+      </h2>
+      <mat-accordion *ngIf="!fatalGithubError && commits; else noCommits" class="mat-elevation-z3">
+        <mat-expansion-panel *ngFor="let commit of commits" class="mat-elevation-z3">
+          <mat-expansion-panel-header>
+            <mat-panel-title [innerText]="commit.message | commitMessage"></mat-panel-title>
+            <mat-panel-description fxHide.lt-md="true" [innerText]="commit.date | commitDate"></mat-panel-description>
+          </mat-expansion-panel-header>
+          <ng-template matExpansionPanelContent>
+            <mat-action-row fxHide="true" fxHide.lt-md="false">
+              <h1>
+                Commit date:
+              </h1>
+              <p><span [innerText]="commit.date | commitDate"></span></p>
+            </mat-action-row>
+            <mat-action-row>
+              <h1>
+                Author:
+              </h1>
+              <p>
+                <span [innerText]="commit.author_name"></span>
+                <span *ngIf="commit.author_name && commit.author_login && commit.author_name !== commit.author_login"
+                  [innerText]="' (Github name: ' + commit.author_login + ')'"></span>
+              </p>
+            </mat-action-row>
+            <mat-action-row *ngIf="commit.author_name !== commit.committer_name && commit.committer_name !== 'GitHub'">
+              <h1>
+                Commiter:
+              </h1>
+              <p>
+                <span [innerText]="commit.committer_name"></span>
+                <span *ngIf="commit.committer_name !== commit.committer_login"
+                  [innerText]="' (Github name: ' + commit.committer_login + ')'"></span>
+              </p>
+            </mat-action-row>
+            <mat-action-row>
+              <h1>
+                Full commit message:
+              </h1>
+              <p [innerText]="commit.message"></p>
+            </mat-action-row>
+            <mat-action-row class="github-links">
+              <a *ngIf="commit.html_url" mat-raised-button="mat-raised-button" color="primary" target="_blank"
+                rel="noopener noreferrer" [attr.href]="commit.html_url">
+                Github commit
+              </a>
+              <a *ngIf="commit.author_html_url" mat-raised-button="mat-raised-button" color="primary" target="_blank"
+                rel="noopener noreferrer" [attr.href]="commit.author_html_url">
+                Github author
+              </a>
+              <a *ngIf="commit.author_name !== commit.committer_name && commit.committer_name !== 'GitHub'"
+                mat-raised-button="mat-raised-button" color="primary" target="_blank" rel="noopener noreferrer"
+                [attr.href]="commit.committer_html_url">
+                Github comitter
+              </a>
+            </mat-action-row>
+          </ng-template>
+        </mat-expansion-panel>
+      </mat-accordion>
+      <ng-template #noCommits>
+        <p>
+          Fetching the latest github commits.
+        </p>
+      </ng-template>
+      <p *ngIf="fatalGithubError">
+        The latest github commits could not be fetched.
+      </p>
+    </div>
+  </div>
+</div>

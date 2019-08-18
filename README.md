@@ -1,25 +1,27 @@
-# https://runelitepl.us [![Netlify Status](https://api.netlify.com/api/v1/badges/dab38b2f-c1da-4e02-b7f7-f23c3290f5f6/deploy-status)](https://app.netlify.com/sites/runeliteplus/deploys)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+# Runeliteplus
 
-Runeliteplus website running on Gatsby, React, and Node.js.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.9.
 
+## Development server
 
-## Installation
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-Run local server:
+## Code scaffolding
 
-```bash
-yarn
-yarn run dev
-```
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-Navigate to `localhost:8000`.
+## Build
 
-## Contributing
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-If you see any typos or formatting errors in a post, or any other issue that needs to be addressed, please do not hesitate to open a pull request and fix it!
+## Running unit tests
 
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## License
+## Running end-to-end tests
 
-This project is open source and available under the [MIT License](LICENSE).
+Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+
+## Further help
+
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).

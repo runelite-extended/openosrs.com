@@ -1,3 +1,0 @@
-User-agent: * 
-Disallow: /tags/
-sitemap: https://runelitepl.us/sitemap.xml
