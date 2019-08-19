@@ -1,10 +1,8 @@
-import { ChangeDetectionStrategy, Component, OnInit, ViewChild, OnDestroy } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, ViewChild } from '@angular/core';
 import { MatStepper } from '@angular/material';
 
 import { NotificationService } from '../../../services/notification.service';
 import { MetaService } from 'src/app/services/meta.service';
-
-import { from } from 'rxjs';
 
 @Component({
   selector: 'app-downloads',
