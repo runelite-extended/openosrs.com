@@ -38,6 +38,13 @@ const routes: Routes = [
     }
   },
   {
+    path: 'integration',
+    loadChildren: () => import('./components/content/app-integration/integration.module').then(m => m.IntegrationModule),
+    data: {
+      title: 'integration'
+    }
+  },
+  {
     path: '**',
     loadChildren: () => import('./components/content/app-not-found/not.found.module').then(m => m.NotFoundModule),
   }
