@@ -35,6 +35,7 @@
 * [Playerscouter](https://github.com/runelite-extended/runelite/commit/4b4af0fa2b3d56355ca854893ba150191c85df56): add combat bracket
 
 ##### [formatme](https://github.com/f0rmatme)
+##### Alexander van spauwen
 * [chatboxperformance](https://github.com/runelite-extended/runelite/pull/1396/commits/d36de1353fee0e7776d204ff97be2777c1ddf1c4): Toggle chatbox gradient
 
 ##### [Lucwousin](https://github.com/Lucwousin)
@@ -59,5 +60,3 @@
 ##### [MattFaris](https://github.com/MattFaris)
 * [cannonplugin](https://github.com/runelite-extended/runelite/commit/385c56512aba5fee3f95bb6b0ba851de5080d353): Fix issue with cannon spots not displaying
 
-##### Alexander van spauwen
-* [chatbox](https://github.com/runelite-extended/runelite/commit/ae08917e779e277c36a283274d3b43ba894c8edc): added ability to disable gradient.
