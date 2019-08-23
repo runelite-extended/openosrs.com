@@ -34,8 +34,7 @@
 * [whalewatchers](https://github.com/runelite-extended/runelite/commit/e31333eb469dd0a25423910683d5ecb8168cbe85): pneck break warning sound
 * [Playerscouter](https://github.com/runelite-extended/runelite/commit/4b4af0fa2b3d56355ca854893ba150191c85df56): add combat bracket
 
-##### [formatme](https://github.com/f0rmatme)
-##### Alexander van spauwen
+##### [formatme](https://github.com/f0rmatme) / Alexander van spauwen
 * [chatboxperformance](https://github.com/runelite-extended/runelite/pull/1396/commits/d36de1353fee0e7776d204ff97be2777c1ddf1c4): Toggle chatbox gradient
 
 ##### [Lucwousin](https://github.com/Lucwousin)
