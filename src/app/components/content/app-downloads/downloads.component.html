@@ -32,7 +32,7 @@
                     Operating System
                   </mat-label>
                   <mat-select [(value)]="selectedOperatingSystem">
-                    <mat-option *ngFor="let os of ['Windows', 'MacOS', 'Linux', 'Other']" [value]="os" [innerText]="os">
+                    <mat-option *ngFor="let os of ['Windows x64', 'Windows x32', 'MacOS', 'Linux', 'Other']" [value]="os" [innerText]="os">
                     </mat-option>
                   </mat-select>
                 </mat-form-field>
@@ -46,19 +46,19 @@
               <div fxLayoutAlign="center" class="stepper-content">
                 <div fxFlex="1 1 85%" fxFlex.lt-xl="0 1 82%" fxFlex.lt-lg="0 1 100%">
                   <div fxLayout="row wrap" fxLayoutAlign="start">
-                    <div class="card-container" fxFlex="1 1 50%" fxFlex.lt-md="1 1 100%">
+                    <div class="card-container" fxFlex="1 1 50%" fxFlex.lt-md="1 1 100%" *ngIf="selectedOperatingSystem != 'Other'">
                       <mat-card class="mat-elevation-z3" fxFlex="1 1 auto"
-                        [style.opacity]="selectedOperatingSystem == 'Windows' || selectedOperatingSystem == 'MacOS' ? 1 : 0.35">
+                        [style.opacity]="selectedOperatingSystem != 'MacOS' ? 1 : 0.35">
                         <mat-card-header>
                           <mat-card-title>
-                            Launcher
+                            Native launcher
                           </mat-card-title>
                         </mat-card-header>
                         <mat-card-content>
-                          <h4 *ngIf="selectedOperatingSystem == 'Windows' || selectedOperatingSystem == 'MacOS'">
+                          <h4 *ngIf="selectedOperatingSystem != 'MacOS'">
                             Best choice
                           </h4>
-                          <h4 *ngIf="selectedOperatingSystem != 'Windows' && selectedOperatingSystem != 'MacOS'">
+                          <h4 *ngIf="selectedOperatingSystem == 'MacOS'">
                             Not yet availble for your operating system
                           </h4>
                           <p>
@@ -69,8 +69,8 @@
                         </mat-card-content>
                         <mat-card-actions>
                           <a mat-raised-button="mat-raised-button" color="primary" rel="noopener noreferrer"
-                            [href]="selectedOperatingSystem == 'Windows' ? 'https://github.com/runelite-extended/launcher/releases/download/2.1.5.0/RuneLitePlusSetup.Windows64.exe' : 'https://github.com/runelite-extended/launcher/releases/download/2.1.5.0/RuneLitePlus.MacOS.zip'"
-                            (click)="downloadClick(0)" [disabled]="selectedOperatingSystem != 'Windows' && selectedOperatingSystem != 'MacOS'">
+                            [href]="getDownload(0)"
+                            (click)="downloadClick(0)" [disabled]="selectedOperatingSystem == 'MacOS'">
                             Download
                           </a>
                         </mat-card-actions>
@@ -80,27 +80,26 @@
                       <mat-card class="mat-elevation-z3" fxFlex="1 1 auto">
                         <mat-card-header>
                           <mat-card-title>
-                            Jar file
+                            Jar launcher
                           </mat-card-title>
                         </mat-card-header>
                         <mat-card-content>
                           <h4>
                             &nbsp;
                           </h4>
-                          <p *ngIf="selectedOperatingSystem == 'Windows' || selectedOperatingSystem == 'MacOS'">
+                          <p *ngIf="selectedOperatingSystem != 'MacOS'">
                             Already have java installed and don't want to have it bundled in a launcher, wanting to have
                             control over your java settings, whatever your motivation is you can also download the jar
-                            file! (The jar file will not update itself when there is a client update available unlike
-                            the launcher).
+                            file!
                           </p>
-                          <p *ngIf="selectedOperatingSystem != 'Windows' && selectedOperatingSystem != 'MacOS'">
-                            We currently only release a jar file for your operating system. The jar file will not
+                          <p *ngIf="selectedOperatingSystem == 'MacOS'">
+                            We currently only release a jar file for your operating system. The jar file will auto
                             update itself when there is an update available. Stay tuned for more download options!
                           </p>
                         </mat-card-content>
                         <mat-card-actions>
                           <a mat-raised-button="mat-raised-button" color="primary" rel="noopener noreferrer"
-                            href="https://github.com/runelite-extended/launcher/releases/download/2.1.5.0/RuneLitePlus.jar" (click)="downloadClick(1)">
+                            [href]="getDownload(1)" (click)="downloadClick(1)">
                             Download
                           </a>
                         </mat-card-actions>
