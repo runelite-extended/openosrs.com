@@ -1,7 +1,7 @@
 > As always, we appreciate the staff for their efforts this week. Also, a special mention to the following users who have contributed on github this week: Lyzrds, Nagi, Loudpacks, icyredstar, xperiaclash, ocekyled, farhan1666, SRLJustin, sunha7, se7enAte9, and tomcylke. We are delivering a hurtful blow to P2W clients with every update, and every new user.
 
 
-## RuneLitePlus 1.4
+## OpenOSRS 1.4
 
 - Impling jar menu entry swapper so you dont open more jars than needed if you have a cluescroll in your bank.
 - MenuEntrySwapper has been reworked to look cleaner with grouping.

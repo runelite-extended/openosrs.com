@@ -25,14 +25,14 @@ export class AppDownloadsComponent implements OnInit {
     [
       '2FA4E25DC979F2CFD218A12D111D91E5',
       'F0D2FE8BF266838F0E204B3AD6E09C93B603F01B',
-      `https://github.com/runelite-extended/launcher/releases/download/${this.version}/RuneLitePlusSetup64.exe`
+      `https://github.com/runelite-extended/launcher/releases/download/${this.version}/OpenOSRSSetup64.exe`
     ],
 
     // Windows x32; md5, sha1
     [
       'D6C2CC7B5F8BA2463C00A5CF63518545',
       'F76F15C8A9248C1DED56F4D6BEE893564A45A91C',
-      `https://github.com/runelite-extended/launcher/releases/download/${this.version}/RuneLitePlusSetup32.exe`
+      `https://github.com/runelite-extended/launcher/releases/download/${this.version}/OpenOSRSSetup32.exe`
     ],
     // MacOS; md5, sha1
     ['', '', ''],
@@ -41,14 +41,14 @@ export class AppDownloadsComponent implements OnInit {
     [
       '4577724EC7620DDF65DC72FB495C0534',
       '4E01F105FB1F7B24FD173F943CF57175EF8943D7',
-      `https://github.com/runelite-extended/launcher/releases/download/${this.version}/RuneLitePlus.AppImage`
+      `https://github.com/runelite-extended/launcher/releases/download/${this.version}/OpenOSRS.AppImage`
     ],
 
     // Jar; md5, sha1
     [
       '7DBC60820058E4687B50193EFADB3CFB',
       '5CF9D8F068DE993EDE20EF308308718D860E9C3A',
-      `https://github.com/runelite-extended/launcher/releases/download/${this.version}/RuneLitePlus.jar`
+      `https://github.com/runelite-extended/launcher/releases/download/${this.version}/OpenOSRS.jar`
     ]
   ];
 
@@ -60,17 +60,17 @@ export class AppDownloadsComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    const description = 'RuneLitePlus has a lot more features compared to RuneLite, zulrah helper, ' +
-      'improved runelite plugins, pvp plugins, pvm plugins and more. Use Runelite Plus over RuneLite!';
+    const description = 'OpenOSRS has a lot more features compared to RuneLite, zulrah helper, ' +
+      'improved runelite plugins, pvp plugins, pvm plugins and more. Use OpenOSRS over RuneLite!';
 
     this.metaService.updateTags([
       {
         name: 'keywords',
-        content: 'runelite, runeliteplus, runelite plus, runelite pvp plugins, runelite pvp, runelite plugins, download, downloads'
+        content: 'runelite, openosrs, OpenOSRS, runelite pvp plugins, runelite pvp, runelite plugins, download, downloads'
       },
       { name: 'description', content: description },
       { name: 'twitter:description', content: description },
-      { name: 'og:url', content: 'https://runelitepl.us/downloads', property: true },
+      { name: 'og:url', content: 'https://openosrs.com/downloads', property: true },
       { name: 'og:type', content: 'website', property: true },
       { name: 'og:description', content: description, property: true },
     ]);

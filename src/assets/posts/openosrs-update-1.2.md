@@ -4,11 +4,11 @@ As always, I appreciate the staff and our end users. We are delivering a hurtful
 
 
 
-#### RuneLitePlus 1.2
+#### OpenOSRS 1.2
 
 
 ```
-RuneLite+ 1.2
+OpenOSRS 1.2
 -Added getPlayerId api.
 -Added OP lava rc support.
 -Added More custom cursors.
@@ -26,7 +26,7 @@ RuneLite+ 1.2
 -Updated Code to follow runelite code style.
 -Updated Various MenuEntries
 -Updated Fight Caves to include tick timers on attacks.
--Updated config to use runeliteplus.properties so new / current users no longer have to stay logged out of Google
+-Updated config to use openosrs.properties so new / current users no longer have to stay logged out of Google
 -Updated CoX plugins to all be one plugin.
 -Updated Hide Prayer extensively.
 -Updated BA plugins extensively.

@@ -41,17 +41,17 @@ export class AppUpdatesComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit() {
-    const description = 'RuneLitePlus provides more functionality and less restrictions whilst staying open source. ' +
+    const description = 'OpenOSRS provides more functionality and less restrictions whilst staying open source. ' +
       'We have lots of custom RuneLite plugins!';
 
     this.metaService.updateTags([
       {
         name: 'keywords',
-        content: 'runelite, runeliteplus, runelite plus, runelite pvp plugins, runelite pvp, runelite plugins, updates, github updates'
+        content: 'runelite, openosrs, OpenOSRS, runelite pvp plugins, runelite pvp, runelite plugins, updates, github updates'
       },
       { name: 'description', content: description },
       { name: 'twitter:description', content: description },
-      { name: 'og:url', content: 'https://runelitepl.us/updates', property: true },
+      { name: 'og:url', content: 'https://openosrs.com/updates', property: true },
       { name: 'og:type', content: 'website', property: true },
       { name: 'og:description', content: description, property: true },
     ]);

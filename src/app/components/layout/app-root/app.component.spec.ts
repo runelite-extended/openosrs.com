@@ -48,7 +48,7 @@ describe('AppComponent', () => {
   describe('Meta =>', () => {
     it('Shouldn\'t set the page title', () => {
       // TODO: Mock this
-      // expect(TestBed.get(Title).getTitle()).toEqual('Runelite Plus');
+      // expect(TestBed.get(Title).getTitle()).toEqual('OpenOSRS');
     });
   });
 

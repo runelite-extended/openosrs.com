@@ -38,8 +38,8 @@ describe('ShareUpdateComponent', () => {
           {
             update: {
               date: '2019-05-23T00:00:00Z',
-              title: 'RuneLite+ has been updated to 1.3!',
-              mdFile: 'runelite-plus-update-1.3',
+              title: 'OpenOSRS has been updated to 1.3!',
+              mdFile: 'openosrs-update-1.3',
               categories: [
                 'updates'
               ],

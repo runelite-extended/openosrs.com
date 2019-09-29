@@ -1,4 +1,4 @@
-## RuneLitePlus 2.1.3.1
+## OpenOSRS 2.1.3.1
 
 ##### [Ganom](https://github.com/Ganom)
 * [menuentryswapper](https://github.com/runelite-extended/runelite/commit/70c162019e290cdc929947676878655d4fe6da2c): various menu fixes

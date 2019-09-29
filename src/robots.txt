@@ -1,2 +1,2 @@
 User-agent: *
-sitemap: https://runelitepl.us/sitemap.xml
+sitemap: https://openosrs.com/sitemap.xml

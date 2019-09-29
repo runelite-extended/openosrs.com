@@ -2,7 +2,7 @@
 >**Damhan, Lohouse, SRLJustin, and MattFaris**.
 > We are delivering a hurtful blow to P2W clients with every update, and every new user.
 >
-## RuneLitePlus 2.1.4.0
+## OpenOSRS 2.1.4.0
 
 ##### [Ganom](https://github.com/Ganom)
 * [menuentryswapper](https://github.com/runelite-extended/runelite/pull/1391/commits/d050a6eceea598ad41abb6c6d68bd186c6e5871c): remove shift click customisation for a better alternative.

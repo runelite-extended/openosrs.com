@@ -1,7 +1,7 @@
 > As always, we appreciate the staff for their efforts this week. Also, a special mention to the following users who have contributed on github this week:
 >**Crystalknoct, HSJ-OSRS, Judaxx, Netami1, ReeeMan, SRLJustin, Sunha7, Tomcylke, and Tyhi**.
 > We are delivering a hurtful blow to P2W clients with every update, and every new user.
-## RuneLitePlus 2.1.3.0
+## OpenOSRS 2.1.3.0
 
 ##### [Crystalknoct](https://github.com/Crystalknoct)
 * [damagecounter](https://github.com/runelite-extended/runelite/pull/1307): updated grammar
@@ -23,7 +23,7 @@
 * [menuentryswapper](https://github.com/runelite-extended/runelite/pull/1327): add equipment swaps, and use them to fix swaps.
 * [playerscouter](https://github.com/runelite-extended/runelite/pull/1294): fix conmod exception, and various other updates.
 * [pluginsorter](https://github.com/runelite-extended/runelite/pull/1282): Fix Alpha
-* [runeliteplus](https://github.com/runelite-extended/runelite/pull/1331): add detach cam toggle
+* [openosrs](https://github.com/runelite-extended/runelite/pull/1331): add detach cam toggle
 * [theatre](https://github.com/runelite-extended/runelite/pull/1264): Fix sote projectiles.
 
 ##### [Gazivodag](https://github.com/Gazivodag)
