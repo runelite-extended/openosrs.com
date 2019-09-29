@@ -14,7 +14,7 @@ OpenOSRS 1.2
 -Added More custom cursors.
 -Added Climb up / Climb down plugin.
 -Added MenuUtil (easy swapping outside MenuEntrySwapper).
--Added Transparent frame under RL+ config.
+-Added Transparent frame under OpenOSRS config.
 -Added High Alch profit tooltip.
 -Added 1 Click Con. Cape and Crafting Cape.
 -Added Dynamic Impling Spawns.

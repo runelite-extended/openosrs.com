@@ -45,7 +45,7 @@ describe('HeaderComponent', () => {
   });
 
   describe('Content =>', () => {
-    it('Should have the RL+ title', () => {
+    it('Should have the OPRS title', () => {
       expect(element.querySelector('.title > span').innerHTML.trim()).toEqual('OpenOSRS');
     });
 
