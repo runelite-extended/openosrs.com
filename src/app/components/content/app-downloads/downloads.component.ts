@@ -60,8 +60,8 @@ export class AppDownloadsComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    const description = 'RuneLitePlus has a lot more features compared to RuneLite, zulrah helper, ' +
-      'improved runelite plugins, pvp plugins, pvm plugins and more. Use Runelite Plus over RuneLite!';
+    const description = 'OpenOSRS has a lot more features compared to RuneLite, zulrah helper, ' +
+      'improved runelite plugins, pvp plugins, pvm plugins and more. Use OpenOSRS over RuneLite!';
 
     this.metaService.updateTags([
       {
@@ -70,7 +70,7 @@ export class AppDownloadsComponent implements OnInit {
       },
       { name: 'description', content: description },
       { name: 'twitter:description', content: description },
-      { name: 'og:url', content: 'https://runelitepl.us/downloads', property: true },
+      { name: 'og:url', content: 'https://openosrs.com/downloads', property: true },
       { name: 'og:type', content: 'website', property: true },
       { name: 'og:description', content: description, property: true },
     ]);

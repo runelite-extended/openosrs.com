@@ -46,7 +46,7 @@ describe('HeaderComponent', () => {
 
   describe('Content =>', () => {
     it('Should have the RL+ title', () => {
-      expect(element.querySelector('.title > span').innerHTML.trim()).toEqual('RuneLite Plus');
+      expect(element.querySelector('.title > span').innerHTML.trim()).toEqual('OpenOSRS');
     });
 
     it('Should have the desktop menu', () => {

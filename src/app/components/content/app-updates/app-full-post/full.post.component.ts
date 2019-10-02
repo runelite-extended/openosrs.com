@@ -38,16 +38,16 @@ export class AppFullPostComponent {
           if (update.mdFile === params.name) {
             this.update = update;
 
-            this.metaService.updateTitle(`RuneLitePlus: ${update.title}`);
+            this.metaService.updateTitle(`OpenOSRS: ${update.title}`);
             this.metaService.updateTags([
               {
                 name: 'keywords',
-                content: `runelite, runeliteplus, runelite plus, runelite pvp plugins, runelite pvp, ` +
+                content: `runelite, OpenOSRS, Open OSRS, runelite pvp plugins, runelite pvp, ` +
                   `runelite plugins, ${update.categories.join(', ')}, ${update.tags.join(', ')}`
               },
               { name: 'description', content: update.title },
               { name: 'twitter:description', content: update.title },
-              { name: 'og:url', content: `https://runelitepl.us/updates/${params.name}`, property: true },
+              { name: 'og:url', content: `https://openosrs.com/updates/${params.name}`, property: true },
               { name: 'og:type', content: 'website', property: true },
               { name: 'og:description', content: update.title, property: true },
             ]);

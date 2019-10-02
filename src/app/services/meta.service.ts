@@ -47,8 +47,8 @@ export class MetaService {
     this.meta.addTags([
       { property: 'article:published_time', content: date },
       { property: 'article:modified_time', content: date },
-      { property: 'article:author', content: 'RuneLitePlus' },
-      { property: 'article:section', content: 'RuneLitePlus software update' },
+      { property: 'article:author', content: 'OpenOSRS' },
+      { property: 'article:section', content: 'OpenOSRS software update' },
       { property: 'article:tag', content: tag }
     ]);
   }
@@ -69,7 +69,7 @@ export class MetaService {
           filter((route) => route.outlet === PRIMARY_OUTLET),
           mergeMap((route) => route.data)).subscribe((event) => {
             if (event.title !== '') {
-              const pageTitle = 'RunelitePlus - ' + event.title;
+              const pageTitle = 'OpenOSRS - ' + event.title;
               this.titleService.setTitle(pageTitle);
 
               this.updateTags([
@@ -79,7 +79,7 @@ export class MetaService {
             }
           });
     } else {
-      const pageTitle = 'RunelitePlus - ' + title;
+      const pageTitle = 'OpenOSRS - ' + title;
       this.titleService.setTitle(pageTitle);
 
       this.updateTags([

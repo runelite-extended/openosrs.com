@@ -36,7 +36,7 @@ export class AppFeaturesComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    const description = 'RuneLitePlus has a lot more features compared to RuneLite, zulrah helper, ' +
+    const description = 'OpenOSRS has a lot more features compared to RuneLite, zulrah helper, ' +
       'improved runelite plugins, pvp plugins, pvm plugins and more. Use Runelite Plus over RuneLite!';
 
     this.metaService.updateTags([
@@ -46,7 +46,7 @@ export class AppFeaturesComponent implements OnInit {
       },
       { name: 'description', content: description },
       { name: 'twitter:description', content: description },
-      { name: 'og:url', content: 'https://runelitepl.us/features', property: true },
+      { name: 'og:url', content: 'https://openosrs.com/features', property: true },
       { name: 'og:type', content: 'website', property: true },
       { name: 'og:description', content: description, property: true },
     ]);
