@@ -2,7 +2,7 @@
 
 @include mat-core();
 
-$runelite-plus-primary: (
+$openosrs-primary: (
   50 : #e0e4e5,
   100 : #b3bcbf,
   200 : #808f95,
@@ -35,7 +35,7 @@ $runelite-plus-primary: (
   )
 );
 
-$runelite-plus-accent: (
+$openosrs-accent: (
   50 : #e0f2f9,
   100 : #b3def0,
   200 : #80c8e6,
@@ -68,8 +68,8 @@ $runelite-plus-accent: (
   )
 );
 
-$primary: mat-palette($runelite-plus-primary);
-$accent: mat-palette($runelite-plus-accent);
+$primary: mat-palette($openosrs-primary);
+$accent: mat-palette($openosrs-accent);
 
 $theme: mat-light-theme($primary, $accent);
 

@@ -4,11 +4,11 @@ As always, I appreciate the staff and our end users. We are delivering a hurtful
 
 
 
-#### RuneLitePlus 1.2
+#### OpenOSRS 1.2
 
 
 ```
-RuneLite+ 1.2
+OpenOSRS 1.2
 -Added getPlayerId api.
 -Added OP lava rc support.
 -Added More custom cursors.

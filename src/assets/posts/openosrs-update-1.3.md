@@ -1,4 +1,4 @@
-#### RuneLitePlus has been updated to 1.3!
+#### OpenOSRS has been updated to 1.3!
 
 ## The live client is now working at a reduced functionality state.
 
