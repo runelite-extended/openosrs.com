@@ -83,7 +83,7 @@ describe('FullPostComponent', () => {
 
   describe('Content =>', () => {
     it('Should Set the header title to \'RuneLite+ has been updated to 1.3!\'', () => {
-      expect(element.querySelector('.content-header span:nth-child(1)').innerHTML.trim()).toEqual('RuneLite+ has been updated to 1.3!');
+      expect(element.querySelector('.content-header span:nth-child(1)').innerHTML.trim()).toEqual('OpenOSRS has been updated to 1.3!');
     });
   });
 
