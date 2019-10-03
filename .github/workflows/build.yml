@@ -9,7 +9,7 @@ jobs:
 
     steps:
       - name: PR title lint
-        if: github.event_name == 'pull_request'
+        if: github.event_name == 'pull_request' && github.actor != 'greenkeeper[bot]'
         uses: seferov/pr-lint-action@master
         with:
           title-regex: '^\w+: \w+'
@@ -58,3 +58,39 @@ jobs:
         run: npm install
       - name: Test
         run: npm test -- --configuration=ci
+
+  approve:
+    name: Approve
+    needs: [lint, build, test]
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Approve pull request
+        if: github.event_name == 'pull_request' && (github.actor == 'OpenOSRS' || github.actor == 'greenkeeper[bot]')
+        uses: hmarr/auto-approve-action@master
+        with:
+          github-token: "${{ secrets.GITHUB_TOKEN }}"
+
+  merge:
+    name: Merge
+    needs: approve
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Merge pull request
+        if: github.event_name == 'pull_request' && (github.actor == 'OpenOSRS' || github.actor == 'greenkeeper[bot]')
+        uses: managedkaos/merge-pull-request@master
+        with:
+          github-token: "${{ secrets.GITHUB_TOKEN }}"
+
+  cleanup:
+    name: Cleanup
+    needs: merge
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Remove merged branch
+        if: github.event_name == 'pull_request' && (github.actor == 'OpenOSRS' || github.actor == 'greenkeeper[bot]')
+        uses: jessfraz/branch-cleanup-action@master
+        with:
+          github-token: "${{ secrets.GITHUB_TOKEN }}"
