@@ -60,8 +60,7 @@ export class AppDownloadsComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    const description = 'OpenOSRS has a lot more features compared to RuneLite, zulrah helper, ' +
-      'improved runelite plugins, pvp plugins, pvm plugins and more. Use OpenOSRS over RuneLite!';
+    const description = 'Open-source client for Old School RuneScape with more functionality and less restrictions.';
 
     this.metaService.updateTags([
       {
