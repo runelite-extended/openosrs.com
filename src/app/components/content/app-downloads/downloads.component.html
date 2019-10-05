@@ -47,19 +47,15 @@
                 <div fxFlex="1 1 85%" fxFlex.lt-xl="0 1 82%" fxFlex.lt-lg="0 1 100%">
                   <div fxLayout="row wrap" fxLayoutAlign="start">
                     <div class="card-container" fxFlex="1 1 50%" fxFlex.lt-md="1 1 100%" *ngIf="selectedOperatingSystem != 'Other'">
-                      <mat-card class="mat-elevation-z3" fxFlex="1 1 auto"
-                        [style.opacity]="selectedOperatingSystem != 'MacOS' ? 1 : 0.35">
+                      <mat-card class="mat-elevation-z3" fxFlex="1 1 auto">
                         <mat-card-header>
                           <mat-card-title>
                             Native launcher
                           </mat-card-title>
                         </mat-card-header>
                         <mat-card-content>
-                          <h4 *ngIf="selectedOperatingSystem != 'MacOS'">
+                          <h4>
                             Best choice
-                          </h4>
-                          <h4 *ngIf="selectedOperatingSystem == 'MacOS'">
-                            Not yet availble for your operating system
                           </h4>
                           <p>
                             This is a launcher for OpenOSRS that comes bundled with a java executable. It'll auto
@@ -70,7 +66,7 @@
                         <mat-card-actions>
                           <a mat-raised-button="mat-raised-button" color="primary" rel="noopener noreferrer"
                             [href]="getDownload(0)"
-                            (click)="downloadClick(0)" [disabled]="selectedOperatingSystem == 'MacOS'">
+                            (click)="downloadClick(0)">
                             Download
                           </a>
                         </mat-card-actions>
@@ -87,14 +83,10 @@
                           <h4>
                             &nbsp;
                           </h4>
-                          <p *ngIf="selectedOperatingSystem != 'MacOS'">
+                          <p>
                             Already have java installed and don't want to have it bundled in a launcher, wanting to have
                             control over your java settings, whatever your motivation is you can also download the jar
                             file!
-                          </p>
-                          <p *ngIf="selectedOperatingSystem == 'MacOS'">
-                            We currently only release a jar file for your operating system. The jar file will auto
-                            update itself when there is an update available. Stay tuned for more download options!
                           </p>
                         </mat-card-content>
                         <mat-card-actions>
