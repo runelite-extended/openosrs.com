@@ -41,7 +41,7 @@ export class AppFeaturesComponent implements OnInit {
     this.metaService.updateTags([
       {
         name: 'keywords',
-        content: 'runelite, runeliteplus, runelite plus, runelite pvp plugins, runelite pvp, runelite plugins, zulrah, vorkath'
+        content: 'openosrs, open osrs, runelite, runeliteplus, runelite plus, runelite pvp plugins, runelite pvp, runelite plugins, zulrah, vorkath'
       },
       { name: 'description', content: description },
       { name: 'twitter:description', content: description },

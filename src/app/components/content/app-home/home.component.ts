@@ -40,7 +40,7 @@ export class AppHomeComponent implements OnInit {
     const description = 'Open-source client for Old School RuneScape with more functionality and less restrictions.';
 
     this.metaService.updateTags([
-      { name: 'keywords', content: 'runelite, runeliteplus, runelite plus, runelite pvp plugins, runelite pvp, runelite plugins' },
+      { name: 'keywords', content: 'openosrs, open osrs, runelite, runeliteplus, runelite plus, runelite pvp plugins, runelite pvp, runelite plugins' },
       { name: 'description', content: description },
       { name: 'twitter:description', content: description },
       { name: 'og:url', content: 'https://openosrs.com/home', property: true },

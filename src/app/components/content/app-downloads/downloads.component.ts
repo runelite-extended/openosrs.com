@@ -25,33 +25,33 @@ export class AppDownloadsComponent implements OnInit {
     [
       'E1CDDAF65C11813B14C854D8ADE67CCA',
       'A97064827688FEDFFD1728EC977DF32BE160077B',
-      `https://github.com/runelite-extended/launcher/releases/download/${this.version}/OpenOSRSSetup64.exe`
+      `https://github.com/open-osrs/launcher/releases/download/${this.version}/OpenOSRSSetup64.exe`
     ],
 
     // Windows x32; md5, sha1
     [
       '9F69B09CCA7151A2E4389A5F8A226E8F',
       'D12C3743B72E043026656C2984386EB1E1FB939F',
-      `https://github.com/runelite-extended/launcher/releases/download/${this.version}/OpenOSRSSetup32.exe`
+      `https://github.com/open-osrs/launcher/releases/download/${this.version}/OpenOSRSSetup32.exe`
     ],
     // MacOS; md5, sha1
     [
       '3BBF416DBB817607C6CFC184DDFC6451',
       '04A0558BE06264E8AB078657E9F1AADE966F47D7',
-      `https://github.com/runelite-extended/launcher/releases/download/${this.version}/OpenOSRSSetup.dmg`],
+      `https://github.com/open-osrs/launcher/releases/download/${this.version}/OpenOSRSSetup.dmg`],
 
     // Linux; md5, sha1
     [
       'F9F9096AFBF0E4B5A5233713D927CD70',
       'DF73B1C16506D3FC7FF8B1948800875B35B78B60',
-      `https://github.com/runelite-extended/launcher/releases/download/${this.version}/OpenOSRS.AppImage`
+      `https://github.com/open-osrs/launcher/releases/download/${this.version}/OpenOSRS.AppImage`
     ],
 
     // Jar; md5, sha1
     [
       'BDA49C77262CB61C81ACA88282EA638C',
       '3031D49F95E37E6E18DC19ABE1F26C2798DF7BA4',
-      `https://github.com/runelite-extended/launcher/releases/download/${this.version}/OpenOSRS.jar`
+      `https://github.com/open-osrs/launcher/releases/download/${this.version}/OpenOSRS.jar`
     ]
   ];
 
@@ -68,7 +68,7 @@ export class AppDownloadsComponent implements OnInit {
     this.metaService.updateTags([
       {
         name: 'keywords',
-        content: 'runelite, runeliteplus, runelite plus, runelite pvp plugins, runelite pvp, runelite plugins, download, downloads'
+        content: 'openosrs, open osrs, runelite, runeliteplus, runelite plus, runelite pvp plugins, runelite pvp, runelite plugins, download, downloads'
       },
       { name: 'description', content: description },
       { name: 'twitter:description', content: description },
