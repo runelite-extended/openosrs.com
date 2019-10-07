@@ -12,7 +12,7 @@
     "name": "Account Switcher",
     "image": "account-switcher",
     "description": "This will allow you to switch between accounts at the hit of a button.",
-    "wiki": "https://github.com/runelite-extended/runelite/wiki/Account-Switcher",
+    "wiki": "https://github.com/open-osrs/runelite/wiki/Account-Switcher",
     "categories": [
       "Utility"
     ]
@@ -37,7 +37,7 @@
     "name": "AoE Warnings",
     "image": "aoe-warnings",
     "description": "This will show you the projectiles of certain enemy attacks.",
-    "wiki": "https://github.com/runelite-extended/runelite/wiki/Aoe-Warnings",
+    "wiki": "https://github.com/open-osrs/runelite/wiki/Aoe-Warnings",
     "categories": [
       "PvM"
     ]
@@ -46,7 +46,7 @@
     "name": "Barbarian Assault+",
     "image": "barbarian-assault-plus",
     "description": "Custom barbarian assault plugin, highlight eggs and a lot more.",
-    "wiki": "https://github.com/runelite-extended/runelite/wiki/Barbarian-Assault-",
+    "wiki": "https://github.com/open-osrs/runelite/wiki/Barbarian-Assault-",
     "categories": [
       "PvM"
     ]
@@ -55,7 +55,7 @@
     "name": "Chambers of Xeric",
     "image": "chambers-of-xeric",
     "description": "Tick Timer for Olm, Overlays for all special attacks, and Olm Prayer Helper showing you what to pray.",
-    "wiki": "https://github.com/runelite-extended/runelite/wiki/CoX-Helper",
+    "wiki": "https://github.com/open-osrs/runelite/wiki/CoX-Helper",
     "categories": [
       "PvM"
     ]
@@ -320,7 +320,7 @@
     "name": "Supplies Used Tracker",
     "image": "supplies-used-tracker",
     "description": "Track your supplies while pvping or pvming, very useful.",
-    "wiki": "https://github.com/runelite-extended/runelite/wiki/Supplies-tracker",
+    "wiki": "https://github.com/open-osrs/runelite/wiki/Supplies-tracker",
     "categories": [
       "Utility",
       "PvP",
@@ -403,7 +403,7 @@
     "name": "Zulrah Helper",
     "image": "zulrah-helper",
     "description": "Kill Zulrah no problem with our zulrah helper. Raise that KC!",
-    "wiki": "https://github.com/runelite-extended/runelite/wiki",
+    "wiki": "https://github.com/open-osrs/runelite/wiki",
     "categories": [
       "PvM"
     ]

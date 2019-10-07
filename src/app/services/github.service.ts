@@ -17,7 +17,7 @@ import { take } from 'rxjs/operators';
 export class GithubService {
 
   private baseUrlApi = 'https://api.github.com';
-  private user = 'runelite-extended';
+  private user = 'open-osrs';
   private repository = 'runelite';
 
   private db = new NgxIndexedDB('runelite-plus', 1);
