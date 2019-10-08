@@ -26,7 +26,7 @@ export class UpdateService {
 
   private promptUser(): void {
     this.snackbar.open(
-      'Website update available',
+      'There is a website update available, please click the reload button',
       'Reload'
     )
       .onAction()

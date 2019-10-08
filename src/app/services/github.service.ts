@@ -20,7 +20,7 @@ export class GithubService {
   private user = 'open-osrs';
   private repository = 'runelite';
 
-  private db = new NgxIndexedDB('runelite-plus', 1);
+  private db = new NgxIndexedDB('openosrs', 1);
 
   constructor(private http: HttpClient) {
   }

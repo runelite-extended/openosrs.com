@@ -6,11 +6,7 @@ import { AppHomeComponent } from './components/content/app-home/home.component';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/home',
-    pathMatch: 'full'
-  },
-  {
-    path: 'home',
+    pathMatch: 'full',
     component: AppHomeComponent,
     data: {
       title: 'homepage'

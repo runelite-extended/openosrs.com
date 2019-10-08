@@ -2,10 +2,12 @@
   "name": "OpenOSRS",
   "short_name": "OPRS",
   "theme_color": "#001e2a",
-  "background_color": "#ffffff",
+  "background_color": "#323232",
   "display": "standalone",
-  "scope": "/",
+  "Scope": "/",
   "start_url": "/",
+  "lang" : "English",
+  "orientation" : "natural",
   "icons": [
     {
       "src": "assets/icons/icon-72x72.png",
