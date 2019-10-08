@@ -62,7 +62,7 @@
                   "maximumError": "5mb"
                 }
               ],
-              "serviceWorker": false
+              "serviceWorker": true
             }
           }
         },
@@ -101,7 +101,7 @@
               "src/favicon.ico",
               "src/assets",
               "src/manifest.json"
-            ],
+            ]
           },
           "configurations": {
             "ci": {
