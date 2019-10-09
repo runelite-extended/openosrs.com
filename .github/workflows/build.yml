@@ -42,6 +42,21 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: Build
+        run: npm run build
+
+  build-prod:
+    name: Build (prod)
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - name: Use Node.js 12.8
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.8
+      - name: Install dependencies
+        run: npm install
+      - name: Build
         run: npm run build -- --prod
 
   test:
@@ -61,7 +76,7 @@ jobs:
 
   approve:
     name: Approve
-    needs: [lint, build, test]
+    needs: [lint, build, build-prod, test]
     runs-on: ubuntu-latest
 
     steps:
