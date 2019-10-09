@@ -83,5 +83,5 @@ jobs:
       with:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         reviewers: false
-        labels: automated pull request
+        labels: greenkeeper
         method: merge
