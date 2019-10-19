@@ -36,7 +36,7 @@
     "ngx-indexed-db": "2.2.5",
     "ngx-markdown": "8.2.1",
     "normalize.css": "8.0.1",
-    "reset-css": "4.0.1",
+    "reset-css": "5.0.1",
     "rxjs": "6.5.3",
     "tslib": "1.10.0",
     "web-animations-js": "github:angular/web-animations-js#release_pr208",
