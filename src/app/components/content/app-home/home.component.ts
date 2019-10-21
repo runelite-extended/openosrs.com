@@ -11,7 +11,6 @@ import { Plugins } from '../../../interfaces/plugins.interface';
 
 import { Observable, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { h } from 'preact';
 
 @Component({
   selector: 'app-home',
