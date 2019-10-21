@@ -11,6 +11,7 @@ import { Plugins } from '../../../interfaces/plugins.interface';
 
 import { Observable, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
+import { h } from 'preact';
 
 @Component({
   selector: 'app-home',
@@ -43,7 +44,7 @@ export class AppHomeComponent implements OnInit {
       { name: 'keywords', content: 'openosrs, open osrs, runelite, runeliteplus, runelite plus, runelite pvp plugins, runelite pvp, runelite plugins' },
       { name: 'description', content: description },
       { name: 'twitter:description', content: description },
-      { name: 'og:url', content: 'https://openosrs.com/home', property: true },
+      { name: 'og:url', content: 'https://openosrs.com', property: true },
       { name: 'og:type', content: 'website', property: true },
       { name: 'og:description', content: description, property: true },
     ]);

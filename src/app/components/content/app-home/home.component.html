@@ -19,14 +19,6 @@
 </div>
 <div class="wrapper">
   <div class="content" fxLayout="column wrap">
-    <div class="header" fxLayout="row wrap" fxLayoutAlign="center">
-      <div fxLayout="row wrap" fxFlex="1 1 85%" fxFlex.lt-xl="0 1 82%" fxFlex.lt-lg="0 1 90%" fxFlex.lt-md="0 1 90%"
-        fxFlex.lt-sm="0 1 85%" class="align-justify">
-        <h2>
-          Our features
-        </h2>
-      </div>
-    </div>
     <div fxLayoutAlign="center">
       <div fxFlex="1 1 85%" fxFlex.lt-xl="0 1 82%" fxFlex.lt-lg="0 1 90%" fxFlex.lt-md="0 1 90%" fxFlex.lt-sm="0 1 85%">
         <div fxLayout="row wrap" fxLayoutAlign="start">
@@ -102,14 +94,14 @@
       <div fxLayout="row wrap" fxFlex="1 1 85%" fxFlex.lt-xl="0 1 82%" fxFlex.lt-lg="0 1 90%" fxFlex.lt-md="0 1 90%"
         fxFlex.lt-sm="0 1 85%" class="align-justify">
         <h2>
-          Plugins
+          PLUGINS
         </h2>
         <button mat-raised-button="mat-raised-button" color="primary" routerLink="/features">
-          See all
+          SHOW ALL FEATURES
         </button>
       </div>
     </div>
-    <ng-container *ngIf="(plugins$ | async) | shufflePlugins | slice:0:5; let plugins">
+    <ng-container *ngIf="(plugins$ | async) | shufflePlugins | slice:0:25; let plugins">
       <div fxLayoutAlign="center">
         <ng-container *ngIf="plugins.length !== 0">
           <div fxFlex="0 1 85%" fxFlex.lt-xl="0 1 82%" fxFlex.lt-lg="0 1 90%" fxFlex.lt-md="0 1 90%"
@@ -119,14 +111,6 @@
                 fxFlex.lt-xl="1 1 25%" fxFlex.lt-lg="1 1 33.33%" fxFlex.lt-md="1 1 50%" fxFlex.lt-sm="1 1 100%"
                 [fxHide.lt-lg]="i == 3 || i == 4" [fxHide.lt-xl]="i == 4" [fxHide.lt-md]="i == 3">
                 <mat-card class="mat-elevation-z3" fxFlex="1 1 auto">
-                  <picture *ngIf="plugin.image != ''">
-                    <source type="image/webp" [attr.srcSet]="'/assets/plugins/images/' + plugin.image + '.webp'" />
-                    <source type="image/png" [attr.srcSet]="'/assets/plugins/images/' + plugin.image + '.png'" />
-                    <img mat-card-image="mat-card-image" class="card-image"
-                      [attr.src]="'/assets/plugins/images/' + plugin.image + '.png'" [attr.alt]="plugin.name" />
-                  </picture>
-                  <img mat-card-image="mat-card-image" *ngIf="plugin.image == ''"
-                    src="/assets/plugins/images/placeholder.png" [attr.alt]="plugin.name" />
                   <mat-card-header>
                     <mat-card-title [innerText]="plugin.name"></mat-card-title>
                   </mat-card-header>
@@ -148,11 +132,8 @@
       <div fxLayout="row wrap" fxFlex="1 1 85%" fxFlex.lt-xl="0 1 82%" fxFlex.lt-lg="0 1 90%" fxFlex.lt-md="0 1 90%"
         fxFlex.lt-sm="0 1 85%" class="align-justify">
         <h2>
-          Latest updates
+          UPDATES
         </h2>
-        <button mat-raised-button="mat-raised-button" color="primary" routerLink="/updates">
-          See all
-        </button>
       </div>
     </div>
     <div fxLayout="row wrap" class="align-justify">

@@ -1,14 +1,5 @@
 [
   {
-    "name": "1 Way Safe Spots",
-    "image": "one-way-safespots",
-    "description": "This will highlight the floor tiles with where you can stand, so you can attack your opponents without them attacking.",
-    "categories": [
-      "PvM",
-      "PvP"
-    ]
-  },
-  {
     "name": "Account Switcher",
     "image": "account-switcher",
     "description": "This will allow you to switch between accounts at the hit of a button.",
@@ -43,7 +34,7 @@
     ]
   },
   {
-    "name": "Barbarian Assault+",
+    "name": "Barbarian Assault",
     "image": "barbarian-assault-plus",
     "description": "Custom barbarian assault plugin, highlight eggs and a lot more.",
     "wiki": "https://github.com/open-osrs/runelite/wiki/Barbarian-Assault-",
@@ -54,7 +45,7 @@
   {
     "name": "Chambers of Xeric",
     "image": "chambers-of-xeric",
-    "description": "Tick Timer for Olm, Overlays for all special attacks, and Olm Prayer Helper showing you what to pray.",
+    "description": "Overlays for all special attacks, and prayer helper showing you what to pray.",
     "wiki": "https://github.com/open-osrs/runelite/wiki/CoX-Helper",
     "categories": [
       "PvM"
@@ -93,14 +84,6 @@
     ]
   },
   {
-    "name": "Flinching Timer",
-    "image": "flinching-timer",
-    "description": "Time your attacks while flinching",
-    "categories": [
-      "PvM"
-    ]
-  },
-  {
     "name": "Freeze Timers",
     "image": "",
     "description": "Timers for Ice Barrage, TeleBlock, Vengeance displayed over players or NPCs.",
@@ -128,7 +111,7 @@
   {
     "name": "Hydra Helper",
     "image": "",
-    "description": "Helps you do hydra by showing what not to stand in, and what to pray.",
+    "description": "Helps you do hydra via overlays.",
     "categories": [
       "PvM"
     ]
@@ -319,7 +302,7 @@
   {
     "name": "Supplies Used Tracker",
     "image": "supplies-used-tracker",
-    "description": "Track your supplies while pvping or pvming, very useful.",
+    "description": "Track your supplies while pvping or pvming.",
     "wiki": "https://github.com/open-osrs/runelite/wiki/Supplies-tracker",
     "categories": [
       "Utility",
