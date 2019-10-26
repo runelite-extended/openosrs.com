@@ -42,12 +42,12 @@ export class MetaService {
   }
 
   addArticleTags(date: string, tag: string) {
+    this.meta.updateTag({ property: 'og:type', content: 'article' });
 
     this.meta.addTags([
       { property: 'article:published_time', content: date },
       { property: 'article:modified_time', content: date },
       { property: 'article:author', content: 'OpenOSRS' },
-      { property: 'og:type', content: 'article' },
       { property: 'article:section', content: 'OpenOSRS software update' },
       { property: 'article:tag', content: tag }
     ]);
