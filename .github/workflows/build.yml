@@ -88,7 +88,7 @@ jobs:
           
   automerge:
     name: Automerge
-    needs: [lint, build, build-prod, test]
+    needs: approve
     
     runs-on: ubuntu-latest
 
