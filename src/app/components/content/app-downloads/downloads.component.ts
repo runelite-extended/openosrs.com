@@ -14,7 +14,7 @@ export class AppDownloadsComponent implements OnInit {
 
   @ViewChild('stepper', { static: false }) stepper: MatStepper;
 
-  private version = '2.1.6.0';
+  private version = '2.1.9.0';
 
   public downloadUrl: string;
   public hideHashes = true;
@@ -23,34 +23,34 @@ export class AppDownloadsComponent implements OnInit {
   public hashes = [
     // Windows x64; md5, sha1
     [
-      'E1CDDAF65C11813B14C854D8ADE67CCA',
-      'A97064827688FEDFFD1728EC977DF32BE160077B',
+      '9C948174EE64DF8757608A0712BA3257',
+      '5F3A036D1F7C1360023A5B4EE55165C92BFD40E5',
       `https://github.com/open-osrs/launcher/releases/download/${this.version}/OpenOSRSSetup64.exe`
     ],
 
     // Windows x32; md5, sha1
     [
-      '9F69B09CCA7151A2E4389A5F8A226E8F',
-      'D12C3743B72E043026656C2984386EB1E1FB939F',
+      '38D656C817FE6619AF6FA4ED403CFA79',
+      '0C451CBA2D2D90FA7AE9DCD69F258658CA51FC8B',
       `https://github.com/open-osrs/launcher/releases/download/${this.version}/OpenOSRSSetup32.exe`
     ],
     // MacOS; md5, sha1
     [
-      '3BBF416DBB817607C6CFC184DDFC6451',
-      '04A0558BE06264E8AB078657E9F1AADE966F47D7',
+      '98B00DAF2CA4811786E1A01DDC7E9D6A',
+      '902AB74A7C5FE7DB43B25887F275CA340666B1EC',
       `https://github.com/open-osrs/launcher/releases/download/${this.version}/OpenOSRSSetup.dmg`],
 
     // Linux; md5, sha1
     [
-      'F9F9096AFBF0E4B5A5233713D927CD70',
-      'DF73B1C16506D3FC7FF8B1948800875B35B78B60',
+      'CC7CEA4191295FFC1BBE1ED77317DADE',
+      'B4007D1B7B86B8A8C8B47A52F9F91AFBD8944D4F',
       `https://github.com/open-osrs/launcher/releases/download/${this.version}/OpenOSRS.AppImage`
     ],
 
     // Jar; md5, sha1
     [
-      'BDA49C77262CB61C81ACA88282EA638C',
-      '3031D49F95E37E6E18DC19ABE1F26C2798DF7BA4',
+      '7D1CB0B7A4B72A27091E5D15838CEAC6',
+      '07DB92E251C5B1528108669CEEDDC833B327B7D8',
       `https://github.com/open-osrs/launcher/releases/download/${this.version}/OpenOSRS.jar`
     ]
   ];
