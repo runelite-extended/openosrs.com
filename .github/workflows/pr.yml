@@ -86,15 +86,13 @@ jobs:
         with:
           github-token: "${{ secrets.GITHUB_TOKEN }}"
 
-  automerge:
-    name: Automerge
+  merge:
+    name: Merge
     needs: approve
-
     runs-on: ubuntu-latest
 
     steps:
-      - name: automerge
-        uses: pascalgn/automerge-action@f84dd310ea4a19890c70a4ff11ab282a872fb94b
-        env:
-          AUTOMERGE: "greenkeeper"
-          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+      - uses: actions/checkout@v1
+      - uses: maxkomarychev/merge-pal-action@v0.1.0
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
