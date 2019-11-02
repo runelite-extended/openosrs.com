@@ -84,17 +84,4 @@ jobs:
         if: github.event_name == 'pull_request' && (github.actor == 'OpenOSRS' || github.actor == 'greenkeeper[bot]')
         uses: hmarr/auto-approve-action@master
         with:
-          github-token: "${{ secrets.GITHUB_TOKEN }}"
-
-  automerge:
-    name: Automerge
-    needs: approve
-
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: automerge
-        uses: pascalgn/automerge-action@f84dd310ea4a19890c70a4ff11ab282a872fb94b
-        env:
-          AUTOMERGE: "greenkeeper"
-          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+          github-token: ${{ secrets.Owain }}
