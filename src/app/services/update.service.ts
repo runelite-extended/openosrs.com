@@ -21,17 +21,6 @@ export class UpdateService {
   }
 
   public checkForUpdates(): void {
-    this.swUpdate.available.subscribe(() => this.promptUser());
-  }
-
-  private promptUser(): void {
-    this.snackbar.open(
-      'There is a website update available, please click the reload button',
-      'Reload'
-    )
-      .onAction()
-      .subscribe(() => {
-        this.swUpdate.activateUpdate().then(() => document.location.reload());
-      });
+    this.swUpdate.available.subscribe(() => document.location.reload());
   }
 }
