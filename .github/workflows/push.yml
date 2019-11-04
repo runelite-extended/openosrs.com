@@ -1,19 +1,11 @@
-name: OpenOSRS - CI
+name: OpenOSRS - CI (push)
 
-on: [pull_request, push]
+on:
+  push:
+    branches:
+      - master
 
 jobs:
-  pr-lint:
-    name: PR title
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: PR title lint
-        if: github.event_name == 'pull_request' && github.actor != 'greenkeeper[bot]'
-        uses: seferov/pr-lint-action@master
-        with:
-          title-regex: '^\w+: \w+'
-
   lint:
     name: Lint
     runs-on: ubuntu-latest
@@ -73,15 +65,3 @@ jobs:
         run: npm install
       - name: Test
         run: npm test -- --configuration=ci
-
-  approve:
-    name: Approve
-    needs: [lint, build, build-prod, test]
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Approve pull request
-        if: github.event_name == 'pull_request' && (github.actor == 'OpenOSRS' || github.actor == 'greenkeeper[bot]')
-        uses: hmarr/auto-approve-action@master
-        with:
-          github-token: "${{ secrets.GITHUB_TOKEN }}"

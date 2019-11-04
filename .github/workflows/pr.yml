@@ -1,0 +1,87 @@
+name: OpenOSRS - CI (PR)
+
+on: pull_request
+
+jobs:
+  pr-lint:
+    name: PR title
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: PR title lint
+        if: github.event_name == 'pull_request' && github.actor != 'greenkeeper[bot]'
+        uses: seferov/pr-lint-action@master
+        with:
+          title-regex: '^\w+: \w+'
+
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - name: Use Node.js 12.8
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.8
+      - name: Install dependencies
+        run: npm install
+      - name: Lint
+        run: npm run lint
+
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - name: Use Node.js 12.8
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.8
+      - name: Install dependencies
+        run: npm install
+      - name: Build
+        run: npm run build
+
+  build-prod:
+    name: Build (prod)
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - name: Use Node.js 12.8
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.8
+      - name: Install dependencies
+        run: npm install
+      - name: Build
+        run: npm run build -- --prod
+
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - name: Use Node.js 12.8
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.8
+      - name: Install dependencies
+        run: npm install
+      - name: Test
+        run: npm test -- --configuration=ci
+
+  approve:
+    name: Approve
+    needs: [lint, build, build-prod, test]
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Approve pull request
+        if: github.event_name == 'pull_request' && (github.actor == 'OpenOSRS' || github.actor == 'greenkeeper[bot]')
+        uses: hmarr/auto-approve-action@master
+        with:
+          github-token: ${{ secrets.Owain }}
