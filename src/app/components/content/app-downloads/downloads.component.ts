@@ -63,7 +63,7 @@ export class AppDownloadsComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    const description = 'Open-source client for Old School RuneScape with more functionality and less restrictions.';
+    const description = 'OpenOSRS client download for windows mac and linux.';
 
     this.metaService.updateTags([
       {
