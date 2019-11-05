@@ -13,6 +13,6 @@ export class SessionService {
   }
 
   public getSessionCount(): Observable<string> {
-    return this.http.get('https://session.runelitepl.us/count', { responseType: 'text' });
+    return this.http.get('https://session.openosrs.com/count', { responseType: 'text' });
   }
 }
