@@ -1,8 +1,13 @@
-import { ChangeDetectionStrategy, Component, OnInit, ViewChild } from '@angular/core';
+import {ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import { MatStepper } from '@angular/material';
 
 import { NotificationService } from '../../../services/notification.service';
 import { MetaService } from 'src/app/services/meta.service';
+import { GithubService} from '../../../services/github.service';
+
+import { Jar, Linux, Macos, Windowsx32, Windowsx64 } from '../../../interfaces/github.interface';
+
+import { from, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-downloads',
@@ -10,56 +15,30 @@ import { MetaService } from 'src/app/services/meta.service';
   styleUrls: ['./downloads.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AppDownloadsComponent implements OnInit {
+export class AppDownloadsComponent implements OnInit, OnDestroy {
 
   @ViewChild('stepper', { static: false }) stepper: MatStepper;
 
-  private version = '2.1.9.1';
+  private version: string;
 
-  public downloadUrl: string;
+  public fatalGithubError = false;
   public hideHashes = true;
   public selectedOperatingSystem = 'Windows x64';
 
-  public hashes = [
-    // Windows x64; md5, sha1
-    [
-      '8F0F64A533B1E9198A54877FF835D0D9',
-      '3067CEF8B7B71B9D8C0BCCAFC0583E911287C89A',
-      `https://github.com/open-osrs/launcher/releases/download/${this.version}/OpenOSRSSetup64.exe`
-    ],
-
-    // Windows x32; md5, sha1
-    [
-      'DED2675F0799EC52080D8078EC2DA6C7',
-      'D0A03D661DC49A3AD5A60B450C7D2C7049D40B8B',
-      `https://github.com/open-osrs/launcher/releases/download/${this.version}/OpenOSRSSetup32.exe`
-    ],
-    // MacOS; md5, sha1
-    [
-      'E6D189ACA9E73A92C5AB637FC5F3D40B',
-      '0436DA6C468907B6D9AD1963409808865E91D421',
-      `https://github.com/open-osrs/launcher/releases/download/${this.version}/OpenOSRSSetup.dmg`],
-
-    // Linux; md5, sha1
-    [
-      'F56949F2DB901AB6797EF0CC740602B8',
-      '7B1EF71DA01A29BB27997E0095CD0C7E699924D3',
-      `https://github.com/open-osrs/launcher/releases/download/${this.version}/OpenOSRS.AppImage`
-    ],
-
-    // Jar; md5, sha1
-    [
-      '961AB6C3B9262993FA2102210F61F42E',
-      '1D0A4226BC742261FE93DD13BE717EA9CF9A887F',
-      `https://github.com/open-osrs/launcher/releases/download/${this.version}/OpenOSRS.jar`
-    ]
-  ];
+  public windowsx64: Windowsx64;
+  public windowsx32: Windowsx32;
+  public macos: Macos;
+  public linux: Linux;
+  public jar: Jar;
 
   private selectedDownload: number;
+  private githubOb: Subscription;
 
   constructor(
     private notificationService: NotificationService,
-    private metaService: MetaService
+    private metaService: MetaService,
+    private githubService: GithubService,
+    private changeDetectorRef: ChangeDetectorRef
   ) { }
 
   ngOnInit(): void {
@@ -76,38 +55,62 @@ export class AppDownloadsComponent implements OnInit {
       { name: 'og:type', content: 'website', property: true },
       { name: 'og:description', content: description, property: true },
     ]);
+
+    this.githubOb = from(
+      this.githubService.getLaunchers()
+    ).subscribe((launchers) => {
+      this.version = launchers.version;
+      this.windowsx64 = launchers.windowsx64;
+      this.windowsx32 = launchers.windowsx32;
+      this.macos = launchers.macos;
+      this.linux = launchers.linux;
+      this.jar = launchers.jar;
+
+      this.changeDetectorRef.detectChanges();
+    }, () => {
+      this.fatalGithubError = true;
+      this.changeDetectorRef.detectChanges();
+    });
+  }
+
+  ngOnDestroy(): void {
+    this.githubOb.unsubscribe();
   }
 
   public getHash(item: number): string {
     if (!this.hideHashes) {
+      let hashes: Windowsx64 | Windowsx32 | Macos | Linux | Jar;
       if (this.selectedDownload === 1) {
-        return this.hashes[4][item];
+        hashes = this.jar;
       } else {
         if (this.selectedOperatingSystem === 'Windows x64') {
-          return this.hashes[0][item];
+          hashes = this.windowsx64;
         } else if (this.selectedOperatingSystem === 'Windows x32') {
-          return this.hashes[1][item];
+          hashes = this.windowsx32;
         } else if (this.selectedOperatingSystem === 'MacOS') {
-          return this.hashes[2][item];
+          hashes = this.macos;
         } else if (this.selectedOperatingSystem === 'Linux') {
-          return this.hashes[1][item];
+          hashes = this.linux;
         }
       }
+
+      return item === 0 ? hashes.md5 : hashes.sha1;
     }
   }
 
   public getDownload(item: number): string {
+    const baseUrl = `https://github.com/open-osrs/launcher/releases/download/${this.version}`;
     if (item === 1) {
-      return this.hashes[4][2];
+      return `${baseUrl}/OpenOSRS.jar`;
     } else {
       if (this.selectedOperatingSystem === 'Windows x64') {
-        return this.hashes[0][2];
+        return `${baseUrl}/OpenOSRSSetup64.exe`;
       } else if (this.selectedOperatingSystem === 'Windows x32') {
-        return this.hashes[1][2];
+        return `${baseUrl}/OpenOSRSSetup32.exe`;
       } else if (this.selectedOperatingSystem === 'MacOS') {
-        return this.hashes[2][2];
+        return `${baseUrl}/OpenOSRSSetup.dmg`;
       } else if (this.selectedOperatingSystem === 'Linux') {
-        return this.hashes[3][2];
+        return `${baseUrl}/OpenOSRS.AppImage`;
       }
     }
   }

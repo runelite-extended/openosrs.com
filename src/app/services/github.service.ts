@@ -5,7 +5,7 @@ import { NgxIndexedDBService } from 'ngx-indexed-db';
 
 import {
   GithubContent,
-  GithubContentFlat
+  GithubContentFlat, Launchers
 } from '../interfaces/github.interface';
 import { Github, GithubFlat } from '../interfaces/github.interface';
 
@@ -19,6 +19,7 @@ export class GithubService {
   private baseUrlApi = 'https://api.github.com';
   private user = 'open-osrs';
   private repository = 'runelite';
+  private launcherRepository = 'launcher';
 
   constructor(
     private http: HttpClient,
@@ -201,6 +202,21 @@ export class GithubService {
             }
           });
       }
+    });
+  }
+
+  public async getLaunchers(): Promise<Launchers> {
+    return new Promise((resolve, reject) => {
+      this.http.get<GithubContent>(
+        `${this.baseUrlApi}/repos/${this.user}/${this.launcherRepository}/contents/version.json`,
+        { observe: 'response' })
+        .pipe(
+          take(1)
+        )
+        .subscribe((resp) => {
+          // @ts-ignore
+          resolve(JSON.parse(atob(resp.body.content)));
+        }, () => reject());
     });
   }
 }
