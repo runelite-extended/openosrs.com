@@ -36,7 +36,7 @@ export class AppFeaturesComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    const description = 'Open-source client for Old School RuneScape with more functionality and less restrictions.';
+    const description = 'OpenOSRS has more functionality and less restrictions than RuneLite and we have more features.';
 
     this.metaService.updateTags([
       {

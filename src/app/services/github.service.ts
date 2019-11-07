@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 
-import { NgxIndexedDB } from 'ngx-indexed-db';
+import { NgxIndexedDBService } from 'ngx-indexed-db';
 
 import {
   GithubContent,
-  GithubContentFlat
-} from './../interfaces/github.interface';
+  GithubContentFlat, Launchers
+} from '../interfaces/github.interface';
 import { Github, GithubFlat } from '../interfaces/github.interface';
 
 import { take } from 'rxjs/operators';
@@ -19,10 +19,13 @@ export class GithubService {
   private baseUrlApi = 'https://api.github.com';
   private user = 'open-osrs';
   private repository = 'runelite';
+  private launcherRepository = 'launcher';
 
-  private db = new NgxIndexedDB('openosrs', 1);
-
-  constructor(private http: HttpClient) {
+  constructor(
+    private http: HttpClient,
+    private dbService: NgxIndexedDBService
+  ) {
+    this.dbService.currentStore = 'github_commits';
   }
 
   private static githubToGithubFlat(commits: Github[]): GithubFlat[] {
@@ -57,39 +60,14 @@ export class GithubService {
     return flatClients;
   }
 
-  private async openDatabase(): Promise<any> {
-    return this.db.openDatabase(1, evt => {
-      const objectStoreGithubModified = evt.currentTarget.result.createObjectStore('github_modified');
-
-      // Last modified
-      objectStoreGithubModified.createIndex('update', 'update', { unique: false });
-
-      const objectStoreGithubCommits = evt.currentTarget.result.createObjectStore('github_commits', { keyPath: 'id', autoIncrement: true });
-
-      // Commit
-      objectStoreGithubCommits.createIndex('message', 'message', { unique: false });
-      objectStoreGithubCommits.createIndex('date', 'date', { unique: false });
-      objectStoreGithubCommits.createIndex('html_url', 'html_url', { unique: false });
-
-      // Author
-      objectStoreGithubCommits.createIndex('author_name', 'author_name', { unique: false });
-      objectStoreGithubCommits.createIndex('author_login', 'author_login', { unique: false });
-      objectStoreGithubCommits.createIndex('author_html_url', 'author_html_url', { unique: false });
-
-      // Commiter
-      objectStoreGithubCommits.createIndex('commiter_name', 'commiter_name', { unique: false });
-      objectStoreGithubCommits.createIndex('commiter_login', 'commiter_login', { unique: false });
-      objectStoreGithubCommits.createIndex('commiter_html_url', 'commiter_html_url', { unique: false });
-    });
-  }
-
   private async getLastmodified(key: number): Promise<string> {
-    return this.db.getByKey('github_modified', key).then(
+    return this.dbService.getByID(key).then(
       (modified) => {
         if (typeof modified === 'undefined') {
           return undefined;
         }
 
+        // @ts-ignore
         return modified.update;
       },
       () => {
@@ -100,21 +78,23 @@ export class GithubService {
 
   private setLastModified(headers: HttpHeaders, key: number): void {
     if (typeof headers !== 'undefined' && typeof headers.get('Last-Modified') !== 'undefined') {
-      this.db.delete('github_modified', key).then(
+      this.dbService.deleteRecord(key).then(
         () => {
-          this.db.add('github_modified', {
+          this.dbService.add({
+            id: key,
             update: headers.get('Last-Modified'),
-          }, key);
+          });
         }
       );
     }
   }
 
   private saveCommits(commits: Github[]): void {
-    this.db.clear('github_commits').then(
+    this.dbService.clear().then(
       () => {
-        for (const commit of commits) {
-          this.db.add('github_commits', {
+        commits.forEach((commit, index) => {
+          this.dbService.add({
+            id: index,
             message: commit.commit.message,
             date: commit.commit.committer.date,
             html_url: commit.html_url,
@@ -125,13 +105,13 @@ export class GithubService {
             committer_login: commit.committer ? commit.committer.login : null,
             committer_html_url: commit.committer ? commit.committer.html_url : null
           });
-        }
+        });
       }
     );
   }
 
-  private async getSaveditems(objectStore: string): Promise<GithubFlat[] | GithubContentFlat[]> {
-    return this.db.getAll(objectStore).then(
+  private async getSavedCommits(): Promise<GithubFlat[]> {
+    return this.dbService.getAll().then(
       (items) => {
         return items;
       },
@@ -151,7 +131,7 @@ export class GithubService {
         )
         .subscribe((resp) => {
           if (!databaseError) {
-            this.setLastModified(resp.headers, 1);
+            this.setLastModified(resp.headers, -1);
             this.saveCommits(resp.body);
           }
 
@@ -173,13 +153,13 @@ export class GithubService {
           take(1)
         )
         .subscribe(async (resp) => {
-          this.setLastModified(resp.headers, 1);
+          this.setLastModified(resp.headers, -1);
           this.saveCommits(resp.body);
 
           resolve(GithubService.githubToGithubFlat(resp.body));
         }, async (error: HttpErrorResponse) => {
           if (error.status === 304) {
-            const savedCommits = await this.getSaveditems('github_commits');
+            const savedCommits = await this.getSavedCommits();
 
             if (typeof savedCommits !== 'undefined') {
               resolve(savedCommits as GithubFlat[]);
@@ -199,43 +179,44 @@ export class GithubService {
 
   public async getCommits(): Promise<GithubFlat[]> {
     return new Promise(async (resolve, reject) => {
-      const databaseError = await this.openDatabase().then(
-        () => {
-          return false;
-        }, () => {
-          return true;
+      const date = await this.getLastmodified(-1).then(
+        (modifiedDate) => {
+          return modifiedDate;
         }
       );
 
-      if (!databaseError) {
-        const date = await this.getLastmodified(1).then(
-          (modifiedDate) => {
-            return modifiedDate;
-          }
-        );
-
-        if (typeof date === 'undefined') {
-          this.fetchCommits(false)
-            .then((data) => resolve(data))
-            .catch(() => reject());
-        } else {
-          this.fetchCommitsConditionally(date)
-            .then((data) => resolve(data))
-            .catch(async () => {
-              const savedCommits = await this.getSaveditems('github_commits');
-
-              if (typeof savedCommits !== 'undefined') {
-                resolve(savedCommits as GithubFlat[]);
-              } else {
-                reject();
-              }
-            });
-        }
-      } else {
-        this.fetchCommits(true)
+      if (typeof date === 'undefined') {
+        this.fetchCommits(false)
           .then((data) => resolve(data))
           .catch(() => reject());
+      } else {
+        this.fetchCommitsConditionally(date)
+          .then((data) => resolve(data))
+          .catch(async () => {
+            const savedCommits = await this.getSavedCommits();
+
+            if (typeof savedCommits !== 'undefined') {
+              resolve(savedCommits as GithubFlat[]);
+            } else {
+              reject();
+            }
+          });
       }
+    });
+  }
+
+  public async getLaunchers(): Promise<Launchers> {
+    return new Promise((resolve, reject) => {
+      this.http.get<GithubContent>(
+        `${this.baseUrlApi}/repos/${this.user}/${this.launcherRepository}/contents/version.json`,
+        { observe: 'response' })
+        .pipe(
+          take(1)
+        )
+        .subscribe((resp) => {
+          // @ts-ignore
+          resolve(JSON.parse(atob(resp.body.content)));
+        }, () => reject());
     });
   }
 }

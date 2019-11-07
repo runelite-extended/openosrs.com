@@ -1,5 +1,19 @@
 [
   {
+    "date": "2019-11-03T00:00:00Z",
+    "title": "OpenOSRS has been updated to 2.1.9.1 and new launcher update!",
+    "mdFile": "openosrs-update-2.1.9.1",
+    "categories": [
+      "updates"
+    ],
+    "tags": [
+      "changes",
+      "plugins",
+      "launcher",
+      "openosrs 2.1.9.1"
+    ]
+  },
+  {
     "date": "2019-08-23T00:00:00Z",
     "title": "OpenOSRS has been updated to 2.1.4.0!",
     "mdFile": "openosrs-update-2.1.4.0",

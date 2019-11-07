@@ -9,28 +9,28 @@ const routes: Routes = [
     pathMatch: 'full',
     component: AppHomeComponent,
     data: {
-      title: 'homepage'
+      title: 'Open-Source OSRS Client - Beats Runelite!'
     }
   },
   {
     path: 'downloads',
     loadChildren: () => import('./components/content/app-downloads/downloads.module').then(m => m.DownloadsModule),
     data: {
-      title: 'downloads'
+      title: 'Client Downloads'
     }
   },
   {
     path: 'updates',
     loadChildren: () => import('./components/content/app-updates/updates.module').then(m => m.UpdatesModule),
     data: {
-      title: 'updates'
+      title: 'Client Updates'
     }
   },
   {
     path: 'features',
     loadChildren: () => import('./components/content/app-features/features.module').then(m => m.FeaturesModule),
     data: {
-      title: 'features'
+      title: 'List Of Features'
     }
   },
   {

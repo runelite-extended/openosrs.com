@@ -41,7 +41,7 @@ export class AppUpdatesComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit() {
-    const description = 'Open-source client for Old School RuneScape with more functionality and less restrictions.';
+    const description = 'Updates for OpenOSRS Client, we push more updates than RuneLite!';
 
     this.metaService.updateTags([
       {
@@ -69,6 +69,7 @@ export class AppUpdatesComponent implements OnInit, OnDestroy {
     this.githubOb = from(
       this.githubService.getCommits()
     ).subscribe((commits) => {
+      commits.shift();
       this.commits = commits;
       this.changeDetectorRef.detectChanges();
     }, () => {
