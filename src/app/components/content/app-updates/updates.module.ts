@@ -26,7 +26,6 @@ import { CommitMessagePipe } from '../../../pipes/commit.message.pipe';
 
 import { HttpErrorInterceptor } from '../../../interceptor/http-error.interceptor';
 
-
 @NgModule({
   imports: [
     CommonModule,

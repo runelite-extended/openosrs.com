@@ -17,6 +17,7 @@ import { GoogleAnalyticsService } from '../../../services/google.analytics.servi
 import { of } from 'rxjs';
 import { UpdatesJsonService } from '../../../services/updates.service';
 import { GithubService } from '../../../services/github.service';
+import {NgxIndexedDBService} from 'ngx-indexed-db';
 
 const update = {
   date: '2019-05-23T00:00:00Z',
@@ -57,6 +58,14 @@ describe('UpdatesComponent', () => {
           provide: ActivatedRoute,
           useValue: {
             params: of({ name: 'openosrs-update-1.3' })
+          }
+        },
+        {
+          provide: NgxIndexedDBService,
+          useClass: class {
+            getByID(key: number) {
+              return false;
+            }
           }
         }
       ]

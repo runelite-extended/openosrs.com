@@ -140,3 +140,58 @@ export interface GithubContentFile {
 export interface GithubContentFlat {
   name: string;
 }
+
+export interface Links {
+  self: string;
+  git: string;
+  html: string;
+}
+
+export interface GithubContent {
+  name: string;
+  path: string;
+  sha: string;
+  size: number;
+  url: string;
+  html_url: string;
+  git_url: string;
+  download_url: string;
+  type: string;
+  content: string;
+  encoding: string;
+  _links: Links;
+}
+
+export interface Windowsx64 {
+  md5: string;
+  sha1: string;
+}
+
+export interface Windowsx32 {
+  md5: string;
+  sha1: string;
+}
+
+export interface Macos {
+  md5: string;
+  sha1: string;
+}
+
+export interface Linux {
+  md5: string;
+  sha1: string;
+}
+
+export interface Jar {
+  md5: string;
+  sha1: string;
+}
+
+export interface Launchers {
+  version: string;
+  windowsx64: Windowsx64;
+  windowsx32: Windowsx32;
+  macos: Macos;
+  linux: Linux;
+  jar: Jar;
+}

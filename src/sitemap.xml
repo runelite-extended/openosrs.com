@@ -66,4 +66,22 @@
     <priority>0.7</priority>
   </url>
 
+  <url>
+    <loc>https://openosrs.com/updates/openosrs-update-2.1.9.1</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://openosrs.com/updates/openosrs-update-2.1.9.2</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://openosrs.com/updates/openosrs-update-2.1.10.0</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+
 </urlset>

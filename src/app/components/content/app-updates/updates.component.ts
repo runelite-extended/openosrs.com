@@ -69,6 +69,7 @@ export class AppUpdatesComponent implements OnInit, OnDestroy {
     this.githubOb = from(
       this.githubService.getCommits()
     ).subscribe((commits) => {
+      commits.shift();
       this.commits = commits;
       this.changeDetectorRef.detectChanges();
     }, () => {
