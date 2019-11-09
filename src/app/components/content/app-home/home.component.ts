@@ -37,7 +37,7 @@ export class AppHomeComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    const description = 'Open-source client for Old School RuneScape with more functionality and less restrictions. RuneLitePlus Is now OpenOSRS!';
+    const description = 'Open-source client for Old School RuneScape with more functionality and less restrictions compared to RuneLite. RuneLitePlus Is now OpenOSRS!';
 
     this.metaService.updateTags([
       { name: 'keywords', content: 'openosrs, open osrs, runelite, runeliteplus, runelite plus, runelite pvp plugins, runelite pvp, runelite plugins' },
