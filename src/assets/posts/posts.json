@@ -1,5 +1,18 @@
 [
   {
+    "date": "2019-11-10T00:00:00Z",
+    "title": "OpenOSRS has been updated to 2.1.11.0!",
+    "mdFile": "openosrs-update-2.1.11.0",
+    "categories": [
+      "updates"
+    ],
+    "tags": [
+      "changes",
+      "plugins",
+      "openosrs 2.1.11.0"
+    ]
+  },
+  {
     "date": "2019-11-07T00:00:00Z",
     "title": "OpenOSRS has been updated to 2.1.10.0!",
     "mdFile": "openosrs-update-2.1.10.0",
