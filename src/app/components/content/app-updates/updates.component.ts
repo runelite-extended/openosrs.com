@@ -42,7 +42,7 @@ export class AppUpdatesComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     const description = 'Updates for OpenOSRS Client, we push more updates than RuneLite!';
-
+    this.metaService.createCanonicalURL();
     this.metaService.updateTags([
       {
         name: 'keywords',

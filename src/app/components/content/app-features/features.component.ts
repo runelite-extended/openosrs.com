@@ -37,7 +37,7 @@ export class AppFeaturesComponent implements OnInit {
 
   ngOnInit() {
     const description = 'OpenOSRS has more functionality and less restrictions than RuneLite and we have more features.';
-
+    this.metaService.createCanonicalURL();
     this.metaService.updateTags([
       {
         name: 'keywords',

@@ -43,7 +43,7 @@ export class AppDownloadsComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     const description = 'OpenOSRS client download for windows mac and linux.';
-
+    this.metaService.createCanonicalURL();
     this.metaService.updateTags([
       {
         name: 'keywords',
