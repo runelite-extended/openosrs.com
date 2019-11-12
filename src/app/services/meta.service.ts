@@ -1,7 +1,7 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Inject } from '@angular/core';
 import { Title, Meta } from '@angular/platform-browser';
 import { Router, ActivatedRoute, NavigationEnd, PRIMARY_OUTLET } from '@angular/router';
-
+import { DOCUMENT } from '@angular/common';
 import { filter, map, mergeMap } from 'rxjs/operators';
 
 @Injectable({
@@ -12,9 +12,16 @@ export class MetaService {
     private titleService: Title,
     private meta: Meta,
     private router: Router,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    @Inject(DOCUMENT) private dom
   ) { }
 
+  createCanonicalURL() {
+    const link: HTMLLinkElement = this.dom.createElement('link');
+    link.setAttribute('rel', 'canonical');
+    this.dom.head.appendChild(link);
+    link.setAttribute('href', this.dom.URL);
+  }
   updateTags(tags: Array<{ name: string, content: string, property?: boolean }>) {
     this.removeArticleTags();
 
