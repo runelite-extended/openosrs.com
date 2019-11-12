@@ -20,6 +20,14 @@ app-root {
   @media (prefers-color-scheme: light) {
     background-color: white;
     color: black;
+    .discord {
+      background-color: #667bd6;
+      color: #fff;
+    }
+    .download {
+      background-color: #2a2e33;
+      color: #fff;
+    }
   }
 
   @media (prefers-color-scheme: dark) {
@@ -31,6 +39,14 @@ app-root {
       background-color: #323232;
     }
 
+    .discord {
+      background-color: #667bd6;
+      color: #fff;
+    }
+    .download {
+      background-color: #2a2e33;
+      color: #fff;
+    }
     .mat-table {
       background-color: #323232;
     }

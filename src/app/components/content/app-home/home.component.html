@@ -11,11 +11,11 @@
         <span *ngIf="!fatalCountError && (session$ | async) as count"
           [innerText]="'Players online: ' + count"></span>
       </p>
-      <button routerLink="/downloads" mat-raised-button="mat-raised-button" color="primary">
-        Download
+      <button routerLink="/downloads" mat-raised-button="mat-raised-button" class="download">
+        Download Client
       </button>
       <a href="https://discord.gg/Q7wFtCe">
-      <button mat-raised-button="mat-raised-button" color="primary">
+      <button mat-raised-button="mat-raised-button" class="discord">
         Join Our Discord
       </button>
       </a>
