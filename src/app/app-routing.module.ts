@@ -9,7 +9,7 @@ const routes: Routes = [
     pathMatch: 'full',
     component: AppHomeComponent,
     data: {
-      title: 'Open-Source OSRS Client - Beats Runelite!'
+      title: 'Open-Source OSRS Client'
     }
   },
   {
