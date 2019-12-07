@@ -63,3 +63,4 @@ param=9=p1cxIGuofoKN6D3mDdihco3oPeYN2KFy2DCquj7JMmEKzxp0igXplg
 param=2=https://payments.jagex.com/operator/v1/
 param=3=true
 param=10=5
+runelite.worldparam=12
