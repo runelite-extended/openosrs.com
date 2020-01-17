@@ -24,8 +24,7 @@ export class AppComponent implements OnInit {
     this.googleAnalyticsService.init();
     this.metaService.updateTitle();
 
-    const description = 'OpenOSRS provides more functionality and less restrictions while staying open source. ' +
-      'We have lots of custom RuneLite plugins!';
+    const description = 'OpenOSRS provides more functionality and less restrictions while staying open source.';
 
     this.metaService.updateTags([
       { name: 'keywords', content: 'runelite, OpenOSRS, Open OSRS, runelite pvp plugins, runelite pvp, runelite plugins' },
