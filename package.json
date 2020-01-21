@@ -33,7 +33,7 @@
     "classlist.js": "1.1.20150312",
     "core-js": "3.5.0",
     "hammerjs": "2.0.8",
-    "ngx-indexed-db": "3.0.12",
+    "ngx-indexed-db": "4.0.3",
     "ngx-markdown": "8.2.1",
     "normalize.css": "8.0.1",
     "reset-css": "5.0.1",
