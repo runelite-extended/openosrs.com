@@ -99,7 +99,7 @@ export class AppDownloadsComponent implements OnInit, OnDestroy {
   }
 
   public getDownload(item: number): string {
-    const baseUrl = `https://github.com/open-osrs/launcher/releases/download/${this.version}`;
+    const baseUrl = `https://github.com/open-osrs/launcher/releases/latest/download`;
     if (item === 1) {
       return `${baseUrl}/OpenOSRS.jar`;
     } else {
