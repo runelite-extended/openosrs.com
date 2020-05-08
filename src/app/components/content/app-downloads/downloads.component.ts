@@ -102,7 +102,7 @@ export class AppDownloadsComponent implements OnInit, OnDestroy {
     const baseUrl = `https://github.com/open-osrs/launcher/releases/latest/download`;
     if (item === 1) {
       return `${baseUrl}/OpenOSRS.jar`;
-    } else {
+    } else if (item === 0) {
       if (this.selectedOperatingSystem === 'Windows x64') {
         return `${baseUrl}/OpenOSRSSetup64.exe`;
       } else if (this.selectedOperatingSystem === 'Windows x32') {
@@ -112,17 +112,23 @@ export class AppDownloadsComponent implements OnInit, OnDestroy {
       } else if (this.selectedOperatingSystem === 'Linux') {
         return `${baseUrl}/OpenOSRS.AppImage`;
       }
+    } else if (item === 2) {
+      return `https://snapcraft.io/openosrs`;
     }
   }
 
   public downloadClick(item: number): void {
     this.selectedDownload = item;
 
-    this.stepper.selected.completed = true;
-    this.stepper.next();
+    if (item === 2) {
+      this.hideHashes = true;
+      this.notificationService.showError('Opening snapcrafters, please wait!');
+    } else {
+      this.hideHashes = false;
+      this.notificationService.showError('Starting download, please wait!');
+      this.stepper.selected.completed = true;
+      this.stepper.next();
+    }
 
-    this.hideHashes = false;
-
-    this.notificationService.showError('Starting download, please wait!');
   }
 }

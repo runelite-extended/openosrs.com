@@ -98,6 +98,31 @@
                         </mat-card-actions>
                       </mat-card>
                     </div>
+                    <div class="card-container" fxFlex="1 1 50%" fxFlex.lt-md="1 1 100%" *ngIf="selectedOperatingSystem == 'Linux'">
+                      <mat-card class="mat-elevation-z3" fxFlex="1 1 auto">
+                        <mat-card-header>
+                          <mat-card-title>
+                            Native Launcher with Snap
+                          </mat-card-title>
+                        </mat-card-header>
+                        <mat-card-content>
+                          <h4>
+                            &nbsp;
+                          </h4>
+                          <p>
+                            Linux users have the option of installing the native launcher in a convenient Snap package!
+                            All the benefits of the native launcher, straight from the Canonical store.
+                          </p>
+                        </mat-card-content>
+                        <mat-card-actions>
+                          <a mat-raised-button="mat-raised-button" color="primary" rel="noopener noreferrer"
+                             [href]="getDownload(2)" target="_blank"
+                             (click)="downloadClick(2)">
+                            Open Snap Store
+                          </a>
+                        </mat-card-actions>
+                      </mat-card>
+                    </div>
                   </div>
                 </div>
               </div>
