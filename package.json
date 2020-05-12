@@ -38,7 +38,7 @@
     "normalize.css": "8.0.1",
     "reset-css": "5.0.1",
     "rxjs": "6.5.3",
-    "tslib": "1.10.0",
+    "tslib": "1.12.0",
     "web-animations-js": "github:angular/web-animations-js#release_pr208",
     "zone.js": "0.10.2"
   },
