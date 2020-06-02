@@ -28,7 +28,7 @@
   {
     "name": "Equipment Inspector",
     "image": "equipment-inspector",
-    "description": "Look up player's equipment and show the vaule of the items.",
+    "description": "Look up player's equipment and show the value of the items.",
     "categories": [
       "PvP"
     ]
