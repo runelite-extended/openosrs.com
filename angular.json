@@ -36,7 +36,6 @@
               "src/palette.scss"
             ],
             "scripts": [],
-            "es5BrowserSupport": true
           },
           "configurations": {
             "production": {

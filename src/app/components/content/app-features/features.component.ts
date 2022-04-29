@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { MatIconRegistry } from '@angular/material';
 import { DomSanitizer } from '@angular/platform-browser';
+import {MatIconRegistry} from '@angular/material/icon';
 
 import { PluginsJsonService } from '../../../services/plugins.json.service';
 import { MetaService } from 'src/app/services/meta.service';

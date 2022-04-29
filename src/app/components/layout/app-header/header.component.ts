@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
-import { MatIconRegistry } from '@angular/material';
+import {MatIconRegistry} from '@angular/material/icon';
 
 @Component({
   selector: 'app-header',
@@ -10,7 +10,7 @@ import { MatIconRegistry } from '@angular/material';
 })
 export class AppHeaderComponent implements OnInit {
 
-  public menuItem = ['downloads', 'updates', 'features'];
+  public menuItem = ['downloads', 'features'];
 
   public constructor(
     private domSanitizer: DomSanitizer,

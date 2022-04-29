@@ -1,11 +1,11 @@
 import {ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnInit, ViewChild} from '@angular/core';
-import { MatStepper } from '@angular/material';
+import {MatStepper} from '@angular/material/stepper';
 
 import { NotificationService } from '../../../services/notification.service';
 import { MetaService } from 'src/app/services/meta.service';
 import { GithubService} from '../../../services/github.service';
 
-import { Jar, Linux, Macos, Windowsx32, Windowsx64 } from '../../../interfaces/github.interface';
+import { Jar, Linux, Macos, MacosM1, Windowsx32, Windowsx64 } from '../../../interfaces/github.interface';
 
 import { from, Subscription } from 'rxjs';
 
@@ -28,6 +28,7 @@ export class AppDownloadsComponent implements OnInit, OnDestroy {
   public windowsx64: Windowsx64;
   public windowsx32: Windowsx32;
   public macos: Macos;
+  public macosM1: MacosM1;
   public linux: Linux;
   public jar: Jar;
 
@@ -63,6 +64,7 @@ export class AppDownloadsComponent implements OnInit, OnDestroy {
       this.windowsx64 = launchers.windowsx64;
       this.windowsx32 = launchers.windowsx32;
       this.macos = launchers.macos;
+      this.macosM1 = launchers.macosM1;
       this.linux = launchers.linux;
       this.jar = launchers.jar;
 
@@ -89,6 +91,8 @@ export class AppDownloadsComponent implements OnInit, OnDestroy {
           hashes = this.windowsx32;
         } else if (this.selectedOperatingSystem === 'MacOS') {
           hashes = this.macos;
+        } else if (this.selectedOperatingSystem === 'MacOS M1') {
+          hashes = this.macosM1;
         } else if (this.selectedOperatingSystem === 'Linux') {
           hashes = this.linux;
         }
@@ -109,6 +113,8 @@ export class AppDownloadsComponent implements OnInit, OnDestroy {
         return `${baseUrl}/OpenOSRSSetup32.exe`;
       } else if (this.selectedOperatingSystem === 'MacOS') {
         return `${baseUrl}/OpenOSRSSetup.dmg`;
+      } else if (this.selectedOperatingSystem === 'MacOS M1') {
+        return `${baseUrl}/OpenOSRSSetup-aarch64.dmg`;
       } else if (this.selectedOperatingSystem === 'Linux') {
         return `${baseUrl}/OpenOSRS.AppImage`;
       }

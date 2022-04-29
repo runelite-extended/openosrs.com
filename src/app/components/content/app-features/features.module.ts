@@ -3,15 +3,14 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import {
-  MatBottomSheetModule,
-  MatButtonModule,
-  MatCardModule,
-  MatIconModule,
-  MatInputModule,
-  MatListModule,
-  MatSelectModule, MatSnackBarModule
-} from '@angular/material';
+import {MatCardModule} from '@angular/material/card';
+import {MatButtonModule} from '@angular/material/button';
+import {MatInputModule} from '@angular/material/input';
+import {MatSelectModule} from '@angular/material/select';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatListModule} from '@angular/material/list';
+import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
+import {MatIconModule} from '@angular/material/icon';
 
 import { FeaturesRoutingModule } from './features.routing';
 
