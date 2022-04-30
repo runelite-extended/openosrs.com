@@ -10,6 +10,22 @@ if (environment.production) {
   enableProdMode();
 }
 
+if ('serviceWorker' in navigator && environment.production) {
+  navigator.serviceWorker.getRegistrations().then(registrations => {
+    for (const registration of registrations) {
+      registration.unregister().then(() => console.log('unregistered service worker'));
+    }
+  });
+
+  caches.keys().then(keyList => {
+    return Promise.all(
+      keyList.map(key => {
+        return caches.delete(key);
+      }),
+    );
+  });
+}
+
 platformBrowserDynamic().bootstrapModule(AppModule)
   .then(() => {
     if ('serviceWorker' in navigator && environment.production) {

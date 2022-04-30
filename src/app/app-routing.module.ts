@@ -20,13 +20,6 @@ const routes: Routes = [
     }
   },
   {
-    path: 'updates',
-    loadChildren: () => import('./components/content/app-updates/updates.module').then(m => m.UpdatesModule),
-    data: {
-      title: 'Client Updates'
-    }
-  },
-  {
     path: 'features',
     loadChildren: () => import('./components/content/app-features/features.module').then(m => m.FeaturesModule),
     data: {

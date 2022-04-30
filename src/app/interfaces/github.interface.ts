@@ -177,6 +177,11 @@ export interface Macos {
   sha1: string;
 }
 
+export interface MacosM1 {
+  md5: string;
+  sha1: string;
+}
+
 export interface Linux {
   md5: string;
   sha1: string;
@@ -192,6 +197,7 @@ export interface Launchers {
   windowsx64: Windowsx64;
   windowsx32: Windowsx32;
   macos: Macos;
+  macosM1: MacosM1;
   linux: Linux;
   jar: Jar;
 }

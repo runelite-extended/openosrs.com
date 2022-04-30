@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-import { UpdateService } from '../../../services/update.service';
 import { GoogleAnalyticsService } from '../../../services/google.analytics.service';
 import { MetaService } from 'src/app/services/meta.service';
 
@@ -14,13 +13,11 @@ export class AppComponent implements OnInit {
   public style: string;
 
   constructor(
-    private updateService: UpdateService,
     private googleAnalyticsService: GoogleAnalyticsService,
     private metaService: MetaService
   ) { }
 
   ngOnInit(): void {
-    this.updateService.checkForUpdates();
     this.googleAnalyticsService.init();
     this.metaService.updateTitle();
 
